@@ -1880,5 +1880,531 @@ z-index: 2;
 /*----- PERFECT SERVICE LOGO -----*/
 
 
+/* ======================================= */
+/*  SERVICE HERO -FORM 2,3,4     */
+/* ======================================= */
+
+.service-hero {
+  position: relative;
+  width: 100%;
+  height:45vh; /* Altura móvil */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #223248; /* Azul oscuro base */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  container-type: inline-size;
+  container-name: service-hero;
+}
+
+/* Fondo con diseño geométrico (sin imágenes) */
+.banner {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+}
+
+/* Bordes de seguridad con patrón de rayas */
+.banner::before,
+.banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background-image: repeating-linear-gradient(
+    135deg,
+    #f9ae39 0px,
+    #f9ae39 10px,
+    #223248 10px,
+    #223248 20px
+  );
+  z-index: 3;
+}
+
+.banner::before { top: 0; }
+.banner::after  { bottom: 0; }
+
+/* Contenido central */
+.service-hero__content {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.service-hero__content h1 {
+  font-family: 'Montserrat', sans-serif; /* Usamos Montserrat para que sea igual a la principal */
+  font-size: 2rem;
+  color:#f0f0f0; /* Título en Naranja */
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Contenedor de botones ajustado */
+.service-hero__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Botones estilo "Pastilla" (Página Principal) */
+.btn-outline,
+.btn-solid {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 50px; /* Redondeado total tipo pastilla */
+  text-decoration: none;
+  padding: 14px 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid #f9ae39;
+}
+
+/* Botón Sólido (Principal) */
+.btn-solid {
+  background-color: #f9ae39;
+  color: #223248;
+}
+
+/* Botón Outline */
+.btn-outline {
+  background-color: transparent;
+  color: #f9ae39;
+}
+
+/* Hover unificado */
+.btn-outline:hover,
+.btn-solid:hover {
+  background-color: #f0f0f0;
+  color: #223248;
+  border-color: #f0f0f0;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================================= */
+/*  AJUSTES PARA PANTALLA GRANDE         */
+/* ======================================= */
+
+@container service-hero (min-width: 900px) {
+  .service-hero {
+    height: 40vh; /* Altura reducida solicitada */
+  }
+
+  .service-hero__content h1 {
+    font-size: 3rem;
+  }
+
+  .service-hero__buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .btn-outline,
+  .btn-solid {
+    font-size: 1.1rem;
+    padding: 15px 45px;
+  }
+}
+/* -------- Request Service ENDS -------*/
 
 
+/* ======================================= */
+/* FORM RESQUEST SERVICE & ESTIMATE  */
+/* ======================================= */
+
+.form_container {
+    /* Box Model */
+    min-height: 60vh;
+    padding: 40px 0; /* Más padding vertical para respirar */
+    
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centramos el formulario horizontalmente */
+    
+    /* Visual */
+    background-color: var(--light-gray-bg, #f8f8f8);
+    container-type: inline-size;
+    container-name: form_container;
+}
+
+.form__container-title {
+    margin: 0;
+    padding: 0 30px 25px 30px; /* Separación abajo y padding lateral en móvil */
+    max-width: 600px; /* Máx. ancho del título en móvil */
+    width: 100%;
+
+    /* Typography */
+    color: var(--accent-color, #f4a200);
+    font-size: 2.2rem;
+    text-align: left; 
+}
+
+.form__container-form {
+     padding: 15px;
+    max-width: 600px; /* Mobile/Tablet base */
+    width: 100%;
+    
+    /* Layout */
+    display: grid;
+}
+
+/* ======================================= */
+/*  ESTILO DE LOS INPUTS Y LABELS        */
+/* ======================================= */
+
+.form__container-input input:not([type="submit"]),
+.form__container-input textarea {
+    /* Box Model */
+    width: 100%;
+    padding: 12px; 
+    margin: 8px 0; 
+    border-radius: 6px; 
+    
+    /* Visual */
+    border: 1px solid var(--border-color, #ddd); 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); 
+    background-color: white; /* Color de fondo limpio */
+    
+    /* Typography */
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form__container-input textarea {
+    resize: vertical; 
+    min-height: 140px; 
+    font-family: inherit;
+}
+
+.form__container-input input:not([type="submit"]):focus,
+.form__container-input textarea:focus {
+    outline: none;
+    border-color: var(--accent-color, #f4a200); /* Borde de enfoque con color de acento */
+    box-shadow: 0 0 5px rgba(244, 162, 0, 0.5);
+}   
+
+.form__container-input input[type="submit"] {
+    /* Visual */
+    background-color: var(--accent-color, #f4a200);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    border: none;
+    cursor: pointer;
+    
+    /* Box Model & Layout */
+    padding: 12px 30px; 
+    border-radius: 10px;
+    margin: 25px auto 0 auto; 
+    width: 200px; 
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form__container-input input[type="submit"]:hover {
+    background-color: var(--hover-color, #e09300); 
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.required {
+    color: var(--accent-color, #f4a200);
+    font-weight: normal; 
+    font-size: 0.9em;
+}
+
+
+/* CONFIDENCIALIDAD */
+.form__confidentiality {
+    grid-column: 1 / -1; 
+    text-align: center;
+    font-size: 13px;
+    color: #333;
+    padding: 0 20px 40px 20px; 
+    opacity: 0.8;
+}
+
+.form__confidentiality p {
+    margin-top: 15px; 
+    line-height: 1.5;
+}
+
+/* Estilo base para el Select (Igual que tus inputs) */
+.form__container-input select {
+    width: 100%;
+    padding: 14px;
+    margin: 5px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    cursor: pointer;
+    appearance: none; /* Quita la flecha por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.3s ease;
+}
+
+/* Contenedor para la flecha personalizada */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Flecha personalizada usando un pseudo-elemento */
+.select-wrapper::after {
+    content: '▼';
+    font-size: 12px;
+    color: #f4a200; /* Naranja de tu marca */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Para que al hacer clic en la flecha se abra el select */
+}
+
+/* Estado de enfoque (Focus) */
+.form__container-input select:focus {
+    outline: none;
+    border-color: #f4a200;
+    box-shadow: 0 0 8px rgba(244, 162, 0, 0.3);
+}
+
+/* Mejorar el color de la opción deshabilitada (placeholder) */
+select:invalid {
+    color: #999;
+}
+
+option {
+    color: #333;
+    background-color: #fff;
+}
+
+
+/* ======================================= */
+/* DISEÑO PARA ESCRITORIO (CONTAINER)   */
+/* ======================================= */
+
+@container form_container (min-width: 720px) {
+
+        .form__container-title {
+        text-align: center;
+        padding: 40px 0 30px 0; 
+        max-width: 800px; /* Coincide con el ancho del formulario */
+       }
+    .form__container-form {
+        max-width: 800px; 
+        grid-template-columns: 1fr 1fr; /* 2 Columnas */
+        grid-template-areas:
+            "firstname lastname"
+            "company address"
+            "city zipcode"
+            "phone email"
+            "message message"
+            "source source"
+            "submit submit";
+            gap: 15px 25px;
+    }
+
+    /* Asignación de áreas basada en el orden de tu HTML */
+    .form__container-input:nth-child(1) { grid-area: firstname; }
+    .form__container-input:nth-child(2) { grid-area: lastname; }
+    .form__container-input:nth-child(3) { grid-area: company; }
+    .form__container-input:nth-child(4) { grid-area: address; }
+    .form__container-input:nth-child(5) { grid-area: city; }
+    .form__container-input:nth-child(6) { grid-area: zipcode; }
+    .form__container-input:nth-child(7) { grid-area: phone; }
+    .form__container-input:nth-child(8) { grid-area: email; }
+    .form__container-input:nth-child(9) { grid-area: message; }
+    .form__container-input:nth-child(10) { grid-area: source; }
+    .form__container-input:nth-child(11) { grid-area: submit; }
+
+    .form__container-input[type="submit"] {
+        width: 250px; 
+    }
+}
+   
+
+/* FORMS ENDS */
+  
+/* FORMS CUSTOMER  */
+
+.form__container-customer {
+    /* Box Model */
+    min-height: 60vh;
+    padding: 40px 0; /* Más padding vertical para respirar */
+    
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centramos el formulario horizontalmente */
+    
+    /* Visual */
+    background-color: var(--light-gray-bg, #f8f8f8);
+    container-type: inline-size;
+    container-name: form__container-customer;
+}
+
+.form__container-customer-title {
+    margin: 0;
+    padding: 0 30px 25px 30px; /* Separación abajo y padding lateral en móvil */
+    max-width: 600px; /* Máx. ancho del título en móvil */
+    width: 100%;
+
+    /* Typography */
+    color: var(--accent-color, #f4a200);
+    font-size: 2.2rem;
+    text-align: left; 
+}
+
+.form__container-customer-form {
+     padding: 15px;
+    max-width: 600px; /* Mobile/Tablet base */
+    width: 100%;
+    
+    /* Layout */
+    display:grid;
+}
+
+/* ======================================= */
+/*  ESTILO DE LOS INPUTS Y LABELS        */
+/* ======================================= */
+
+.form__container-customer-input input:not([type="submit"]),
+.form__container-customer-input textarea {
+    /* Box Model */
+    width: 100%;
+    padding: 12px; 
+    margin: 8px 0; 
+    border-radius: 6px; 
+    
+    /* Visual */
+    border: 1px solid var(--border-color, #ddd); 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); 
+    background-color: white; /* Color de fondo limpio */
+    
+    /* Typography */
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form__container-customer-input textarea {
+    resize: vertical; 
+    min-height: 140px; 
+    font-family: inherit;
+}
+
+.form__container-customer-input input:not([type="submit"]):focus,
+.form__container-customer-input textarea:focus {
+    outline: none;
+    border-color: var(--accent-color, #f4a200); /* Borde de enfoque con color de acento */
+    box-shadow: 0 0 5px rgba(244, 162, 0, 0.5);
+}   
+
+.form__container-customer-input input[type="submit"] {
+    /* Visual */
+    background-color: var(--accent-color, #f4a200);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    border: none;
+    cursor: pointer;
+    
+    /* Box Model & Layout */
+    padding: 12px 30px; 
+    border-radius: 10px;
+    margin: 25px auto 0 auto; 
+    width: 200px; 
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form__container-customer-input input[type="submit"]:hover {
+    background-color: var(--hover-color, #e09300); 
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.required {
+    color: var(--accent-color, #f4a200);
+    font-weight: normal; 
+    font-size: 0.9em;
+}
+
+
+/* CONFIDENCIALIDAD */
+.form__container-customer-confidentiality {
+    grid-column: 1 / -1; 
+    text-align: center;
+    font-size: 13px;
+    color: #333;
+    padding: 0 20px 40px 20px; 
+    opacity: 0.8;
+}
+
+.form__container-customer-confidentiality p {
+    margin-top: 15px; 
+    line-height: 1.5;
+}
+
+/* ======================================= */
+/* DISEÑO PARA ESCRITORIO (CONTAINER)  CUSTOMER  */
+/* ======================================= */
+
+@container form__container-customer (min-width: 720px) {
+
+        .form__container-customer-title {
+        text-align: center;
+        padding: 40px 0 30px 0; 
+        max-width: 800px; /* Coincide con el ancho del formulario */
+       }
+    .form__container-customer-form {
+        max-width: 800px; 
+        grid-template-columns: 1fr 1fr; /* 2 Columnas */
+        grid-template-areas:
+            "firstname lastname"
+            "company phone"
+            "email email"
+            "message message"
+            "submit submit";
+            gap: 15px 25px;
+    }
+
+    /* Asignación de áreas basada en el orden de tu HTML */
+    .form__container-customer-input:nth-child(1) { grid-area: firstname; }
+    .form__container-customer-input:nth-child(2) { grid-area: lastname; }
+    .form__container-customer-input:nth-child(3) { grid-area: company; }
+    .form__container-customer-input:nth-child(4) { grid-area: phone; }
+    .form__container-customer-input:nth-child(5) { grid-area: email; }
+    .form__container-customer-input:nth-child(6) { grid-area: message; }
+    .form__container-customer-input:nth-child(7) { grid-area: submit; }
+
+    .form__container-customer-input[type="submit"] {
+        width: 250px; 
+    }
+  }  
+
+
+  /* FORMS ENDS */
