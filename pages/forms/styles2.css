@@ -1,0 +1,128 @@
+
+.hero_dos {
+   position: relative;
+   width: 100%;
+   height: 70vh;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   container-type: inline-size;
+   container-name: hero;
+}
+
+.hero__imgs {
+    width: 1
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+/* CONTENEDOR PRINCIPAL (coincide con hero__container-data del HTML) */
+.hero__container-data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.hero__data {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    color:#f0f0f0;
+}
+
+/* TÍTULO */
+.hero__container-descripcion h1 {
+    font-size: 2rem;
+}
+
+/* BOTONES */
+.hero__container-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    padding:50px;
+}
+
+/* Botón outline */
+.btn__container-outline,
+.btn__container-solid {
+    font-family: Tahoma;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #f4a200;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.btn__container-outline:hover {
+    background-color: #0d8ac6;
+    color: #f4a200;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn__container-solid:hover {
+    background-color: #0d8ac6;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* INDICADORES */
+.hero__indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.hero__indicators .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    transition: background-color 0.3s;
+}
+
+.hero__indicators .indicator.active {
+    background-color:#f4a200;
+}
+
+/* QUERIES */
+@container hero (min-width: 600px)   {
+
+    .hero__container-descripcion h1 {
+        font-size: 3rem;
+    }
+
+    .hero__container-buttons {
+        flex-direction: row;
+        gap: 40px;
+        padding: 20px;
+    }
+
+    .btn__container-outline,
+    .btn__container-solid {
+        font-size: 1.5rem;
+        padding: 12px 24px;
+    }
+
+    .hero__indicators {
+        bottom: 30px;
+        gap: 15px;
+    }
+}

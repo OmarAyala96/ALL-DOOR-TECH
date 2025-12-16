@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Principate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="topbar">
+        <a href="mailto:alldoortech@gmail.com">alldoortech@gmail.com</a>
+        <a href="tel:+541145719869">TEL: (951) 376-1433</a>
+    </div>
+
+ <!-- HEADER PRINCIPAL -->
+<header class="header" role="banner">
+    <div class="header__container">
+
+        <input type="checkbox" id="menu-toggle" class="header__checkbox" aria-controls="main-navigation">
+
+        <label for="menu-toggle" class="header__hamburger" 
+       role="button" 
+       aria-label="Abrir menú de navegación principal"
+       aria-expanded="false"
+       aria-controls="main-navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span class="sr-only">Menú</span>
+</label>
+
+        <a href="/" class="header__logo-link">
+            <img src="/Desktop/ALL DOOR TECH/assets/images/LOGO.png" class="header__logo" alt="[Nombre de tu empresa] Logo. Volver a la página de inicio">
+        </a>
+
+        <nav class="header__nav" id="main-navigation" aria-label="Navegación principal del sitio">
+
+            <div class="header__mobile-topbar">
+                <label for="menu-toggle" class="header__close-btn" 
+                       role="button" 
+                       aria-label="Cerrar menú de navegación">
+                    &times; 
+                </label>
+            </div>
+
+            <ul class="header__nav-list" role="menu">
+
+                <li class="dropdown" role="none">
+                    <input type="checkbox" id="doors-toggle" class="dropdown__checkbox" aria-controls="doors-submenu">
+
+                    <label for="doors-toggle" class="dropdown__link" 
+                           role="button" 
+                           aria-expanded="false" 
+                           aria-haspopup="true">
+                        DOORS
+                        <span class="arrow" aria-hidden="true">▾</span>
+                    </label>
+
+                    <ul class="dropdown__menu" id="doors-submenu" role="menu">
+                        <li role="none"><a href="#" role="menuitem">High Speed Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Automatic Sliding Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Roll Up Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Counter Shutter Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Dock Restraints & Levelers</a></li>
+                        <li role="none"><a href="#" role="menuitem">Hollow Metal Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Sectional Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Low Energy Operators</a></li>
+                        <li role="none"><a href="#" role="menuitem">Storefront Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Aluminum Grilles</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown" role="none">
+                    <input type="checkbox" id="all-types-toggle" class="dropdown__checkbox" aria-controls="all-types-submenu">
+
+                    <label for="all-types-toggle" class="dropdown__link" 
+                           role="button" 
+                           aria-expanded="false" 
+                           aria-haspopup="true">
+                        ALL TYPES FOR DOORS
+                        <span class="arrow" aria-hidden="true">▾</span>
+                    </label>
+
+                    <ul class="dropdown__menu" id="all-types-submenu" role="menu">
+                        <li role="none"><a href="#" role="menuitem">GA Herculite wood</a></li>
+                        <li role="none"><a href="#" role="menuitem">Rolling Steel & Sectional Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Fire Doors, Inspection & Repairs</a></li>
+                        <li role="none"><a href="#" role="menuitem">Security Gates & Grilles</a></li>
+                        <li role="none"><a href="#" role="menuitem">Entrance & Swinging Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Hangar & Large Scale Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Access Control Systems and Hardware</a></li>
+                        <li role="none"><a href="#" role="menuitem">Automatic Door Systems and ADA</a></li>
+                        <li role="none"><a href="#" role="menuitem">Loading Docks & Equipment</a></li>
+                        <li role="none"><a href="#" role="menuitem">Specialty Doors & Services</a></li>
+                        <li role="none"><a href="#" role="menuitem">Preventive maintenance</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown" role="none">
+                    <input type="checkbox" id="industries-toggle" class="dropdown__checkbox" aria-controls="industries-submenu">
+
+                    <label for="industries-toggle" class="dropdown__link" 
+                           role="button" 
+                           aria-expanded="false" 
+                           aria-haspopup="true">
+                        INDUSTRIES WE SERVE
+                        <span class="arrow" aria-hidden="true">▾</span>
+                    </label>
+
+                    <ul class="dropdown__menu" id="industries-submenu" role="menu">
+                        <li role="none"><a href="#" role="menuitem">Corporate Offices</a></li>
+                        <li role="none"><a href="#" role="menuitem">Construction Projects</a></li>
+                        <li role="none"><a href="#" role="menuitem">Commercial Premises</a></li>
+                        <li role="none"><a href="#" role="menuitem">Transportation & Logistics</a></li>
+                        <li role="none"><a href="#" role="menuitem">Healthcare Institutions</a></li>
+                        <li role="none"><a href="#" role="menuitem">Hospitality & Restaurants</a></li>
+                        <li role="none"><a href="#" role="menuitem">County Offices</a></li>
+                        <li role="none"><a href="#" role="menuitem">Airports & Aviation Facilities</a></li>
+                    </ul>
+                </li>
+
+                <li class="header__nav-item" role="none">
+                    <a href="#" role="menuitem">ABOUT</a>
+                </li>
+
+                <li class="header__nav-item" role="none">
+                    <a href="#" role="menuitem">CONTACT</a>
+                </li>
+
+                <li class="header__nav-cta-group" role="none">
+                    <a href="#" class="header__cta header__cta--outline" role="menuitem">
+                        REQUEST SERVICE
+                    </a>
+                    <a href="#" class="header__cta header__cta--solid" role="menuitem">
+                        REQUEST ESTIMATE
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="desktop-cta-group">
+            <a href="#" class="header__cta header__cta--outline">REQUEST SERVICE</a>
+            <a href="#" class="header__cta header__cta--solid">REQUEST ESTIMATE</a>
+        </div>
+
+    </div>
+</header>
+
+
+      <!-- HERO PRINCIPAL -->
+ <main class="hero">
+    <!-- CARRUSEL DE FONDO -->
+    <div class="hero__carrusel">
+        <div class="hero__track">
+            <img src="./assets/images/carrusel1.png" class="hero__img">
+            <img src="./assets/images/carrusel2.png" class="hero__img">
+            <img src="./assets/images/carrusel3.png" class="hero__img">
+            <img src="./assets/images/carrusel4.png" class="hero__img">
+            <img src="./assets/images/carrusel5.png" class="hero__img">
+        </div>
+    </div>
+
+     <!-- TEXTO Y BOTONES -->
+    <div class="hero__data-container">
+        <div class="hero__data">
+            <div class="hero__descripcion">
+                <h1>COMMERCIAL - INDUSTRIAL DOOR REPAIRS SERVICES</h1>
+            </div>
+
+           <div class="hero__buttons">
+                <a href="#" class="btn__btn-solid">Request Estimate</a>
+                <a href="#" class="btn__btn-outline">Request Service</a>
+            </div>
+
+              <div class="hero__indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--  CONTACT SECTOR -->
+<nav class="about__services">
+    <a href="#" class="about__service-link">Our Services Include</a>
+    <a href="#" class="about__service-link">Commercial Door Services</a>
+    <a href="#" class="about__service-link">Latest at ALL DOOR TECH</a>
+</nav>
+
+ <!-- ABOUT PRINCIPAL -->
+<section id="about" class="about__section">
+
+  <div class="about__section-video-container">
+    <video 
+      src="./assets/videos/video.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+      class="about__video">
+    </video>
+  </div>
+
+  <div class="about__data-container">
+    <div class="about__data">
+      <div class="about__description">
+        <h2>
+          ABOUT US — <span class="about__brand">ALL DOOR TECH</span>
+        </h2>
+          <p>
+                    At All Door Tech, we have over 22 years of experience providing comprehensive solutions for the repair, manufacture, installation, and maintenance of commercial and industrial doors. We are a locally owned and operated company committed to offering reliable, safe, and high-performance service for all types of entry systems.
+
+                    Our specialty includes Herculite, wood, hollow metal, and aluminum glass doors, as well as roll-up, sectional steel, and overhead doors designed to meet the needs of commercial, industrial, and large-scale spaces.
+
+                    Throughout our history, we have built a reputation based on quality, innovation, and professional technical support, helping companies, hangars, logistics centers, industrial warehouses, and businesses optimize their access points.
+
+                    We focus on offering durable, safe, and efficient solutions, backed by fast, friendly, and personalized technical service that guarantees the reliable operation of each installation. At All Door Tech, we work to ensure that each customer receives a door that not only fulfills its purpose but also enhances the safety and efficiency of their operation.
+                 </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!---------  PORTAFOLIO CARDS -------->
+
+
+<section class="portfolio">
+    <h2 class="portfolio__title">ALL TYPES OF DOORS</h2>
+
+    <div class="portfolio__item-container">
+
+        <a href="rolling-doors.html" class="portfolio__card">
+            <img src="/assets/images/carrusel1.png" alt="Rolling Steel Doors">
+            <div class="portfolio__info">
+                <span>Rolling Steel & Sectional Doors</span>
+            </div>
+        </a>
+
+        <a href="fire-doors.html" class="portfolio__card">
+            <img src="/assets/images/carrusel2.png" alt="Fire Doors">
+            <div class="portfolio__info">
+                <span>Fire Doors, Inspection & Repairs</span>
+            </div>
+        </a>
+
+        <a href="security-gates.html" class="portfolio__card">
+            <img src="assets/images/security.jpg" alt="Security Gates">
+            <div class="portfolio__info">
+                <span>Security Gates & Grilles</span>
+            </div>
+        </a>
+
+        <a href="entrance-doors.html" class="portfolio__card">
+            <img src="assets/images/entrance.jpg" alt="Entrance Doors">
+            <div class="portfolio__info">
+                <span>Entrance & Swinging Doors</span>
+            </div>
+        </a>
+
+        <a href="hangar-doors.html" class="portfolio__card">
+            <img src="assets/images/hangar.jpg" alt="Hangar Doors">
+            <div class="portfolio__info">
+                <span>Hangar & Large Scale Doors</span>
+            </div>
+        </a>
+
+        <a href="access-control.html" class="portfolio__card">
+            <img src="assets/images/access.jpg" alt="Access Control">
+            <div class="portfolio__info">
+                <span>Access Control Systems and Hardware</span>
+            </div>
+        </a>
+
+        <a href="high-speed-doors.html" class="portfolio__card">
+            <img src="assets/images/high-speed.jpg" alt="High Speed Doors">
+            <div class="portfolio__info">
+                <span>High Speed Doors</span>
+            </div>
+        </a>
+
+        <a href="dock-equipment.html" class="portfolio__card">
+            <img src="assets/images/dock.jpg" alt="Dock Equipment">
+            <div class="portfolio__info">
+                <span>Dock Levelers & Seals</span>
+            </div>
+        </a>
+
+        <a href="glass-doors.html" class="portfolio__card">
+            <img src="assets/images/glass.jpg" alt="Glass & Aluminum Doors">
+            <div class="portfolio__info">
+                <span>Glass & Aluminum Doors</span>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<!---------  PORTAFOLIO ENDS -------->
+
+
+<!-- DOORS SECTOR -->
+<section class="doors__section">
+  <h2 class="doors__title">ALL DOOR TECH</h2>
+  <div class="doors__container">
+    <div class="doors__item">
+      <a href="#" class="doors__link">High Speed Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Automatic Sliding Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Roll Up Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Counter Shutter Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Dock Restraints & Levelers <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Hollow Metal Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Sectional Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Low Energy Operators <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Storefront Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Aluminum Grilles <span class="doors__arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!--  CONTACT SECTOR -->
+ <div class="contact">
+    <h2 class="contact__us">Contact Us</h2>
+ </div>
+ <nav class="contact__active">
+    <a href="#" class="contact__tabs-item">Request Service</a>
+    <a href="#" class="contact__tabs-item">Request Estimate</a>
+    <a href="#" class="contact__tabs-item">Customer Feedback</a>
+</nav> 
+
+
+<!-------  FORM SECTOR ---------->
+
+
+<section class="form">
+    <h2 class="form__title">CONTACT INFORMATION</h2>
+
+    <form class="form__form">
+
+        <div class="form__input-container">
+            <label for="first-name">First Name <span class="required">(Required)</span></label>
+            <input type="text" id="first-name" placeholder="John">
+        </div>
+
+        <div class="form__input-container">
+            <label for="last-name">Last Name <span class="required">(Required)</span></label>
+            <input type="text" id="last-name" placeholder="Doe">
+        </div>
+
+        <div class="form__input-container">
+            <label for="company-name">Company Name <span class="required">(Required)</span></label>
+            <input type="text" id="company-name" placeholder="All Door tech">
+        </div>
+
+        <div class="form__input-container">
+            <label for="email">Email <span class="required">(Required)</span></label>
+            <input type="email" id="email" placeholder="john.doe@example.com">
+        </div>
+
+        <div class="form__input-container">
+            <label for="phone">Phone <span class="required">(Required)</span></label>
+            <input type="tel" id="phone" placeholder="1 (213) 555-7890">
+            </div>
+
+        <div class="form__input-container">
+            <label for="subject">Subject <span class="required">(Required)</span></label>
+            <input type="text" id="subject" placeholder="Your message subject">
+        </div>
+
+        <div class="form__input-container">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Write your message here..."></textarea>
+        </div>
+
+        <div class="form__input-container submit-button"> 
+            <input type="submit" value="Submit">
+        </div>
+
+        <div class="form__confidentiality">
+            <p>
+                <strong>Confidentiality Notice:</strong> The information contained in this communication may be confidential or privileged. 
+                It is intended only for the use of the person(s) named herein as sender and recipient(s).
+            </p>
+        </div>
+
+    </form>
+</section>
+
+<!-- LOCATION SECTOR -->
+
+<section class="location">
+    
+    <div class="map-container">
+        <div class="map-overlay"></div>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211894.61777037784!2d-117.45963045065736!3d33.91917238309467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dca6df7ff47dbb%3A0xf7a1d705135e0ae8!2sRiverside%2C%20California%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1765400873397!5m2!1ses-419!2sar"
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<!-- FOOTER SECTOR -->
+
+  <footer class="footer">
+
+  <div class="footer__container">
+
+    <!-- LOGO  -->
+    <div class="footer__brand">
+      <h2 class="footer__logo">
+        All<span class="highlight">Door</span>Tech
+      </h2>
+
+      
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="footer__nav">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Doors</a></li>
+        <li><a href="#">Repairs</a></li>
+        <li><a href="#">Services</a></li>
+      </ul>
+    </nav>
+
+    <!-- CONTACT -->
+    <div class="footer__contact">
+      <h3>Contact</h3>
+      <p>Riverside, California</p>
+      <p>Tel: (011) 4571.9869</p>
+      <p>Email: <a href="mailto:alldoortech@gmail.com">alldoortech@gmail.com</a></p>
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer__bottom">
+    © 2025 All rights reserved. | Design & Development by <strong>ManyiWebSoft</strong>
+  </div>
+
+</footer>
+
+
+</body>
+</html>
