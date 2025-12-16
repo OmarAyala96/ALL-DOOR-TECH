@@ -1690,6 +1690,45 @@ z-index: 2;
 
 
 
+/*-------VISTA PRINCIPAL DE LOS ALL TYPES FOR DOORS-------*/
+
+/* 1. CLASE PARA EL FONDO AZUL OSCURO (Aplica a la <section>) */
+/* Sobreescribe cualquier color de fondo de Bootstrap (como bg-primary) con tu variable */
+.bg-custom-dark-blue {
+    background-color: var(--primary-dark-blue) !important;
+}
+
+/* 2. ESTILOS DE LA BARRA DE PESTAÑAS INFERIOR (.sub-nav-link) */
+/* La mayor parte del estilo (color, negrita, alineación) se maneja con Bootstrap */
+.sub-nav-link {
+    position: relative;
+    padding-bottom: 5px; /* Espacio para la línea */
+    transition: color 0.3s;
+    /* Aseguramos que el color al hacer hover sea el naranja de acento */
+}
+
+.sub-nav-link:hover {
+    color: var(--primary-orange) !important;
+}
+
+/* 3. ESTILO PARA EL ENLACE ACTIVO (La línea naranja) */
+.sub-nav-link.active {
+    color: var(--primary-dark-blue) !important; /* Texto más oscuro cuando está activo */
+    border-bottom: 3px solid var(--primary-orange);
+}
+
+/* 4. Ajuste de texto para responsividad en móvil (Adaptamos el H1 de display-4) */
+@media (max-width: 768px) {
+    .container-fluid.bg-custom-dark-blue h1 {
+        /* Reducimos el tamaño de fuente para que quepa en una o dos líneas en móvil */
+        font-size: 2.2rem;
+        padding: 0 5%;
+    }
+}
+
+/*-------VISTA PRINCIPAL DE LOS ALL TYPES FOR DOORS ENDS-------*/
+
+
 
     /*-------PAGINA DE ACCESS CONTROL SYSTEM-------*/
 
@@ -1760,6 +1799,10 @@ z-index: 2;
     max-width: 50%;
   }
 }
+
+
+    /*-------PAGINA DE ACCESS CONTROL SYSTEM END-------*/
+
 
 
 
