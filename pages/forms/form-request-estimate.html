@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..//forms/stylesform.css">
-    <title>Customer Feedback</title>
+    <link rel="stylesheet" href="../forms/stylesform.css">
+    <title>Request Estimate</title>
 </head>
 <body>
      
@@ -19,7 +19,7 @@
 
 
   <div class="service-hero__content">
-    <h1>Customer Feedback</h1>
+    <h1>Request Estimate</h1>
 
     <div class="service-hero__buttons">
       <a href="#" class="btn-outline">Request Service</a>
@@ -28,67 +28,111 @@
   </div>
 
 </main>
- <div class="contact">
+
+<div class="contact">
   
  </div>
  <nav class="contact__active">
     <a href="#" class="contact__tabs-item">Contact Us</a>
     <a href="#" class="contact__tabs-item">Request Service</a>
-    <a href="#" class="contact__tabs-item">Request Estimate</a>
+    <a href="#" class="contact__tabs-item">Customer Feedback</a>
 </nav> 
 
 <!-- FORM SECTION -->
-<section class="form__container-customer">
-  <h2 class="form__container-customer-title">Feedback Information</h2>
+<section class="form_container" id="service-form">
+  <h2 class="form__container-title">Estimate Information</h2>
 
-  <form class="form__container-customer-form">
+  <form class="form__container-form">
+
+    <div class="form__container-input">
+      <label>
+        First Name <span class="required">(Required)</span>
+        <input type="text" name="first_name" placeholder="John" required>
+      </label>
+    </div>
+
+    <div class="form__container-input">
+      <label>
+        Last Name <span class="required">(Required)</span>
+        <input type="text" name="last_name" placeholder="Doe" required>
+      </label>
+    </div>
+
+    <div class="form__container-input">
+      <label>
+        Company <span class="required">(Required)</span>
+        <input type="text" name="company" placeholder="All Door Tech" required>
+      </label>
+    </div>
+
+    <div class="form__container-input">
+      <label>
+        Address <span class="required">(Required)</span>
+        <input type="text" name="address" placeholder="123 Main Street, Apt 4B" required>
+      </label>
+    </div>
+
+    <div class="form__container-input">
+      <label>
+        City <span class="required">(Required)</span>
+        <input type="text" name="city" placeholder="Los Angeles" required>
+      </label>
+    </div>
+
+    <div class="form__container-input">
+      <label>
+        Zip Code <span class="required">(Required)</span>
+        <input type="text" name="zip_code" placeholder="90012" required>
+      </label>
+    </div>
+
+    <div class="form__container-input">
+      <label>
+        Phone <span class="required">(Required)</span>
+        <input type="tel" name="phone" placeholder="1 (213) 555-7890" required>
+      </label>
+    </div>
+
+    <div class="form__container-input">
+      <label>
+        Email <span class="required">(Required)</span>
+        <input type="email" name="email" placeholder="john.doe@example.com" required>
+      </label>
+    </div>
+
+    <div class="form__container-input">
+      <label>
+        Please provide a brief description of your request
+        <textarea name="message" placeholder="Write your message here..." required></textarea>
+      </label>
+    </div>
     
-    <div class="form__container-customer-input">
-      <label>First Name <span class="required">(Required)</span></label>
-      <input type="text" name="first_name" placeholder="John" required>
+    <div class="form__container-input">
+      <label for="source">How did you find us? <span class="required">(Required)</span></label>
+      <div class="select-wrapper">
+        <select name="source" id="source" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="google">Google</option>
+          <option value="bing">Bing</option>
+          <option value="existing_customer">I'm an existing customer</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
     </div>
 
-    <div class="form__container-customer-input">
-      <label>Last Name <span class="required">(Required)</span></label>
-      <input type="text" name="last_name" placeholder="Doe" required>
-    </div>
-
-    <div class="form__container-customer-input">
-      <label>Company <span class="required">(Required)</span></label>
-      <input type="text" name="company" placeholder="All Door Tech" required>
-    </div>
-
-    <div class="form__container-customer-input">
-      <label>Phone <span class="required">(Required)</span></label>
-      <input type="tel" name="phone" placeholder="1 (213) 555-7890" required>
-    </div>
-
-    <div class="form__container-customer-input">
-      <label>Email <span class="required">(Required)</span></label>
-      <input type="email" name="email" placeholder="john.doe@example.com" required>
-    </div>
-
-    <div class="form__container-customer-input">
-      <label>Give us your feedback <span class="required">(Required)</span></label>
-      <textarea name="message" placeholder="How can we help you?" required></textarea>
-    </div>
-
-
-    <div class="form__container-customer-input">
+    <div class="form__container-input">
       <input type="submit" value="Submit">
     </div>
 
-    <div class="form__container-customer-confidentiality">
+    <div class="form__container-confidentiality">
       <p>
-        <strong>Confidentiality Notice:</strong><br>
+        <strong>Confidentiality Notice:</strong>
         The information contained in this communication may be confidential or privileged.
         It is intended only for the use of the person(s) named herein.
       </p>
     </div>
-
   </form>
 </section>
-
 
 <!-- PERFECT SERVICE INCREIBLE FAST  -->
 
@@ -106,7 +150,7 @@
         </p>
 
 
-        <a href="#" class="cta-button">Contact Us</a>
+        <a href="#contact" class="cta-button">Contact Us</a>
 
     </div>
 </section>
