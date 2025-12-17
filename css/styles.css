@@ -1,55 +1,109 @@
+/* ==========================================================================
+   1. VARIABLES, FUENTES Y RESET (BASE)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Colores de Marca */
+    --primary-dark-blue: #223248;
+    --primary-orange: #f9ae39;       /* Color de la empresa */
+    --primary-orange-hover: #e0921d; 
+    --secondary-dark-blue: #1c2a3d;
+    --topbar-dark: #221f1c;
+    
+    /* Colores de Texto y UI */
+    --text-light: #ffffff;
+    --text-dark: #101632dd;
+    --border-color: rgba(255, 255, 255, 0.15);
+    
+    /* Configuración de Diseño */
+    --border-radius-tech: 8px;       /* El redondeado técnico que pediste */
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 * {
     box-sizing: border-box;
-}
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-body {
-    font-family:'Montsserat';
-    background-color: #f0f0f0;
-    color: #101632dd;
-}
-
-body, div, nav, footer, a, li, label {
     margin: 0;
     padding: 0;
 }
 
-
-/* ======================================= */
-/* 0. VARIABLES Y UTILITIES */
-/* (Asegúrate de que tus colores principales estén definidos) */
-/* ======================================= */
-:root {
-    --primary-dark-blue: #223248; /* Azul oscuro principal (Fondo del header y menú) */
-    --primary-orange: #f4a200; /* Naranja/Amarillo de acento */
-    --secondary-dark-blue: #1c2a3d; /* Fondo de submenú desplegable (más oscuro) */
-    --text-light: #ffffff;
-    --text-dark: #101632dd;
-    --topbar-dark: #221f1c; /* Color de tu Topbar actual */
-    --border-color: rgba(255, 255, 255, 0.15); /* Borde sutil del menú móvil */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-
-//* ======================================= */
-/* ♿ ACCESIBILIDAD CRÍTICA (GLOBAL) */
-/* IMPLEMENTACIÓN DE :FOCUS-VISIBLE */
-/* ======================================= */
-
-/* 1. ANULACIÓN GLOBAL DEL FOCO TRADICIONAL (Quita el borde al hacer click con ratón) */
-:focus {
-    outline: none; 
+body {
+    font-family: 'Montserrat', sans-serif; /* Corregido de 'Montsserat' */
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
-/* 2. APLICACIÓN DEL FOCO VISIBLE (Solo cuando se navega con el teclado) */
+ul, ol { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+/* Accesibilidad: Foco visible para navegación por teclado */
 :focus-visible {
-    outline: 3px solid var(--primary-orange, #FF9900);
-    outline-offset: 2px; 
-    border-radius: 4px;
+    outline: 3px solid var(--primary-orange);
+    outline-offset: 2px;
 }
+
+/* ==========================================================================
+   2. COMPONENTES GLOBALES: BOTONES (NUEVO DISEÑO TÉCNICO)
+   ========================================================================== */
+
+/* Botón "REQUEST SERVICE" (Sobrescribe btn-warning de Bootstrap) */
+.btn-warning {
+    background-color: var(--primary-orange) !important;
+    border: 2px solid var(--primary-orange) !important;
+    color: var(--primary-dark-blue) !important;
+    border-radius: var(--border-radius-tech) !important;
+    font-weight: 700 !important;
+    padding: 12px 28px !important;
+    text-transform: uppercase;
+    transition: var(--transition-smooth) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón "REQUEST ESTIMATE" (Sobrescribe btn-outline-light) */
+.btn-outline-light {
+    background-color: transparent !important;
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
+    border-radius: var(--border-radius-tech) !important;
+    font-weight: 700 !important;
+    padding: 12px 28px !important;
+    text-transform: uppercase;
+    transition: var(--transition-smooth) !important;
+}
+
+/* EFECTO DE MOVIMIENTO Y ELEVACIÓN (HOVER) */
+.btn-warning:hover, 
+.btn-outline-light:hover {
+    transform: translateY(-5px) !important; /* Movimiento leve hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+.btn-warning:hover {
+    background-color: var(--primary-orange-hover) !important;
+    border-color: var(--primary-orange-hover) !important;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffffff !important;
+    color: var(--primary-dark-blue) !important;
+}
+
+/* Utilidades de color */
+.text-warning { color: var(--primary-orange) !important; }
+.bg-custom-dark-blue { background-color: var(--primary-dark-blue) !important; }
+
+
+
 
 /* 3. Adaptación de elementos específicos del Header */
 
@@ -1578,7 +1632,7 @@ z-index: 2;
 
 .parallax-section {
     /* CLAVE 1: Define la imagen de fondo y su tamaño */
-    background-image: url('/assets/images/carrusel3.png'); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
+    background-image: url('/assets/images/imagen\ 1\ access\ control\ system.webp'); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
     background-size: cover;
     background-position: center;
     min-height: 400px; /* Altura mínima para que el efecto sea visible */
@@ -1847,7 +1901,7 @@ z-index: 2;
 .cta-title {
     font-size: 28px;
     font-weight: bold;
-    color: #f1a037; /* naranja igual a tu paleta */
+    color: #f9ae39; /* naranja igual a tu paleta */
     margin-bottom: 8%;
     letter-spacing: 1px;
 }
@@ -1871,7 +1925,7 @@ z-index: 2;
 
 .cta-button {
     display: inline-flex;
-    background-color: #f1a037;
+    background-color: #f9ae39;
     align-items: center;
     color: white;
     font-family: "inter" "Montserrat";
@@ -2485,13 +2539,40 @@ option {
   /* FORMS ENDS */
 
 
-  /* ======================================= */
-/* FIX DE EMERGENCIA PARA EL LAYOUT DE BOOTSTRAP */
-/* Esto asegura que el flex-row-reverse funcione */
-/* ======================================= */
+ /* --- MEJORA VISUAL BANNER Y BOTONES --- */
 
-/* Apunta al contenedor del bloque 2 y fuerza el orden inverso */
-#access-control-system .container-fluid .row.flex-row-reverse {
-    display: flex !important; /* Asegura que se use Flexbox */
-    flex-direction: reverse !important; /* Fuerza la inversión */
+/* Ajuste del Título para que no se vea "suelto" */
+.display-4 {
+    font-family: 'Montserrat', sans-serif !important;
+    line-height: 1.1 !important;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo unificado para los botones del Banner */
+#access-control-system .btn-lg, 
+.container-fluid.bg-custom-dark-blue .btn-lg {
+    border-radius: 8px !important; /* El redondeado técnico que definimos */
+    font-size: 0.9rem !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+    border-width: 2px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px; /* Para que ambos botones midan lo mismo y se vean simétricos */
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.btn-warning:hover {
+    background-color: var(--primary-orange-hover) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+}
+
+.btn-outline-light:hover {
+    background-color: white !important;
+    color: var(--primary-dark-blue) !important;
+    transform: translateY(-3px);
 }
