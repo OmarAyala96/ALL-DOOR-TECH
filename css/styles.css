@@ -1632,7 +1632,7 @@ z-index: 2;
 
 .parallax-section {
     /* CLAVE 1: Define la imagen de fondo y su tamaño */
-    background-image: url('/assets/images/imagen\ 1\ access\ control\ system.webp'); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
+    background-image: url(/assets/images/carrusel3.png); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
     background-size: cover;
     background-position: center;
     min-height: 400px; /* Altura mínima para que el efecto sea visible */
@@ -1657,6 +1657,19 @@ z-index: 2;
     z-index: -1;
 }
 
+#cta-parallax img {
+    filter: brightness(0) invert(1); /* Esto hace que cualquier icono de color se vuelva blanco para el parallax */
+    transition: transform 0.3s ease;
+}
+
+#cta-parallax .p-3:hover img {
+    transform: scale(1.1);
+    filter: none; /* Si quieres que al pasar el mouse recuperen su color original (ej. naranja) */
+}
+
+/* ======================================= */
+/* 11. SECCIÓN DE PARALLAX (CTA)   END */
+/* ======================================= */
 
 
     /* --------  FOOTER SECTOR   -------*/
@@ -2538,41 +2551,54 @@ option {
 
   /* FORMS ENDS */
 
+/* ==========================================================================
+   CAMBIOS GLOBALES PARA BOTONES Y TÍTULOS (SITIO COMPLETO)
+   ========================================================================== */
 
- /* --- MEJORA VISUAL BANNER Y BOTONES --- */
-
-/* Ajuste del Título para que no se vea "suelto" */
-.display-4 {
+/* 1. Títulos de Banner (Global) */
+.display-4, .display-5 {
     font-family: 'Montserrat', sans-serif !important;
-    line-height: 1.1 !important;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
 }
 
-/* Estilo unificado para los botones del Banner */
-#access-control-system .btn-lg, 
-.container-fluid.bg-custom-dark-blue .btn-lg {
-    border-radius: 8px !important; /* El redondeado técnico que definimos */
-    font-size: 0.9rem !important;
+/* 2. Botones Grandes (Request Service / Estimate) en todo el sitio */
+.btn-lg {
+    font-family: 'Montserrat', sans-serif !important;
+    border-radius: var(--border-radius-tech) !important; /* Usa tus 8px */
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
     letter-spacing: 1px !important;
-    transition: all 0.3s ease !important;
+    padding: 15px 30px !important;
+    transition: var(--transition-smooth) !important;
+    text-transform: uppercase;
     border-width: 2px !important;
+    
+    /* Para que los botones se alineen perfecto si están uno al lado del otro */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 250px; /* Para que ambos botones midan lo mismo y se vean simétricos */
+    min-width: 220px; 
 }
 
-/* Efecto al pasar el mouse (Hover) */
+/* 3. Comportamiento Hover Global */
 .btn-warning:hover {
     background-color: var(--primary-orange-hover) !important;
+    border-color: var(--primary-orange-hover) !important;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+    box-shadow: 0 8px 15px rgba(249, 174, 57, 0.3) !important;
 }
 
 .btn-outline-light:hover {
-    background-color: white !important;
+    background-color: #ffffff !important;
     color: var(--primary-dark-blue) !important;
     transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 4. Ajuste para que el texto de los banners no se pegue a los bordes */
+.container {
+    max-width: 1200px !important;
 }
