@@ -1983,7 +1983,7 @@ z-index: 2;
     }
 
     .cta-button {
- display: inline-flex;
+    display: inline-flex;
     background-color: #f1a037;
     align-items: center;
     color: white;
@@ -2564,12 +2564,6 @@ option {
     letter-spacing: -0.5px;
 }
 
-<<<<<<< HEAD
-/* Apunta al contenedor del bloque 2 y fuerza el orden inverso */
-#access-control-system .container-fluid .row.flex-row-reverse {
-    display: flex !important; /* Asegura que se use Flexbox */
-    flex-direction: reverse !important; /* Fuerza la inversión */
-}
 
 
 
@@ -2723,8 +2717,161 @@ option {
 
 .flip-card-back p {
     font-size: 1.2rem;
-    line-height: 1.6;
-=======
+    line-height: 1.6;}
+
+
+/**/
+/* --- Variables y Base --- */
+.ind-hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 65vh;
+  background-color: #223248; /* Color Corporativo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 5rem 1.5rem; /* Espaciado tipo Bootstrap p-5 */
+}
+
+/* --- El Banner (Degradado Innovador) --- */
+.ind-banner-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  /* Degradado sutil que da profundidad al azul #223248 */
+  background: radial-gradient(circle at center, rgba(34, 50, 72, 0) 0%, rgba(15, 23, 33, 0.4) 100%);
+  border-bottom: 3px solid #f9ae39; /* Línea de acento naranja abajo */
+}
+
+.ind-side {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+.ind-left {
+  left: 0;
+  background: linear-gradient(to right, #0f1721, transparent);
+}
+
+.ind-right {
+  right: 0;
+  background: linear-gradient(to left, #0f1721, transparent);
+}
+
+/* --- Contenido (Enfoque Bootstrap) --- */
+.ind-hero-body {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 900px;
+}
+
+.ind-title {
+  color: #ffffff;
+  font-size: clamp(2.5rem, 8vw, 4.2rem); /* Fuente responsiva */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 2.5rem;
+  /* Sombra sutil para despegar del fondo azul */
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Botones (Bootstrap-Style Utilities) --- */
+.ind-action-area {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ind-btn {
+  padding: 0.9rem 2.2rem;
+  border-radius: 4px; /* Radio estándar industrial */
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.ind-btn-outline {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+}
+
+.ind-btn-outline:hover {
+  background-color: #ffffff;
+  color: #223248;
+  transform: translateY(-3px);
+}
+
+.ind-btn-solid {
+  background-color: #f9ae39; /* Naranja de la empresa */
+  border: 2px solid #f9ae39;
+  color: #223248;
+  box-shadow: 0 4px 12px rgba(249, 174, 57, 0.2);
+}
+
+.ind-btn-solid:hover {
+  background-color: #e59d2e;
+  border-color: #e59d2e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/**/
+
+/* --- Estilos Generales --- */
+.filter-grayscale {
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.filter-grayscale:hover {
+  filter: grayscale(0%);
+  opacity: 1 !important;
+  color: #223248; /* El azul de tu empresa */
+}
+
+.vendor-strip h4 {
+  font-family: 'Arial Black', sans-serif;
+  letter-spacing: -1px;
+}
+  /* ======================================= */
+/*             INDUSTRIES WE SERVE  ANDS          */
+/* ======================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 2. Botones Grandes (Request Service / Estimate) en todo el sitio */
 .btn-lg {
     font-family: 'Montserrat', sans-serif !important;
