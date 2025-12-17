@@ -1690,115 +1690,73 @@ z-index: 2;
 
 
 
-/*-------VISTA PRINCIPAL DE LOS ALL TYPES FOR DOORS-------*/
+/*-------VISTA PRINCIPAL DE LOS ALL TYPES FOR DOORS ENDS-------*/
 
-/* 1. CLASE PARA EL FONDO AZUL OSCURO (Aplica a la <section>) */
-/* Sobreescribe cualquier color de fondo de Bootstrap (como bg-primary) con tu variable */
+
+    /*-------PAGINA DE ACCESS CONTROL SYSTEM-------*/
+
+
 .bg-custom-dark-blue {
     background-color: var(--primary-dark-blue) !important;
+    position: relative;
+    overflow: hidden;
 }
 
-/* 2. ESTILOS DE LA BARRA DE PESTAÑAS INFERIOR (.sub-nav-link) */
-/* La mayor parte del estilo (color, negrita, alineación) se maneja con Bootstrap */
+
+/* 2. AJUSTE DE ALINEACIÓN DEL BREADCRUMB (HOME / ACCESS CONTROL SYSTEMS) */
+.breadcrumb-item,
+.breadcrumb-item a,
+.breadcrumb-item.active {
+    line-height: 1.2 !important; 
+    display: inline-flex; 
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7) !important; 
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--primary-orange) !important;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-light) !important;
+}
+
+/* 3. ESTILOS DE LA BARRA DE PESTAÑAS INFERIOR (.sub-nav-link) */
 .sub-nav-link {
     position: relative;
-    padding-bottom: 5px; /* Espacio para la línea */
+    padding-bottom: 5px; 
     transition: color 0.3s;
-    /* Aseguramos que el color al hacer hover sea el naranja de acento */
 }
 
 .sub-nav-link:hover {
     color: var(--primary-orange) !important;
 }
 
-/* 3. ESTILO PARA EL ENLACE ACTIVO (La línea naranja) */
 .sub-nav-link.active {
-    color: var(--primary-dark-blue) !important; /* Texto más oscuro cuando está activo */
+    color: var(--primary-dark-blue) !important; 
     border-bottom: 3px solid var(--primary-orange);
 }
 
-/* 4. Ajuste de texto para responsividad en móvil (Adaptamos el H1 de display-4) */
+/* 4. ESTILOS DE LA SECCIÓN DE CONTENIDO (ACS) */
+.text-custom-blue {
+    color: var(--primary-dark-blue) !important;
+}
+
+.list-unstyled i {
+    /* CLAVE: text-warning de Bootstrap es un color, pero lo forzamos a tu naranja */
+    color: var(--primary-orange) !important; 
+}
+
+/* 5. AJUSTE DE RESPONSIVIDAD MÓVIL (H1 del Hero) */
 @media (max-width: 768px) {
     .container-fluid.bg-custom-dark-blue h1 {
-        /* Reducimos el tamaño de fuente para que quepa en una o dos líneas en móvil */
         font-size: 2.2rem;
         padding: 0 5%;
     }
 }
 
-/*-------VISTA PRINCIPAL DE LOS ALL TYPES FOR DOORS ENDS-------*/
-
-
-
-    /*-------PAGINA DE ACCESS CONTROL SYSTEM-------*/
-
-
-    /*----- ACCESS CONTROL SYSTEM -----*/
-.access-control {
-  background-color: #f0f0f0;
-}
-
-.access-control__container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.ac-block {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* TEXTO */
-.ac-block__text h2 {
-  color: #f9ae39;
-  margin-bottom: 10px;
-}
-
-.ac-block__text p {
-  color: #223248;
-  line-height: 1.6;
-  font-size: 20px;
-}
-
-/* IMAGEN */
-.ac-block__img img {
-  width: 100%;
-  max-width: 500px; /* 👈 NO SE AGRANDA MÁS */
-  border-radius: 16px;
-}
-
-
-
-/* ===== BLOQUE AZUL FULL WIDTH ===== */
-.ac-block--full {
-  background-color: #223248;
-}
-
-.ac-block--full .ac-block__text p {
-  color: #f0f0f0;
-}
-
-
-
-/* DESKTOP */
-@media (min-width: 768px) {
-
-  .ac-block {
-    flex-direction: row;
-    align-items: center; /* 👈 ESTO ERA LO QUE TE FALTABA */
-    justify-content: space-between;
-  }
-
-  .ac-block--reverse {
-    flex-direction: reverse;
-  }
-
-  .ac-block__text {
-    max-width: 50%;
-  }
-}
 
 
     /*-------PAGINA DE ACCESS CONTROL SYSTEM END-------*/
@@ -2451,3 +2409,15 @@ option {
 
 
   /* FORMS ENDS */
+
+
+  /* ======================================= */
+/* FIX DE EMERGENCIA PARA EL LAYOUT DE BOOTSTRAP */
+/* Esto asegura que el flex-row-reverse funcione */
+/* ======================================= */
+
+/* Apunta al contenedor del bloque 2 y fuerza el orden inverso */
+#access-control-system .container-fluid .row.flex-row-reverse {
+    display: flex !important; /* Asegura que se use Flexbox */
+    flex-direction: reverse !important; /* Fuerza la inversión */
+}
