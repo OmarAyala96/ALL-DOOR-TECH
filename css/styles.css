@@ -152,9 +152,17 @@ a { text-decoration: none; color: inherit; }
 
 /* --- 2. LOGO --- */
 .header__logo {
-    height: 60px; 
-    filter: brightness(1.3) contrast(1.1);
-    transition: height 0.3s;
+    display: block;
+    height: 55px; /* Ajusta el tamaño a tu gusto */
+    width: auto;
+    /* Esto ayuda a que los colores se mantengan fieles y nítidos */
+    image-rendering: -webkit-optimize-contrast; 
+    transition: transform 0.3s ease;
+}
+
+/* Un efecto sutil al pasar el mouse */
+.header__logo:hover {
+    transform: scale(1.05);
 }
 
 /* --- 3. HAMBURGUESA --- */
@@ -368,21 +376,30 @@ a { text-decoration: none; color: inherit; }
         align-items: center; 
         justify-content: space-between; 
         min-height: 80px; 
-        max-width: 1200px; 
+        max-width: 100% !important;
         margin: 0 auto;
         padding: 0 20px;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
     }
 
     /*  LOGO (Ajuste de tamaño en desktop) */
     .header__logo {
-        width: auto;
-        height: 70px;
-        filter: brightness(1.3) contrast(1.1) drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        transition: all 0.3s ease;
-    }
+    display: block;
+    height: 70px; /* Ajusta el tamaño a tu gusto */
+    width: auto;
+    /* Esto ayuda a que los colores se mantengan fieles y nítidos */
+    image-rendering: -webkit-optimize-contrast; 
+    transition: transform 0.3s ease;
+}
 
-    .header__logo:hover {
-        transform: scale(1.05);
+/* Un efecto sutil al pasar el mouse */
+.header__logo:hover {
+    transform: scale(1.05);
+}
+
+    .header__logo-link {
+        flex-shrink: 0 !important;
     }
 
     /* 2. OCULTAR ELEMENTOS MÓVILES */
@@ -409,21 +426,26 @@ a { text-decoration: none; color: inherit; }
     }
 
     .header__nav-list {
-        display: flex;
+        display: flex !important;
+        gap: 12px !important;
         align-items: center;
         justify-content: center; 
         gap: 30px;
         list-style: none;
         margin: 0;
         padding: 0;
-        flex-wrap: nowrap;
+        flex-wrap: nowrap !important;
     }
 
     .header__nav-list > li {
         position: relative;
-        white-space: nowrap;
+        white-space: nowrap !important;
     }
     
+    .header__nav-list li:last-child {
+        margin-left: auto; /* Empuja el botón un poco a la derecha si hay espacio */
+    }
+
     .arrow {
         display: none; 
     }
@@ -441,6 +463,10 @@ a { text-decoration: none; color: inherit; }
         transition: color 0.3s ease;
         position: relative;
         display: block;
+        font-size: 13px !important;      /* Bajamos a 13px solo en escritorio */
+        letter-spacing: -0.3px !important; /* Junta un poquito las letras para ganar espacio */
+        padding-left: 5px !important;    /* Reduce el aire a los costados del texto */
+        padding-right: 5px !important;
     }
 
     /* 💡 NUEVO: Creación de la línea animada (Pseudo-elemento) */
@@ -1632,7 +1658,7 @@ z-index: 2;
 
 .parallax-section {
     /* CLAVE 1: Define la imagen de fondo y su tamaño */
-    background-image: url(/assets/images/carrusel3.png); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
+    background-image: url(/assets/images/office1.jpg); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
     background-size: cover;
     background-position: center;
     min-height: 400px; /* Altura mínima para que el efecto sea visible */
@@ -2564,13 +2590,6 @@ option {
     letter-spacing: -0.5px;
 }
 
-<<<<<<< HEAD
-/* Apunta al contenedor del bloque 2 y fuerza el orden inverso */
-#access-control-system .container-fluid .row.flex-row-reverse {
-    display: flex !important; /* Asegura que se use Flexbox */
-    flex-direction: reverse !important; /* Fuerza la inversión */
-}
-
 
 
 
@@ -2763,4 +2782,33 @@ option {
 .container {
     max-width: 1200px !important;
 >>>>>>> 481d02e1b53606903e1d70520dc6df27fde34833
+}
+
+
+
+/* Evita que el menú se rompa al traducir */
+
+
+
+.navbar-nav {
+    width: 100%;
+    justify-content: flex-end; /* Alinea a la derecha */
+}
+
+.nav-link {
+    white-space: nowrap; /* Evita que una palabra se parta en dos líneas */
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    font-size: 0.85rem !important; /* Reducimos un pelín el tamaño para ganar espacio */
+}
+
+/* Si el menú sigue siendo muy largo, ocultamos el menú antes de lo normal */
+@media (max-width: 1200px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+    }
+    .navbar-expand-lg .navbar-collapse {
+        display: none !important;
+    }
+    /* Esto activa el "menú hamburguesa" antes de que los textos choquen */
 }
