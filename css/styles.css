@@ -2026,7 +2026,7 @@ z-index: 2;
 /* FORM RESQUEST SERVICE & ESTIMATE  */
 /* ======================================= */
 
-.form_container {
+.form__container {
     /* Box Model */
     min-height: 60vh;
     padding: 40px 0; /* Más padding vertical para respirar */
@@ -2040,7 +2040,7 @@ z-index: 2;
     /* Visual */
     background-color: var(--light-gray-bg, #f8f8f8);
     container-type: inline-size;
-    container-name: form_container;
+    container-name: form__container;
 }
 
 .form__container-title {
@@ -2057,16 +2057,27 @@ z-index: 2;
 
 .form__container-form {
      padding: 15px;
-    max-width: 600px; /* Mobile/Tablet base */
+    max-width: 800px; /* Mobile/Tablet base */
     width: 100%;
     
     /* Layout */
     display: grid;
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 10px; /* Espacio entre filas */
 }
 
 /* ======================================= */
 /*  ESTILO DE LOS INPUTS Y LABELS        */
 /* ======================================= */
+
+.form__container-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+
 
 .form__container-input input:not([type="submit"]),
 .form__container-input textarea {
@@ -2088,9 +2099,10 @@ z-index: 2;
 }
 
 .form__container-input textarea {
-    resize: vertical; 
+   resize: none; /* QUITA LAS TRES LÍNEAS */
     min-height: 140px; 
     font-family: inherit;
+    display: block;
 }
 
 .form__container-input input:not([type="submit"]):focus,
@@ -2133,7 +2145,7 @@ z-index: 2;
 
 
 /* CONFIDENCIALIDAD */
-.form__confidentiality {
+.form__container-confidentiality{
     grid-column: 1 / -1; 
     text-align: center;
     font-size: 13px;
@@ -2142,7 +2154,7 @@ z-index: 2;
     opacity: 0.8;
 }
 
-.form__confidentiality p {
+.form__container-confidentiality p {
     margin-top: 15px; 
     line-height: 1.5;
 }
@@ -2205,7 +2217,7 @@ option {
 /* DISEÑO PARA ESCRITORIO (CONTAINER)   */
 /* ======================================= */
 
-@container form_container (min-width: 720px) {
+@container form__container (min-width: 720px) {
 
         .form__container-title {
         text-align: center;
