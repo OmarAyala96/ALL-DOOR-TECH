@@ -1572,23 +1572,56 @@ z-index: 2;
    /* --------  LOCATION ANDS   -------*/
 
 
+/* ======================================= */
+/* 11. SECCIÓN DE PARALLAX (CTA) */
+/* ======================================= */
+
+.parallax-section {
+    /* CLAVE 1: Define la imagen de fondo y su tamaño */
+    background-image: url('/assets/images/carrusel3.png'); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
+    background-size: cover;
+    background-position: center;
+    min-height: 400px; /* Altura mínima para que el efecto sea visible */
+    
+    /* CLAVE 2: La magia del Parallax - Fija la imagen al viewport */
+    background-attachment: fixed;
+    
+    /* Asegura que el contenido sea legible sobre la imagen */
+    position: relative;
+    z-index: 1; 
+}
+
+/* Oscurece ligeramente la imagen para mejorar la legibilidad del texto blanco */
+.parallax-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Capa oscura (40% de opacidad negra) */
+    z-index: -1;
+}
+
+
 
     /* --------  FOOTER SECTOR   -------*/
 
 .footer {
-  background-color: #223248;
-  color: #f0f0f0;
-  padding: 60px 20px 30px;
-  font-family: "Montserrat";
+    background-color: var(--primary-dark-blue); /* Usamos tu color de marca */
+    color: #f0f0f0; /* Color claro para el texto */
+    padding: 40px 0; /* Espaciado vertical */
 }
 
-/* CONTENEDOR */
 .footer__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  gap: 40px;
-  text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* CLAVE: Usamos Flexbox para organizar las columnas */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los ítems se envuelvan en móvil */
+    justify-content: space-around; /* Distribuye el espacio entre los ítems */
+    align-items: flex-start; /* Alinea los ítems en la parte superior */
 }
 
 /* LOGO */
@@ -1663,24 +1696,53 @@ z-index: 2;
 }
 
 /* DESKTOP */
-@media (min-width: 900px) {
-  .footer__container {
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: left;
-    align-items: start;
-  }
+@media (min-width: 768px) {
 
-  .footer__brand {
-    text-align: left;
-  }
+    /* 1. Mueve el logo a la izquierda (orden 1) */
+    .footer__logo-section {
+        /* Aseguramos que el logo ocupe el primer lugar */
+        order: 1; 
+        width: 30%; /* Le damos espacio para que empuje a los demás */
+        text-align: left; /* Alinea el contenido del logo a la izquierda */
+    }
 
-  .footer__social {
-    justify-content: flex-start;
-  }
+    /* 2. Coloca Navigation y Contact en el centro */
+    .footer__nav {
+        order: 2; /* Después del logo */
+        width: 30%; /* Espacio para que ocupe el centro */
+        text-align: center; /* Centra el contenido de Navigation */
+    }
+    
+    .footer__contact {
+        order: 3; /* Al final */
+        width: 30%;
+        text-align: center; /* Centra el contenido de Contact */
+    }
+    
+    /* Aseguramos que los títulos y listas se alineen al centro */
+    .footer__nav h3,
+    .footer__contact h3 {
+        text-align: center;
+        /* Puedes añadir aquí la línea naranja debajo del título si quieres */
+    }
+    
+    /* 1. Estilo para el contenedor de copyright */
+.footer__copy {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px; /* Margen superior para separarlo del contenido de arriba */
+    padding-top: 20px; /* Padding interno para separar el texto de la línea */
 
-  .footer h3::after {
-    margin-left: 0;
-  }
+    /* CLAVE: Añade un borde superior para la línea divisoria */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea delgada blanca y transparente */
+}
+
+/* Y si tienes el .footer__container, asegúrate que haya un margen inferior para el espacio */
+.footer__container {
+    /* ... (tus reglas existentes) ... */
+    padding-bottom: 20px; /* Añade un espacio debajo del contenido principal */
+}
+
 }
 
 
