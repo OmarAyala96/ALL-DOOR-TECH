@@ -30,7 +30,6 @@
 
 html, body {
     max-width: 100%;
-    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -352,6 +351,9 @@ a { text-decoration: none; color: inherit; }
 
     /* Topbar */
     .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 1001;
         padding: 5px 20px;
         font-size: 0.85rem;
         background-color: #0d1e34; 
@@ -371,6 +373,15 @@ a { text-decoration: none; color: inherit; }
     }
 
     /* 1. ALINEACIÓN PRINCIPAL Y ESTRUCTURA DEL HEADER */
+
+    .header {
+        position: sticky;
+        top: 31px; /* El alto aproximado de tu topbar (padding + texto) */
+        z-index: 1000;
+        background-color: #223248; /* Asegúrate de que tenga fondo */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Sombra para que se vea sobre el contenido */
+    }
+
     .header__container {
         display: flex; 
         align-items: center; 
@@ -587,8 +598,21 @@ a { text-decoration: none; color: inherit; }
 }
 
 
+
     
 /* -------- HEROS SECTION -------- */
+
+
+/* -------- PARA QUE NINGUNA IMG SE ROMPA -------- */
+
+
+.main-content {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* -------- PARA QUE NINGUNA IMG SE ROMPA -------- */
+
 
 /* ======================================= */
 /* 1. CONTENEDOR PRINCIPAL (HERO) */

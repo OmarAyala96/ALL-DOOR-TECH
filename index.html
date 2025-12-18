@@ -13,56 +13,65 @@
 </head>
 
 <body>
-    <div class="topbar">
-        <a href="mailto:alldoortech@gmail.com">alldoortech@gmail.com</a>
-        <a href="tel:+541145719869">TEL: (951) 376-1433</a>
+    <div class="topbar" role="complementary" aria-label="Business contact information">
+    <div itemscope itemtype="https://schema.org/LocalBusiness" style="display: contents;">
+        <meta itemprop="name" content="All Door Tech">
+        
+        <a href="mailto:alldoortech@gmail.com" itemprop="email">
+            <span class="sr-only">Send an email to </span>
+            alldoortech@gmail.com
+        </a>
+
+        <a href="tel:+19513761433" itemprop="telephone">
+            <span class="sr-only">Call our office at </span>
+            TEL: (951) 376-1433
+        </a>
     </div>
+</div>
 
  <!-- HEADER PRINCIPAL -->
 <header class="header" role="banner">
     <div class="header__container">
-
-        <input type="checkbox" id="menu-toggle" class="header__checkbox" aria-controls="main-navigation">
+        <input type="checkbox" id="menu-toggle" class="header__checkbox" aria-hidden="true">
 
         <label for="menu-toggle" class="header__hamburger" 
-       role="button" 
-       aria-label="Abrir menú de navegación principal"
-       aria-expanded="false"
-       aria-controls="main-navigation">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span class="sr-only">Menú</span>
-</label>
+               role="button" 
+               tabindex="0"
+               aria-label="Abrir menú de navegación principal"
+               aria-expanded="false"
+               aria-controls="main-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="sr-only">Menú</span>
+        </label>
 
         <a href="/" class="header__logo-link">
-            <img src="/assets/images/LOGO.png" class="header__logo" alt="[Nombre de tu empresa] Logo. Volver a la página de inicio">
+            <img src="/assets/images/LOGO.png" class="header__logo" alt="All Door Tech - Industrial door services. Return to home page.">
         </a>
 
-        <nav class="header__nav" id="main-navigation" aria-label="Navegación principal del sitio">
-
+        <nav class="header__nav" id="main-navigation" aria-label="Main site navigation">
             <div class="header__mobile-topbar">
                 <label for="menu-toggle" class="header__close-btn" 
                        role="button" 
+                       tabindex="0"
                        aria-label="Cerrar menú de navegación">
                     &times; 
                 </label>
             </div>
 
-            <ul class="header__nav-list" role="menu">
-
+            <ul class="header__nav-list" role="menubar">
                 <li class="dropdown" role="none">
-                    <input type="checkbox" id="doors-toggle" class="dropdown__checkbox" aria-controls="doors-submenu">
-
+                    <input type="checkbox" id="doors-toggle" class="dropdown__checkbox" aria-hidden="true">
                     <label for="doors-toggle" class="dropdown__link" 
                            role="button" 
+                           tabindex="0"
                            aria-expanded="false" 
                            aria-haspopup="true">
                         DOORS
                         <span class="arrow" aria-hidden="true">▾</span>
                     </label>
-
-                    <ul class="dropdown__menu" id="doors-submenu" role="menu">
+                    <ul class="dropdown__menu" id="doors-submenu" role="menu" aria-label="Doors sub-menu">
                         <li role="none"><a href="#" role="menuitem">High Speed Doors</a></li>
                         <li role="none"><a href="#" role="menuitem">Automatic Sliding Doors</a></li>
                         <li role="none"><a href="#" role="menuitem">Roll Up Doors</a></li>
@@ -77,17 +86,16 @@
                 </li>
 
                 <li class="dropdown" role="none">
-                    <input type="checkbox" id="all-types-toggle" class="dropdown__checkbox" aria-controls="all-types-submenu">
-
+                    <input type="checkbox" id="all-types-toggle" class="dropdown__checkbox" aria-hidden="true">
                     <label for="all-types-toggle" class="dropdown__link" 
                            role="button" 
+                           tabindex="0"
                            aria-expanded="false" 
                            aria-haspopup="true">
                         ALL TYPES FOR DOORS
                         <span class="arrow" aria-hidden="true">▾</span>
                     </label>
-
-                    <ul class="dropdown__menu" id="all-types-submenu" role="menu">
+                    <ul class="dropdown__menu" id="all-types-submenu" role="menu" aria-label="All types sub-menu">
                         <li role="none"><a href="#" role="menuitem">GA Herculite wood</a></li>
                         <li role="none"><a href="#" role="menuitem">Rolling Steel & Sectional Doors</a></li>
                         <li role="none"><a href="#" role="menuitem">Fire Doors, Inspection & Repairs</a></li>
@@ -103,17 +111,16 @@
                 </li>
 
                 <li class="dropdown" role="none">
-                    <input type="checkbox" id="industries-toggle" class="dropdown__checkbox" aria-controls="industries-submenu">
-
+                    <input type="checkbox" id="industries-toggle" class="dropdown__checkbox" aria-hidden="true">
                     <label for="industries-toggle" class="dropdown__link" 
                            role="button" 
+                           tabindex="0"
                            aria-expanded="false" 
                            aria-haspopup="true">
                         INDUSTRIES WE SERVE
                         <span class="arrow" aria-hidden="true">▾</span>
                     </label>
-
-                    <ul class="dropdown__menu" id="industries-submenu" role="menu">
+                    <ul class="dropdown__menu" id="industries-submenu" role="menu" aria-label="Industries sub-menu">
                         <li role="none"><a href="#" role="menuitem">Corporate Offices</a></li>
                         <li role="none"><a href="#" role="menuitem">Construction Projects</a></li>
                         <li role="none"><a href="#" role="menuitem">Commercial Premises</a></li>
@@ -134,77 +141,73 @@
                 </li>
 
                 <li class="header__nav-cta-group" role="none">
-                    <a href="#" class="header__cta header__cta--outline" role="menuitem">
-                        REQUEST SERVICE
-                    </a>
-                    <a href="#" class="header__cta header__cta--solid" role="menuitem">
-                        REQUEST ESTIMATE
-                    </a>
+                    <a href="#" class="header__cta header__cta--outline" role="menuitem">REQUEST SERVICE</a>
+                    <a href="#" class="header__cta header__cta--solid" role="menuitem">REQUEST ESTIMATE</a>
                 </li>
-
             </ul>
-
         </nav>
 
         <div class="desktop-cta-group">
             <a href="#" class="header__cta header__cta--outline">REQUEST SERVICE</a>
             <a href="#" class="header__cta header__cta--solid">REQUEST ESTIMATE</a>
         </div>
-
     </div>
 </header>
 
 
+
       <!-- HERO PRINCIPAL -->
- <main class="hero">
-    <!-- CARRUSEL DE FONDO -->
-    <section class="hero-custom">
-    <div class="hero__carrusel">
-        <div class="hero__track">
-            <div class="hero__slide active">
-                <img src="/assets/images/PORTADA PRINCIPAL.jpg" class="hero__img kb-effect">
-                <div class="hero__overlay"></div>
-            </div>
-            <div class="hero__slide">
-                <img src="/assets/images/offices.jpg" class="hero__img kb-effect">
-                <div class="hero__overlay"></div>
-            </div>
-            <div class="hero__slide">
-                <img src="/assets/images/carrusel3.png" class="hero__img kb-effect">
-                <div class="hero__overlay"></div>
-            </div>
-            <div class="hero__slide">
-                <img src="/assets/images/Roll-King-Door-.jpg" class="hero__img kb-effect">
-                <div class="hero__overlay"></div>
-            </div>
-            <div class="hero__slide">
-                <img src="/assets/images/centrodistribucion.jpg" class="hero__img kb-effect">
-                <div class="hero__overlay"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="hero__data-container">
-        <div class="hero__data">
-            <div class="hero__descripcion">
-                <h1 class="animate-up">COMMERCIAL - INDUSTRIAL <br> <span style="color: var(--primary-orange);">DOOR REPAIRS SERVICES</span></h1>
-            </div>
-
-            <div class="hero__buttons animate-up-delayed">
-                <a href="#" class="btn-brand-solid-final">Request Estimate</a>
-                <a href="#" class="btn-brand-outline-final">Request Service</a>
-            </div>
-
-            <div class="hero__indicators">
-                <span class="indicator active"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
-                <span class="indicator"></span>
+ <main class="hero" id="main-content">
+    <section class="hero-custom" aria-roledescription="carousel" aria-label="Featured industrial door services">
+        <div class="hero__carrusel">
+            <div class="hero__track">
+                <div class="hero__slide active" role="group" aria-roledescription="slide" aria-label="1 of 5">
+                    <img src="/assets/images/PORTADA PRINCIPAL.jpg" class="hero__img kb-effect" alt="Professional technician installing a large industrial rolling door">
+                    <div class="hero__overlay"></div>
+                </div>
+                <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
+                    <img src="/assets/images/offices.jpg" class="hero__img kb-effect" alt="Modern corporate office glass entrance doors">
+                    <div class="hero__overlay"></div>
+                </div>
+                <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
+                    <img src="/assets/images/carrusel3.png" class="hero__img kb-effect" alt="High-speed industrial door in a warehouse facility">
+                    <div class="hero__overlay"></div>
+                </div>
+                <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
+                    <img src="/assets/images/Roll-King-Door-.jpg" class="hero__img kb-effect" alt="Heavy duty commercial rolling steel door">
+                    <div class="hero__overlay"></div>
+                </div>
+                <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
+                    <img src="/assets/images/centrodistribucion.jpg" class="hero__img kb-effect" alt="Multiple loading dock doors at a large distribution center">
+                    <div class="hero__overlay"></div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+
+        <div class="hero__data-container">
+            <div class="hero__data">
+                <div class="hero__descripcion">
+                    <h1 class="animate-up">
+                        COMMERCIAL - INDUSTRIAL <br> 
+                        <span style="color: var(--primary-orange);">DOOR REPAIRS SERVICES</span>
+                    </h1>
+                </div>
+
+                <div class="hero__buttons animate-up-delayed">
+                    <a href="#" class="btn-brand-solid-final" aria-label="Request a free estimate for door services">Request Estimate</a>
+                    <a href="#" class="btn-brand-outline-final" aria-label="Request emergency or scheduled service">Request Service</a>
+                </div>
+
+                <div class="hero__indicators" role="tablist" aria-label="Select slide to display">
+                    <button class="indicator active" role="tab" aria-selected="true" aria-label="Go to slide 1" tabindex="0"></button>
+                    <button class="indicator" role="tab" aria-selected="false" aria-label="Go to slide 2" tabindex="0"></button>
+                    <button class="indicator" role="tab" aria-selected="false" aria-label="Go to slide 3" tabindex="0"></button>
+                    <button class="indicator" role="tab" aria-selected="false" aria-label="Go to slide 4" tabindex="0"></button>
+                    <button class="indicator" role="tab" aria-selected="false" aria-label="Go to slide 5" tabindex="0"></button>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <!--  CONTACT SECTOR -->
