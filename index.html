@@ -158,29 +158,44 @@
       <!-- HERO PRINCIPAL -->
  <main class="hero">
     <!-- CARRUSEL DE FONDO -->
+    <section class="hero-custom">
     <div class="hero__carrusel">
         <div class="hero__track">
-            <img src="./assets/images/carrusel1.png" class="hero__img">
-            <img src="./assets/images/carrusel2.png" class="hero__img">
-            <img src="./assets/images/carrusel3.png" class="hero__img">
-            <img src="./assets/images/carrusel4.png" class="hero__img">
-            <img src="./assets/images/carrusel5.png" class="hero__img">
+            <div class="hero__slide active">
+                <img src="/assets/images/PORTADA PRINCIPAL.jpg" class="hero__img kb-effect">
+                <div class="hero__overlay"></div>
+            </div>
+            <div class="hero__slide">
+                <img src="/assets/images/offices.jpg" class="hero__img kb-effect">
+                <div class="hero__overlay"></div>
+            </div>
+            <div class="hero__slide">
+                <img src="/assets/images/carrusel3.png" class="hero__img kb-effect">
+                <div class="hero__overlay"></div>
+            </div>
+            <div class="hero__slide">
+                <img src="/assets/images/Roll-King-Door-.jpg" class="hero__img kb-effect">
+                <div class="hero__overlay"></div>
+            </div>
+            <div class="hero__slide">
+                <img src="/assets/images/centrodistribucion.jpg" class="hero__img kb-effect">
+                <div class="hero__overlay"></div>
+            </div>
         </div>
     </div>
 
-     <!-- TEXTO Y BOTONES -->
     <div class="hero__data-container">
         <div class="hero__data">
             <div class="hero__descripcion">
-                <h1>COMMERCIAL - INDUSTRIAL DOOR REPAIRS SERVICES</h1>
+                <h1 class="animate-up">COMMERCIAL - INDUSTRIAL <br> <span style="color: var(--primary-orange);">DOOR REPAIRS SERVICES</span></h1>
             </div>
 
-           <div class="hero__buttons">
-    <a href="#" class="btn btn__btn-solid">Request Estimate</a>
-    <a href="#" class="btn btn__btn-outline">Request Service</a>
-           </div>
+            <div class="hero__buttons animate-up-delayed">
+                <a href="#" class="btn-brand-solid-final">Request Estimate</a>
+                <a href="#" class="btn-brand-outline-final">Request Service</a>
+            </div>
 
-              <div class="hero__indicators">
+            <div class="hero__indicators">
                 <span class="indicator active"></span>
                 <span class="indicator"></span>
                 <span class="indicator"></span>
@@ -189,118 +204,129 @@
             </div>
         </div>
     </div>
+</section>
 </main>
 
 <!--  CONTACT SECTOR -->
 <nav class="about__services">
     <a href="#" class="about__service-link">Our Services Include</a>
     <a href="#" class="about__service-link">Commercial Door Services</a>
-    <a href="#" class="about__service-link">Latest at ALL DOOR TECH</a>
+    <a href="#" class="about__service-link">Latest at all door tech </a>
 </nav>
 
  <!-- ABOUT PRINCIPAL -->
-<section id="about" class="about__section">
-
-  <div class="about__section-video-container">
-    <video 
-      src="./assets/videos/video.mp4"
-      autoplay
-      loop
-      muted
-      playsinline
-      class="about__video">
-    </video>
-  </div>
-
-  <div class="about__data-container">
-    <div class="about__data">
-      <div class="about__description">
-        <h2>
-          ABOUT US — <span class="about__brand">ALL DOOR TECH</span>
-        </h2>
-          <p>
-                    At All Door Tech, we have over 22 years of experience providing comprehensive solutions for the repair, manufacture, installation, and maintenance of commercial and industrial doors. We are a locally owned and operated company committed to offering reliable, safe, and high-performance service for all types of entry systems.
-
-                    Our specialty includes Herculite, wood, hollow metal, and aluminum glass doors, as well as roll-up, sectional steel, and overhead doors designed to meet the needs of commercial, industrial, and large-scale spaces.
-
-                    Throughout our history, we have built a reputation based on quality, innovation, and professional technical support, helping companies, hangars, logistics centers, industrial warehouses, and businesses optimize their access points.
-
-                    We focus on offering durable, safe, and efficient solutions, backed by fast, friendly, and personalized technical service that guarantees the reliable operation of each installation. At All Door Tech, we work to ensure that each customer receives a door that not only fulfills its purpose but also enhances the safety and efficiency of their operation.
-                 </p>
+<section class="about-compact">
+    <div class="about-wrapper">
+        
+        <div class="about-video-side">
+            <div class="video-frame">
+                <video src="./assets/videos/video.mp4" autoplay loop muted playsinline></video>
             </div>
         </div>
+
+        <div class="about-text-side">
+            <h2>ABOUT US — <span>ALL DOOR TECH</span></h2>
+            <div class="about-content">
+                <p>At All Door Tech, we have over 22 years of experience providing comprehensive solutions for the repair, manufacture, installation, and maintenance of commercial and industrial doors. We are a locally owned and operated company committed to offering reliable, safe, and high-performance service for all types of entry systems.</p>
+                
+                <p>Our specialty includes Herculite, wood, hollow metal, and aluminum glass doors, as well as roll-up, sectional steel, and overhead doors designed to meet the needs of commercial, industrial, and large-scale spaces.</p>
+
+                <p>We focus on offering durable, safe, and efficient solutions, backed by fast, friendly, and personalized technical service that guarantees the reliable operation of each installation.</p>
+            </div>
+        </div>
+
     </div>
 </section>
+
+
 
 
 <!---------  PORTAFOLIO CARDS -------->
 
 
 <section class="portfolio">
-    <h2 class="portfolio__title">ALL TYPES OF DOORS</h2>
+    <h2 class="portfolio__title">OUR DOOR SOLUTIONS</h2>
 
     <div class="portfolio__item-container">
 
         <a href="rolling-doors.html" class="portfolio__card">
             <img src="/assets/images/carrusel1.png" alt="Rolling Steel Doors">
             <div class="portfolio__info">
-                <span>Rolling Steel & Sectional Doors</span>
+                <div class="portfolio__text-wrapper">
+                    <span>Rolling Steel & Sectional Doors</span>
+                </div>
             </div>
         </a>
 
         <a href="fire-doors.html" class="portfolio__card">
             <img src="/assets/images/carrusel2.png" alt="Fire Doors">
             <div class="portfolio__info">
-                <span>Fire Doors, Inspection & Repairs</span>
+                <div class="portfolio__text-wrapper">
+                    <span>Fire Doors, Inspection & Repairs</span>
+                </div>
             </div>
         </a>
 
         <a href="security-gates.html" class="portfolio__card">
             <img src="assets/images/security.jpg" alt="Security Gates">
             <div class="portfolio__info">
-                <span>Security Gates & Grilles</span>
+                <div class="portfolio__text-wrapper">
+                    <span>Security Gates & Grilles</span>
+                </div>
             </div>
         </a>
 
         <a href="entrance-doors.html" class="portfolio__card">
             <img src="assets/images/entrance.jpg" alt="Entrance Doors">
             <div class="portfolio__info">
-                <span>Entrance & Swinging Doors</span>
+                <div class="portfolio__text-wrapper">
+                    <span>Entrance & Swinging Doors</span>
+                </div>
             </div>
         </a>
 
         <a href="hangar-doors.html" class="portfolio__card">
             <img src="assets/images/hangar.jpg" alt="Hangar Doors">
             <div class="portfolio__info">
-                <span>Hangar & Large Scale Doors</span>
+                <div class="portfolio__text-wrapper">
+                    <span>Hangar & Large Scale Doors</span>
+                </div>
             </div>
         </a>
 
         <a href="access-control.html" class="portfolio__card">
             <img src="assets/images/access.jpg" alt="Access Control">
             <div class="portfolio__info">
-                <span>Access Control Systems and Hardware</span>
+                <div class="portfolio__text-wrapper">
+                    <span>Access Control Systems</span>
+                </div>
             </div>
         </a>
 
         <a href="high-speed-doors.html" class="portfolio__card">
             <img src="assets/images/high-speed.jpg" alt="High Speed Doors">
             <div class="portfolio__info">
-                <span>High Speed Doors</span>
+                <div class="portfolio__text-wrapper">
+                    <span>High Speed Doors</span>
+                </div>
             </div>
         </a>
 
         <a href="dock-equipment.html" class="portfolio__card">
             <img src="assets/images/dock.jpg" alt="Dock Equipment">
             <div class="portfolio__info">
-                <span>Dock Levelers & Seals</span>
+                <div class="portfolio__text-wrapper">
+                    <span>Dock Levelers & Seals</span>
+                </div>
             </div>
         </a>
 
         <a href="glass-doors.html" class="portfolio__card">
             <img src="assets/images/glass.jpg" alt="Glass & Aluminum Doors">
             <div class="portfolio__info">
-                <span>Glass & Aluminum Doors</span>
+                <div class="portfolio__text-wrapper">
+                    <span>Glass & Aluminum Doors</span>
+                </div>
             </div>
         </a>
 
@@ -433,47 +459,66 @@
     </div>
 </section>
 
+
+<!------- Fully Certified & Accredited ------->
+
+<section class="py-5" style="background-color: #fff; border-top: 1px solid #eee;">
+    <div class="container text-center mb-4">
+        <h3 class="fw-bold text-uppercase" style="color: var(--primary-dark-blue); font-size: 1.5rem; letter-spacing: 1px;">
+            Fully Certified & Accredited Commercial Door Experts
+        </h3>
+        <div style="width: 50px; height: 3px; background-color: var(--primary-orange); margin: 15px auto;"></div>
+    </div>
+
+    <div class="logos-slider" style="overflow: hidden; padding: 20px 0; background: white; white-space: nowrap; position: relative;">
+        <div class="logos-track">
+            <img src="/assets/images/isnetworld-logo.png" alt="ISN" class="mx-5 logo-item">
+            <img src="/assets/images/top-100-workplaces.png" alt="Top 100" class="mx-5 logo-item">
+            <img src="/assets/images/newsweek-award.png" alt="Newsweek" class="mx-5 logo-item">
+  
+            <img src="/assets/images/newsweek-award.png" alt="Newsweek" class="mx-5 logo-item">
+            <img src="/assets/images/aaadm-certified.png" alt="AAADM" class="mx-5 logo-item">
+            <img src="/assets/images/nfpa-member.png" alt="NFPA" class="mx-5 logo-item">
+        </div>
+    </div>
+</section>
+
+<!------- Fully Certified & Accredited EDN------->
+
+
 <!-- FOOTER SECTOR -->
 
-  <footer class="footer">
+    <footer class="footer py-2" style="background-color: #1d2d44; color: white; border-top: none !important;">
+    <div class="footer__container container d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-center text-center text-md-start">
 
-  <div class="footer__container">
+        <nav class="footer__nav mb-2 mb-md-0">
+            <h3 style="font-size: 1rem; margin-bottom: 5px; border-bottom: 2px solid #f9ae39; display: inline-block; padding-bottom: 2px;">NAVIGATION</h3>
+            <ul class="list-unstyled mb-0">
+                <li><a href="#" class="text-white text-decoration-none small opacity-75">Home</a></li>
+                <li><a href="#" class="text-white text-decoration-none small opacity-75">Doors</a></li>
+                <li><a href="#" class="text-white text-decoration-none small opacity-75">Repairs</a></li>
+                <li><a href="#" class="text-white text-decoration-none small opacity-75">Services</a></li>
+            </ul>
+        </nav>
 
-    <!-- LOGO  -->
-    <div class="footer__brand">
-      <h2 class="footer__logo">
-        All<span class="highlight">Door</span>Tech
-      </h2>
+        <div class="footer__contact mb-2 mb-md-0">
+            <h3 style="font-size: 1rem; margin-bottom: 5px; border-bottom: 2px solid #f9ae39; display: inline-block; padding-bottom: 2px;">CONTACT</h3>
+            <p class="small mb-0 opacity-75">4036 Canterbury Rd, Riverside, CA</p>
+            <p class="small mb-0 opacity-75">Tel: (951) 376-1433</p>
+            <p class="small mb-0 opacity-75">Email: alldoortech@gmail.com</p>
+        </div>
 
-      
+        <div class="footer__logo-section mt-md-4"> 
+            <h2 class="footer__logo mb-0" style="font-size: 2.2rem; font-weight: 800; letter-spacing: -1px;">
+                <span>All</span><span style="color: #f9ae39;">Door</span>Tech
+            </h2>
+        </div>
+
     </div>
 
-    <!-- NAVIGATION -->
-    <nav class="footer__nav">
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Doors</a></li>
-        <li><a href="#">Repairs</a></li>
-        <li><a href="#">Services</a></li>
-      </ul>
-    </nav>
-
-    <!-- CONTACT -->
-    <div class="footer__contact">
-      <h3>Contact</h3>
-      <p>Riverside, California</p>
-      <p>Tel: (951) 376-1433</p>
-      <p>Email: <a href="mailto:alldoortech@gmail.com">alldoortech@gmail.com</a></p>
-    </div>
-
-  </div>
-
-  <!-- COPYRIGHT -->
-  <div class="footer__bottom">
-    © 2025 All rights reserved. | Design & Development by <strong>ManyiWebSoft</strong>
-  </div>
-
+    <p class="footer__copy text-center small opacity-50 mt-3 mb-0" style="font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); pt-2">
+        © 2025 All rights reserved. | Design and development by ManyiWebSoft
+    </p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Speed Door </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<!--TOPBAR -->
+
+
+    <div class="topbar">
+        <a href="mailto:alldoortech@gmail.com">alldoortech@gmail.com</a>
+        <a href="tel:+541145719869">TEL: (951) 376-1433</a>
+    </div>
+
+<!--TOPBAR END -->
+
+
+
+ <!-- HEADER PRINCIPAL -->
+
+
+<header class="header" role="banner">
+    <div class="header__container">
+
+        <input type="checkbox" id="menu-toggle" class="header__checkbox" aria-controls="main-navigation">
+
+        <label for="menu-toggle" class="header__hamburger" 
+       role="button" 
+       aria-label="Abrir menú de navegación principal"
+       aria-expanded="false"
+       aria-controls="main-navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span class="sr-only">Menú</span>
+        </label>
+
+          <!----------- lOGO---------->
+
+        <a href="/" class="header__logo-link">
+    <img src="/assets/images/LOGO.png" class="header__logo" alt="All Door Tech Logo">
+</a>
+
+        <nav class="header__nav" id="main-navigation" aria-label="Navegación principal del sitio">
+
+            <div class="header__mobile-topbar">
+                <label for="menu-toggle" class="header__close-btn" 
+                       role="button" 
+                       aria-label="Cerrar menú de navegación">
+                    &times; 
+                </label>
+            </div>
+
+            <ul class="header__nav-list" role="menu">
+
+                <li class="dropdown" role="none">
+                    <input type="checkbox" id="doors-toggle" class="dropdown__checkbox" aria-controls="doors-submenu">
+
+                    <label for="doors-toggle" class="dropdown__link" 
+                           role="button" 
+                           aria-expanded="false" 
+                           aria-haspopup="true">
+                        DOORS
+                        <span class="arrow" aria-hidden="true">▾</span>
+                    </label>
+
+                    <ul class="dropdown__menu" id="doors-submenu" role="menu">
+                        <li role="none"><a href="#" role="menuitem">High Speed Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Automatic Sliding Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Roll Up Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Counter Shutter Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Dock Restraints & Levelers</a></li>
+                        <li role="none"><a href="#" role="menuitem">Hollow Metal Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Sectional Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Low Energy Operators</a></li>
+                        <li role="none"><a href="#" role="menuitem">Storefront Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Aluminum Grilles</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown" role="none">
+                    <input type="checkbox" id="all-types-toggle" class="dropdown__checkbox" aria-controls="all-types-submenu">
+
+                    <label for="all-types-toggle" class="dropdown__link" 
+                           role="button" 
+                           aria-expanded="false" 
+                           aria-haspopup="true">
+                        ALL TYPES FOR DOORS
+                        <span class="arrow" aria-hidden="true">▾</span>
+                    </label>
+
+                    <ul class="dropdown__menu" id="all-types-submenu" role="menu">
+                        <li role="none"><a href="#" role="menuitem">GA Herculite wood</a></li>
+                        <li role="none"><a href="#" role="menuitem">Rolling Steel & Sectional Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Fire Doors, Inspection & Repairs</a></li>
+                        <li role="none"><a href="#" role="menuitem">Security Gates & Grilles</a></li>
+                        <li role="none"><a href="#" role="menuitem">Entrance & Swinging Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Hangar & Large Scale Doors</a></li>
+                        <li role="none"><a href="#" role="menuitem">Access Control Systems and Hardware</a></li>
+                        <li role="none"><a href="#" role="menuitem">Automatic Door Systems and ADA</a></li>
+                        <li role="none"><a href="#" role="menuitem">Loading Docks & Equipment</a></li>
+                        <li role="none"><a href="#" role="menuitem">Specialty Doors & Services</a></li>
+                        <li role="none"><a href="#" role="menuitem">Preventive maintenance</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown" role="none">
+                    <input type="checkbox" id="industries-toggle" class="dropdown__checkbox" aria-controls="industries-submenu">
+
+                    <label for="industries-toggle" class="dropdown__link" 
+                           role="button" 
+                           aria-expanded="false" 
+                           aria-haspopup="true">
+                        INDUSTRIES WE SERVE
+                        <span class="arrow" aria-hidden="true">▾</span>
+                    </label>
+
+                    <ul class="dropdown__menu" id="industries-submenu" role="menu">
+                        <li role="none"><a href="#" role="menuitem">Corporate Offices</a></li>
+                        <li role="none"><a href="#" role="menuitem">Construction Projects</a></li>
+                        <li role="none"><a href="#" role="menuitem">Commercial Premises</a></li>
+                        <li role="none"><a href="#" role="menuitem">Transportation & Logistics</a></li>
+                        <li role="none"><a href="#" role="menuitem">Healthcare Institutions</a></li>
+                        <li role="none"><a href="#" role="menuitem">Hospitality & Restaurants</a></li>
+                        <li role="none"><a href="#" role="menuitem">County Offices</a></li>
+                        <li role="none"><a href="#" role="menuitem">Airports & Aviation Facilities</a></li>
+                    </ul>
+                </li>
+
+                <li class="header__nav-item" role="none">
+                    <a href="#" role="menuitem">ABOUT</a>
+                </li>
+
+                <li class="header__nav-item" role="none">
+                    <a href="#" role="menuitem">CONTACT</a>
+                </li>
+
+                <li class="header__nav-cta-group" role="none">
+                    <a href="#" class="header__cta header__cta--outline" role="menuitem">
+                        REQUEST SERVICE
+                    </a>
+                    <a href="#" class="header__cta header__cta--solid" role="menuitem">
+                        REQUEST ESTIMATE
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="desktop-cta-group">
+            <a href="#" class="header__cta header__cta--outline">REQUEST SERVICE</a>
+            <a href="#" class="header__cta header__cta--solid">REQUEST ESTIMATE</a>
+        </div>
+
+    </div>
+</header>
+
+
+<!----------- HEADER END---------->
+
+
+
+
+
+<!----------- MAIN ---------->
+
+<main>
+    <section class="container-fluid py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--secondary-dark-blue) 100%);">
+        <div class="container text-center py-md-5">
+            <nav aria-label="breadcrumb" class="mb-3">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-none small opacity-75">HOME</a></li>
+                    <li class="breadcrumb-item active text-white small fw-bold" aria-current="page" style="color: var(--primary-orange) !important;">HIGH SPEED DOORS</li>
+                </ol>
+            </nav>
+            <h1 class="display-3 fw-bold mb-0 text-white text-uppercase" style="letter-spacing: 2px;">High Speed Doors</h1>
+            <div style="width: 100px; height: 4px; background-color: var(--primary-orange); margin: 25px auto; border-radius: var(--border-radius-tech);"></div>
+            <p class="text-white opacity-75 mx-auto" style="max-width: 700px;">Advanced rapid-roll solutions designed for durability, security, and climate control in high-traffic environments.</p>
+        </div>
+    </section>
+
+    <div class="container-fluid bg-light border-bottom shadow-sm sticky-top" style="z-index: 1000;">
+        <div class="container">
+            <div class="d-flex justify-content-center py-3 gap-md-5 gap-3">
+                <a href="#overview" class="fw-bold text-decoration-none small text-uppercase" style="color: var(--primary-dark-blue);">Overview</a>
+                <a href="#specifications" class="fw-bold text-decoration-none small text-uppercase" style="color: var(--primary-dark-blue);">Specifications</a>
+                <a href="#why-us" class="fw-bold text-decoration-none small text-uppercase" style="color: var(--primary-dark-blue);">Why Choose Us</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="overview" class="bg-white overflow-hidden" style="padding: 0;">
+    <div class="container-fluid p-0">
+        <div class="row g-0 align-items-center">
+            
+            <div class="col-lg-6 d-flex flex-column justify-content-center px-4 py-5"> 
+                <div style="max-width: 520px; margin: 0 auto;">
+                    <h2 class="fw-bold mb-3" style="color: var(--primary-dark-blue); border-left: 6px solid var(--primary-orange); padding-left: 20px; font-size: 2.2rem; line-height: 1.1;">
+                        Industrial Speed & Efficiency
+                    </h2>
+                    <p class="mb-3" style="color: var(--text-dark); font-size: 1.05rem; opacity: 0.9; line-height: 1.6;">
+                        Our high-speed doors are engineered to handle the intense demands of industrial facilities, offering opening speeds of up to 100 inches per second.
+                    </p>
+                    <p class="text-muted mb-4" style="font-size: 0.9rem; line-height: 1.6;">
+                        By minimizing the time a door remains open, you significantly reduce energy loss, improve worker comfort, and prevent the entry of dust or debris into sensitive areas.
+                    </p>
+                    
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn-brand-solid-final">
+                            Request Service
+                        </a>
+                        <a href="#contact" class="btn-brand-outline-final">
+                            Request Estimate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="img-curve-container-final">
+                    <img src="/assets/images/PORTADA PRINCIPAL.jpg" alt="High Speed Industrial Door" class="img-fluid">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="why-us" class="py-5" style="background-color: #f4f7f9;">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-md-4 text-center">
+                    <div class="p-4 bg-white shadow-sm h-100" style="border-radius: var(--border-radius-tech); border-bottom: 4px solid var(--primary-orange);">
+                        <i class="bi bi-lightning-charge-fill display-5 mb-3" style="color: var(--primary-orange);"></i>
+                        <h4 class="fw-bold" style="color: var(--primary-dark-blue);">Rapid-Roll</h4>
+                        <p class="small text-muted">Maximum cycles per day with minimal air exchange to optimize productivity and climate control.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="p-4 bg-white shadow-sm h-100" style="border-radius: var(--border-radius-tech); border-bottom: 4px solid var(--primary-orange);">
+                        <i class="bi bi-shield-lock-fill display-5 mb-3" style="color: var(--primary-orange);"></i>
+                        <h4 class="fw-bold" style="color: var(--primary-dark-blue);">Safety Sensors</h4>
+                        <p class="small text-muted">Integrated light curtains and wireless safety edges to protect personnel and inventory from impacts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="p-4 bg-white shadow-sm h-100" style="border-radius: var(--border-radius-tech); border-bottom: 4px solid var(--primary-orange);">
+                        <i class="bi bi-tools display-5 mb-3" style="color: var(--primary-orange);"></i>
+                        <h4 class="fw-bold" style="color: var(--primary-dark-blue);">Low Maintenance</h4>
+                        <p class="small text-muted">Self-repairing curtain technology that resets itself after an accidental impact, reducing downtime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specifications" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="/assets/images/high speed doors img 1.jpg" alt="Technical Specifications" class="img-fluid shadow" style="border-radius: var(--border-radius-tech);">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h3 class="fw-bold mb-4" style="color: var(--primary-dark-blue);">Technical Specifications</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-check-square-fill me-3" style="color: var(--primary-orange);"></i>
+                            <span><strong>Custom Sizes:</strong> Up to 20' x 20' for large industrial openings.</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-check-square-fill me-3" style="color: var(--primary-orange);"></i>
+                            <span><strong>Material:</strong> Heavy-duty reinforced PVC or insulated fabric options.</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-check-square-fill me-3" style="color: var(--primary-orange);"></i>
+                            <span><strong>Wind Load:</strong> Designed to withstand significant pressure in exterior applications.</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="bi bi-check-square-fill me-3" style="color: var(--primary-orange);"></i>
+                            <span><strong>Control Box:</strong> User-friendly digital interface with variable speed frequency drive.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!--------------MAIN END ------------->
+
+
+
+
+
+<!-- DOORS SECTOR -->
+
+<!-- DOORS SECTOR -->
+<section class="doors__section">
+  <h2 class="doors__title">ALL DOOR TECH</h2>
+  <div class="doors__container">
+    <div class="doors__item">
+      <a href="#" class="doors__link">Automatic Sliding Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Roll Up Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Counter Shutter Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Dock Restraints & Levelers <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Hollow Metal Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Sectional Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Low Energy Operators <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Storefront Doors <span class="doors__arrow">↗</span></a>
+    </div>
+    <div class="doors__item">
+      <a href="#" class="doors__link">Aluminum Grilles <span class="doors__arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+                 
+
+<!-- DOORS SECTOR END -->
+
+
+
+
+
+
+
+<!-- PARALLAX -->
+
+<section id="cta-parallax" class="parallax-section d-flex align-items-center justify-content-center py-5" 
+         style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: linear-gradient(rgba(47, 69, 101, 0.85), rgba(47, 69, 101, 0.85)), url('/assets/images/parallax\ de\ high\ seep\ doors.jpg');">
+    
+    <div class="container text-center text-white py-5">
+        
+        <h2 class="display-5 fw-bold mb-3 text-uppercase" style="letter-spacing: 2px;">Built for Maximum Productivity</h2>
+        <p class="lead mb-5 opacity-75">Optimizing your workflow with the fastest and safest industrial doors on the market.</p>
+        
+        <div class="row justify-content-center g-4">
+    
+            <div class="col-md-4 col-sm-6 text-center">
+                <div class="p-3">
+                    <div class="mb-4 d-inline-block p-3" style="background: rgba(47, 69, 101, 0.85); border-radius: var(--border-radius-tech);">
+                        <img src="/assets/iconos/eficiencia-energetica.png" alt="Energy" style="width: 50px; filter: brightness(0) invert(1);">
+                    </div>
+                    <h4 class="fw-bold text-uppercase" style="color: var(--primary-orange);">Energy Efficiency</h4>
+                    <p class="small opacity-75">Rapid seal technology minimizes air exchange, significantly reducing HVAC costs and maintaining climate control.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 text-center">
+                <div class="p-3">
+                    <div class="mb-4 d-inline-block p-3" style="background: rgba(47, 69, 101, 0.85); border-radius: var(--border-radius-tech);">
+                        <img src="/assets/iconos/proteger.png" alt="Safety" style="width: 50px; filter: brightness(0) invert(1);">
+                    </div>
+                    <h4 class="fw-bold text-uppercase" style="color: var(--primary-orange);">Safety Systems</h4>
+                    <p class="small opacity-75">Equipped with intelligent sensors and soft-bottom edges to prevent accidents and protect your equipment.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 text-center">
+                <div class="p-3">
+                    <div class="mb-4 d-inline-block p-3" style="background: rgba(47, 69, 101, 0.85); border-radius: var(--border-radius-tech);">
+                        <img src="/assets/iconos/vida-util-del-producto.png" alt="Durability" style="width: 50px; filter: brightness(0) invert(1);">
+                    </div>
+                    <h4 class="fw-bold text-uppercase" style="color: var(--primary-orange);">High-Cycle Life</h4>
+                    <p class="small opacity-75">Designed for millions of cycles with self-repairing curtains that automatically reset after impacts.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PARALLAX END -->
+
+
+<!-- PERFECT SERVICE INCREIBLE FAST  -->
+
+<section class="contact-cta">
+    <div class="contact-cta__container">
+
+        <img src="/assets/images/logo.png" alt="All Door Tech Logo" class="cta-logo">
+
+        <h2 class="cta-title">PERFECT SERVICE, INCREDIBLY FAST.</h2>
+
+        <p class="cta-subtitle">
+            Please call us at 
+            <a href="tel:+9513761433" class="cta-phone">(9 513) 76-1433</a>
+            for 24/7 customer support.
+        </p>
+
+
+        <a href="#contact" class="cta-button">Contact Us</a>
+
+    </div>
+</section>
+
+<!-- PERFECT SERVICE INCREIBLE FAST  END -->
+
+
+<!------- Fully Certified & Accredited ------->
+
+<section class="vendor-strip py-5" style="background-color: #ffffff; border-top: 1px solid #eee;">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      
+      <div class="col-12 text-center mb-4">
+        <span class="text-uppercase fw-bold small text-muted" style="letter-spacing: 2px;">
+          Certified Systems & Partners
+        </span>
+      </div>
+
+      <div class="col-6 col-md-2 text-center opacity-50 filter-grayscale mb-4 mb-md-0">
+        <h4 class="fw-bold mb-0">STANLEY</h4>
+      </div>
+      <div class="col-6 col-md-2 text-center opacity-50 filter-grayscale mb-4 mb-md-0">
+        <h4 class="fw-bold mb-0">DORMA</h4>
+      </div>
+      <div class="col-6 col-md-2 text-center opacity-50 filter-grayscale mb-4 mb-md-0">
+        <h4 class="fw-bold mb-0">HORTON</h4>
+      </div>
+      <div class="col-6 col-md-2 text-center opacity-50 filter-grayscale mb-4 mb-md-0">
+        <h4 class="fw-bold mb-0">RECORD</h4>
+      </div>
+      <div class="col-6 col-md-2 text-center opacity-50 filter-grayscale mb-4 mb-md-0">
+        <h4 class="fw-bold mb-0">NABCO</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!------- Fully Certified & Accredited EDN------->
+
+
+
+
+
+
+<!-- FOOTER SECTOR -->
+
+    <footer class="footer py-2" style="background-color: #1d2d44; color: white; border-top: none !important;">
+    <div class="footer__container container d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-center text-center text-md-start">
+
+        <nav class="footer__nav mb-2 mb-md-0">
+            <h3 style="font-size: 1rem; margin-bottom: 5px; border-bottom: 2px solid #f9ae39; display: inline-block; padding-bottom: 2px;">NAVIGATION</h3>
+            <ul class="list-unstyled mb-0">
+                <li><a href="#" class="text-white text-decoration-none small opacity-75">Home</a></li>
+                <li><a href="#" class="text-white text-decoration-none small opacity-75">Doors</a></li>
+                <li><a href="#" class="text-white text-decoration-none small opacity-75">Repairs</a></li>
+                <li><a href="#" class="text-white text-decoration-none small opacity-75">Services</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer__contact mb-2 mb-md-0">
+            <h3 style="font-size: 1rem; margin-bottom: 5px; border-bottom: 2px solid #f9ae39; display: inline-block; padding-bottom: 2px;">CONTACT</h3>
+            <p class="small mb-0 opacity-75">4036 Canterbury Rd, Riverside, CA</p>
+            <p class="small mb-0 opacity-75">Tel: (951) 376-1433</p>
+            <p class="small mb-0 opacity-75">Email: alldoortech@gmail.com</p>
+        </div>
+
+        <div class="footer__logo-section mt-md-4"> 
+            <h2 class="footer__logo mb-0" style="font-size: 2.2rem; font-weight: 800; letter-spacing: -1px;">
+                <span>All</span><span style="color: #f9ae39;">Door</span>Tech
+            </h2>
+        </div>
+
+    </div>
+
+    <p class="footer__copy text-center small opacity-50 mt-3 mb-0" style="font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); pt-2">
+        © 2025 All rights reserved. | Design and development by ManyiWebSoft
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
