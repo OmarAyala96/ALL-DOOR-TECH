@@ -2720,24 +2720,103 @@ option {
 
 /**/
 
-/* --- Estilos Generales --- */
-.filter-grayscale {
-  filter: grayscale(100%);
-  transition: all 0.3s ease;
-  cursor: default;
-}
+/* --- Fully Certified & Accredited  OFFICE--- */
+:root {
+    --primary-blue: #223248;
+    --accent-orange: #f9ae39;
+    /* Control de velocidad: Aumenta el número para ir más lento (ej. 60s) */
+    --speed: 50s; 
+  }
 
-.filter-grayscale:hover {
-  filter: grayscale(0%);
-  opacity: 1 !important;
-  color: #223248; /* El azul de tu empresa */
-}
+  .cert-section {
+    background-color: #ffffff;
+    padding: 90px 0;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
 
-.vendor-strip h4 {
-  font-family: 'Arial Black', sans-serif;
-  letter-spacing: -1px;
-}
-  /* ======================================= */
+  /* Título con los colores solicitados */
+  .cert-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  
+  .cert-header .title-badge {
+    display: inline-block;
+    color: var(--primary-blue);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    padding-bottom: 15px;
+  }
+
+  /* Línea inferior naranja personalizada */
+  .cert-header .title-badge::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%; /* Línea centrada y un poco más corta para mayor elegancia */
+    width: 50%;
+    height: 4px;
+    background-color: var(--accent-orange);
+    border-radius: 2px;
+  }
+
+  /* Carrusel de movimiento ultra lento */
+  .marquee-wrapper {
+    display: flex;
+    width: 100%;
+    /* Efecto de desvanecido en los bordes */
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  }
+
+  @keyframes scroll-slow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .marquee-content {
+    display: flex;
+    align-items: center;
+    animation: scroll-slow var(--speed) linear infinite;
+  }
+
+  /* Estilo de las imágenes */
+  .cert-card {
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 0 45px;
+    transition: all 0.5s ease;
+    filter: grayscale(100%);
+    opacity: 0.6;
+  }
+
+  .cert-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* Interacción */
+  .cert-card:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  /* Pausa suave al pasar el mouse */
+  .marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
+  }
+
+
+  /* ====================================== */
 /*             INDUSTRIES WE SERVE  ANDS          */
 /* ======================================= */
 
@@ -2745,7 +2824,7 @@ option {
 
 
   /* ======================================= */
-/*             Fully Certified & Accredited          */
+/*             Fully Certified & Accredited AMOR         */
 /* ======================================= */
 
 
