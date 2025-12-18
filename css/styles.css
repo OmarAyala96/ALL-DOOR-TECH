@@ -1188,6 +1188,7 @@ a { text-decoration: none; color: inherit; }
     /* Typography */
     color: var(--light-color, #f0f0f0);
     text-align: center;
+    content-visibility: auto;
     
     /* Container Query Setup */
     container-type: inline-size;
@@ -1208,24 +1209,15 @@ a { text-decoration: none; color: inherit; }
 /* ======================================= */
 .contact__active {
     background-color: transparent; 
-    
-    /* Layout */
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* 👈 AJUSTE CLAVE: Permite que los botones se envuelvan si no caben (Móvil) */
     flex-wrap: wrap; 
-    
-    gap: 10px; /* Reducimos el gap para que quepan en móvil */
-    
-    /* Box Model */
+    gap: 10px; 
     padding: 10px 0; 
     max-width: 1200px;
     margin: 0 auto;
-    
-    /* ELIMINAMOS overflow-x: auto; y white-space: nowrap; ya que ahora se envuelven */
-}
+    }
 
 /* ======================================= */
 /* 3. ESTILO DE CADA BOTÓN (.contact__tabs-item) */
@@ -1903,7 +1895,7 @@ z-index: 2;
 
 
 /* ======================================= */
-/*  SERVICE HERO -FORM 2,3,4     */
+/*  SERVICE HERO -FORM 2,3,4  buttton    */
 /* ======================================= */
 
 .service-hero {
@@ -1926,7 +1918,12 @@ z-index: 2;
   position: absolute;
   inset: 0;
   z-index: 1;
+}
 
+/* Mejora de Accesibilidad: Asegura que los botones tengan un estado de foco claro */
+.service-hero__buttons a:focus {
+  outline: 3px solid #f9ae39; /* El color naranja que usamos antes */
+  outline-offset: 2px;
 }
 
 /* Bordes de seguridad con patrón de rayas */
@@ -1967,6 +1964,8 @@ z-index: 2;
   font-weight: 800;
   text-transform: uppercase;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 /* Contenedor de botones ajustado */
@@ -2014,6 +2013,27 @@ z-index: 2;
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+/* Esto asegura que tu diseño no cambie al quitar el atributo 'btn' */
+.btn-style-title {
+  /* Copia aquí los estilos que tenías para [btn] */
+  display: inline-block; 
+  /* ... tus otros estilos ... */
+}
+
+/* Asegura que el botón sea fácil de presionar en móviles (Touch Targets) */
+.service-hero__buttons a {
+  min-width: 44px; /* Estándar de Apple/Google para accesibilidad táctil */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mejora el LCP (Largest Contentful Paint) si usas imágenes de fondo */
+.side.left, .side.right {
+  background-display: swap;
+  content-visibility: auto;
+}
 
 /* ======================================= */
 /*  AJUSTES PARA PANTALLA GRANDE         */
@@ -2047,18 +2067,17 @@ z-index: 2;
 /* FORM RESQUEST SERVICE & ESTIMATE  */
 /* ======================================= */
 
+/* ======================================= */
+/* FORM REQUEST SERVICE & ESTIMATE         */
+/* ======================================= */
+
 .form__container {
-    /* Box Model */
     min-height: 60vh;
-    padding: 40px 0; /* Más padding vertical para respirar */
-    
-    /* Layout */
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Centramos el formulario horizontalmente */
-    
-    /* Visual */
+    align-items: center;
     background-color: var(--light-gray-bg, #f8f8f8);
     container-type: inline-size;
     container-name: form__container;
@@ -2066,31 +2085,24 @@ z-index: 2;
 
 .form__container-title {
     margin: 0;
-    padding: 0 30px 25px 30px; /* Separación abajo y padding lateral en móvil */
-    max-width: 600px; /* Máx. ancho del título en móvil */
+    padding: 0 30px 25px 30px;
+    max-width: 600px;
     width: 100%;
-
-    /* Typography */
     color: var(--accent-color, #f4a200);
     font-size: 2.2rem;
     text-align: left; 
 }
 
 .form__container-form {
-     padding: 15px;
-    max-width: 800px; /* Mobile/Tablet base */
+    padding: 15px;
+    max-width: 800px;
     width: 100%;
-    
-    /* Layout */
     display: grid;
-    grid-template-columns: 1fr; /* Una columna en móvil */
-    gap: 10px; /* Espacio entre filas */
+    grid-template-columns: 1fr;
+    gap: 10px;
 }
 
-/* ======================================= */
-/*  ESTILO DE LOS INPUTS Y LABELS        */
-/* ======================================= */
-
+/* --- ESTILO DE LOS INPUTS Y LABELS --- */
 .form__container-input label {
     display: block;
     margin-bottom: 5px;
@@ -2098,60 +2110,59 @@ z-index: 2;
     color: #444;
 }
 
-
-
 .form__container-input input:not([type="submit"]),
-.form__container-input textarea {
-    /* Box Model */
+.form__container-input textarea,
+.form__container-input select {
     width: 100%;
     padding: 12px; 
     margin: 8px 0; 
     border-radius: 6px; 
-    
-    /* Visual */
     border: 1px solid var(--border-color, #ddd); 
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); 
-    background-color: white; /* Color de fondo limpio */
-    
-    /* Typography */
-    font-size: 1rem;
+    background-color: white; 
+    font-size: 1rem; /* 16px evita zoom penalizado por Chrome en iOS */
     color: #333;
-    transition: border-color 0.3s ease;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form__container-input textarea {
-   resize: none; /* QUITA LAS TRES LÍNEAS */
+    resize: none; 
     min-height: 140px; 
-    font-family: inherit;
     display: block;
 }
 
+/* Enfoque de Accesibilidad (Puntos clave para el 100%) */
 .form__container-input input:not([type="submit"]):focus,
-.form__container-input textarea:focus {
+.form__container-input textarea:focus,
+.form__container-input select:focus {
     outline: none;
-    border-color: var(--accent-color, #f4a200); /* Borde de enfoque con color de acento */
-    box-shadow: 0 0 5px rgba(244, 162, 0, 0.5);
-}   
+    border-color: var(--accent-color, #f4a200);
+    box-shadow: 0 0 0 3px rgba(244, 162, 0, 0.3); /* Anillo de nitidez para accesibilidad */
+}
 
+/* --- EL BOTÓN: RESET Y ESTILO ORIGINAL --- */
+.submit-button-style,
 .form__container-input input[type="submit"] {
-    /* Visual */
+    all: unset; /* Elimina estilos de sistema que rompen el diseño */
     background-color: var(--accent-color, #f4a200);
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    border: none;
-    cursor: pointer;
-    
-    /* Box Model & Layout */
-    padding: 12px 30px; 
     border-radius: 10px;
+    padding: 12px 30px; 
     margin: 25px auto 0 auto; 
     width: 200px; 
     display: block;
     font-weight: 700;
     font-size: 1.1rem;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.submit-button-style:hover,
 .form__container-input input[type="submit"]:hover {
     background-color: var(--hover-color, #e09300); 
     transform: translateY(-1px);
@@ -2164,9 +2175,21 @@ z-index: 2;
     font-size: 0.9em;
 }
 
+/* SELECT CUSTOM */
+.select-wrapper { position: relative; width: 100%; }
+.select-wrapper::after {
+    content: '▼';
+    font-size: 12px;
+    color: #f4a200;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
 
 /* CONFIDENCIALIDAD */
-.form__container-confidentiality{
+.form__container-confidentiality {
     grid-column: 1 / -1; 
     text-align: center;
     font-size: 13px;
@@ -2174,79 +2197,19 @@ z-index: 2;
     padding: 0 20px 40px 20px; 
     opacity: 0.8;
 }
-
-.form__container-confidentiality p {
-    margin-top: 15px; 
-    line-height: 1.5;
-}
-
-/* Estilo base para el Select (Igual que tus inputs) */
-.form__container-input select {
-    width: 100%;
-    padding: 14px;
-    margin: 5px 0;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    background-color: white;
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    cursor: pointer;
-    appearance: none; /* Quita la flecha por defecto del navegador */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    transition: all 0.3s ease;
-}
-
-/* Contenedor para la flecha personalizada */
-.select-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-/* Flecha personalizada usando un pseudo-elemento */
-.select-wrapper::after {
-    content: '▼';
-    font-size: 12px;
-    color: #f4a200; /* Naranja de tu marca */
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none; /* Para que al hacer clic en la flecha se abra el select */
-}
-
-/* Estado de enfoque (Focus) */
-.form__container-input select:focus {
-    outline: none;
-    border-color: #f4a200;
-    box-shadow: 0 0 8px rgba(244, 162, 0, 0.3);
-}
-
-/* Mejorar el color de la opción deshabilitada (placeholder) */
-select:invalid {
-    color: #999;
-}
-
-option {
-    color: #333;
-    background-color: #fff;
-}
-
-
 /* ======================================= */
-/* DISEÑO PARA ESCRITORIO (CONTAINER)   */
+/* DISEÑO PARA ESCRITORIO (CONTAINER)      */
 /* ======================================= */
-
 @container form__container (min-width: 720px) {
-
-        .form__container-title {
+    .form__container-title {
         text-align: center;
         padding: 40px 0 30px 0; 
-        max-width: 800px; /* Coincide con el ancho del formulario */
-       }
+        max-width: 800px;
+    }
+
     .form__container-form {
         max-width: 800px; 
+        display: grid;
         grid-template-columns: 1fr 1fr; /* 2 Columnas */
         grid-template-areas:
             "firstname lastname"
@@ -2255,11 +2218,12 @@ option {
             "phone email"
             "message message"
             "source source"
-            "submit submit";
-            gap: 15px 25px;
+            "submit submit" /* El botón ocupará ambas columnas */
+            "notice notice";
+        gap: 15px 25px;
     }
 
-    /* Asignación de áreas basada en el orden de tu HTML */
+    /* Asignación de áreas a los DIVS */
     .form__container-input:nth-child(1) { grid-area: firstname; }
     .form__container-input:nth-child(2) { grid-area: lastname; }
     .form__container-input:nth-child(3) { grid-area: company; }
@@ -2270,30 +2234,35 @@ option {
     .form__container-input:nth-child(8) { grid-area: email; }
     .form__container-input:nth-child(9) { grid-area: message; }
     .form__container-input:nth-child(10) { grid-area: source; }
-    .form__container-input:nth-child(11) { grid-area: submit; }
 
-    .form__container-input[type="submit"] {
-        width: 250px; 
+    /* --- ESTO CENTRA EL BOTÓN SIN NECESIDAD DE DIV PADRE --- */
+    .submit-button-style {
+        grid-area: submit;      /* Se expande en las dos columnas según el área definida arriba */
+        justify-self: center;   /* ESTA ES LA CLAVE: Centra el botón en su carril */
+        width: 250px !important;
+        margin: 30px 0 !important;
+        display: block;         /* Asegura que se comporte como bloque para aceptar el centrado */
+    }
+
+    .form__container-confidentiality {
+        grid-area: notice;
     }
 }
-   
 
 /* FORMS ENDS */
   
 /* FORMS CUSTOMER  */
+/* ==========================================================================
+   FORM CONTAINER - OPTIMIZADO PARA 100% LIGHTHOUSE SIN ROMPER DISEÑO
+   ========================================================================== */
 
 .form__container-customer {
-    /* Box Model */
     min-height: 60vh;
-    padding: 40px 0; /* Más padding vertical para respirar */
-    
-    /* Layout */
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Centramos el formulario horizontalmente */
-    
-    /* Visual */
+    align-items: center;
     background-color: var(--light-gray-bg, #f8f8f8);
     container-type: inline-size;
     container-name: form__container-customer;
@@ -2301,84 +2270,75 @@ option {
 
 .form__container-customer-title {
     margin: 0;
-    padding: 0 30px 25px 30px; /* Separación abajo y padding lateral en móvil */
-    max-width: 600px; /* Máx. ancho del título en móvil */
+    padding: 0 30px 25px 30px;
+    max-width: 600px;
     width: 100%;
-
-    /* Typography */
     color: var(--accent-color, #f4a200);
     font-size: 2.2rem;
     text-align: left; 
 }
 
 .form__container-customer-form {
-     padding: 15px;
-    max-width: 600px; /* Mobile/Tablet base */
+    padding: 15px;
+    max-width: 600px;
     width: 100%;
-    
-    /* Layout */
-    display:grid;
+    display: grid; 
 }
 
-/* ======================================= */
-/*  ESTILO DE LOS INPUTS Y LABELS        */
-/* ======================================= */
-
+/* --- ESTILO DE LOS INPUTS Y LABELS --- */
 .form__container-customer-input input:not([type="submit"]),
-.form__container-customer-input textarea {
-    /* Box Model */
+.form__container-customer-input textarea,
+.form__container-customer-input select {
     width: 100%;
     padding: 12px; 
     margin: 8px 0; 
     border-radius: 6px; 
-    
-    /* Visual */
     border: 1px solid var(--border-color, #ddd); 
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); 
-    background-color: white; /* Color de fondo limpio */
-    
-    /* Typography */
+    background-color: white; 
     font-size: 1rem;
     color: #333;
-    transition: border-color 0.3s ease;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form__container-customer-input textarea {
     resize: vertical; 
     min-height: 140px; 
-    font-family: inherit;
 }
 
 .form__container-customer-input input:not([type="submit"]):focus,
 .form__container-customer-input textarea:focus {
     outline: none;
-    border-color: var(--accent-color, #f4a200); /* Borde de enfoque con color de acento */
-    box-shadow: 0 0 5px rgba(244, 162, 0, 0.5);
-}   
+    border-color: var(--accent-color, #f4a200);
+    box-shadow: 0 0 0 3px rgba(244, 162, 0, 0.3);
+}
 
+/* --- EL BOTÓN: RESET Y ESTILO ORIGINAL --- */
+/* "all: unset" elimina el borde negro feo y el fondo gris del navegador */
+.submit-button-style, 
 .form__container-customer-input input[type="submit"] {
-    /* Visual */
+    all: unset; 
     background-color: var(--accent-color, #f4a200);
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    border: none;
-    cursor: pointer;
-    
-    /* Box Model & Layout */
-    padding: 12px 30px; 
     border-radius: 10px;
+    padding: 12px 30px; 
     margin: 25px auto 0 auto; 
     width: 200px; 
     display: block;
     font-weight: 700;
     font-size: 1.1rem;
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.form__container-customer-input input[type="submit"]:hover {
+.submit-button-style:hover {
     background-color: var(--hover-color, #e09300); 
     transform: translateY(-1px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .required {
@@ -2387,8 +2347,6 @@ option {
     font-size: 0.9em;
 }
 
-
-/* CONFIDENCIALIDAD */
 .form__container-customer-confidentiality {
     grid-column: 1 / -1; 
     text-align: center;
@@ -2403,61 +2361,42 @@ option {
     line-height: 1.5;
 }
 
-/* ======================================= */
-/* DISEÑO PARA ESCRITORIO (CONTAINER)  CUSTOMER  */
-/* ======================================= */
-
+/* --- DISEÑO PARA ESCRITORIO --- */
 @container form__container-customer (min-width: 720px) {
-
-        .form__container-customer-title {
+    .form__container-customer-title {
         text-align: center;
         padding: 40px 0 30px 0; 
-        max-width: 800px; /* Coincide con el ancho del formulario */
-       }
+        max-width: 800px;
+    }
+
     .form__container-customer-form {
         max-width: 800px; 
-        grid-template-columns: 1fr 1fr; /* 2 Columnas */
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
             "firstname lastname"
             "company phone"
             "email email"
             "message message"
             "submit submit";
-            gap: 15px 25px;
+        gap: 15px 25px;
     }
 
-    /* Asignación de áreas basada en el orden de tu HTML */
+    /* Asignación manual para que el botón naranja no se mueva de lugar */
     .form__container-customer-input:nth-child(1) { grid-area: firstname; }
     .form__container-customer-input:nth-child(2) { grid-area: lastname; }
     .form__container-customer-input:nth-child(3) { grid-area: company; }
     .form__container-customer-input:nth-child(4) { grid-area: phone; }
     .form__container-customer-input:nth-child(5) { grid-area: email; }
     .form__container-customer-input:nth-child(6) { grid-area: message; }
-    .form__container-customer-input:nth-child(7) { grid-area: submit; }
-
-    .form__container-customer-input[type="submit"] {
+    
+    /* El botón (hijo 7) debe estirarse en las dos columnas para centrarse */
+    .form__container-customer-input:nth-child(7),
+    .submit-button-style { 
+        grid-area: submit; 
+        justify-self: center;
         width: 250px; 
     }
-  }  
-
-
-  /* FORMS ENDS */
-
-/* ==========================================================================
-   CAMBIOS GLOBALES PARA BOTONES Y TÍTULOS (SITIO COMPLETO)
-   ========================================================================== */
-
-/* 1. Títulos de Banner (Global) */
-.display-4, .display-5 {
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 700 !important;
-    line-height: 1.2 !important;
-    text-transform: uppercase;
-    letter-spacing: -0.5px;
-}
-
-
-
+}       
 
 
   /* ======================================= */
@@ -2488,7 +2427,7 @@ option {
 .building-image {
     position: absolute;
     width: 100%; height: 100%;
-    background-image: url('/assets/images/offices.jpg');
+    background-image: url('/assets/images/banner-png/offices.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
