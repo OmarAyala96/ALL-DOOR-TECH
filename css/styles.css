@@ -1413,7 +1413,7 @@ a { text-decoration: none; color: inherit; }
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    background-color: var(--light-gray-bg, #f8f8f8); 
+    background-color: var(--light-gray-bg, #f0f0f0); 
     container-name: form;
     container-type: inline-size;
 }
