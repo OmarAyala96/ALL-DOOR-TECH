@@ -190,57 +190,57 @@
 </nav>
 
 <!-- FORM SECTION -->
-<section class="form__container" id="service-form">
+<section class="form__container" id="estimate-section">
   <h2 class="form__container-title">Estimate Information</h2>
 
-  <form class="form__container-form" action="#" method="POST">
-
-    <div class="form__container-input">
+  <form class="form__container-form" id="estimate-form">
+    
+    <div class="form__container-input f-name">
       <label for="est_first_name">First Name <span class="required">(Required)</span></label>
       <input type="text" id="est_first_name" name="first_name" placeholder="John" required autocomplete="given-name">
     </div>
 
-    <div class="form__container-input">
+    <div class="form__container-input l-name">
       <label for="est_last_name">Last Name <span class="required">(Required)</span></label>
       <input type="text" id="est_last_name" name="last_name" placeholder="Doe" required autocomplete="family-name">
     </div>
 
-    <div class="form__container-input">
+    <div class="form__container-input f-company">
       <label for="est_company">Company <span class="required">(Required)</span></label>
       <input type="text" id="est_company" name="company" placeholder="All Door Tech" required autocomplete="organization">
     </div>
 
-    <div class="form__container-input">
+    <div class="form__container-input f-address">
       <label for="est_address">Address <span class="required">(Required)</span></label>
       <input type="text" id="est_address" name="address" placeholder="123 Main Street" required autocomplete="street-address">
     </div>
 
-    <div class="form__container-input">
+    <div class="form__container-input f-city">
       <label for="est_city">City <span class="required">(Required)</span></label>
       <input type="text" id="est_city" name="city" placeholder="Los Angeles" required autocomplete="address-level2">
     </div>
 
-    <div class="form__container-input">
+    <div class="form__container-input f-zip">
       <label for="est_zip">Zip Code <span class="required">(Required)</span></label>
       <input type="text" id="est_zip" name="zip_code" placeholder="90012" required autocomplete="postal-code">
     </div>
 
-    <div class="form__container-input">
+    <div class="form__container-input f-phone">
       <label for="est_phone">Phone <span class="required">(Required)</span></label>
       <input type="tel" id="est_phone" name="phone" placeholder="1 (213) 555-7890" required autocomplete="tel">
     </div>
 
-    <div class="form__container-input">
+    <div class="form__container-input f-email">
       <label for="est_email">Email <span class="required">(Required)</span></label>
       <input type="email" id="est_email" name="email" placeholder="john.doe@example.com" required autocomplete="email">
     </div>
 
-    <div class="form__container-input full-width">
+    <div class="form__container-input f-message">
       <label for="est_message">Description of your request <span class="required">(Required)</span></label>
-      <textarea id="est_message" name="message" placeholder="Write your message here..." required></textarea>
+      <textarea id="est_message" name="message" placeholder="How can we help you?" required></textarea>
     </div>
-    
-    <div class="form__container-input full-width">
+
+    <div class="form__container-input f-source">
       <label for="est_source">How did you find us? <span class="required">(Required)</span></label>
       <div class="select-wrapper">
         <select name="source" id="est_source" required>
@@ -253,9 +253,9 @@
       </div>
     </div>
 
-    <button type="submit" class="submit-button-style">Submit</button>
+    <button type="submit" class="submit-button-style f-submit">Submit</button>
 
-    <div class="form__container-confidentiality">
+    <div class="form__container-confidentiality" role="note">
       <p>
         <strong>Confidentiality Notice:</strong><br>
         The information contained in this communication may be confidential or privileged.
@@ -265,20 +265,24 @@
 </section>
 
 <!-- PERFECT SERVICE INCREIBLE FAST  -->
-
 <section class="contact-cta">
     <div class="contact-cta__container">
 
-        <img src="/assets/images/logo.png" alt="All Door Tech Logo" class="cta-logo">
+        <img src="/assets/images/banner-png/LOGO.png" 
+             alt="All Door Tech Logo" 
+             class="cta-logo" 
+             width="200" 
+             height="80"> 
 
         <h2 class="cta-title">PERFECT SERVICE, INCREDIBLY FAST.</h2>
 
         <p class="cta-subtitle">
             Please call us at 
-            <a href="tel:+9513761433" class="cta-phone">(9 513) 76-1433</a>
+            <a href="tel:+19513761433" class="cta-phone" aria-label="Call us at 951-376-1433">
+                (951) 376-1433
+            </a>
             for 24/7 customer support.
         </p>
-
 
         <a href="#contact" class="cta-button">Contact Us</a>
 
@@ -286,80 +290,76 @@
 </section>
 
 <!-- Fully Certified & Accredited  OFFICE -->
-
 <section class="cert-section">
   <div class="cert-header">
-    <span class="title-badge">Certificaciones de Calidad y Respaldo</span>
+    <h2 class="title-badge">Quality Certifications and Support</h2>
   </div>
 
   <div class="marquee-wrapper">
     <div class="marquee-content">
-      <div class="cert-card"><img src="CERTIFICADO_1.png" alt="Certificación"></div>
-      <div class="cert-card"><img src="CERTIFICADO_2.png" alt="Certificación"></div>
-      <div class="cert-card"><img src="CERTIFICADO_3.png" alt="Certificación"></div>
-      <div class="cert-card"><img src="CERTIFICADO_4.png" alt="Certificación"></div>
-      <div class="cert-card"><img src="CERTIFICADO_5.png" alt="Certificación"></div>
+      <div class="cert-card"><img src="CERTIFICADO_1.png" alt="Certificación de Calidad 1" width="120" height="60"></div>
+      <div class="cert-card"><img src="CERTIFICADO_2.png" alt="Certificación de Calidad 2" width="120" height="60"></div>
+      <div class="cert-card"><img src="CERTIFICADO_3.png" alt="Certificación de Calidad 3" width="120" height="60"></div>
+      <div class="cert-card"><img src="CERTIFICADO_4.png" alt="Certificación de Calidad 4" width="120" height="60"></div>
+      <div class="cert-card"><img src="CERTIFICADO_5.png" alt="Certificación de Calidad 5" width="120" height="60"></div>
       
-      <div class="cert-card"><img src="CERTIFICADO_1.png" alt="Certificación"></div>
-      <div class="cert-card"><img src="CERTIFICADO_2.png" alt="Certificación"></div>
-      <div class="cert-card"><img src="CERTIFICADO_3.png" alt="Certificación"></div>
-      <div class="cert-card"><img src="CERTIFICADO_4.png" alt="Certificación"></div>
-      <div class="cert-card"><img src="CERTIFICADO_5.png" alt="Certificación"></div>
+      <div class="cert-card" aria-hidden="true"><img src="CERTIFICADO_1.png" alt="" width="120" height="60"></div>
+      <div class="cert-card" aria-hidden="true"><img src="CERTIFICADO_2.png" alt="" width="120" height="60"></div>
+      <div class="cert-card" aria-hidden="true"><img src="CERTIFICADO_3.png" alt="" width="120" height="60"></div>
+      <div class="cert-card" aria-hidden="true"><img src="CERTIFICADO_4.png" alt="" width="120" height="60"></div>
+      <div class="cert-card" aria-hidden="true"><img src="CERTIFICADO_5.png" alt="" width="120" height="60"></div>
     </div>
   </div>
 </section>
 
-<!-- LOCATION SECTOR -->
-
-<section class="location">
-
-
-  <div class="map-container">
-    <div class="map-overlay"></div>
-
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211894.61777037784!2d-117.45963045065736!3d33.91917238309467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dca6df7ff47dbb%3A0xf7a1d705135e0ae8!2sRiverside%2C%20California%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1765400873397!5m2!1ses-419!2sar"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-
-  </div>
-</section>
 
 
  <!--   FOOTER SECTOR -->
+<!-- FOOTER SECTOR -->
 
-<footer class="footer py-2" style="background-color: #1d2d44; color: white; border-top: none !important;">
-    <div class="footer__container container d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-center text-center text-md-start">
+    <footer class="footer" itemscope itemtype="https://schema.org/LocalBusiness">
+    <div class="footer__container container">
+        
+        <div class="footer__column footer__brand-col"> 
+            <h2 class="footer__brand" itemprop="name">
+                <span>All</span><span class="text-accent">Door</span>Tech
+            </h2>
+            <p class="footer__slogan">Professional Commercial Door Solutions.</p>
+        </div>
 
-        <nav class="footer__nav mb-2 mb-md-0">
-            <h3 style="font-size: 1rem; margin-bottom: 5px; border-bottom: 2px solid #f9ae39; display: inline-block; padding-bottom: 2px;">NAVIGATION</h3>
-            <ul class="list-unstyled mb-0">
-                <li><a href="#" class="text-white text-decoration-none small opacity-75">Home</a></li>
-                <li><a href="#" class="text-white text-decoration-none small opacity-75">Doors</a></li>
-                <li><a href="#" class="text-white text-decoration-none small opacity-75">Repairs</a></li>
-                <li><a href="#" class="text-white text-decoration-none small opacity-75">Services</a></li>
+        <nav class="footer__column footer__nav" aria-label="Footer Navigation">
+            <h3 class="footer__subtitle">NAVIGATION</h3>
+            <ul class="footer__list">
+                <li><a href="/" class="footer__link">Home</a></li>
+                <li><a href="/doors" class="footer__link">Doors</a></li>
+                <li><a href="/repairs" class="footer__link">Repairs</a></li>
+                <li><a href="/services" class="footer__link">Services</a></li>
             </ul>
         </nav>
 
-        <div class="footer__contact mb-2 mb-md-0">
-            <h3 style="font-size: 1rem; margin-bottom: 5px; border-bottom: 2px solid #f9ae39; display: inline-block; padding-bottom: 2px;">CONTACT</h3>
-            <p class="small mb-0 opacity-75">4036 Canterbury Rd, Riverside, CA</p>
-            <p class="small mb-0 opacity-75">Tel: (951) 376-1433</p>
-            <p class="small mb-0 opacity-75">Email: alldoortech@gmail.com</p>
-        </div>
-
-        <div class="footer__logo-section mt-md-4"> 
-            <h2 class="footer__logo mb-0" style="font-size: 2.2rem; font-weight: 800; letter-spacing: -1px;">
-                <span>All</span><span style="color: #f9ae39;">Door</span>Tech
-            </h2>
+        <div class="footer__column footer__contact">
+            <h3 class="footer__subtitle">CONTACT</h3>
+            <address class="footer__address">
+                <p class="footer__info" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">4036 Canterbury Rd</span><br> 
+                    <span itemprop="addressLocality">Riverside</span>, <span itemprop="addressRegion">CA</span>
+                </p>
+                <p class="footer__info">
+                    <strong>Tel:</strong> <a href="tel:+19513761433" class="footer__link" itemprop="telephone">(951) 376-1433</a>
+                </p>
+                <p class="footer__info">
+                    <strong>Email:</strong> <a href="mailto:alldoortech@gmail.com" class="footer__link" itemprop="email">alldoortech@gmail.com</a>
+                </p>
+            </address>
         </div>
 
     </div>
 
-    <p class="footer__copy text-center small opacity-50 mt-3 mb-0" style="font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); pt-2">
-        © 2025 All rights reserved. | Design and development by ManyiWebSoft
-    </p>
+    <div class="footer__bottom">
+        <p class="footer__copy">
+            © 2025 All Door Tech. All rights reserved. | Design by ManyiWebSoft
+        </p>
+    </div>
 </footer>
 
 

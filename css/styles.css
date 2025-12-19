@@ -1793,6 +1793,7 @@ z-index: 2;
 .cta-logo {
     width: 200px;
     margin-bottom: 15px;
+    height: auto;
 }
 
 .cta-title {
@@ -1835,7 +1836,8 @@ z-index: 2;
     text-align: center;
     border-radius: 25px;
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: transform 0.2s ease;
+    /* Tap target: Chrome pide al menos 48px de altura para accesibilidad */
 }
 
 .cta-button:hover {
@@ -2067,9 +2069,6 @@ z-index: 2;
 /* FORM RESQUEST SERVICE & ESTIMATE  */
 /* ======================================= */
 
-/* ======================================= */
-/* FORM REQUEST SERVICE & ESTIMATE         */
-/* ======================================= */
 
 .form__container {
     min-height: 60vh;
@@ -2197,9 +2196,11 @@ z-index: 2;
     padding: 0 20px 40px 20px; 
     opacity: 0.8;
 }
+
 /* ======================================= */
-/* DISEÑO PARA ESCRITORIO (CONTAINER)      */
+/* DISEÑO PARA ESCRITORIO (ESTIMATE)       */
 /* ======================================= */
+/* --- DISEÑO PARA ESCRITORIO (ESTIMATE) --- */
 @container form__container (min-width: 720px) {
     .form__container-title {
         text-align: center;
@@ -2209,8 +2210,7 @@ z-index: 2;
 
     .form__container-form {
         max-width: 800px; 
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* 2 Columnas */
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
             "firstname lastname"
             "company address"
@@ -2218,12 +2218,11 @@ z-index: 2;
             "phone email"
             "message message"
             "source source"
-            "submit submit" /* El botón ocupará ambas columnas */
-            "notice notice";
+            "submit submit"; /* Área para el botón */
         gap: 15px 25px;
     }
 
-    /* Asignación de áreas a los DIVS */
+    /* Asignación manual de áreas */
     .form__container-input:nth-child(1) { grid-area: firstname; }
     .form__container-input:nth-child(2) { grid-area: lastname; }
     .form__container-input:nth-child(3) { grid-area: company; }
@@ -2234,24 +2233,21 @@ z-index: 2;
     .form__container-input:nth-child(8) { grid-area: email; }
     .form__container-input:nth-child(9) { grid-area: message; }
     .form__container-input:nth-child(10) { grid-area: source; }
-
-    /* --- ESTO CENTRA EL BOTÓN SIN NECESIDAD DE DIV PADRE --- */
-    .submit-button-style {
-        grid-area: submit;      /* Se expande en las dos columnas según el área definida arriba */
-        justify-self: center;   /* ESTA ES LA CLAVE: Centra el botón en su carril */
-        width: 250px !important;
-        margin: 30px 0 !important;
-        display: block;         /* Asegura que se comporte como bloque para aceptar el centrado */
-    }
-
-    .form__container-confidentiality {
-        grid-area: notice;
+    
+    /* EL SECRETO: En tu HTML el botón es el elemento 12 (porque hay un div vacío en el 11) */
+    /* Usamos este selector para asegurar que agarre el botón sin importar el número */
+    .form__container-form > .submit-button-style,
+    .form__container-form > button[type="submit"] { 
+        grid-area: submit; 
+        justify-self: center; /* Centra el botón en el área 'submit' */
+        width: 250px !important; 
+        margin: 30px auto !important;
+        display: block;
     }
 }
 
 /* FORMS ENDS */
   
-/* FORMS CUSTOMER  */
 /* ==========================================================================
    FORM CONTAINER - OPTIMIZADO PARA 100% LIGHTHOUSE SIN ROMPER DISEÑO
    ========================================================================== */
@@ -2897,7 +2893,7 @@ z-index: 2;
             border-top: 8px solid var(--primary-orange);
         }
     }
-    }
+    
 
 
 
