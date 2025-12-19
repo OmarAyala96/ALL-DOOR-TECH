@@ -768,6 +768,7 @@ a { text-decoration: none; color: inherit; }
     .hero {
         height: 85vh; /* Altura imponente en escritorio */
     }
+    }
 
 
 
@@ -1216,12 +1217,9 @@ a { text-decoration: none; color: inherit; }
     background-color: var(--dark-blue, #223248);
     color: var(--light-color, #f0f0f0);
     text-align: center;
-<<<<<<< HEAD
-=======
     content-visibility: auto;
     
     /* Container Query Setup */
->>>>>>> 12ee1a31c1b66dc69ae6eb8415ced548a6c35b3e
     container-type: inline-size;
     container-name: contact; 
 }
@@ -1232,7 +1230,6 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: 25px; 
 }
 
-<<<<<<< HEAD
 /* --- AJUSTE PARA LA LISTA (Sustituye el comportamiento de .contact__active) --- */
 .contact__tabs-list {
     list-style: none;
@@ -1241,18 +1238,15 @@ a { text-decoration: none; color: inherit; }
     max-width: 1200px;
     
     /* Layout igual al que tenías */
-=======
 /* ======================================= */
 /* 2. CONTENEDOR DE BOTONES (.contact__active) */
 /* ======================================= */
 .contact__active {
     background-color: transparent; 
->>>>>>> 12ee1a31c1b66dc69ae6eb8415ced548a6c35b3e
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap; 
-<<<<<<< HEAD
     gap: 10px;
 }
 
@@ -1260,13 +1254,11 @@ a { text-decoration: none; color: inherit; }
 .contact__item {
     display: flex;
 }
-=======
     gap: 10px; 
     padding: 10px 0; 
     max-width: 1200px;
     margin: 0 auto;
     }
->>>>>>> 12ee1a31c1b66dc69ae6eb8415ced548a6c35b3e
 
 .contact__tabs-item {
     padding: 12px 20px; 
