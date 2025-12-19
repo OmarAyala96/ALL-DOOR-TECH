@@ -2582,26 +2582,37 @@ z-index: 2;
     font-size: 1.6rem;
     font-weight: 800;
     margin: 0;
+   
 }
 
 .flip-card-back {
-    background-color: #223248;
-    color: white;
+  background-color: #223248;
+    color: #ffffff; /* Forzamos blanco puro para contraste */
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Centra el contenido horizontalmente */
     padding: 30px;
     text-align: center;
     border: 4px solid #f4a200;
+    backface-visibility: hidden; /* Evita que se vea el frente al girar */
 }
 
 .flip-card-back h3 {
     color: #f4a200;
     font-size: 1.5rem;
+    font-weight: 800;
     margin-bottom: 15px;
+    text-transform: uppercase;
 }
-
+.flip-card-back p {
+    font-size: 1.1rem; /* Tamaño legible para Lighthouse */
+    line-height: 1.5;  /* Espaciado para mejor lectura */
+    color: #ffffff;    /* Asegura que el texto no sea gris o azul oscuro */
+    margin: 0;
+    font-weight: 400;
+}
 
 /**/
 /* --- Variables y Base --- */
