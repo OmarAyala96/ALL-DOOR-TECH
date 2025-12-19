@@ -788,12 +788,9 @@ a { text-decoration: none; color: inherit; }
     .hero {
         height: 85vh; /* Altura imponente en escritorio */
     }
-<<<<<<< HEAD
 }
-=======
-    }
+    
 
->>>>>>> 12afbaeb2102cf2e8fea6cf472f8375ea4887d27
 
 
 
@@ -1230,9 +1227,7 @@ a { text-decoration: none; color: inherit; }
 
         /* --------  DOORS ANDS   -------*/
 
-        
-
-        /* ----- CONTACT ----- */
+    
         
 /* ======================================= */
 /* 1. CONTENEDOR PRINCIPAL (.contact) */
@@ -1245,12 +1240,10 @@ a { text-decoration: none; color: inherit; }
     text-align: center;
 }
 
-/* 2. BLOQUE DEL TÍTULO (Reducimos el padding inferior) */
+/* 1. BLOQUE DEL TÍTULO (Azul) */
 .contact {
     background-color: var(--dark-blue, #223248); 
-    padding: 20px; /* Bajamos de 60px a 50px arriba y de 20px a 10px abajo */
-    /* Eliminamos el margin-bottom o lo hacemos muy pequeño */
-   
+    padding: 20px; 
 }
 
 .contact__us {
@@ -1261,56 +1254,37 @@ a { text-decoration: none; color: inherit; }
     margin: 0;
 }
 
-/* 3. BLOQUE DE BOTONES (Reducimos el padding superior) */
+/* 2. CONTENEDOR DE NAVEGACIÓN (Gris claro) */
 .contact__active {
+    background-color: transparent; 
     width: 100%;
-    display: block;
-    padding: 10px; /* Bajamos el padding superior de 20px a 5px */
+    padding: 10px 0;
+    display: block; /* Volvemos a block para que el UL maneje el flex */
 }
 
+/* 3. LA LISTA (Aquí es donde se controla el orden) */
 .contact__tabs-list {
     list-style: none;
     padding: 0;
     margin: 0 auto;
-<<<<<<< HEAD
     max-width: 1200px;
-}
-    /* Layout igual al que tenías */
-/* ======================================= */
-/* 2. CONTENEDOR DE BOTONES (.contact__active) */
-/* ======================================= */
-.contact__active {
-    background-color: transparent; 
-=======
->>>>>>> df018ecfbb89d15858a1d0ed8cf8596897fe3101
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Columna en móvil */
     align-items: center;
-    gap: 15px;
-    max-width: 1100px;
+    gap: 0; /* El gap lo manejamos en el item o aquí si prefieres */
 }
-
 
 .contact__item {
-<<<<<<< HEAD
     display: flex;
-<<<<<<< HEAD
-=======
-}
->>>>>>> 12afbaeb2102cf2e8fea6cf472f8375ea4887d27
-    gap: 10px; 
+    justify-content: center;
     padding: 10px 0; 
-    max-width: 1200px;
-    margin: 0 auto;
-    }
-=======
     width: 90%;
     max-width: 350px;
 }
->>>>>>> df018ecfbb89d15858a1d0ed8cf8596897fe3101
 
 .contact__tabs-item {
     display: block;
+    width: 100%; /* Para que todos midan lo mismo en móvil */
     text-align: center;
     padding: 12px 20px;
     background-color: #f9ae39;
@@ -1320,7 +1294,7 @@ a { text-decoration: none; color: inherit; }
     font-size: 1.1rem;
     border-radius: 8px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra un poco más fuerte */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .contact__tabs-item:hover {
@@ -1330,17 +1304,23 @@ a { text-decoration: none; color: inherit; }
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
-/* 4. AJUSTE DESKTOP */
+/* 4. AJUSTE ESCRITORIO (REPARACIÓN) */
 @media (min-width: 768px) {
     .contact__tabs-list {
-        flex-direction: row;
+        flex-direction: row; /* EN LÍNEA PARA ESCRITORIO */
         justify-content: center;
-        gap: 25px;
+        gap: 20px; /* Espacio entre botones */
     }
 
     .contact__item {
         width: auto;
         max-width: none;
+        padding: 0; /* Quitamos padding extra en desktop */
+    }
+    
+    .contact__tabs-item {
+        width: auto;
+        min-width: 200px; /* Tamaño consistente en escritorio */
     }
 }
 /* CONTACT ENDS */
