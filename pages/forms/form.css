@@ -1,0 +1,201 @@
+/* ============================================================
+   ESTILOS GLOBALES Y VARIABLES
+   ============================================================ */
+:root {
+    --accent-color: #f4a200;
+    --hover-color: #e09300;
+    --light-gray-bg: #f8f8f8;
+    --border-color: #ddd;
+}
+
+/* ============================================================
+   SECTION: FORM CONTAINER (Service & Estimate)
+   ============================================================ */
+.form__container {
+    min-height: 60vh;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-gray-bg);
+    container-type: inline-size;
+    container-name: form__container;
+}
+
+.form__container-title {
+    margin: 0;
+    padding: 0 30px 25px 30px;
+    max-width: 600px;
+    width: 100%;
+    color: var(--accent-color);
+    font-size: 2.2rem;
+    text-align: left; 
+}
+
+.form__container-form {
+    padding: 15px;
+    max-width: 800px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+/* Inputs, Textareas y Selects */
+.form__container-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form__container-input input:not([type="submit"]),
+.form__container-input textarea,
+.form__container-input select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.form__container-input textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+/* El Botón (Diseño Unificado) */
+.submit-button-style {
+    all: unset;
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 12px 30px;
+    width: 200px;
+    display: block;
+    margin: 25px auto 0 auto;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button-style:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE GRID (ESTIMATE/SERVICE) --- */
+@container form__container (min-width: 720px) {
+    .form__container-form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "firstname lastname"
+            "company address"
+            "city zipcode"
+            "phone email"
+            "message message"
+            "source source"
+            "submit submit";
+        gap: 15px 25px;
+    }
+
+    /* Asignación de Áreas */
+    .form__container-input:nth-child(1) { grid-area: firstname; }
+    .form__container-input:nth-child(2) { grid-area: lastname; }
+    .form__container-input:nth-child(3) { grid-area: company; }
+    .form__container-input:nth-child(4) { grid-area: address; }
+    .form__container-input:nth-child(5) { grid-area: city; }
+    .form__container-input:nth-child(6) { grid-area: zipcode; }
+    .form__container-input:nth-child(7) { grid-area: phone; }
+    .form__container-input:nth-child(8) { grid-area: email; }
+    .form__container-input:nth-child(9) { grid-area: message; }
+    .form__container-input:nth-child(10) { grid-area: source; }
+    
+    .form__container-form > .submit-button-style {
+        grid-area: submit;
+        justify-self: center;
+        width: 250px;
+    }
+
+    .form__container-confidentiality { grid-column: 1 / -1; text-align: center; font-size: 13px; opacity: 0.8; }
+}
+
+/* ============================================================
+   SECTION: CONTACT CTA
+   ============================================================ */
+.contact-cta {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff; /* Ajusta a tu color */
+}
+
+.contact-cta__container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.cta-title { font-size: 2rem; font-weight: 800; margin: 0; }
+.cta-phone { color: var(--accent-color); text-decoration: none; font-weight: 700; }
+.cta-button { 
+    display: inline-block; 
+    background-color: var(--accent-color); 
+    color: white; 
+    padding: 15px 35px; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-weight: 700; 
+}
+
+/* ============================================================
+   SECTION: CERTIFICACIONES (Marquee Infinito)
+   ============================================================ */
+.cert-section { padding: 40px 0; overflow: hidden; }
+.cert-header { display: flex; justify-content: center; margin-bottom: 25px; }
+
+.title-badge { 
+    display: inline-block; 
+    padding: 8px 20px; 
+    background-color: var(--accent-color); 
+    color: white; 
+    border-radius: 50px; 
+    font-size: 0.9rem; 
+    font-weight: 700; 
+}
+
+.marquee-wrapper { 
+    width: 100%; 
+    overflow: hidden; 
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); 
+}
+
+.marquee-content {
+    display: flex;
+    gap: 50px;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+    will-change: transform; /* Crucial para Performance */
+}
+
+.marquee-content:hover { animation-play-state: paused; }
+
+.cert-card img { height: 60px; width: auto; object-fit: contain; display: block; }
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 25px)); }
+}
