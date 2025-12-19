@@ -695,18 +695,30 @@ a { text-decoration: none; color: inherit; }
 
 .hero__descripcion h1 {
     color: #ffffff;
-    font-size: clamp(1.8rem, 5vw, 3.5rem);
-    font-weight: 800;
+    /* Aumentamos el mínimo a 2.4rem y el máximo a 4.5rem */
+    font-size: clamp(2.4rem, 6vw, 4.5rem); 
+    font-weight: 600; /* Un poco más de peso para que resalte más */
     text-transform: uppercase;
-    line-height: 1.1;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    line-height: 1.05; /* Reducimos ligeramente el interlineado para títulos grandes */
+    margin-bottom: 40px; /* Más espacio respecto a los nuevos botones */
+    text-shadow: 3px 3px 15px rgba(0,0,0,0.6); /* Sombra más definida para legibilidad */
+    width: 100%;
+    max-width: 1200px; /* Evita que el texto se estire demasiado a los lados */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ajuste específico para pantallas muy pequeñas (iPhone SE, etc) */
+@media (max-width: 380px) {
+    .hero__descripcion h1 {
+        font-size: 2rem; 
+    }
 }
 
 /* --- Botones --- */
 .hero__buttons {
     display: flex;
-    gap: 15px;
+    gap: 28px;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -725,8 +737,16 @@ a { text-decoration: none; color: inherit; }
 }
 
 .btn-brand-solid-final {
-    background-color: #f9ae39;
-    color: #223248 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Esto crea un espacio perfecto entre el icono y el número */
+}
+
+/* Animación opcional para que el icono llame la atención */
+.btn-brand-solid-final:hover i {
+    transform: scale(1.2) rotate(10deg);
+    transition: transform 0.3s ease;
 }
 
 /* Selector de alta especificidad para el botón de servicio */
@@ -1213,32 +1233,46 @@ a { text-decoration: none; color: inherit; }
         
 
         /* ----- CONTACT ----- */
+        
 /* ======================================= */
 /* 1. CONTENEDOR PRINCIPAL (.contact) */
 /* ======================================= */
-.contact {
-    padding: 30px 20px; 
-    background-color: var(--dark-blue, #223248);
-    color: var(--light-color, #f0f0f0);
+/* 1. Contenedor Base */
+/* 1. SECCIÓN CONTENEDORA (Ahora es el fondo general de los botones) */
+.contact-section {
+    background-color: #f4f4f4; 
+    padding: 0; 
     text-align: center;
-    content-visibility: auto;
-    
-    /* Container Query Setup */
-    container-type: inline-size;
-    container-name: contact; 
+}
+
+/* 2. BLOQUE DEL TÍTULO (Reducimos el padding inferior) */
+.contact {
+    background-color: var(--dark-blue, #223248); 
+    padding: 20px; /* Bajamos de 60px a 50px arriba y de 20px a 10px abajo */
+    /* Eliminamos el margin-bottom o lo hacemos muy pequeño */
+   
 }
 
 .contact__us {
-    font-size: 2.8rem;
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 2.8rem);
     font-weight: 700;
-    margin-bottom: 25px; 
+    text-transform: uppercase;
+    margin: 0;
 }
 
-/* --- AJUSTE PARA LA LISTA (Sustituye el comportamiento de .contact__active) --- */
+/* 3. BLOQUE DE BOTONES (Reducimos el padding superior) */
+.contact__active {
+    width: 100%;
+    display: block;
+    padding: 10px; /* Bajamos el padding superior de 20px a 5px */
+}
+
 .contact__tabs-list {
     list-style: none;
-    padding: 10px 0; 
+    padding: 0;
     margin: 0 auto;
+<<<<<<< HEAD
     max-width: 1200px;
 }
     /* Layout igual al que tenías */
@@ -1247,15 +1281,18 @@ a { text-decoration: none; color: inherit; }
 /* ======================================= */
 .contact__active {
     background-color: transparent; 
+=======
+>>>>>>> df018ecfbb89d15858a1d0ed8cf8596897fe3101
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap; 
-    gap: 10px;
+    gap: 15px;
+    max-width: 1100px;
 }
 
-/* Hacemos que el LI no interfiera en el diseño */
+
 .contact__item {
+<<<<<<< HEAD
     display: flex;
 <<<<<<< HEAD
 =======
@@ -1266,38 +1303,44 @@ a { text-decoration: none; color: inherit; }
     max-width: 1200px;
     margin: 0 auto;
     }
+=======
+    width: 90%;
+    max-width: 350px;
+}
+>>>>>>> df018ecfbb89d15858a1d0ed8cf8596897fe3101
 
 .contact__tabs-item {
-    padding: 12px 20px; 
+    display: block;
+    text-align: center;
+    padding: 12px 20px;
+    background-color: #f9ae39;
+    color: #223248 !important;
     text-decoration: none;
-    border-radius: 8px; 
-    background-color: var(--accent-color, #f9ae39); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
-    border: none;
-    color: #223248;
     font-weight: 700;
-    font-size: 0.95rem; 
+    font-size: 1.1rem;
+    border-radius: 8px;
     transition: all 0.3s ease;
-    white-space: nowrap; /* Evita que el texto del botón se rompa */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra un poco más fuerte */
 }
 
 .contact__tabs-item:hover {
-    color: white; 
-    background-color: var(--hover-color, #f4a200); 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
-    transform: translateY(1px); 
+    background-color: #223248;
+    color: #ffffff !important;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
-/* --- CONTAINER QUERIES --- */
-@container contact (min-width: 768px) {
+/* 4. AJUSTE DESKTOP */
+@media (min-width: 768px) {
     .contact__tabs-list {
-        gap: 30px; 
-        flex-wrap: nowrap; 
+        flex-direction: row;
+        justify-content: center;
+        gap: 25px;
     }
 
-    .contact__tabs-item {
-        font-size: 1.3rem; 
-        padding: 15px 30px; 
+    .contact__item {
+        width: auto;
+        max-width: none;
     }
 }
 /* CONTACT ENDS */
