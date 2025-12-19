@@ -38,6 +38,7 @@
 html, body {
     max-width: 100%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -198,18 +199,25 @@ a { text-decoration: none; color: inherit; }
     transition: all 0.3s;
 }
 
+.header__nav::-webkit-scrollbar {
+    display: none; /* Para Chrome, Safari y Opera */
+}
+
 /* --- 4. MENÚ LATERAL (SIDEBAR) --- */
 .header__nav {
     position: fixed;
     top: 0;
     right: -100%; 
-    width: 80%;
-    max-width: 320px;
+    width: 85%; /* Aumentado de 80% a 85% */
+    max-width: 380px; /* Aumentado de 320px a 350px */
     height: 100vh;
     background-color: var(--primary-dark-blue);
     transition: right 0.35s ease;
     box-shadow: inset -5px 0 20px rgba(0,0,0,0.5);
-    overflow-y: auto;
+    -ms-overflow-style: none;  /* Para Internet Explorer y Edge */
+    scrollbar-width: none;
+    overflow-y: auto;overflow-x: hidden;
+    box-sizing: border-box;
     padding-top: 65px;
 }
 
@@ -348,6 +356,43 @@ a { text-decoration: none; color: inherit; }
     display: none;
 }
 
+/* 1. Estilos para móvil (Fuera de las media queries) */
+.nav-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
+    background-color: var(--primary-dark-blue); /* Para que combine con el sidebar */
+}
+
+.nav-info-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem; /* Un tamaño fijo seguro */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Si no cabe, pone "..." al final en lugar de estirar el menú */
+    max-width: 100%;
+}
+
+.nav-info-link i {
+    color: var(--primary-orange);
+    font-size: 1.2rem;
+}
+
+/* 2. DESAPARECER EN ESCRITORIO (Dentro de tu @media 1024px) */
+@media (min-width: 1024px) {
+    /* Agrega esta línea dentro de tu bloque de 1024px actual */
+    .nav-info-container {
+        display: none !important;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
 
 
 
@@ -434,13 +479,14 @@ a { text-decoration: none; color: inherit; }
         flex-grow: 1; 
         margin: 0 80px; 
         position: static;
-        width: auto;
+        width: auto; /* En escritorio vuelve a ser automático */
         height: auto;
         background: none;
         padding: 0;
         box-shadow: none;
         overflow: visible; 
         min-width: 0;
+        display: block; /* Asegura que se vea en el flujo horizontal */
     }
 
     .header__nav-list {
