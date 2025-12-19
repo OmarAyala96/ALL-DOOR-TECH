@@ -1239,19 +1239,31 @@ a { text-decoration: none; color: inherit; }
 /* ======================================= */
 /* 1. CONTENEDOR PRINCIPAL (.contact) */
 /* ======================================= */
-/* 1. Contenedor Base */
-/* 1. SECCIÓN CONTENEDORA (Ahora es el fondo general de los botones) */
+
+/* ======================================= */
+/* SECTION: CONTACT (Modular & Robust)     */
+/* ======================================= */
+
+/* ======================================= */
+/* SECTION: CONTACT (Modular & Robust)     */
+/* ======================================= */
+
+/* ======================================= */
+/* SECTION: CONTACT (Versión Unificada)    */
+/* ======================================= */
+
 .contact-section {
     background-color: #f4f4f4; 
     padding: 0; 
     text-align: center;
 }
 
-/* 1. BLOQUE DEL TÍTULO (Azul) */
+/* 1. BLOQUE DEL TÍTULO (Se oculta si ella no lo pone) */
 .contact {
     background-color: var(--dark-blue, #223248); 
-    padding: 20px; 
+    padding: 20px;
 }
+.contact:empty { display: none; }
 
 .contact__us {
     color: #ffffff;
@@ -1261,56 +1273,41 @@ a { text-decoration: none; color: inherit; }
     margin: 0;
 }
 
-/* 2. CONTENEDOR DE NAVEGACIÓN (Gris claro) */
+/* 2. CONTENEDOR DE NAVEGACIÓN */
 .contact__active {
-    background-color: transparent; 
     width: 100%;
     padding: 10px 0;
-    display: block; /* Volvemos a block para que el UL maneje el flex */
+    background-color: transparent;
 }
 
-/* 3. LA LISTA (Aquí es donde se controla el orden) */
-.contact__tabs-list {
+/* 3. LA LISTA (Tu estructura) y CONTENEDOR (Estructura de ella) */
+/* Fusionamos ambos para que el Flexbox sea idéntico */
+.contact__tabs-list, 
+.contact__tabs-container {
     list-style: none;
     padding: 0;
     margin: 0 auto;
     max-width: 1200px;
-<<<<<<< HEAD
-}
-    /* Layout igual al que tenías */
-/* ======================================= */
-/* 2. CONTENEDOR DE BOTONES (.contact__active) */
-/* ======================================= */
-.contact__active {
-    background-color: transparent; 
-=======
->>>>>>> b3db511d9bb0bfcac8e548c8328ecb236c8f9588
     display: flex;
-    flex-direction: column; /* Columna en móvil */
+    flex-direction: column; /* Móvil */
     align-items: center;
-    gap: 0; /* El gap lo manejamos en el item o aquí si prefieres */
+    gap: 10px; /* Asegura separación incluso si no hay padding en el item */
 }
 
-.contact__item {
-<<<<<<< HEAD
-
-    display: flex;
-    gap: 10px; 
-    padding: 10px 0; 
-    max-width: 1200px;
-    margin: 0 auto;
-=======
+/* 4. ITEMS Y ENLACES DIRECTOS */
+.contact__item,
+.contact__tabs-container > a {
     display: flex;
     justify-content: center;
-    padding: 10px 0; 
->>>>>>> b3db511d9bb0bfcac8e548c8328ecb236c8f9588
+    padding: 5px 0; 
     width: 90%;
     max-width: 350px;
 }
 
+/* 5. EL BOTÓN (Tu estilo exacto) */
 .contact__tabs-item {
     display: block;
-    width: 100%; /* Para que todos midan lo mismo en móvil */
+    width: 100%; 
     text-align: center;
     padding: 12px 20px;
     background-color: #f9ae39;
@@ -1330,26 +1327,31 @@ a { text-decoration: none; color: inherit; }
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
-/* 4. AJUSTE ESCRITORIO (REPARACIÓN) */
+/* 6. AJUSTE ESCRITORIO */
 @media (min-width: 768px) {
-    .contact__tabs-list {
-        flex-direction: row; /* EN LÍNEA PARA ESCRITORIO */
+    .contact__tabs-list,
+    .contact__tabs-container {
+        flex-direction: row; 
         justify-content: center;
-        gap: 20px; /* Espacio entre botones */
+        gap: 20px;
     }
 
-    .contact__item {
+    .contact__item,
+    .contact__tabs-container > a {
         width: auto;
         max-width: none;
-        padding: 0; /* Quitamos padding extra en desktop */
+        padding: 0;
     }
     
     .contact__tabs-item {
-        width: auto;
-        min-width: 200px; /* Tamaño consistente en escritorio */
+        min-width: 220px;
     }
 }
+
+
 /* CONTACT ENDS */
+
+
 
 /* ======================================= */
 /* --------  FORM SECTOR   -------*/

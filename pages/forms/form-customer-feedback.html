@@ -186,14 +186,23 @@
 
 
 
- <div class="contact" aria-hidden="true"></div>
+ <section class="contact-section" itemscope itemtype="https://schema.org/ContactPage">
+    <meta itemprop="name" content="Service Options All Door Tech">
 
-<nav class="contact__active" aria-label="Contact and Service Navigation">
-    <a href="/contact" class="contact__tabs-item" title="Go to Contact Page">Contact Us</a>
-    <a href="/request-service" class="contact__tabs-item" title="Book a technical service">Request Service</a>
-    <a href="/request-estimate" class="contact__tabs-item" title="Ask for a free estimate">Request Estimate</a>
-</nav>
-
+    <nav class="contact__active" aria-label="Service navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <ul class="contact__tabs-list" role="list">
+            <li class="contact__item" itemprop="name">
+                <a href="#service" class="contact__tabs-item" itemprop="url">Request Service</a>
+            </li>
+            <li class="contact__item" itemprop="name">
+                <a href="#estimate" class="contact__tabs-item" itemprop="url">Request Estimate</a>
+            </li>
+            <li class="contact__item" itemprop="name">
+                <a href="#feedback" class="contact__tabs-item" itemprop="url">Customer Feedback</a>
+            </li>
+        </ul>
+    </nav>
+</section>
 
 <!-- FORM SECTION -->
 <section class="form__container-customer">
@@ -246,11 +255,11 @@
 <section class="contact-cta">
     <div class="contact-cta__container">
 
-        <img src="/assets/images/banner-png/LOGO.png" 
-             alt="All Door Tech Logo" 
+        <img src="/assets/images/Img-png/LOGO.webp" 
+             alt="All Door Tech Logo" loading="lazy"
              class="cta-logo" 
-             width="200" 
-             height="80"> 
+             width="200px" 
+             height="80px"> 
 
         <h2 class="cta-title">PERFECT SERVICE, INCREDIBLY FAST.</h2>
 
