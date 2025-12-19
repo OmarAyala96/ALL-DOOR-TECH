@@ -1275,6 +1275,16 @@ a { text-decoration: none; color: inherit; }
     padding: 0;
     margin: 0 auto;
     max-width: 1200px;
+<<<<<<< HEAD
+}
+    /* Layout igual al que tenías */
+/* ======================================= */
+/* 2. CONTENEDOR DE BOTONES (.contact__active) */
+/* ======================================= */
+.contact__active {
+    background-color: transparent; 
+=======
+>>>>>>> b3db511d9bb0bfcac8e548c8328ecb236c8f9588
     display: flex;
     flex-direction: column; /* Columna en móvil */
     align-items: center;
@@ -1282,9 +1292,18 @@ a { text-decoration: none; color: inherit; }
 }
 
 .contact__item {
+<<<<<<< HEAD
+
+    display: flex;
+    gap: 10px; 
+    padding: 10px 0; 
+    max-width: 1200px;
+    margin: 0 auto;
+=======
     display: flex;
     justify-content: center;
     padding: 10px 0; 
+>>>>>>> b3db511d9bb0bfcac8e548c8328ecb236c8f9588
     width: 90%;
     max-width: 350px;
 }
@@ -2388,44 +2407,53 @@ z-index: 2;
   /* ======================================= */
 /*             INDUSTRIES WE SERVE           */
 /* ======================================= */
-/* --- Contenedor Principal --- */
-/* --- Sección: Menos espacio superior y alineación --- */
-/* --- Sección Principal --- */
+
 .industries-subtle-section {
     position: relative;
     width: 100%;
     min-height: 80vh;
-    padding: 60px 0; /* Espacio equilibrado arriba y abajo */
+    padding: 80px 0; /* Un poco más de aire para separar */
     display: flex;
-    align-items: center; /* Centrado vertical */
-    justify-content: center; /* Centrado horizontal */
-    overflow: hidden;
-    background-color: var(--primary-dark-blue);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Esto es clave para que no se "pegue" a lo de arriba */
+    background-color: #223248;
+    /* Forzamos a que la sección sea un contenedor aislado */
+    isolation: isolate; 
 }
 
-/* --- Fondo: Foto muy visible --- */
+/* --- Fondo: Corregido para que no se escape --- */
 .subtle-background {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 1;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    z-index: -1; /* Lo mandamos al fondo absoluto */
 }
 
 .building-image {
     position: absolute;
-    width: 100%; height: 100%;
-    background-image: url('/assets/images/banner-png/offices.png');
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-image: url('/assets/images/Banner-Webp/offices.webp');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    filter: grayscale(10%); /* Casi color real */
-    opacity: 0.8; /* Foto muy nítida */
+    /* Si se sigue pegando, cambia 'fixed' por 'scroll' para probar */
+    background-attachment: fixed; 
+    filter: grayscale(10%);
+    opacity: 0.8;
 }
 
 .dark-overlay {
     position: absolute;
-    width: 100%; height: 100%;
-    /* Azul muy transparente (0.3) para que la foto se vea mucho más */
-    background: linear-gradient(135deg, rgba(34, 50, 72, 0.4) 0%, rgba(34, 50, 72, 0.2) 100%);
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(135deg, rgba(34, 50, 72, 0.5) 0%, rgba(34, 50, 72, 0.3) 100%);
 }
 
 /* --- Contenedor de Contenido --- */
@@ -2433,39 +2461,31 @@ z-index: 2;
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 1600px; /* Muy ancho para permitir cards grandes */
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;
-    justify-content: center;
 }
 
-/* --- Grid Centrado y Cards Grandes --- */
+/* --- Grid de 4 columnas --- */
 .gallery__grid {
     display: grid;
     width: 100%;
-    /* Aumentamos el tamaño mínimo a 350px para que sean más grandes */
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-    gap: 40px;
-    justify-content: center; /* Centra las cards si sobran espacios */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px;
 }
 
 @media (min-width: 1200px) {
     .gallery__grid {
-        /* En pantallas grandes, forzamos las 4 columnas con un tamaño generoso */
         grid-template-columns: repeat(4, 1fr);
-        max-width: 1500px;
     }
 }
 
-/* --- Estilo de las Flip Cards --- */
+/* --- Cards --- */
 .flip-card {
     background-color: transparent;
     width: 100%;
-    aspect-ratio: 1 / 1; /* Cuadradas perfectas y grandes */
+    aspect-ratio: 1 / 1; 
     perspective: 1000px;
-    /* Sombra más pesada para que resalten sobre el fondo claro */
-    filter: drop-shadow(0px 20px 30px rgba(0,0,0,0.7));
 }
 
 .flip-card-inner {
@@ -2474,6 +2494,7 @@ z-index: 2;
     height: 100%;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
+    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.5));
 }
 
 .flip-card:hover .flip-card-inner {
@@ -2485,7 +2506,8 @@ z-index: 2;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 20px; /* Bordes más redondeados para cards grandes */
+    -webkit-backface-visibility: hidden;
+    border-radius: 20px;
     overflow: hidden;
 }
 
@@ -2495,7 +2517,6 @@ z-index: 2;
     object-fit: cover;
 }
 
-/* Overlay interno de la card para que el nombre se lea bien */
 .card-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -2504,36 +2525,32 @@ z-index: 2;
 
 .flip-card-front h3 {
     position: absolute;
-    bottom: 35px;
+    bottom: 25px;
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 1.8rem; /* Texto más grande */
+    font-size: 1.6rem;
     font-weight: 800;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+    margin: 0;
 }
 
 .flip-card-back {
-    background-color: var(--primary-dark-blue);
+    background-color: #223248;
     color: white;
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px;
+    padding: 30px;
     text-align: center;
-    border: 4px solid var(--primary-orange); /* Borde más imponente */
+    border: 4px solid #f4a200;
 }
 
 .flip-card-back h3 {
-    color: var(--primary-orange);
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    color: #f4a200;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
-
-.flip-card-back p {
-    font-size: 1.2rem;
-    line-height: 1.6;}
 
 
 /**/
