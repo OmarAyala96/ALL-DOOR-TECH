@@ -269,95 +269,101 @@
 
 <!-- FORM SECTION -->
 <section class="form__container" id="estimate-section">
-    <h2 class="form__container-title">Estimate Information</h2>
+  <h2 class="form__container-title">Estimate Information</h2>
 
-    <form class="form__container-form" id="estimate-form" enctype="multipart/form-data">
-        
-        <div class="form__container-input f-name">
-            <label for="est_first_name">First Name <span class="required">(Required)</span></label>
-            <input type="text" id="est_first_name" name="first_name" placeholder="John" required autocomplete="given-name">
+  <form class="form__container-form" id="estimate-form" enctype="multipart/form-data">
+    
+    <div class="form__container-input f-name">
+      <label for="est_first_name">First Name <span class="required">(Required)</span></label>
+      <input type="text" id="est_first_name" name="first_name" placeholder="John" required autocomplete="given-name">
+    </div>
+
+    <div class="form__container-input l-name">
+      <label for="est_last_name">Last Name <span class="required">(Required)</span></label>
+      <input type="text" id="est_last_name" name="last_name" placeholder="Doe" required autocomplete="family-name">
+    </div>
+
+    <div class="form__container-input f-company">
+      <label for="est_company">Company <span class="required">(Required)</span></label>
+      <input type="text" id="est_company" name="company" placeholder="Company Name" required autocomplete="organization">
+    </div>
+
+    <div class="form__container-input f-address">
+      <label for="est_address">Address <span class="required">(Required)</span></label>
+      <input type="text" id="est_address" name="address" placeholder="123 Main Street" required autocomplete="street-address">
+    </div>
+
+    <div class="form__container-input f-city">
+      <label for="est_city">City <span class="required">(Required)</span></label>
+      <input type="text" id="est_city" name="city" placeholder="Los Angeles" required autocomplete="address-level2">
+    </div>
+
+    <div class="form__container-input f-zip">
+      <label for="est_zip">Zip Code <span class="required">(Required)</span></label>
+      <input type="text" id="est_zip" name="zip_code" placeholder="90012" required autocomplete="postal-code">
+    </div>
+
+    <div class="form__container-input f-phone">
+      <label for="est_phone">Phone <span class="required">(Required)</span></label>
+      <input type="tel" id="est_phone" name="phone" placeholder="1 (213) 555-7890" required autocomplete="tel">
+    </div>
+
+    <div class="form__container-input f-email">
+      <label for="est_email">Email <span class="required">(Required)</span></label>
+      <input type="email" id="est_email" name="email" placeholder="john.doe@example.com" required autocomplete="email">
+    </div>
+
+    <div class="form__container-input f-message">
+      <label for="est_message">Description of your request <span class="required">(Required)</span></label>
+      <textarea id="est_message" name="message" placeholder="Please describe the door type, size, or issues you are experiencing." required></textarea>
+    </div>
+
+    <div class="form__container-input f-files">
+  <label for="est_files">Attach Photos or Videos <span class="optional">(Max 3 files)</span></label>
+  
+      <div class="custom-file-wrapper">
+        <input 
+          type="file" 
+          id="est_files" 
+          name="attachments[]" 
+          accept="image/*,video/*" 
+          multiple 
+        >
+        <div class="custom-file-design" id="file-design-container">
+          <span class="custom-file-button">Choose files</span>
+          <span class="custom-file-status" id="file-status-text">No files chosen</span>
         </div>
+      </div>
 
-        <div class="form__container-input l-name">
-            <label for="est_last_name">Last Name <span class="required">(Required)</span></label>
-            <input type="text" id="est_last_name" name="last_name" placeholder="Doe" required autocomplete="family-name">
-        </div>
+     <p id="file-instructions" class="file-help-text">Please upload up to 3 files. Large files might take a moment to load.</p>
+  
+  <div id="file-preview-list" class="file-preview-wrapper"></div>
+</div>
+    <div class="form__container-input f-source">
+      <label for="est_source">How did you find us? <span class="required">(Required)</span></label>
+      <div class="select-wrapper">
+        <select name="source" id="est_source" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="google">Google Search</option>
+          <option value="bing">Bing</option>
+          <option value="referral">Word of Mouth / Referral</option>
+          <option value="existing_customer">I'm an existing customer</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
 
-        <div class="form__container-input f-company">
-            <label for="est_company">Company <span class="required">(Required)</span></label>
-            <input type="text" id="est_company" name="company" placeholder="All Door Tech" required autocomplete="organization">
-        </div>
+    <button type="submit" class="submit-button-style f-submit">Send Request</button>
 
-        <div class="form__container-input f-address">
-            <label for="est_address">Address <span class="required">(Required)</span></label>
-            <input type="text" id="est_address" name="address" placeholder="123 Main Street" required autocomplete="street-address">
-        </div>
-
-        <div class="form__container-input f-city">
-            <label for="est_city">City <span class="required">(Required)</span></label>
-            <input type="text" id="est_city" name="city" placeholder="Los Angeles" required autocomplete="address-level2">
-        </div>
-
-        <div class="form__container-input f-zip">
-            <label for="est_zip">Zip Code <span class="required">(Required)</span></label>
-            <input type="text" id="est_zip" name="zip_code" placeholder="90012" required autocomplete="postal-code">
-        </div>
-
-        <div class="form__container-input f-phone">
-            <label for="est_phone">Phone <span class="required">(Required)</span></label>
-            <input type="tel" id="est_phone" name="phone" placeholder="1 (213) 555-7890" required autocomplete="tel">
-        </div>
-
-        <div class="form__container-input f-email">
-            <label for="est_email">Email <span class="required">(Required)</span></label>
-            <input type="email" id="est_email" name="email" placeholder="john.doe@example.com" required autocomplete="email">
-        </div>
-
-        <div class="form__container-input f-message">
-            <label for="est_message">Description of your request <span class="required">(Required)</span></label>
-            <textarea id="est_message" name="message" placeholder="How can we help you?" required></textarea>
-        </div>
-
-        <div class="form__container-input f-files">
-            <label for="est_files">Attach Photos or Videos <span class="optional">(Optional - Max 5 files)</span></label>
-            
-            <div class="custom-file-wrapper">
-                <input type="file" id="est_files" name="attachments[]" 
-                       accept="image/*,video/*" 
-                       multiple 
-                       aria-describedby="file-limit-msg">
-                
-                <div class="custom-file-design" aria-hidden="true">
-                    <span class="custom-file-button">Choose Files</span>
-                    <span class="custom-file-status" id="file-status-text">No files selected</span>
-                </div>
-            </div>
-            <span id="file-limit-msg" class="file-help-text">Images or videos help us provide a better estimate.</span>
-        </div>
-
-        <div class="form__container-input f-source">
-            <label for="est_source">How did you find us? <span class="required">(Required)</span></label>
-            <div class="select-wrapper">
-                <select name="source" id="est_source" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="google">Google</option>
-                    <option value="bing">Bing</option>
-                    <option value="existing_customer">I'm an existing customer</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-        </div>
-
-        <button type="submit" class="submit-button-style f-submit">Submit</button>
-
-        <div class="form__container-confidentiality" role="note">
-            <p>
-                <strong>Confidentiality Notice:</strong><br>
-                The information contained in this communication may be confidential or privileged.
-            </p>
-        </div>
-    </form>
+    <div class="form__container-confidentiality" role="note">
+      <p>
+        <strong>Confidentiality Notice:</strong><br>
+        The information provided will be used solely for the purpose of providing an estimate and will not be shared with third parties.
+      </p>
+    </div>
+  </form>
 </section>
+
 
 <!-- PERFECT SERVICE INCREIBLE FAST  -->
 

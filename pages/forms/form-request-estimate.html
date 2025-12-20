@@ -282,7 +282,7 @@
 
     <div class="form__container-input f-company">
       <label for="est_company">Company <span class="required">(Required)</span></label>
-      <input type="text" id="est_company" name="company" placeholder="All Door Tech" required autocomplete="organization">
+      <input type="text" id="est_company" name="company" placeholder="Company Name" required autocomplete="organization">
     </div>
 
     <div class="form__container-input f-address">
@@ -312,42 +312,50 @@
 
     <div class="form__container-input f-message">
       <label for="est_message">Description of your request <span class="required">(Required)</span></label>
-      <textarea id="est_message" name="message" placeholder="How can we help you?" required></textarea>
+      <textarea id="est_message" name="message" placeholder="Please describe the door type, size, or issues you are experiencing." required></textarea>
     </div>
 
+    <div class="form__container-input f-files">
+  <label for="est_files">Attach Photos or Videos <span class="optional">(Max 3 files)</span></label>
+  
+      <div class="custom-file-wrapper">
+        <input 
+          type="file" 
+          id="est_files" 
+          name="attachments[]" 
+          accept="image/*,video/*" 
+          multiple 
+        >
+        <div class="custom-file-design" id="file-design-container">
+          <span class="custom-file-button">Choose files</span>
+          <span class="custom-file-status" id="file-status-text">No files chosen</span>
+        </div>
+      </div>
+
+     <p id="file-instructions" class="file-help-text">Please upload up to 3 files. Large files might take a moment to load.</p>
+  
+  <div id="file-preview-list" class="file-preview-wrapper"></div>
+</div>
     <div class="form__container-input f-source">
       <label for="est_source">How did you find us? <span class="required">(Required)</span></label>
       <div class="select-wrapper">
         <select name="source" id="est_source" required>
           <option value="" disabled selected>Select an option</option>
-          <option value="google">Google</option>
+          <option value="google">Google Search</option>
           <option value="bing">Bing</option>
+          <option value="referral">Word of Mouth / Referral</option>
           <option value="existing_customer">I'm an existing customer</option>
           <option value="other">Other</option>
         </select>
       </div>
     </div>
 
-    <div class="form__container-input f-files">
-      <label for="est_files">Attach Photos or Videos <span class="optional">(Max 5 files)</span></label>
-      <input 
-        type="file" 
-        id="est_files" 
-        name="attachments[]" 
-        accept="image/*,video/*" 
-        multiple 
-        aria-describedby="file-instructions"
-      >
-      <p id="file-instructions" class="file-help-text">You can upload up to 5 images or videos to help us better understand your request.</p>
-      <div id="file-preview-list" class="file-preview-grid"></div>
-    </div>
-
-    <button type="submit" class="submit-button-style f-submit">Submit</button>
+    <button type="submit" class="submit-button-style f-submit">Send Request</button>
 
     <div class="form__container-confidentiality" role="note">
       <p>
         <strong>Confidentiality Notice:</strong><br>
-        The information contained in this communication may be confidential or privileged.
+        The information provided will be used solely for the purpose of providing an estimate and will not be shared with third parties.
       </p>
     </div>
   </form>
