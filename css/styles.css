@@ -2233,15 +2233,37 @@ z-index: 2;
 
 /* SELECT CUSTOM */
 .select-wrapper { position: relative; width: 100%; }
-.select-wrapper::after {
-    content: '▼';
-    font-size: 12px;
-    color: #f4a200;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
+
+/* Estilos específicos para el input de archivos */
+.form__container-input input[type="file"] {
+    background-color: white;
+    border: 1px solid var(--border-color, #ddd);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.file-help-text {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.file-preview-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.file-badge {
+    background-color: #eee;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid #ddd;
+    color: #333;
 }
 
 /* CONFIDENCIALIDAD */
@@ -2253,11 +2275,79 @@ z-index: 2;
     padding: 0 20px 40px 20px; 
     opacity: 0.8;
 }
+/* --- Estilos del Campo de Archivos --- */
+.custom-file-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 8px 0;
+}
+
+/* Ocultar input nativo pero mantenerlo funcional */
+#est_files {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Contenedor visual: Imitamos tus otros inputs */
+.custom-file-design {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Botón simulado en inglés */
+.custom-file-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.custom-file-status {
+    color: #666;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Accesibilidad: Focus Ring (Puntos clave Lighthouse) */
+#est_files:focus + .custom-file-design {
+    border-color: var(--accent-color, #f4a200);
+    box-shadow: 0 0 0 3px rgba(244, 162, 0, 0.3);
+}
+
+.file-help-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 5px;
+    display: block;
+}
+
+.optional {
+    color: #888;
+    font-weight: normal;
+    font-size: 0.85em;
+}
 
 /* ======================================= */
 /* DISEÑO PARA ESCRITORIO (ESTIMATE)       */
 /* ======================================= */
-/* --- DISEÑO PARA ESCRITORIO (ESTIMATE) --- */
+
 @container form__container (min-width: 720px) {
     .form__container-title {
         text-align: center;
@@ -2274,6 +2364,7 @@ z-index: 2;
             "city zipcode"
             "phone email"
             "message message"
+            "files files"
             "source source"
             "submit submit"; /* Área para el botón */
         gap: 15px 25px;
@@ -2289,8 +2380,12 @@ z-index: 2;
     .form__container-input:nth-child(7) { grid-area: phone; }
     .form__container-input:nth-child(8) { grid-area: email; }
     .form__container-input:nth-child(9) { grid-area: message; }
-    .form__container-input:nth-child(10) { grid-area: source; }
-    
+    .f-files { 
+        grid-area: files; 
+    }
+    .f-source { 
+        grid-area: source; 
+    }
     /* EL SECRETO: En tu HTML el botón es el elemento 12 (porque hay un div vacío en el 11) */
     /* Usamos este selector para asegurar que agarre el botón sin importar el número */
     .form__container-form > .submit-button-style,
@@ -2504,6 +2599,18 @@ z-index: 2;
     background: linear-gradient(135deg, rgba(34, 50, 72, 0.5) 0%, rgba(34, 50, 72, 0.3) 100%);
 }
 
+/* --- Contenedor queres --- */
+@media (max-width: 1024px) {
+    .building-image {
+        background-attachment: scroll; /* Mejora el rendimiento en móviles */
+    }
+    
+    .industries-subtle-section {
+        padding: 50px 0; /* Menos relleno en móviles */
+        min-height: auto; /* Dejamos que el contenido dicte la altura */
+    }
+}
+
 /* --- Contenedor de Contenido --- */
 .industries-content {
     position: relative;
@@ -2518,13 +2625,12 @@ z-index: 2;
 .gallery__grid {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
 }
-
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
     .gallery__grid {
-        grid-template-columns: repeat(4, 1fr);
+        gap: 30px; /* Recuperamos espacio en tablets/desktop */
     }
 }
 
@@ -2534,6 +2640,7 @@ z-index: 2;
     width: 100%;
     aspect-ratio: 1 / 1; 
     perspective: 1000px;
+    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.5));
 }
 
 .flip-card-inner {
@@ -2542,7 +2649,6 @@ z-index: 2;
     height: 100%;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
-    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.5));
 }
 
 .flip-card:hover .flip-card-inner {
@@ -2562,9 +2668,8 @@ z-index: 2;
 }
 
 .flip-card-front img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+   z-index: 2; /* Asegura que el frente esté arriba inicialmente */
+    transform: rotateY(0deg);
 }
 
 .card-overlay {
@@ -2586,17 +2691,16 @@ z-index: 2;
 }
 
 .flip-card-back {
-  background-color: #223248;
-    color: #ffffff; /* Forzamos blanco puro para contraste */
+    background-color: #223248;
+    color: #ffffff;
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Centra el contenido horizontalmente */
+    align-items: center;
     padding: 30px;
     text-align: center;
-    border: 4px solid #f4a200;
-    backface-visibility: hidden; /* Evita que se vea el frente al girar */
+    border: 4px solid #f4a200; 
 }
 
 .flip-card-back h3 {
@@ -2613,8 +2717,30 @@ z-index: 2;
     margin: 0;
     font-weight: 400;
 }
+/*contenedor  card */
 
-/**/
+@media (max-width: 480px) {
+    .flip-card-front h3 {
+        font-size: 1.3rem;
+        bottom: 15px;
+    }
+
+    .flip-card-back h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .flip-card-back p {
+        font-size: 0.95rem;
+        line-height: 1.3;
+    }
+
+    .flip-card-back {
+        padding: 15px; /* Más espacio interno para el texto */
+    }
+}
+/*and card*/
+
 /* --- Variables y Base --- */
 .ind-hero-container {
   position: relative;

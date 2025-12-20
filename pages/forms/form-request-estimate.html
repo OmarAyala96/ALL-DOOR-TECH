@@ -249,10 +249,10 @@
     <nav class="contact__active" aria-label="Service navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <ul class="contact__tabs-list" role="list">
             <li class="contact__item" itemprop="name">
-                <a href="#service" class="contact__tabs-item" itemprop="url">Request Service</a>
+                <a href="#service" class="contact__tabs-item" itemprop="url">Contact Us</a>
             </li>
             <li class="contact__item" itemprop="name">
-                <a href="#estimate" class="contact__tabs-item" itemprop="url">Request Estimate</a>
+                <a href="#estimate" class="contact__tabs-item" itemprop="url">Request Service</a>
             </li>
             <li class="contact__item" itemprop="name">
                 <a href="#feedback" class="contact__tabs-item" itemprop="url">Customer Feedback</a>
@@ -265,11 +265,10 @@
 
 <!-- FORM SECTION -->
 
-
 <section class="form__container" id="estimate-section">
   <h2 class="form__container-title">Estimate Information</h2>
 
-  <form class="form__container-form" id="estimate-form">
+  <form class="form__container-form" id="estimate-form" enctype="multipart/form-data">
     
     <div class="form__container-input f-name">
       <label for="est_first_name">First Name <span class="required">(Required)</span></label>
@@ -327,6 +326,20 @@
           <option value="other">Other</option>
         </select>
       </div>
+    </div>
+
+    <div class="form__container-input f-files">
+      <label for="est_files">Attach Photos or Videos <span class="optional">(Max 5 files)</span></label>
+      <input 
+        type="file" 
+        id="est_files" 
+        name="attachments[]" 
+        accept="image/*,video/*" 
+        multiple 
+        aria-describedby="file-instructions"
+      >
+      <p id="file-instructions" class="file-help-text">You can upload up to 5 images or videos to help us better understand your request.</p>
+      <div id="file-preview-list" class="file-preview-grid"></div>
     </div>
 
     <button type="submit" class="submit-button-style f-submit">Submit</button>
