@@ -1663,7 +1663,7 @@ z-index: 2;
 .footer {
     background-color: #1d2d44;
     color: white;
-    padding: 60px 20px 20px 20px;
+    padding: 30px 20px 15px 20px;
     text-align: center; /* Base para móvil */
 }
 
@@ -1672,27 +1672,27 @@ z-index: 2;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 
 /* Títulos y Estética */
 .footer__brand {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .text-accent { color: #f9ae39; }
 
 .footer__slogan {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     opacity: 0.7;
-    margin-top: -5px;
+    margin-top: 0px;
 }
 
 .footer__subtitle {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
     border-bottom: 2px solid #f9ae39;
     display: inline-block;
     letter-spacing: 1px;
@@ -1702,16 +1702,16 @@ z-index: 2;
 .footer__link {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    line-height: 2.2;
-    font-size: 0.95rem;
+    line-height: 1.6;
+    font-size: 0.9rem;
     transition: 0.3s;
 }
 .footer__link:hover { color: #f9ae39; }
 
 .footer__info {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
     opacity: 0.9;
 }
 
@@ -1730,7 +1730,7 @@ z-index: 2;
     }
 
     .footer__brand-col {
-        flex: 1.5; /* El logo tiene un poco más de aire */
+        flex: 1.2; /* El logo tiene un poco más de aire */
     }
 
     .footer__nav, .footer__contact {
@@ -1738,8 +1738,10 @@ z-index: 2;
     }
 
     .footer__bottom {
-        margin-top: 60px;
+        margin-top: 30px; /* Reducimos el espacio final de 60px a 30px */
         text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.1); /* Línea sutil para separar */
+        padding-top: 15px;
     }
 }
 
@@ -3059,35 +3061,45 @@ z-index: 2;
 
 /* Contenedor de Certificados */
 .certifications-section {
-  padding: 60px 0;
-  background-color: #ffffff;
+    padding: 40px 0;
+    background-color: #fff;
 }
 
 .static-cert-container {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
 }
 
 .cert-card {
-  padding: 20px;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  background: #fff;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 150px;
+    /* --- NUEVOS AJUSTES PARA QUITAR INTERACCIÓN --- */
+    cursor: default;      /* El cursor no cambia a "mano" */
+    user-select: none;    /* No se puede seleccionar el contenido */
+    pointer-events: none; /* La imagen no reacciona al clic ni al arrastre */
+    transition: none;     /* Eliminamos cualquier animación */
 }
 
-.cert-card:hover {
-  border-color: #f4a200;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
+/* ELIMINAMOS COMPLETAMENTE EL BLOQUE .cert-card:hover */
 
 .cert-card img {
-  max-width: 180px; /* Un poco más grandes para que se lean bien */
-  height: auto;
-  display: block;
+    max-width: 100%; 
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* Optimización de renderizado */
+    display: block;
 }
 
  /*======================================= */
