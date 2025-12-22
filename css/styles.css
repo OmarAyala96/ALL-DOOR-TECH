@@ -2,10 +2,35 @@
    1. VARIABLES, FUENTES Y RESET (BASE)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/Fonts/montserrat-v31-latin-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
+  src: url("/assets/Fonts/montserrat-v31-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/Fonts/montserrat-v31-latin-600.woff22") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/Fonts/montserrat-v31-latin-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -834,6 +859,47 @@ a { text-decoration: none; color: inherit; }
     .hero__buttons a {
         width: 90%; /* Botones uno sobre otro en móviles pequeños */
     }
+
+      .hero {
+        height: 75vh;
+        min-height: 480px;
+    }
+
+    .hero__buttons a {
+        width: 90%;
+    }
+
+    /* Desactiva Ken Burns */
+    .hero__img {
+        animation: none;
+        filter: none;
+        filter: brightness(0.40) contrast(1.1) !important;
+    
+    }
+
+    /* Detiene animación del carrusel */
+    .hero__track {
+        animation: none;
+        transform: translateX(0);
+    }
+
+    .hero__descripcion h1 {
+        text-shadow: none;
+    }
+
+    .hero__buttons a:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .hero__indicators {
+        display: none !important;
+    }
+
+    .hero__indicators button {
+        visibility: hidden;
+    }
+
 }
 
 /* Desktop Fix */
