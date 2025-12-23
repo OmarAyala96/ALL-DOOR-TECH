@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrusel Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Estilos personalizados para la animación y el carrusel */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 70vh; /* Altura del carrusel */
+      min-height: 400px; /* Altura mínima para que no se vea muy pequeño */
+      overflow: hidden;
+    }
+
+    .carousel-slide {
+      width: 100%; /* Cada slide ocupa el 100% del contenedor */
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out; /* Transición de la opacidad */
+    }
+
+    .carousel-slide.active {
+      opacity: 1; /* El slide activo es visible */
+    }
+
+    /* Opcional: Filtro oscuro para que el texto resalte */
+    .carousel-slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4); /* Capa oscura semitransparente */
+    }
+
+    .carousel-content {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+
+    .carousel-indicator {
+      width: 12px;
+      height: 12px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .carousel-indicator.active {
+      background-color: white;
+    }
+
+    /* Animación de Ken Burns (zoom ligero) */
+    @keyframes kenBurns {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+    .carousel-slide.active img {
+        animation: kenBurns 8s infinite alternate ease-in-out;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="carousel-container">
+    <div class="carousel-slide active" style="background-image: url('https://picsum.photos/1920/1080?random=1');">
+      <div class="carousel-content">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-md">Descubre Nuevos Horizontes</h2>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl drop-shadow-sm">Explora destinos increíbles y vive experiencias inolvidables.</p>
+        <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+          Ver Ofertas
+        </button>
+      </div>
+    </div>
+    
+    <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=2');">
+      <div class="carousel-content">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-md">La Aventura te Espera</h2>
+        <p class="text-lg md:text-xl mb-6 max-w-2xl drop-shadow-sm">Prepárate para la emoción y la belleza de lo desconocido.</p>
+        <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+          Planifica tu Viaje
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=3');">
+        <div class="carousel-content">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-md">Momentos Inolvidables</h2>
+            <p class="text-lg md:text-xl mb-6 max-w-2xl drop-shadow-sm">Captura recuerdos que durarán toda la vida en paisajes únicos.</p>
+            <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+                Reserva Ahora
+            </button>
+        </div>
+    </div>
+
+    <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=4');">
+        <div class="carousel-content">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-md">Explora el Mundo</h2>
+            <p class="text-lg md:text-xl mb-6 max-w-2xl drop-shadow-sm">Conecta con nuevas culturas y maravillas naturales.</p>
+            <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+                Más Información
+            </button>
+        </div>
+    </div>
+
+    <div class="carousel-slide" style="background-image: url('https://picsum.photos/1920/1080?random=5');">
+        <div class="carousel-content">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 drop-shadow-md">Tu Próxima Escapada</h2>
+            <p class="text-lg md:text-xl mb-6 max-w-2xl drop-shadow-sm">Encuentra la inspiración para tu viaje perfecto.</p>
+            <button class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300">
+                Descubre Aquí
+            </button>
+        </div>
+    </div>
+
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
+      <div class="carousel-indicator active" onclick="goToSlide(0)"></div>
+      <div class="carousel-indicator" onclick="goToSlide(1)"></div>
+      <div class="carousel-indicator" onclick="goToSlide(2)"></div>
+      <div class="carousel-indicator" onclick="goToSlide(3)"></div>
+      <div class
