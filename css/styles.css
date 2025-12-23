@@ -3365,6 +3365,9 @@ z-index: 2;
     display: flex;
     flex-direction: column;
 }
+.construction__showcase-project{
+    
+}
 
 .project-img-wrapper {
     position: relative;
@@ -3384,7 +3387,7 @@ z-index: 2;
 
 .project-details-large h3 {
     color: #223248;
-    font-size: 0.8rem; /* Ajustado para balancear con el párrafo pequeño */
+    font-size: 15px; /* Ajustado para balancear con el párrafo pequeño */
     font-weight: 800;
     margin-bottom: 15px;
 }
@@ -3393,7 +3396,7 @@ z-index: 2;
 .project-details-large p {
     color: var(--text-muted);
     line-height: 1.6;
-    font-size: 0.9rem;   /* Fuente más pequeña */
+    font-size:15px;   /* Fuente más pequeña */
     margin-bottom: 0;
     max-width: 90%;      /* Evita que el texto toque los bordes */
 }
