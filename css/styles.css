@@ -382,30 +382,60 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* 1. Estilos para móvil (Fuera de las media queries) */
+/* Contenedor: le damos aire a los costados */
+/* Eliminamos el contenedor con padding especial */
 .nav-info-container {
+    list-style: none;
+    padding: 0; /* Sin padding extra para que la línea llegue de borde a borde */
+    margin: 10px 0px 0px 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 30px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    align-items: center;
-    background-color: var(--primary-dark-blue); /* Para que combine con el sidebar */
 }
 
+/* Aplicamos el estilo exacto de los ítems del menú (ABOUT, CONTACT) */
 .nav-info-link {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.9rem; /* Un tamaño fijo seguro */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Si no cabe, pone "..." al final en lugar de estirar el menú */
-    max-width: 100%;
+    padding: 12px 20px; /* Ajustá según el padding de tus otros items */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase; /* Para que coincida con DOORS, ABOUT, etc. */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* La línea divisoria del menú */
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* El primer ítem de contacto necesita una línea arriba para separarse de los botones */
+.nav-info-link:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px; /* Un pequeño respiro después de los botones naranjas */
+}
+
+/* Estilo de los iconos para que no distraigan */
 .nav-info-link i {
-    color: var(--primary-orange);
-    font-size: 1.2rem;
+    width: 20px; /* Ancho fijo para que los textos queden alineados */
+    margin-right: 10px;
+    color: #f9ae39; /* El color naranja solo en el icono para resaltar */
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Solución definitiva para que el email largo no rompa el diseño */
+.nav-info-link span {
+    font-size: 13px; /* Tamaño reducido para correos largos */
+    letter-spacing: -0.2px; /* Comprimimos un poco las letras */
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+    display: block;
+}
+
+/* Efecto al pasar el dedo o clic */
+.nav-info-link:active, 
+.nav-info-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* 2. DESAPARECER EN ESCRITORIO (Dentro de tu @media 1024px) */
@@ -697,14 +727,17 @@ a { text-decoration: none; color: inherit; }
 /* ======================================= */
 /* Contenedor Principal */
 /* --- Estructura Base --- */
+/* =========================================
+   1. ESTRUCTURA PRINCIPAL (Mobile First)
+   ========================================= */
 .hero {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 85vh; /* Altura fija para controlar el encuadre */
+    min-height: 600px;
     overflow: hidden;
     background-color: #223248;
 }
-
 
 .hero-custom {
     width: 100%;
@@ -718,41 +751,46 @@ a { text-decoration: none; color: inherit; }
     z-index: 1;
 }
 
-/* --- Track de Animación (Optimizado para Performance) --- */
+/* --- Track de Animación --- */
 .hero__track {
     display: flex;
-    width: 500%;
+    width: 500%; /* 5 slides x 100% = 500% */
     height: 100%;
     animation: slideHeroCustom 25s infinite ease-in-out;
-    will-change: transform; /* Ayuda al navegador a suavizar la carga */
+    will-change: transform;
 }
 
 .hero__slide {
-    width: 20%;
+    width: 20%; /* 100% / 5 = 20% */
     height: 100%;
     position: relative;
     overflow: hidden;
 }
 
-/* --- La Imagen: Aquí corregimos el Zoom --- */
-/* --- 1. TU CÓDIGO BASE (Mantenlo como está) --- */
-/* --- 1. AJUSTE GLOBAL --- */
+/* =========================================
+   2. IMÁGENES Y EFECTOS
+   ========================================= */
 .hero__img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
-    /* Cambiamos 20% por 50% (centro) para que no empiece tan arriba el corte */
-    object-position: center center; 
-    filter: brightness(0.5);
-    /* Bajamos el zoom al 5% (1.05) para ganar área visible */
+    object-position: center center;
+    filter: brightness(0.5); /* Oscurecer para que se lea el texto */
+    /* Animación Ken Burns suave */
     animation: kenBurnsFade 12s infinite alternate ease-in-out;
 }
 
+/* Overlay opcional si la imagen es muy clara */
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+    pointer-events: none;
+}
 
-/* --- 3. SUAVIZAR EL ZOOM --- */
 @keyframes kenBurnsFade {
     from { transform: scale(1); }
-    to { transform: scale(1.05); } /* Si pones 1.08 o 1.1, cortas más la foto por los 4 lados */
+    to { transform: scale(1.05); } /* Zoom mínimo para no cortar bordes */
 }
 
 @keyframes slideHeroCustom {
@@ -764,7 +802,9 @@ a { text-decoration: none; color: inherit; }
     100% { transform: translateX(0); }
 }
 
-/* --- Contenedor de Texto --- */
+/* =========================================
+   3. CONTENIDO (TEXTO Y BOTONES)
+   ========================================= */
 .hero__data-container {
     position: absolute;
     inset: 0;
@@ -773,37 +813,31 @@ a { text-decoration: none; color: inherit; }
     justify-content: center;
     z-index: 10;
     text-align: center;
-    background: rgba(0,0,0,0.2); /* Sutil refuerzo para legibilidad */
+    padding: 0 15px; /* Margen de seguridad en móviles */
 }
 
 .hero__descripcion h1 {
     color: #ffffff;
-    /* Aumentamos el mínimo a 2.4rem y el máximo a 4.5rem */
-    font-size: clamp(2.4rem, 6vw, 4.5rem); 
-    font-weight: 600; /* Un poco más de peso para que resalte más */
+    font-size: clamp(2rem, 5vw, 4.5rem); /* Tipografía fluida */
+    font-weight: 700;
     text-transform: uppercase;
-    line-height: 1.05; /* Reducimos ligeramente el interlineado para títulos grandes */
-    margin-bottom: 60px; /* Más espacio respecto a los nuevos botones */
-    text-shadow: 3px 3px 15px rgba(0,0,0,0.6); /* Sombra más definida para legibilidad */
+    line-height: 1.1;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
     width: 100%;
-    max-width: 1200px; /* Evita que el texto se estire demasiado a los lados */
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Ajuste específico para pantallas muy pequeñas (iPhone SE, etc) */
-@media (max-width: 380px) {
-    .hero__descripcion h1 {
-        font-size: 2rem; 
-    }
-}
+/* --- ESTILOS DE BOTONES (Copia y reemplaza todo tu bloque de botones) --- */
 
-/* --- Botones --- */
 .hero__buttons {
     display: flex;
-    gap: 28px;
+    gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .hero__buttons a {
@@ -816,149 +850,161 @@ a { text-decoration: none; color: inherit; }
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
+/* 1. Botón Principal (Naranja) */
 .btn-brand-solid-final {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* Esto crea un espacio perfecto entre el icono y el número */
+    background-color: #f9ae39; 
+    color: #fff;
+    border: 2px solid #f9ae39;
 }
 
-/* Animación opcional para que el icono llame la atención */
-.btn-brand-solid-final:hover i {
-    transform: scale(1.2) rotate(10deg);
-    transition: transform 0.3s ease;
-}
-
-/* Selector de alta especificidad para el botón de servicio */
-.hero__buttons a.btn-brand-outline-final, 
-.hero__buttons a.btn-brand-outline-final:link, 
-.hero__buttons a.btn-brand-outline-final:visited {
-    color: #ffffff !important;           /* Texto siempre blanco */
-    border: 2px solid #ffffff !important; /* Borde siempre blanco */
-    background-color: transparent !important;
-    text-decoration: none !important;
-}
-
-.hero__buttons a.btn-brand-outline-final:hover {
-    background-color: #ffffff !important; /* Fondo blanco al pasar el mouse */
-    color: #223248 !important;           /* Texto oscuro al pasar el mouse para contraste */
-}
-
-.hero__buttons a:hover {
+.btn-brand-solid-final:hover {
+    background-color: #e59d2e;
+    border-color: #e59d2e;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    color: #fff;
 }
 
+/* 2. Botón Secundario (Transparente -> Blanco) - CORREGIDO */
 
+/* Estado Normal: Forzamos texto blanco para que no salga azul */
+.hero__buttons a.btn-brand-outline-final,
+.hero__buttons a.btn-brand-outline-final:link,
+.hero__buttons a.btn-brand-outline-final:visited {
+    color: #ffffff !important;            /* Texto BLANCO */
+    border: 2px solid #ffffff !important; /* Borde BLANCO */
+    background-color: transparent !important;
+}
 
-/* --- Ajustes Responsivos --- */
+/* Estado Hover: Fondo blanco con TEXTO OSCURO */
+.hero__buttons a.btn-brand-outline-final:hover,
+.hero__buttons a.btn-brand-outline-final:active {
+    background-color: #ffffff !important; /* Fondo Blanco */
+    color: #223248 !important;            /* Texto AZUL OSCURO (para que se lea) */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+/* =========================================
+   4. AJUSTES RESPONSIVOS (LA CLAVE)
+   ========================================= */
 
-/* Móvil */
+/* --- MÓVIL (Hasta 768px) --- */
 @media (max-width: 768px) {
     .hero {
-        height: 75vh; /* Un poco más corto en móvil para ver contenido abajo */
-    }
-    .hero__buttons a {
-        width: 90%; /* Botones uno sobre otro en móviles pequeños */
-    }
-
-      .hero {
-        height: 75vh;
-        min-height: 480px;
+        /* En móvil NO usamos 16/9 porque quedaría muy bajito.
+           Usamos altura vertical para priorizar el texto. */
+        height: 85vh; 
+        min-height: 500px;
     }
 
-    .hero__buttons a {
-        width: 90%;
-    }
-
-    /* Desactiva Ken Burns */
     .hero__img {
+        /* Desactivamos animación en móvil para rendimiento */
         animation: none;
-        filter: none;
-        filter: brightness(0.40) contrast(1.1) !important;
+        transform: scale(1);
+    }
     
+    .hero__carrusel {
+        display: none !important; /* Apaga el carrusel */
     }
-
-    /* Detiene animación del carrusel */
+    
     .hero__track {
-        animation: none;
-        transform: translateX(0);
+        animation: none !important; /* Mata la animación para ahorrar procesador */
     }
 
-    .hero__descripcion h1 {
-        text-shadow: none;
+    .hero__mobile-only {
+        display: block;
+        width: 100%;
+        height: 100%;
     }
 
-    .hero__buttons a:hover {
-        transform: none;
-        box-shadow: none;
+    .hero__mobile-static {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+    }
+
+    .hero__img-static {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.5); /* Mantén el oscurecido para leer el texto */
     }
 
     .hero__indicators {
-        display: none !important;
+        display: none !important; /* Ocultamos los puntos en móvil */
     }
-
-    .hero__indicators button {
-        visibility: hidden;
-    }
-
 }
 
-/* Desktop Fix */
-/* Desktop ONLY */
+@media (min-width: 769px) {
+    .hero__mobile-only {
+        display: none;
+    }
+}
+
+
+
+/* --- DESKTOP (Desde 1024px) --- */
 @media (min-width: 1024px) {
-
     .hero {
-        height: 85vh;
-        max-height: 900px;
+        height: 85vh; 
+        max-height: 950px; /* Evita que sea monstruosamente alto en pantallas gigantes */
     }
 
-    #slide-1 .hero__img {
-        object-position: center center;
-    }
+/* --- AJUSTE DE ENCUADRE CORREGIDO --- */
 
-    #slide-2 .hero__img {
-        object-position: center 40%;
-    }
-
-    #slide-3 .hero__img {
-        object-position: center 55%;
-    }
-
-    #slide-4 .hero__img {
-        object-position: center 45%;
-    }
-
-    #slide-5 .hero__img {
-        object-position: center 50%;
-    }
+/* Slide 1: Subimos un poco la cámara.
+   Antes estaba en 'bottom' (100%). Al poner 80%, subimos la vista ligeramente
+   para ver el piso pero con más aire arriba. */
+#slide-1 .hero__img {
+    object-position: center 60% !important; 
 }
 
+/* Slide 2: (Pendiente de cambio de foto) */
+#slide-2 .hero__img {
+    object-position: center center; 
+}
 
+/* Slide 3: Búsqueda de equilibrio Techo/Piso.
+   Estaba en 'center' (50%). Probamos con 40%.
+   Esto mira un poco más hacia arriba para agarrar el techo.
+   (Si pones 20% verás mucho techo y nada de piso). */
+#slide-3 .hero__img {
+    object-position: center 35% !important;
+}
 
+/* Slide 4: Entrada + Marco (Mantuvimos el 65% que suele funcionar) */
+#slide-4 .hero__img {
+    object-position: center 70% !important;
+}
 
+/* Slide 5: (Estándar) */
+#slide-5 .hero__img {
+    object-position: center center;
+}
+}
 
-/* 1. Modificamos el contenedor de los puntos */
+/* =========================================
+   5. INDICADORES (PUNTOS)
+   ========================================= */
 .hero__indicators {
-    position: absolute;      /* Lo sacamos del centro */
-    bottom: 30px;            /* Lo pegamos al borde inferior (ajusta a tu gusto) */
-    left: 50%;               /* Centrado horizontal */
-    transform: translateX(-50%); /* Ajuste fino de centrado */
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     gap: 15px;
-    z-index: 25;             /* Por encima de las imágenes y el overlay */
-    margin-top: 0;           /* Eliminamos el margen superior que tenía antes */
+    z-index: 25;
 }
 
-/* 2. Mantener el estilo que ya te gustó */
 .indicator {
-    width: 16px; 
-    height: 16px;
-    background: rgba(255, 255, 255, 0.3);
+    width: 14px; 
+    height: 14px;
+    background: rgba(255, 255, 255, 0.4);
     border: 2px solid #ffffff;
     border-radius: 50%;
     cursor: pointer;
@@ -969,15 +1015,11 @@ a { text-decoration: none; color: inherit; }
 .indicator.active {
     background: #f9ae39 !important;
     border-color: #f9ae39 !important;
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
-/* 3. Ajuste opcional para los botones */
-/* Como quitamos los puntos de abajo, quizá quieras que los botones 
-   tengan un pequeño margen inferior para que no se vean pegados al vacío */
-.hero__buttons {
-    margin-bottom: 20px; 
-}
+
+
 
 
 /* -------- HERO ENDS -------*/

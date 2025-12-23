@@ -35,14 +35,14 @@
 
 
   <!-- Preload hero images -->
-  <link rel="preload" as="image" href="/assets/images/Banner-Webp/Roll .webp" media="(max-width: 600px)" fetchpriority="high">
-  <link rel="preload" as="image" href="/assets/images/Banner-Webp/Roll .webp" media="(min-width: 601px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/images/Banner-Webp/Roll.webp" media="(max-width: 600px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/images/Banner-Webp/Roll.webp" media="(min-width: 601px)" fetchpriority="high">
 
   <!-- Favicon -->
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/webp" sizes="32x32" href="/assets/images/Img-png/FAVicon-LOGO.webp">
-  <link rel="icon" type="image/webp" sizes="192x192" href="/assets/images/Img-png/FAVicon-LOGO.webp">
-  <link rel="apple-touch-icon" href="/assets/logo.webp">
+  <link rel="icon" type="image/webp" sizes="32x32" href="/assets/images/Img-webp/FAVicon-LOGO.webp">
+  <link rel="icon" type="image/webp" sizes="192x192" href="/assets/images/Img-webp/FAVicon-LOGO.webp">
+  <link rel="apple-touch-icon" href="/assets/images/Img-webp/FAVicon-LOGO.webp">
   <link rel="manifest" href="/assets/site.webmanifest">
 
   <!-- CSS: Performance Optimized -->
@@ -149,7 +149,7 @@
         </label>
 
         <a href="/" class="header__logo-link" itemprop="url">
-            <img src="/assets/images/Img-png/LOGO.webp" 
+            <img src="/assets/images/Img-webp/LOGO.webp" 
                  class="header__logo" 
                  width="180" height="60"
                  itemprop="logo"
@@ -236,7 +236,7 @@
 
                     <a href="mailto:alldoortech@gmail.com" class="nav-info-link" itemprop="url" aria-label="Send us an email to alldoortech@gmail.com">
                         <i class="fas fa-envelope" aria-hidden="true"></i> 
-                        <span>alldoortech@gmail.com</span>
+                        <span>administration@alldoortech.com</span>
                     </a>
                 </li>
 
@@ -272,66 +272,83 @@
             <meta itemprop="name" content="All Door Tech">
         </div>
 
-        <div class="hero__carrusel" role="region" aria-label="Image slideshow">
+        <div class="hero__mobile-static d-block d-md-none">
+            <img src="/assets/images/Banner-Webp/Gemini-Mobile.webp" 
+                 class="hero__img" 
+                 alt="Industrial Door Services Mobile"
+                 style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.5);">
+            <div class="hero__overlay"></div>
+        </div>
+
+        <div class="hero__carrusel d-none d-md-block">
             <div class="hero__track">
-                <div class="hero__slide active" role="group" aria-roledescription="slide" aria-label="1 of 5" id="slide-1">
-                    <img src="/assets/images/Banner-Webp/Roll.webp" 
-                        srcset="/assets/images/Banner-Webp/Roll-mobile.webp 600w,
-                                /assets/images/Banner-Webp/Roll.webp 1200w"
-                        sizes="(max-width: 600px) 100vw, 1200px" 
-                        width="1920" height="1080" 
-                        class="hero__img" 
-                        alt="Industrial and Commercial Door Services"
-                        fetchpriority="high">
-                    <div class="hero__overlay"></div>
-                </div>
+
+        <div class="hero__slide active" role="group" aria-roledescription="slide" aria-label="1 of 5" id="slide-1">
+    
+            <img src="/assets/images/Banner-Webp/Roll.webp" 
+                srcset="/assets/images/Banner-Webp/Roll.webp 600w,
+                        /assets/images/Banner-Webp/Roll.webp 1200w"
+                sizes="(max-width: 600px) 100vw, 1200px" 
+                width="1920" height="1080" 
+                class="hero__img" 
+                alt="Industrial Overhead Doors,Row of numbered sectional overhead doors at an industrial loading dock"
+                fetchpriority="high">
+
+            <div class="hero__overlay"></div>
+        </div>
 
                 <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="2 of 5" id="slide-2">
-                    <img src="/assets/images/Banner-Webp/Hangar-Door.webp" width="1920" height="1080"
-                         class="hero__img kb-effect" 
-                         alt="Glass commercial entrance doors installed in corporate office building"
-                         itemprop="image"
-                         loading="lazy"
-                         decoding="async"
-                         fetchpriority="low">
+                    
+                    <img src="/assets/images/Banner-Webp/corporate-office33.webp" width="1920" height="1080"
+                        class="hero__img kb-effect" 
+                        alt="Corporate Glass Doors,Double swing glass doors with metal frames in a modern corporate office hallway"
+                        itemprop="image"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="low">
+
                     <div class="hero__overlay"></div>
                 </div>
 
                 <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="3 of 5" id="slide-3">
-                    <img src="/assets/images/Banner-Webp/offices.webp" width="1920" height="1080"
-                         class="hero__img kb-effect" 
-                         alt="High speed industrial door maintenance and service for distribution centers"
-                         itemprop="image" 
-                         loading="lazy"
-                         decoding="async"
-                         fetchpriority="low">
+                    
+                    <img src="/assets/images/Banner-Webp/Gemini_acces-control-system.webp" width="1920" height="1080"
+                        class="hero__img kb-effect" 
+                        alt="Advanced commercial access control system installation on a secure office door featuring an electronic keypad reader and professional security hardware."
+                        itemprop="image" 
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="low">
+
                     <div class="hero__overlay"></div>
                 </div>
 
                 <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="4 of 5" id="slide-4">
+    
                     <img src="/assets/images/Banner-Webp/door.webp" width="1920" height="1080"
-                         class="hero__img kb-effect" 
-                         alt="Commercial steel rolling doors built for industrial facilities"
-                         itemprop="image" 
-                         loading="lazy"
-                         decoding="async"
-                         fetchpriority="low">
+                        class="hero__img kb-effect" 
+                        alt="Automatic Door Installation,Installation of commercial automatic sliding glass doors with tools and ladder on site"
+                        itemprop="image" 
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="low">
+
                     <div class="hero__overlay"></div>
                 </div>
 
                 <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="5 of 5" id="slide-5">
-                    <img src="/assets/images/Banner-Webp/Roll-King-Door.webp" width="1920" height="1080"
-                         class="hero__img kb-effect" 
-                         alt="Loading dock and sectional door repair service for industrial properties"
-                         itemprop="image" 
-                         loading="lazy"
-                         decoding="async"
-                         fetchpriority="low">
+    
+                    <img src="/assets/images/Banner-Webp/gemini2.webp" width="1920" height="1080"
+                        class="hero__img kb-effect" 
+                        alt="Industrial gate and hangar door repair service showing custom metal fencing, heavy-duty sectional doors, and professional loading dock equipment maintenance."
+                        itemprop="image" 
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="low">
+
                     <div class="hero__overlay"></div>
                 </div>
-            </div>
-        </div>
-
+                </div></div>
         <div class="hero__data-container">
             <div class="hero__data">
                 <div class="hero__descripcion text-center mt-3" aria-labelledby="hero-title" aria-describedby="hero-desc">
@@ -500,7 +517,7 @@
                aria-label="Rolling steel and sectional commercial door services"
                itemprop="url">
 
-                <img src="/assets/images/gallery-jpg/access control system 2.webp" 
+                <img src="/assets/images/All Types of doors/Rolling Steel & Sectional Doors.webp" 
                      alt="Commercial rolling steel sectional door installation service"
                      itemprop="image"
                      width="400" 
@@ -525,7 +542,7 @@
             aria-label="Fire doors inspection and certified repair service"
             itemprop="url">
 
-                <img src="/assets/images/gallery-jpg/carrusel1.webp" 
+                <img src="/assets/images/All Types of doors/fire-doors-2.webp" 
                     alt="Commercial fire door inspection and safety repair service"
                     itemprop="image"
                     width="400" 
@@ -550,7 +567,7 @@
             aria-label="Security gates and commercial folding grilles installation"
             itemprop="url">
 
-                <img src="/assets/images/gallery-jpg/carrusel4.webp" 
+                <img src="/assets/images/All Types of doors/Security Gates & Grilles.webp" 
                     alt="Commercial folding security gates and grille systems installed"
                     itemprop="image"
                     width="400" 
@@ -575,7 +592,7 @@
             aria-label="Commercial glass entrance and swinging door services"
             itemprop="url">
 
-                <img src="/assets/images/gallery-jpg/centrodistribucion.webp" 
+                <img src="/assets/images/All Types of doors/Entrance & .webp" 
                     alt="Glass entrance door system installed at a commercial building"
                     itemprop="image"
                     width="400" 
@@ -600,7 +617,7 @@
             aria-label="Hangar door maintenance and large-scale commercial doors"
             itemprop="url">
 
-                <img src="/assets/images/gallery-jpg/high speed doors img 1.webp" 
+                <img src="/assets/images/All Types of doors/Hangar & Large Scale Doors.webp" 
                     alt="Large hangar door installation and maintenance service"
                     itemprop="image"
                     width="400" 
@@ -625,7 +642,7 @@
             aria-label="Access control systems for commercial door security"
             itemprop="url">
 
-                <img src="/assets/images/gallery-jpg/imagen 1 access control system.webp" 
+                <img src="/assets/images/All Types of doors/access-control-system.webp" 
                     alt="Electronic access control system installed for commercial building"
                     itemprop="image"
                     width="400" 
@@ -645,13 +662,13 @@
 
         <!-- 7 -->
         <li class="portfolio__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
-            <a href="high-speed-doors.html" 
+            <a href="/loading-docks-equipment" 
             class="portfolio__card" 
-            aria-label="High speed door installation and repair services"
+            aria-label="Learn more about loading docks and equipment"
             itemprop="url">
 
-                <img src="/assets/images/gallery-jpg/puerta-accionamiento-rapido.webp" 
-                    alt="High speed industrial fabric door system for warehouses"
+                <img src="/assets/images/All Types of doors/Loading-Docks-&-Equipment (1).webp" 
+                    alt="Loading dock equipment including dock leveler, dock seals and industrial dock door"
                     itemprop="image"
                     width="400" 
                     height="300"
@@ -660,7 +677,7 @@
 
                 <div class="portfolio__info">
                     <div class="portfolio__text-wrapper">
-                        <span itemprop="name">High Speed Doors</span>
+                        <span itemprop="name">Loading Docks & Equipment</span>
                     </div>
                 </div>
             </a>
@@ -670,13 +687,13 @@
 
         <!-- 8 -->
         <li class="portfolio__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
-            <a href="dock-equipment.html" 
+            <a href="/preventive-maintenance" 
             class="portfolio__card" 
-            aria-label="Dock levelers and dock seal equipment repairs"
+            aria-label="Preventive maintenance inspection and service"
             itemprop="url">
 
-                <img src="/assets/images/gallery-jpg/Roll-King-Door-.webp" 
-                    alt="Commercial dock leveler and dock seal equipment installation"
+                <img src="/assets/images/All Types of doors/PREVENTIVE.webp" 
+                    alt="Preventive maintenance service for commercial and industrial doors and equipment"
                     itemprop="image"
                     width="400" 
                 height="300"
@@ -685,7 +702,7 @@
 
                 <div class="portfolio__info">
                     <div class="portfolio__text-wrapper">
-                        <span itemprop="name">Dock Levelers & Seals</span>
+                        <span itemprop="name">Preventive Maintenance</span>
                     </div>
                 </div>
             </a>
@@ -695,13 +712,13 @@
 
         <!-- 9 -->
         <li class="portfolio__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
-            <a href="glass-doors.html" 
+            <a href="/automatic-door-systems-ada" 
             class="portfolio__card" 
-            aria-label="Glass and aluminum commercial door installation"
+            aria-label="ADA compliant automatic door systems"
             itemprop="url">
 
-                <img src="/assets/images/gallery-jpg/pro.webp" 
-                    alt="Aluminum framed commercial glass door installed at storefront"
+                <img src="/assets/images/All Types of doors/Automatic Door Systems and ADA.webp" 
+                    alt="ADA compliant automatic door system providing accessible entrance for all users"
                     itemprop="image"
                     width="400" 
                     height="300"
@@ -710,7 +727,7 @@
 
                 <div class="portfolio__info">
                     <div class="portfolio__text-wrapper">
-                        <span itemprop="name">Glass & Aluminum Doors</span>
+                        <span itemprop="name">Automatic Door Systems and ADA</span>
                     </div>
                 </div>
             </a>
