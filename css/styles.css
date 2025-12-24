@@ -3265,37 +3265,6 @@ z-index: 2;
 /* ======================================= */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  /*======================= ================ */
 /*   Office Detail                          */
 /* ======================================= */
@@ -3343,109 +3312,100 @@ z-index: 2;
 
 
 
-
-
-
-
 /* --- Constructions Proyects --- */
-/* --- Variables de Color y Estilo --- */
-:root {
-    --industrial-gold: #856404;
-    --text-muted: #4b4b4b;
-    --border-radius-custom: 20px; /* Radio de los bordes ajustable */
-}
-
-.mega-project-item {
-    background: #ffffff;
-    border: 1px solid #dee2e6;
-    border-radius: var(--border-radius-custom); /* Bordes redondeados en la tarjeta */
-    overflow: hidden; /* Obligatorio para que la imagen respete el radio */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.construction__showcase-project{
-    font-size: 2rem;
-}
-
-.project-img-wrapper {
-    position: relative;
+/* Estilos para Galería Vertical */
+.gallery-card.vertical {
+    border: none;
+    border-radius: 12px;
     overflow: hidden;
-    aspect-ratio: 16 / 9;
-    border-top-left-radius: var(--border-radius-custom);
-    border-top-right-radius: var(--border-radius-custom);
-}
-
-.project-details-large {
-    padding: 30px;
+    background: #fff;
+    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el contenido horizontalmente */
-    text-align: center;  /* Centra el texto */
 }
 
-.project-details-large h3 {
-    color: #223248;
-    font-size: 15px; /* Ajustado para balancear con el párrafo pequeño */
-    font-weight: 800;
-    margin-bottom: 15px;
+.gallery-card.vertical:hover {
+    transform: translateY(-10px);
 }
 
-/* --- Ajuste solicitado: Letra más pequeña y centrada --- */
-.project-details-large p {
-    color: var(--text-muted);
-    line-height: 1.6;
-    font-size:15px;   /* Fuente más pequeña */
-    margin-bottom: 0;
-    max-width: 90%;      /* Evita que el texto toque los bordes */
+.gallery-img-wrapper {
+    position: relative;
+    width: 100%;
+    /* Define la proporción vertical (4 de ancho por 5 de alto) */
+    aspect-ratio: 4 / 5; 
+    overflow: hidden;
+    background-color: #f8f9fa;
 }
 
-/* Mejora el enfoque para accesibilidad con bordes redondeados */
-.mega-project-item:focus-within {
-    outline: 3px solid var(--industrial-gold);
-    outline-offset: 5px;
-    border-radius: var(--border-radius-custom);
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que la imagen llene el espacio sin deformarse */
+    transition: transform 0.5s ease;
 }
 
+.gallery-card:hover .gallery-img {
+    transform: scale(1.1);
+}
 
-/* Estilos para el botón "flotante" */
-/* --- ESTILOS BOTÓN BACK --- */
-
-/* 1. Vista Móvil (Visible por defecto) */
-.btn-back-header {
-    position: absolute;
-    left: 160px; /* Espacio para que no tape el logo "All Door Tech" */
-    top: 50%;
-    transform: translateY(-50%);
-    
-    background-color: #f9ae39;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.75rem;
-    z-index: 100;
+.gallery-content {
+    padding: 1.5rem;
+    flex-grow: 1;
     display: flex;
-    align-items: center;
-    white-space: nowrap;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* 2. Vista Desktop (OCULTO COMPLETAMENTE) */
-@media (min-width: 1024px) {
+.gallery-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #212529;
+}
+
+.gallery-content p {
+    font-size: 0.95rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+/* Estilo para el botón PREVIEW (Móvil) */
+.btn-back-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;             /* Texto blanco */
+    background-color: #f9ae39;  /* Gris oscuro industrial */
+    border: 2px solid #f9ae39;
+    border-radius: 4px;         /* Bordes ligeramente redondeados */
+    transition: all 0.3s ease;
+    margin-left: 10px;          /* Espacio respecto al logo */
+    letter-spacing: 0.5px;
+}
+
+/* Efecto al tocarlo (Mobile Feedback) */
+.btn-back-header:active {
+    background-color: #000000;
+    transform: scale(0.95);    /* Pequeño efecto de pulsación */
+}
+
+/* Regla para ocultarlo en Desktop */
+@media (min-width: 992px) {
     .btn-back-header {
         display: none !important;
     }
 }
-
-/* 3. Ajuste para pantallas muy pequeñas (iPhone SE, etc) */
-@media (max-width: 400px) {
-    .btn-back-header {
-        left: 140px;
-        font-size: 0.65rem;
-        padding: 4px 8px;
-    }
-}
-
-/* Si el body tiene la clase home-page, esconde el botón BACK */
