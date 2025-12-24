@@ -1755,7 +1755,7 @@ z-index: 2;
 
 .parallax-section {
     /* CLAVE 1: Define la imagen de fondo y su tamaño */
-    background-image: url(assets/images/Banner-Webp/Gemini_acces-control-system.webp); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
+    background-image: url(assets/images/office1.jpg); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
     background-size: cover;
     background-position: center;
     min-height: 400px; /* Altura mínima para que el efecto sea visible */
