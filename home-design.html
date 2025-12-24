@@ -16,16 +16,16 @@
   <link rel="preload" href="assets/fonts/montserrat-v31-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   
   <link rel="preload" as="image" href="assets/images/Banner-Webp/Roll-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/images/Banner-Webp/Roll.webp" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href=".assets/images/Banner-Webp/Roll.webp" media="(min-width: 768px)" fetchpriority="high">
 
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
   <link rel="preload" href="css/styles.css" as="style">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../../css/styles.css">
 
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/webp" sizes="32x32" href="assets/images/Img-webp/FAVicon-LOGO.webp">
   <link rel="apple-touch-icon" href="assets/images/Img-webp/FAVicon-LOGO.webp">
   <link rel="manifest" href="assets/site.webmanifest">
@@ -47,7 +47,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "All Door Tech",
-    "image": "https://alldoortech.com/assets/logo.png",
+    "image": "https://alldoortech.com/../../assets/logo.png",
     "telephone": "+1-951-376-1433",
     "priceRange": "$$",
     "address": {
@@ -91,7 +91,7 @@
 
 <body>
 <div class="topbar" role="complementary" aria-label="Business contact information">
-    <div itemscope itemtype="https://schema.org/LocalBusiness" style="display: contents;">
+    <div itemscope itemtype="https://schema.org/LocalBusiness" style="display: flex; align-items: center; justify-content: center; gap: 20px;">
         <meta itemprop="name" content="All Door Tech">
         <meta itemprop="url" content="https://alldoortech.com">
 
@@ -105,9 +105,13 @@
             TEL : (951) 376-1433
         </a>
 
-        <span style="margin-left: 15px; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 15px; color: #ffffff; font-weight: 600;">
+        <span style="border-left: 1px solid rgba(255,255,255,0.3); padding-left: 15px; color: #ffffff; font-weight: 600;">
             CSLB #1064323
         </span>
+
+        <a href="index.html" style="background-color: #f9ae39; color: white; padding: 2px 10px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.8rem; margin-left: 10px;">
+            ◀ BACK TO PREVIEW
+        </a>
     </div>
 </div>
 
@@ -119,7 +123,7 @@
     <div class="header__container">
         <meta itemprop="name" content="All Door Tech">
         <meta itemprop="url" content="https://alldoortech.com">
-        <meta itemprop="logo" content="https://alldoortech.comassets/images/Img-png/LOGO.webp">
+        <meta itemprop="logo" content="https://alldoortech.com/assets/images/Img-png/LOGO.webp">
 
         <input type="checkbox" id="menu-toggle" class="header__checkbox" aria-hidden="true">
 
@@ -448,7 +452,7 @@
         <div class="about-video-side">
             <div class="video-frame">
                 <video 
-                    src="./assets/videos/video.mp4" 
+                    src="assets/videos/video.mp4" 
                     autoplay 
                     loop 
                     muted 

@@ -8,13 +8,13 @@
   "theme_color": "#223248",
   "icons": [
     {
-      "src": "assets/images/Img-png/FAVicon-LOGO.webp",
+      "src": "../../assets/images/Img-png/FAVicon-LOGO.webp",
       "sizes": "192x192",
       "type": "image/webp",
       "purpose": "any"
     },
     {
-      "src": "assets/images/Img-png/FAVicon-LOGO.webp",
+      "src": "../../assets/images/Img-png/FAVicon-LOGO.webp",
       "sizes": "512x512",
       "type": "image/webp",
       "purpose": "maskable"
