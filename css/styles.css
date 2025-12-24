@@ -3407,3 +3407,45 @@ z-index: 2;
     outline-offset: 5px;
     border-radius: var(--border-radius-custom);
 }
+
+
+/* Estilos para el botón "flotante" */
+/* --- ESTILOS BOTÓN BACK --- */
+
+/* 1. Vista Móvil (Visible por defecto) */
+.btn-back-header {
+    position: absolute;
+    left: 160px; /* Espacio para que no tape el logo "All Door Tech" */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background-color: #f9ae39;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.75rem;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* 2. Vista Desktop (OCULTO COMPLETAMENTE) */
+@media (min-width: 1024px) {
+    .btn-back-header {
+        display: none !important;
+    }
+}
+
+/* 3. Ajuste para pantallas muy pequeñas (iPhone SE, etc) */
+@media (max-width: 400px) {
+    .btn-back-header {
+        left: 140px;
+        font-size: 0.65rem;
+        padding: 4px 8px;
+    }
+}
+
+/* Si el body tiene la clase home-page, esconde el botón BACK */
