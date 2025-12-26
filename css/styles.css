@@ -3409,3 +3409,121 @@ z-index: 2;
         display: none !important;
     }
 }
+
+
+
+/* ==========================================================================
+   CONSTRUCTION PROJECTS SECTION
+   ========================================================================== */
+
+/* Contenedor Principal de la Sección */
+.construction-showcase {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Título de la sección */
+.construction__showcase-project {
+    font-weight: 800;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+/* Tarjeta del Proyecto (Card) */
+.mega-project-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Obliga a todas las tarjetas de la misma fila a medir lo mismo */
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #eef0f2;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+}
+
+/* Efecto al pasar el mouse */
+.mega-project-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+    border-color: #d1d1d1;
+}
+
+/* Contenedor de la Imagen */
+.project-img-wrapper {
+    position: relative;
+    width: 100%;
+    /* PROPORCIÓN DE IMAGEN: 16:9 (puedes usar 4:3 para que sean más verticales) */
+    aspect-ratio: 16 / 9; 
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+/* La Imagen Real */
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* MAGIA: Corta la imagen para que llene el espacio sin estirarse */
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.mega-project-item:hover .project-img {
+    transform: scale(1.05); /* Efecto de zoom suave */
+}
+
+/* Detalles y Texto debajo de la imagen */
+.project-details-large {
+    padding: 2.5rem;
+    flex-grow: 1; /* Empuja el contenido para llenar la tarjeta verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.project-details-large h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+}
+
+.project-details-large p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 0;
+    /* Limita a 4 líneas de texto para mantener uniformidad (Opcional) */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   AJUSTES RESPONSIVOS (Móvil y Tablet)
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    .project-details-large {
+        padding: 1.5rem;
+    }
+    
+    .project-details-large h3 {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .construction-showcase {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    .project-img-wrapper {
+        aspect-ratio: 3 / 2; /* Imágenes un poco más altas en móviles */
+    }
+}
