@@ -3558,7 +3558,6 @@ z-index: 2;
 
 
 
-<<<<<<< HEAD
 /* ==========================================================================
      PAGINA DE DISEÑO PARA LA SECCION DE DOORS 
    ========================================================================== */
@@ -3623,7 +3622,6 @@ z-index: 2;
 
 
             
-=======
 
 
 
@@ -3675,4 +3673,47 @@ z-index: 2;
         font-size: 0.95rem;
         line-height: 1.7;
     }
->>>>>>> dd501010c5e2a4001998a7fd992a6aba3b49cf68
+
+
+
+
+ /* About us */
+/* Estilos específicos para el efecto Parallax novedoso */
+    .adt-parallax-about {
+        position: relative;
+        background-image: linear-gradient(rgba(34, 50, 72, 0.85), rgba(34, 50, 72, 0.85)), 
+                          url("../../ALL-DOOR-TECH/assets/images/About-us/about-us4.webp");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .adt-glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(249, 174, 57, 0.2);
+        border-left: 5px solid #f9ae39;
+        transition: transform 0.4s ease;
+    }
+
+    .adt-glass-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.07);
+    }
+
+    .text-warning-custom {
+        color: #f9ae39 !important;
+    }
+
+    /* Mejora de accesibilidad para reducir movimiento si el usuario lo prefiere */
+    @media (prefers-reduced-motion: reduce) {
+        .adt-parallax-about {
+            background-attachment: scroll;
+        }
+    }
