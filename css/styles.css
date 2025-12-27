@@ -33,6 +33,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6") format("woff2"),
+       url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
+  font-display: swap; /* ESTO ES LO QUE PIDE GOOGLE */
+}
 
 
 :root {
@@ -390,8 +396,7 @@ a { text-decoration: none; color: inherit; }
 .nav-info-container {
     list-style: none;
     padding: 0; /* Sin padding extra para que la línea llegue de borde a borde */
-    margin: 10px 0px 0px 0px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 10px 0px 0px 0px;;
     display: flex;
     flex-direction: column;
 }
@@ -405,14 +410,12 @@ a { text-decoration: none; color: inherit; }
     text-decoration: none;
     font-weight: 500;
     text-transform: uppercase; /* Para que coincida con DOORS, ABOUT, etc. */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* La línea divisoria del menú */
     width: 100%;
     box-sizing: border-box;
 }
 
 /* El primer ítem de contacto necesita una línea arriba para separarse de los botones */
 .nav-info-link:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 10px; /* Un pequeño respiro después de los botones naranjas */
 }
 
@@ -867,10 +870,11 @@ a { text-decoration: none; color: inherit; }
 
 /* 1. Botón Principal (Naranja) */
 .btn-brand-solid-final {
-    background-color: #f9ae39; 
+    background-color: #f9ae39 ; 
     color: #fff;
-    border: 2px solid #f9ae39;
+    border: 1px solid #f9ae39 ;
 }
+
 
 .btn-brand-solid-final:hover {
     background-color: #e59d2e;
@@ -890,6 +894,21 @@ a { text-decoration: none; color: inherit; }
     background-color: transparent !important;
 }
 
+.btn-brand-solid-final,
+.btn-brand-outline-final {
+    display: inline-flex !important;       /* Vital para poder centrar verticalmente */
+    align-items: center !important;        /* Centra el texto verticalmente */
+    justify-content: center !important;    /* Centra el texto horizontalmente */
+    text-decoration: none !important;      /* Quita el subrayado del link */
+    vertical-align: middle !important;     /* Asegura alineación con otros elementos */
+}
+
+/* 2. El truco para el botón sólido */
+.btn-brand-solid-final {
+    /* Agregamos un borde transparente del MISMO grosor que el otro botón.
+       Si tu borde "outline" es de 1px, cambia el 2px por 1px aquí abajo. */
+    border: 2px solid transparent !important; 
+}
 /* Estado Hover: Fondo blanco con TEXTO OSCURO */
 .hero__buttons a.btn-brand-outline-final:hover,
 .hero__buttons a.btn-brand-outline-final:active {
@@ -3538,3 +3557,71 @@ z-index: 2;
         aspect-ratio: 3 / 2; /* Imágenes un poco más altas en móviles */
     }
 }
+
+
+
+
+/* ==========================================================================
+     PAGINA DE DISEÑO PARA LA SECCION DE DOORS 
+   ========================================================================== */
+
+   /* SECCION DE LA PRIMER IMAGEN TEXT */
+ 
+.smart-door-img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        min-height: 400px; /* En PC mantiene la altura elegante */
+    }
+    
+    @media (max-width: 991px) {
+        .smart-door-img {
+            min-height: auto !important; /* En Celular: elimina la altura forzada */
+            height: auto !important;     /* Deja que la imagen use su tamaño natural */
+            max-height: 400px;           /* (Opcional) evita que sea demasiado alta si la imagen es gigante */
+        }
+    }
+
+        /* SECCION DE LA PRIMER IMAGEN Y TEXT , FINAL */
+
+
+         /* SECCION DE LA SEGUNDA IMAGEN  Y TEXTO */
+
+.spec-item-hover {
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+    }
+    .spec-item-hover:hover {
+        background: #f8f9fa;
+        transform: translateX(8px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+       /* SECCION DE LA SEGUNDA IMAGEN  Y TEXTO , FINAL */
+
+
+
+            /* ELEMENTOS DEL MENU DE DOORS   -Overview-Contact Us-Why Choose Us PRINCIPIO */
+
+            .nav-link-mobile {
+        font-size: 0.75rem; /* Letra más pequeña para que quepan los 3 */
+        letter-spacing: 0.5px;
+    }
+
+    /* Estilo para Tablet/PC (md y superior) */
+    @media (min-width: 768px) {
+        .nav-link-mobile {
+            font-size: 0.9rem; /* Tamaño normal (equivalente a la clase 'small' de bootstrap) */
+            letter-spacing: 1px;
+        }
+    }
+    
+    /* Opcional: Ocultar la barra de desplazamiento fea en móviles */
+    .d-flex::-webkit-scrollbar {
+        display: none;
+    }
+
+            /* ELEMENTOS DEL MENU DE DOORS   -Overview-Contact Us-Why Choose Us FINAL*/
+
+
+            
