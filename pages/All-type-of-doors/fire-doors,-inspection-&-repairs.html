@@ -1,20 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access System Control</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../../css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#223248">
+
+  <!-- TITLE & META -->
+  <title>Fire Doors Inspection & Repairs | Commercial Fire Door Services | All Door Tech</title>
+  <meta name="description" content="Professional fire door inspection, repair, and maintenance services. Code-compliant fire doors for commercial and industrial facilities by All Door Tech.">
+  <meta name="keywords" content="fire doors, fire door inspection, fire door repair, commercial fire doors, fire rated doors, fire door maintenance">
+  <link rel="canonical" href="https://alldoortech.com/fire-doors-inspection-repairs">
+
+  <!-- PRECONNECT -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- FONTS -->
+  <link rel="preload" href="../../assets/fonts/montserrat-v31-latin-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/montserrat-v31-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/montserrat-v31-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/montserrat-v31-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="../../css/styles.css" as="style">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+
+  <!-- ICONS -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        media="print"
+        onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  </noscript>
+
+  <!-- FAVICONS -->
+  <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/webp" sizes="32x32" href="../../assets/images/img-webp/FAVicon-LOGO.webp">
+  <link rel="apple-touch-icon" href="../../assets/images/img-webp/Apple-Touch-LOGO.webp">
+  <link rel="manifest" href="../../assets/site.webmanifest">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Fire Doors Inspection & Repairs | All Door Tech">
+  <meta property="og:description" content="Certified fire door inspection and repair services for commercial and industrial properties. Stay compliant and protected.">
+  <meta property="og:image" content="https://alldoortech.com/assets/og-image.png">
+  <meta property="og:url" content="https://alldoortech.com/fire-doors-inspection-repairs">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fire Doors Inspection & Repairs | All Door Tech">
+  <meta name="twitter:description" content="Professional fire door inspection and repair services to ensure safety and code compliance.">
+  <meta name="twitter:image" content="https://alldoortech.com/assets/og-image.png">
+
+  <!-- LOCAL BUSINESS SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "All Door Tech",
+    "telephone": "+1-951-376-1433",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Riverside",
+      "addressRegion": "CA",
+      "postalCode": "92501",
+      "addressCountry": "US"
+    },
+    "url": "https://alldoortech.com/fire-doors-inspection-repairs"
+  }
+  </script>
+
+  <!-- SERVICE SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Fire Door Inspection and Repair",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "All Door Tech"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Riverside, CA"
+    }
+  }
+  </script>
 </head>
-<body>
+
+
+
+<body class="home-page">
 
 <!--TOPBAR -->
-
-
 <div class="topbar" role="complementary" aria-label="Business contact information">
-    <div itemscope itemtype="https://schema.org/LocalBusiness" style="display: contents;">
+    <div itemscope itemtype="https://schema.org/LocalBusiness" style="display: flex; align-items: center; justify-content: center; gap: 20px;">
         <meta itemprop="name" content="All Door Tech">
         <meta itemprop="url" content="https://alldoortech.com">
 
@@ -28,38 +116,35 @@
             TEL : (951) 376-1433
         </a>
 
-        <span style="margin-left: 15px; border-left: 1px solid rgba(255,255,255,0.3); padding-left: 15px; color: #ffffff; font-weight: 600;">
+        <span style="border-left: 1px solid rgba(255,255,255,0.3); padding-left: 15px; color: #ffffff; font-weight: 600;">
             CSLB #1064323
         </span>
 
-        <a href="../../index.html" style="background-color: #f9ae39; color: white; padding: 2px 10px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.8rem; margin-left: 10px;">
+        <a href="index.html" style="background-color: #f9ae39; color: white; padding: 2px 10px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.8rem; margin-left: 10px;">
             ◀ PREVIEW
         </a>
     </div>
 </div>
 
-<!--TOPBAR END -->
-
-
 
  <!-- HEADER PRINCIPAL -->
-
 
 
 <header class="header" role="banner" itemscope itemtype="https://schema.org/Organization">
     <div class="header__container">
         <meta itemprop="name" content="All Door Tech">
 
-                <a href="../../index.html" class="header__logo-link" itemprop="url">
-            <img src="../../assets/images/img-webp/LOGO.webp" 
-                 class="header__logo" 
-                 width="180" height="60"
-                 itemprop="logo"
-                 alt="All Door Tech - Commercial & Industrial Door Services Home">
-        </a>
+                <a href="../../home-design.html" class="header__logo-link" itemprop="url">
+            <img src="../../assets/images/img-webp/LOGO-header.webp" 
+            class="header__logo" 
+            width="250" 
+            height="165"
+            itemprop="logo"
+            alt="All Door Tech - Commercial & Industrial Door Services Home">
+                </a>
 
 
-            <a href="../../index.html" class="btn-back-header">
+            <a href="index.html" class="btn-back-header">
             ◀ PREVIEW
           </a>
 
@@ -76,7 +161,6 @@
         </label>
 
         
-
         <nav class="header__nav" id="main-navigation" aria-label="Main site navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <div class="header__mobile-topbar">
                 <label for="menu-toggle" class="header__close-btn" role="button" tabindex="0" aria-label="Cerrar menú de navegación">
@@ -175,9 +259,6 @@
 <!----------- HEADER END---------->
 
 
-
-
-
 <!----------- MAIN ---------->
 
 
@@ -193,13 +274,13 @@
                     <a href="/" class="text-white text-decoration-none small fw-bold opacity-75">HOME</a>
                 </li>
                 <li class="breadcrumb-item active text-white small fw-bold" aria-current="page">
-                    ACCESS CONTROL SYSTEMS
+                    Fire Doors Inspection And Repairs 
                 </li>
             </ol>
         </nav>
 
         <h1 class="display-4 fw-bold mb-5 text-uppercase" style="letter-spacing: -1px;">
-    Commercial Access Control Systems for Office Buildings
+   Fire Doors Inspection And Repairs
 </h1>
         
         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
@@ -217,15 +298,14 @@
 <div class="container-fluid bg-light shadow-sm">
     <div class="container">
         <div class="d-flex justify-content-center py-3 gap-4">
-            <a href="#access-control-system" class="text-dark fw-bold text-decoration-none sub-nav-link active">STANDALONE</a>
-            <a href="#ip-based-systems" class="text-dark fw-bold text-decoration-none sub-nav-link">IP-BASED</a>
-            <a href="#cloud-based-systems" class="text-dark fw-bold text-decoration-none sub-nav-link">CLOUD-BASED</a>
+            <a href="#Overview" class="text-dark fw-bold text-decoration-none sub-nav-link active">Overview</a>
+            <a href="#Contac-Us" class="text-dark fw-bold text-decoration-none sub-nav-link">Contac Us</a>
+            <a href="#Why-Choose-Us" class="text-dark fw-bold text-decoration-none sub-nav-link">Why Choose Us</a>
         </div>
     </div>
 </div>
 
 <!-----------------STANDALONE--------------- -->
-
 
 <section id="access-control-system" class="py-5">
     <div class="container">
@@ -233,66 +313,55 @@
         <div class="row align-items-center mb-5">
             
             <div class="row align-items-center mb-5">
-    <div class="col-lg-6 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
-        <img src="../../assets/images/All-Types-of-doors/access-control-system.webp" class="img-fluid rounded shadow-lg" alt="Keypad Access Control Installation">
-    </div>
+                <div class="col-lg-6 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
+                    <img src="../../assets/images/All-Types-of-doors/fire-doors,-inspection-&-repairs.webp"
+                         class="img-fluid rounded shadow-lg"
+                         alt="Commercial fire door inspection and repair service for fire-rated doors">
+                </div>
 
-    <div class="col-lg-6 col-md-12 p-4">
-        <h2 class="fw-bold mb-3 text-custom-blue uppercase">Classic Access Security Solutions</h2>
-        <p>
-            Keypad Entry Systems represent the most reliable and traditional method for managing access. Widely implemented across retail, corporate, and industrial sectors, these systems grant entry via a personalized security code.
-        </p>
-        <p>
-            Advanced engineering allows <strong>ALLDOORTECH</strong> devices to interface seamlessly with modern hardware, including <strong>magnetic locks, electric strikes, and automated gate operators.</strong> While often used as standalone units, they can also be integrated into complex security networks.
-        </p>
-        <p class="lead fw-bold text-dark">
-            Simple, keyless security designed for high-traffic commercial environments.
-        </p>
-    </div>
-</div>
-        
-    </div>
-
-    <div class="container-fluid bg-custom-dark-blue py-5">
-    <div class="container">
-        <div class="row align-items-center text-white"> 
-            
-            <div class="col-lg-6 col-md-12 p-4 order-lg-1">
-                <h2 class="fw-bold mb-3">Professional Keypad Devices</h2>
-                <p class="mb-4">
-                    <strong>ALLDOORTECH</strong> offers a broad selection of high-performance keypad devices tailored to your facility's specific security needs:
-                </p>
-                <ul class="list-unstyled">
-                    <li class="mb-3">
-                        <i class="bi bi-check-circle-fill me-2 text-warning"></i> 
-                        <strong>Standalone Units:</strong> Build-in touchlock systems with optional <strong>Bluetooth access</strong> for smartphone control and audit trails.
-                    </li>
-                    <li class="mb-3">
-                        <i class="bi bi-check-circle-fill me-2 text-warning"></i> 
-                        <strong>Integrated Digital Keypads:</strong> Linked to a central system to monitor real-time movement and unique user codes.
-                    </li>
-                    <li class="mb-3">
-                        <i class="bi bi-check-circle-fill me-2 text-warning"></i> 
-                        <strong>Outdoor/Weatherproof:</strong> Durable, protected units capable of operating reliably for years in harsh weather conditions.
-                    </li>
-                    <li class="mb-3">
-                        <i class="bi bi-check-circle-fill me-2 text-warning"></i> 
-                        <strong>Dormakaba Solutions:</strong> Premium push-button locks for robust mechanical and electronic security.
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="col-lg-6 col-md-12 text-center text-lg-end mb-4 mb-lg-0 order-lg-2">
-                <img src="../../assets/images/All-Types-of-doors/access-control-system-2.webp" class="img-fluid rounded shadow-lg" alt="Digital Keypad Technology">
+                <div class="col-lg-6 col-md-12 p-4">
+                    <h2 class="fw-bold mb-3 text-custom-blue uppercase">
+                        Fire Doors Inspection & Repair Services
+                    </h2>
+                    <p>
+                        Fire doors play a critical role in protecting lives and property during emergencies.
+                        At All Door Tech, we provide professional fire door inspection, repair, and maintenance
+                        services to ensure your doors meet safety regulations and operate correctly when it matters most.
+                    </p>
+                </div>
             </div>
             
         </div>
+
     </div>
-</div>
+
+    <div class="container-fluid bg-custom-dark-blue py-5">
+        <div class="container">
+            <div class="row align-items-center text-white"> 
+                
+                <div class="col-lg-6 col-md-12 p-4 order-lg-1">
+                    <h2 class="fw-bold mb-3">
+                        Fire-Rated Door Systems & Compliance
+                    </h2>
+                    <p class="mb-4">
+                        <strong>ALL DOOR TECH</strong> specializes in fire-rated door systems designed to slow the
+                        spread of fire and smoke. Our certified inspections and repairs help commercial buildings
+                        remain compliant with fire safety codes while maintaining reliable door operation.
+                    </p>
+                </div>
+                
+                <div class="col-lg-6 col-md-12 text-center text-lg-end mb-4 mb-lg-0 order-lg-2">
+                    <img src="../../assets/images/All-Types-of-doors/fire-doors,-inspection-&-repairs5.webp"
+                         class="img-fluid rounded shadow-lg"
+                         alt="Fire-rated commercial door with certified hardware installed for fire safety compliance">
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-----------STANDALONE  END---------- -->
-
 
 <!--------------IP-BASED -------- -->
 
@@ -301,10 +370,15 @@
         
         <div class="row mb-5 justify-content-center">
             <div class="col-lg-8 text-center">
-                <span class="text-warning fw-bold text-uppercase tracking-wider">Advanced Connectivity</span>
-                <h2 class="display-5 fw-bold text-custom-blue mt-2">IP-Based Access Control</h2>
+                <span class="text-warning fw-bold text-uppercase tracking-wider">
+                    Fire Doors & Life Safety Systems
+                </span>
+                <h2 class="display-5 fw-bold text-custom-blue mt-2">
+                    FIRE DOOR INSPECTION & REPAIR SOLUTIONS
+                </h2>
                 <p class="lead text-secondary mt-3">
-                    Modernize your security by leveraging your building’s existing network infrastructure. Our IP solutions provide high-speed data transfer and limitless scalability.
+                    Our fire door services are designed to protect occupants, meet fire code requirements,
+                    and ensure proper door operation in commercial and industrial facilities.
                 </p>
             </div>
         </div>
@@ -313,47 +387,61 @@
             
             <div class="col-md-4">
                 <div class="p-4 h-100 border-0 shadow-sm rounded-4 bg-light text-center transition-hover">
-                    <div class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center bg-custom-dark-blue text-white rounded-circle" style="width: 70px; height: 70px;">
+                    <div class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center bg-custom-dark-blue text-white rounded-circle"
+                         style="width: 70px; height: 70px;">
                         <i class="bi bi-diagram-3-fill fs-3"></i>
                     </div>
-                    <h4 class="fw-bold">Infinite Scalability</h4>
-                    <p class="small text-muted">Easily add new doors or entry points anywhere on your network without the need for expensive new control panels.</p>
+                    <h4 class="fw-bold">Code-Compliant Inspections</h4>
+                    <p class="small text-muted">
+                        Detailed fire door inspections to identify issues with hardware, alignment,
+                        labeling, and performance to ensure compliance with safety regulations.
+                    </p>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="p-4 h-100 border-0 shadow-sm rounded-4 bg-light text-center transition-hover">
-                    <div class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center bg-warning text-dark rounded-circle" style="width: 70px; height: 70px;">
+                    <div class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center bg-warning text-dark rounded-circle"
+                         style="width: 70px; height: 70px;">
                         <i class="bi bi-pc-display-horizontal fs-3"></i>
                     </div>
-                    <h4 class="fw-bold">Centralized Control</h4>
-                    <p class="small text-muted">Manage users, schedules, and permissions for multiple locations from a single web-based interface or dedicated PC.</p>
+                    <h4 class="fw-bold">Certified Repairs & Adjustments</h4>
+                    <p class="small text-muted">
+                        Professional repairs including closer adjustments, hardware replacement,
+                        and door alignment to restore proper fire-rated performance.
+                    </p>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="p-4 h-100 border-0 shadow-sm rounded-4 bg-light text-center transition-hover">
-                    <div class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center bg-custom-dark-blue text-white rounded-circle" style="width: 70px; height: 70px;">
+                    <div class="icon-box mb-3 mx-auto d-flex align-items-center justify-content-center bg-custom-dark-blue text-white rounded-circle"
+                         style="width: 70px; height: 70px;">
                         <i class="bi bi-lightning-charge-fill fs-3"></i>
                     </div>
-                    <h4 class="fw-bold">Live Monitoring</h4>
-                    <p class="small text-muted">Get instant notifications and detailed audit trails. See exactly who enters and exits your facility in real-time.</p>
+                    <h4 class="fw-bold">Life Safety & Reliability</h4>
+                    <p class="small text-muted">
+                        Properly maintained fire doors help contain fire and smoke,
+                        protecting occupants and reducing property damage during emergencies.
+                    </p>
                 </div>
             </div>
 
         </div>
 
         <div class="mt-5 p-4 bg-custom-dark-blue rounded-4 text-white d-flex align-items-center justify-content-between flex-wrap">
-            <p class="mb-0 fw-bold">Ready to upgrade your legacy system to IP technology?</p>
-            <a href="#contact" class="btn btn-warning fw-bold px-4">GET A QUOTE</a>
+            <p class="mb-0 fw-bold">
+                Need fire door inspection or repair services?
+            </p>
+            <a href="#contact" class="btn btn-warning fw-bold px-4">
+                GET A QUOTE
+            </a>
         </div>
 
     </div>
 </section>
 
 <!--------------IP-BASED END -------- -->
-
-
 
 <!--------------CLOUD BASED  -------- -->
 
@@ -362,36 +450,48 @@
         <div class="row align-items-center">
             
             <div class="col-lg-7 order-2 order-lg-1">
-                <h2 class="display-6 fw-bold text-custom-blue mb-4">Cloud-Based Management</h2>
+                <h2 class="display-6 fw-bold text-custom-blue mb-4">
+                    Fire Door Inspection & Repair Services
+                </h2>
                 <p class="lead text-dark mb-4">
-                    Experience total freedom with ALLDOORTECH cloud solutions. Eliminate the need for local servers and manage your security infrastructure from your smartphone or laptop, anywhere in the world.
+                    Protect your building with professional <strong>fire door inspection and repair services.</strong>
+                    All Door Tech ensures your fire-rated doors operate correctly, remain code-compliant,
+                    and provide critical protection in emergency situations.
                 </p>
                 
                 <div class="row g-4">
                     <div class="col-md-6">
-                        <h5 class="fw-bold"><i class="bi bi-phone-vibrate text-warning me-2"></i> Mobile Credentials</h5>
-                        <p class="small text-muted">Issue digital keys to employees' phones. No more lost physical cards or fobs.</p>
+                        <h5 class="fw-bold">
+                            <i class="bi bi-phone-vibrate text-warning me-2"></i>
+                            Fire Door Inspections
+                        </h5>
+                        <p class="small text-muted">
+                            Comprehensive inspections to verify door operation, hardware condition,
+                            labeling, and compliance with fire safety standards.
+                        </p>
                     </div>
                     <div class="col-md-6">
-                        <h5 class="fw-bold"><i class="bi bi-cloud-check text-warning me-2"></i> Remote Lockdown</h5>
-                        <p class="small text-muted">Instantly lock or unlock any door across your entire organization with one click.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5 class="fw-bold"><i class="bi bi-shield-lock text-warning me-2"></i> Automatic Updates</h5>
-                        <p class="small text-muted">Your system is always secure with the latest encrypted firmware updates via the cloud.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5 class="fw-bold"><i class="bi bi-graph-up-arrow text-warning me-2"></i> Data Analytics</h5>
-                        <p class="small text-muted">Access automated reports on occupancy and peak entry times from our dashboard.</p>
+                        <h5 class="fw-bold">
+                            <i class="bi bi-cloud-check text-warning me-2"></i>
+                            Fire Door Repairs & Maintenance
+                        </h5>
+                        <p class="small text-muted">
+                            Repair and maintenance services for fire doors, frames, closers,
+                            hinges, and latching hardware to ensure proper function.
+                        </p>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-5 order-1 order-lg-2 text-center mb-5 mb-lg-0">
                 <div class="position-relative d-inline-block">
-                    <img src="../../assets/images/All-Types-of-doors/access-control-system-mano.webp" class="img-fluid rounded-5 shadow-lg" alt="Cloud Access Mobile Control">
+                    <img src="../../assets/images/All-Types-of-doors/fire-doors,-inspection-&-repairs1.webp"
+                         class="img-fluid rounded-5 shadow-lg"
+                         alt="Fire door inspection and repair service ensuring proper closing and fire safety compliance">
                     <div class="position-absolute bottom-0 start-0 bg-warning p-3 rounded-3 shadow mb-n3 ms-n3 d-none d-md-block">
-                        <p class="mb-0 fw-bold text-dark"><i class="bi bi-wifi"></i> 100% Wireless Control</p>
+                        <p class="mb-0 fw-bold text-dark">
+                            <i class="bi bi-wifi"></i> Fire door safety compliance
+                        </p>
                     </div>
                 </div>
             </div>
@@ -399,10 +499,8 @@
         </div>
     </div>
 </section>
-
-<!--------------CLOUD BASED END -------- -->
-
 </main>
+
 
 
 <!--------------MAIN END ------------->
@@ -443,7 +541,7 @@
                 <a href="#" 
                    class="doors__link" 
                    itemprop="url">
-                    <span itemprop="name">High Speed Doors</span>
+                    <span itemprop="name">Herculite-&-Wood-Doors </span>
                     <span class="doors__arrow" aria-hidden="true">↗</span>
                 </a>
             </li>
@@ -455,7 +553,7 @@
                 <a href="#" 
                    class="doors__link" 
                    itemprop="url">
-                    <span itemprop="name">Automatic Sliding Doors</span>
+                    <span itemprop="name">Rolling Steel & Sectional Doors</span>
                     <span class="doors__arrow" aria-hidden="true">↗</span>
                 </a>
             </li>
@@ -467,7 +565,7 @@
                 <a href="#" 
                    class="doors__link" 
                    itemprop="url">
-                    <span itemprop="name">Roll Up Doors</span>
+                    <span itemprop="name">Security Gates & Grilles</span>
                     <span class="doors__arrow" aria-hidden="true">↗</span>
                 </a>
             </li>
@@ -479,7 +577,7 @@
                 <a href="#" 
                    class="doors__link" 
                    itemprop="url">
-                    <span itemprop="name">Counter Shutter Doors</span>
+                    <span itemprop="name">Entrance & Swinging Doors</span>
                     <span class="doors__arrow" aria-hidden="true">↗</span>
                 </a>
             </li>
@@ -491,7 +589,7 @@
                 <a href="#" 
                    class="doors__link" 
                    itemprop="url">
-                    <span itemprop="name">Dock Restraints & Levelers</span>
+                    <span itemprop="name">Hangar & Large Scale Doors</span>
                     <span class="doors__arrow" aria-hidden="true">↗</span>
                 </a>
             </li>
@@ -503,7 +601,7 @@
                 <a href="#" 
                    class="doors__link" 
                    itemprop="url">
-                    <span itemprop="name">Hollow Metal Doors</span>
+                    <span itemprop="name">Access Control Systems And Hardware</span>
                     <span class="doors__arrow" aria-hidden="true">↗</span>
                 </a>
             </li>
@@ -515,7 +613,7 @@
                 <a href="#" 
                    class="doors__link" 
                    itemprop="url">
-                    <span itemprop="name">Sectional Doors</span>
+                    <span itemprop="name">Automatic Door Systems And Ada</span>
                     <span class="doors__arrow" aria-hidden="true">↗</span>
                 </a>
             </li>
@@ -527,7 +625,7 @@
                 <a href="#" 
                    class="doors__link" 
                    itemprop="url">
-                    <span itemprop="name">Low Energy Operators</span>
+                    <span itemprop="name">Loading Docks & Equipment</span>
                     <span class="doors__arrow" aria-hidden="true">↗</span>
                 </a>
             </li>
@@ -539,7 +637,7 @@
                 <a href="#" 
                    class="doors__link" 
                    itemprop="url">
-                    <span itemprop="name">Storefront Doors</span>
+                    <span itemprop="name">Specialty Doors & Services</span>
                     <span class="doors__arrow" aria-hidden="true">↗</span>
                 </a>
             </li>
@@ -551,7 +649,7 @@
                 <a href="#" 
                    class="doors__link" 
                    itemprop="url">
-                    <span itemprop="name">Aluminum Grilles</span>
+                    <span itemprop="name">Preventive Maintenance</span>
                     <span class="doors__arrow" aria-hidden="true">↗</span>
                 </a>
             </li>
@@ -561,47 +659,53 @@
 </section>
 
 
-
-
-
 <!-- PARALLAX -->
-
-<section id="cta-parallax" class="parallax-section d-flex align-items-center justify-content-center py-5">
-    <div class="container text-center text-white py-5">
-        
-        <h2 class="display-5 fw-bold mb-3">SMART ACCESS SOLUTIONS</h2>
-        <p class="lead mb-5">We ensure safety and efficiency for your commercial facilities.</p>
-        
-        <div class="row justify-content-center g-4">
-    
-    <div class="col-md-3 col-sm-6 text-center">
-        <div class="p-3">
-            <img src="../../assets/iconos/expandir.png" alt="Icon 1" style="width: 60px; margin-bottom: 20px;">
-            <h4 class="fw-bold text-uppercase">IP-BASED SYSTEMS</h4>
-            <p class="small opacity-75">Quickly scale your security by integrating access control directly into your existing network lines.</p>
+<section class="adt-herculite-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 text-white fw-bold text-uppercase">
+                Fire Door <span style="color: #f9ae39;">Inspection & Repairs</span>
+            </h2>
+            <p class="lead text-white opacity-75">
+                Protecting lives and property through certified fire door solutions.
+            </p>
         </div>
-    </div>
 
-    <div class="col-md-3 col-sm-6 text-center">
-        <div class="p-3">
-            <img src="../../assets/iconos/monitor.png" alt="Icon 2" style="width: 60px; margin-bottom: 20px;">
-            <h4 class="fw-bold text-uppercase">REAL-TIME MONITORING</h4>
-            <p class="small opacity-75">Manage users and monitor behavior instantly through a secure web-based interface or PC software.</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="adt-door-card">
+                    <h4 class="adt-door-title">Fire Door Inspections</h4>
+                    <p class="adt-door-desc">
+                        Detailed inspections to verify proper operation, hardware condition,
+                        labeling, and compliance with fire safety regulations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="adt-door-card">
+                    <h4 class="adt-door-title">Fire Door Repairs</h4>
+                    <p class="adt-door-desc">
+                        Professional repairs including closer adjustments, hardware replacement,
+                        and alignment to restore fire-rated performance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="adt-door-card">
+                    <h4 class="adt-door-title">Code Compliance</h4>
+                    <p class="adt-door-desc">
+                        Services focused on meeting local and national fire codes,
+                        ensuring doors perform correctly in emergency situations.
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="col-md-3 col-sm-6 text-center">
-        <div class="p-3">
-            <img src="../../assets/iconos/codigo-pin.png" alt="Icon 3" style="width: 60px; margin-bottom: 20px;">
-            <h4 class="fw-bold text-uppercase">SMART ACCESS MODES</h4>
-            <p class="small opacity-75">Customize your entry with multiple credential options, including secure card access, PIN codes, or a high-security combination of both.</p>
-        </div>
-    </div>
-
-</div>
-
     </div>
 </section>
+
+
 
 <!-- PARALLAX END -->
 
@@ -610,7 +714,7 @@
 <section class="contact-cta">
     <div class="contact-cta__container">
 
-        <img src="../../assets/images/img-webp/LOGO.webp" 
+        <img src="../../../../assets/images/img-webp/LOGO-header.webp" 
              alt="All Door Tech Logo" 
              class="cta-logo" 
              width="200" 

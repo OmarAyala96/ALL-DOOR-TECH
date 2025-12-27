@@ -3386,9 +3386,6 @@ z-index: 2;
 
 
 
-
-
-
 /* Estilo para el botón PREVIEW (Móvil) */
 .btn-back-header {
     display: inline-flex;
@@ -3538,3 +3535,58 @@ z-index: 2;
         aspect-ratio: 3 / 2; /* Imágenes un poco más altas en móviles */
     }
 }
+
+
+
+
+
+
+
+    /* Contenedor Principal con prefijo ADT (All Door Tech) */
+    
+   
+   /* Fondo Azul Empresa */
+    .adt-herculite-section {
+        background-color: #223248;
+        padding: 90px 0;
+    }
+
+    /* Tarjetas con Negro y Ámbar */
+    .adt-door-card {
+        background: rgba(0, 0, 0, 0.3); /* Fondo negro sutil */
+        border-left: 4px solid #f9ae39; /* Línea de acento ámbar */
+        border-radius: 4px;
+        padding: 35px;
+        transition: all 0.3s ease;
+        height: 100%;
+        text-align: left; /* Alineación a la izquierda para un look más serio */
+    }
+
+    .adt-door-card:hover {
+        background: rgba(0, 0, 0, 0.5);
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    /* Iconos */
+    .adt-door-icon {
+        color: #f9ae39;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    /* Tipografía */
+    .adt-door-title {
+        color: #f9ae39;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        font-size: 1.15rem;
+    }
+
+    .adt-door-desc {
+        color: #cfd8dc;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
