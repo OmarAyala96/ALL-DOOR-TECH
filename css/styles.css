@@ -2023,7 +2023,7 @@ z-index: 2;
 
 .cta-title {
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 800;
     color: #f9ae39; /* naranja igual a tu paleta */
     margin-bottom: 8%;
     letter-spacing: 1px;
@@ -3558,7 +3558,6 @@ z-index: 2;
 
 
 
-<<<<<<< HEAD
 /* ==========================================================================
      PAGINA DE DISEÑO PARA LA SECCION DE DOORS 
    ========================================================================== */
@@ -3577,7 +3576,7 @@ z-index: 2;
         .smart-door-img {
             min-height: auto !important; /* En Celular: elimina la altura forzada */
             height: auto !important;     /* Deja que la imagen use su tamaño natural */
-            max-height: 400px;           /* (Opcional) evita que sea demasiado alta si la imagen es gigante */
+            max-height: 600px;           /* (Opcional) evita que sea demasiado alta si la imagen es gigante */
         }
     }
 
@@ -3599,7 +3598,7 @@ z-index: 2;
 
 
 
-            /* ELEMENTOS DEL MENU DE DOORS   -Overview-Contact Us-Why Choose Us PRINCIPIO */
+            /* ELEMENTOS DEL MENU DE DOORS   -Overview-Contact Us - Why Choose Us PRINCIPIO */
 
             .nav-link-mobile {
         font-size: 0.75rem; /* Letra más pequeña para que quepan los 3 */
@@ -3623,7 +3622,6 @@ z-index: 2;
 
 
             
-=======
 
 
 
@@ -3675,4 +3673,4 @@ z-index: 2;
         font-size: 0.95rem;
         line-height: 1.7;
     }
->>>>>>> dd501010c5e2a4001998a7fd992a6aba3b49cf68
+
