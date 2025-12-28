@@ -3837,3 +3837,102 @@ z-index: 2;
         display: block;
     }
 
+/* 1. Controlamos el tamaño de la tarjeta */
+
+.adt-gallery-item {
+        position: relative;
+        height: 180px; /* Altura pequeña y fija para todas */
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        background-color: #eee; /* Fondo por si la imagen tarda en cargar */
+    }
+
+    /* 2. El TRUCO para que no se estiren las fotos */
+    .adt-gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Esto recorta la imagen al centro sin deformarla */
+        display: block;
+    }
+
+    .adt-gallery-item:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Overlay sutil */
+    .adt-gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 8px;
+        background: rgba(34, 50, 72, 0.7);
+        color: white;
+        font-size: 0.75rem;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .adt-gallery-item:hover .adt-gallery-overlay {
+        opacity: 1;
+    }
+
+    /* Badge de Año con estilo de sello */
+    .adt-year-circle {
+        width: 180px;
+        height: 180px;
+        border: 8px solid #f9ae39;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 30px rgba(249, 174, 57, 0.2);
+    }
+
+    .adt-year-circle h3 {
+        font-size: 3rem;
+        font-weight: 900;
+        margin: 0;
+        color: #f9ae39;
+        line-height: 1;
+    }
+
+    .adt-year-circle span {
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* Línea de tiempo lateral */
+    .adt-legacy-content {
+        border-left: 3px solid #f9ae39;
+        padding-left: 30px;
+        height: 100%;
+    }
+
+    .adt-stat-highlight {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #f9ae39;
+        display: block;
+    }
+
+    .adt-feature-item {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .adt-feature-item:hover {
+        background: rgba(249, 174, 57, 0.1);
+        border-color: #f9ae39;
+        transform: translateY(-5px);
+    }
