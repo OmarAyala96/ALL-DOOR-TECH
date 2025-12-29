@@ -65,17 +65,19 @@
     padding: 0;
 }
 
-html, body {
-    max-width: 100%;
+/* --- CORRECCIÓN IMPORTANTE --- */
+html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    /* QUITAMOS overflow-x de aquí porque rompe el position: sticky */
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Corregido de 'Montsserat' */
+    font-family: 'Montserrat', sans-serif;
     background-color: #f0f0f0;
     color: var(--text-dark);
     line-height: 1.6;
+    max-width: 100%;
+    overflow-x: hidden; /* Lo dejamos solo en el body */
 }
 
 ul, ol { list-style: none; }
@@ -173,9 +175,11 @@ a { text-decoration: none; color: inherit; }
 
 .header {
     background-color: var(--primary-dark-blue);
-    position: sticky; 
-    top: 0;
-    z-index: 1000;
+    position: -webkit-sticky; /* Para soporte en Safari */
+    position: sticky;         /* Esto hace la magia */
+    top: 0;                   /* Se pega al borde superior */
+    z-index: 1000;            /* Se asegura de estar encima de todo */
+    width: 100%;              /* Asegura que ocupe todo el ancho */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -464,9 +468,10 @@ a { text-decoration: none; color: inherit; }
 
     /* Topbar */
     .topbar {
+        position: -webkit-sticky;
         position: sticky;
         top: 0;
-        z-index: 1001;
+        z-index: 1002; /* Mayor que el header para que tape si es necesario */
         padding: 5px 20px;
         font-size: 0.85rem;
         background-color: #0d1e34; 
@@ -488,11 +493,13 @@ a { text-decoration: none; color: inherit; }
     /* 1. ALINEACIÓN PRINCIPAL Y ESTRUCTURA DEL HEADER */
 
     .header {
+        position: -webkit-sticky;
         position: sticky;
-        top: 31px; /* El alto aproximado de tu topbar (padding + texto) */
+        /* Si tu topbar mide aprox 31px, esto hace que el header se pegue debajo */
+        top: 31px; 
         z-index: 1000;
-        background-color: #223248; /* Asegúrate de que tenga fondo */
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Sombra para que se vea sobre el contenido */
+        background-color: #223248;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
     .header__container {
