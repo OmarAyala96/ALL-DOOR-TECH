@@ -3676,401 +3676,216 @@ z-index: 2;
 
 
 
-
- /* About us */
-/* Optimizamos el contenedor para asegurar que la imagen siempre encaje */
-    .adt-parallax-cta {
-        position: relative;
-        width: 100%;
-        min-height: 70vh;
-        display: flex;
-        align-items: center;    
-        justify-content: center;
-        text-align: center;
-        overflow: hidden;
-        background-image: linear-gradient(rgba(34, 50, 72, 0.6), rgba(34, 50, 72, 0.8)), 
-                          url('..//assets/images/About-us/about-us4.webp');
-        background-attachment: fixed;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    @media (max-width: 991px) {
-        .adt-parallax-cta {
-            background-attachment: scroll;
-            min-height: 60vh;
-            padding: 4rem 0;
-        }
-    }
-
-    .adt-parallax-cta-box {
-        max-width: 900px;
-        width: 92%;
-        padding: 3.5rem 2rem;
-        background: rgba(34, 50, 72, 0.5);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 30px;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    /* MISION VISION */
-    .adt-parallax-cta-box p {
-        color: #ffffff;
-        font-size: 1.15rem;
-        line-height: 1.8;
-        opacity: 0.95;
-        margin-bottom: 2rem;
-    }
-
-    .btn-warning-custom {
-        background-color: #f9ae39 !important;
-        color: #223248 !important;
-        border: none;
-        font-weight: 800;
-        padding: 14px 35px;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-    }
-
-    .btn-warning-custom:hover {
-        background-color: #ffb84d !important;
-        transform: translateY(-4px);
-        box-shadow: 0 8px 15px rgba(249, 174, 57, 0.3);
-    }
-
-    .btn-outline-custom {
-        border: 2px solid #f9ae39 !important;
-        color: #f9ae39 !important;
-        background: transparent;
-        font-weight: 700;
-        padding: 14px 35px;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-    }
-
-    .btn-outline-custom:hover {
-        background-color: #f9ae39 !important;
-        color: #223248 !important;
-        transform: translateY(-4px);
-    }
-
-
-    .adt-core-section {
-        background-color: #ffffff;
-        padding: 80px 0;
-    }
-
-    .adt-card-modern {
-        height: 100%;
-        padding: 2.5rem;
-        border-radius: 20px;
-        background: #ffffff;
-        border: 1px solid rgba(34, 50, 72, 0.1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-    }
-
-    .adt-card-modern:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(34, 50, 72, 0.1);
-        border-color: #f9ae39;
-    }
-
-    .adt-icon-box {
-        width: 60px;
-        height: 60px;
-        background-color: rgba(249, 174, 57, 0.1);
-        color: #f9ae39;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 12px;
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .text-custom-blue { color: #223248; }
-    .bg-custom-blue { background-color: #223248; }
-
-
-    /* MISION VISION */
-
-.adt-gallery-item {
-        position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-        height: 220px; /* Tamaño compacto */
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-    }
-    
-    .adt-gallery-item:hover {
-        transform: scale(1.03);
-    }
-
-    .adt-gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Asegura que todas las fotos se vean uniformes */
-    }
-
-    .adt-gallery-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(transparent, rgba(34, 50, 72, 0.9));
-        color: #fff;
-        padding: 15px;
-        font-size: 0.85rem;
-    }
-
-    .adt-gallery-tag {
-        font-size: 0.7rem;
-        color: #f9ae39;
-        text-transform: uppercase;
-        font-weight: 700;
-        display: block;
-    }
-
-/* 1. Controlamos el tamaño de la tarjeta */
-
-.adt-gallery-item {
-        position: relative;
-        height: 180px; /* Altura pequeña y fija para todas */
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        background-color: #eee; /* Fondo por si la imagen tarda en cargar */
-    }
-
-    /* 2. El TRUCO para que no se estiren las fotos */
-    .adt-gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Esto recorta la imagen al centro sin deformarla */
-        display: block;
-    }
-
-    .adt-gallery-item:hover {
-        transform: translateY(-5px);
-    }
-
-    /* Overlay sutil */
-    .adt-gallery-overlay {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        padding: 8px;
-        background: rgba(34, 50, 72, 0.7);
-        color: white;
-        font-size: 0.75rem;
-        text-align: center;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-
-    .adt-gallery-item:hover .adt-gallery-overlay {
-        opacity: 1;
-    }
-
-    /* Badge de Año con estilo de sello */
-    .adt-year-circle {
-        width: 180px;
-        height: 180px;
-        border: 8px solid #f9ae39;
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px;
-        background: rgba(255, 255, 255, 0.05);
-        box-shadow: 0 0 30px rgba(249, 174, 57, 0.2);
-    }
-
-    .adt-year-circle h3 {
-        font-size: 3rem;
-        font-weight: 900;
-        margin: 0;
-        color: #f9ae39;
-        line-height: 1;
-    }
-
-    .adt-year-circle span {
-        font-size: 0.9rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-    /* Línea de tiempo lateral */
-    .adt-legacy-content {
-        border-left: 3px solid #f9ae39;
-        padding-left: 30px;
-        height: 100%;
-    }
-
-    .adt-stat-highlight {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: #f9ae39;
-        display: block;
-    }
-
-    .adt-feature-item {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        padding: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .adt-feature-item:hover {
-        background: rgba(249, 174, 57, 0.1);
-        border-color: #f9ae39;
-        transform: translateY(-5px);
-    }
-
-
-
-
-
-    /* Contenedor del Botón Flotante */
-    
+/* --- VARIABLES Y ROOT --- */
 :root {
-        --adt-gold: #f9ae39;
-        --adt-dark: #223248;
-    }
+    --adt-gold: #f9ae39;
+    --adt-dark: #223248;
+    --adt-white: #ffffff;
+    --adt-transition: all 0.3s ease;
+}
 
-    /* Contenedor Principal */
-    .adt-chat-system {
-        position: fixed;
-        bottom: 25px;
-        right: 25px;
-        z-index: 999999;
-        font-family: 'Segoe UI', Arial, sans-serif;
-    }
+/* --- CLASES DE UTILIDAD --- */
+.text-custom-blue { color: var(--adt-dark); }
+.bg-custom-blue { background-color: var(--adt-dark); }
+.text-highlight { color: var(--adt-gold); }
 
-    /* BOTÓN: Blanco Transparente con Naranja */
-    .adt-chat-trigger {
-        width: 65px;
-        height: 65px;
-        /* Fondo blanco con 20% de opacidad y desenfoque */
-        background: rgba(255, 255, 255, 0.2); 
-        backdrop-filter: blur(10px); 
-        -webkit-backdrop-filter: blur(10px);
-        
-        /* Borde y color en tu naranja/amarillo */
-        border: 2px solid var(--adt-gold);
-        color: var(--adt-gold);
-        
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 30px;
-        cursor: pointer;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        transition: all 0.4s ease;
-    }
+/* --- SECCIÓN HERO PARALLAX --- */
+.adt-parallax-cta {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(34, 50, 72, 0.6), rgba(34, 50, 72, 0.8)), 
+                url('../assets/images/About-us/about-us4.webp') no-repeat center center / cover fixed;
+}
 
-    .adt-chat-trigger:hover {
-        background: rgba(255, 255, 255, 0.4);
-        transform: scale(1.1);
-        box-shadow: 0 8px 32px rgba(249, 174, 57, 0.3);
-    }
+.adt-parallax-cta-box {
+    max-width: 900px;
+    width: 92%;
+    padding: 3.5rem 2rem;
+    background: rgba(34, 50, 72, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+}
 
-    /* Ventana de Chat */
-    .adt-chat-box {
-        position: absolute;
-        bottom: 85px;
-        right: 0;
-        width: 350px;
-        background: #f0f2f5;
-        border-radius: 20px;
-        box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-        display: none;
-        overflow: hidden;
-        border: 1px solid rgba(255,255,255,0.3);
-    }
+/* --- BOTONES PERSONALIZADOS --- */
+.btn-warning-custom {
+    background-color: var(--adt-gold) !important;
+    color: var(--adt-dark) !important;
+    border: none;
+    font-weight: 800;
+    padding: 14px 35px;
+    text-transform: uppercase;
+    transition: var(--adt-transition);
+}
 
-    /* Cabecera */
-    .adt-chat-header {
-        background: var(--adt-dark);
-        padding: 15px 20px;
-        color: white;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
+.btn-warning-custom:hover {
+    background-color: #ffb84d !important;
+    transform: translateY(-4px);
+}
 
-    .adt-avatar {
-        width: 40px;
-        height: 40px;
-        background: var(--adt-gold);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--adt-dark);
-        font-weight: bold;
-    }
+.btn-outline-custom {
+    border: 2px solid var(--adt-gold) !important;
+    color: var(--adt-gold) !important;
+    background: transparent;
+    font-weight: 700;
+    padding: 14px 35px;
+    text-transform: uppercase;
+    transition: var(--adt-transition);
+}
 
-    /* Cuerpo y Mensajes */
-    .adt-chat-body {
-        height: 300px;
-        overflow-y: auto;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+.btn-outline-custom:hover {
+    background-color: var(--adt-gold) !important;
+    color: var(--adt-dark) !important;
+}
 
-    .adt-msg {
-        max-width: 85%;
-        padding: 10px 15px;
-        font-size: 0.9rem;
-        border-radius: 15px;
-        background: white;
-        color: #333;
-        align-self: flex-start;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
+/* --- TARJETAS MISION Y VISION --- */
+.adt-card-modern {
+    height: 100%;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: var(--adt-white);
+    border: 1px solid rgba(34, 50, 72, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: var(--adt-transition);
+}
 
-    /* Footer / Formulario */
-    .adt-chat-footer {
-        background: white;
-        padding: 15px;
-    }
+.adt-card-modern:hover {
+    transform: translateY(-10px);
+    border-color: var(--adt-gold);
+}
 
-    .adt-input {
-        width: 100%;
-        border: 1px solid #eee;
-        background: #f8f9fa;
-        border-radius: 10px;
-        padding: 8px 12px;
-        font-size: 0.85rem;
-        margin-bottom: 8px;
-    }
+.adt-icon-box {
+    width: 60px; height: 60px;
+    background-color: rgba(249, 174, 57, 0.1);
+    color: var(--adt-gold);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 12px; font-size: 1.8rem; margin-bottom: 1.5rem;
+}
 
-    .adt-btn-send {
-        width: 100%;
-        background: var(--adt-dark);
-        color: var(--adt-gold);
-        border: 2px solid var(--adt-gold);
-        padding: 10px;
-        border-radius: 10px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
+/* --- PORTFOLIO GALLERY --- */
+.adt-gallery-item {
+    position: relative;
+    height: 180px; /* Tamaño fijo para rejilla perfecta */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: var(--adt-transition);
+}
 
-    .adt-btn-send:hover {
-        background: var(--adt-gold);
-        color: var(--adt-dark);
-    }
+.adt-gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.adt-gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* --- EXPERIENCE SECTION --- */
+.adt-year-circle {
+    width: 170px; height: 170px;
+    border: 8px solid var(--adt-gold);
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.adt-year-circle h3 { font-size: 2.8rem; font-weight: 900; color: var(--adt-gold); margin: 0; }
+.adt-year-circle span { font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; }
+
+.adt-legacy-content { border-left: 3px solid var(--adt-gold); padding-left: 30px; }
+.adt-stat-highlight { font-size: 2.5rem; font-weight: 800; color: var(--adt-gold); display: block; }
+
+.adt-feature-item {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    height: 100%;
+    transition: var(--adt-transition);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* --- CHAT SYSTEM --- */
+.adt-chat-system { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
+
+.adt-chat-box {
+    position: absolute; bottom: 80px; right: 0;
+    width: 320px; background: #f0f2f5;
+    border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    display: none; overflow: hidden;
+}
+
+.adt-chat-header {
+    background: var(--adt-dark); color: white; padding: 15px;
+    display: flex; align-items: center; gap: 10px;
+}
+
+.adt-avatar {
+    position: relative; width: 40px; height: 40px;
+    background: var(--adt-gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--adt-dark); font-weight: bold;
+}
+
+.online-dot {
+    position: absolute; bottom: 2px; right: 2px;
+    width: 10px; height: 10px; background: #28a745;
+    border: 2px solid var(--adt-dark); border-radius: 50%;
+}
+
+.chat-close-btn { background: none; border: none; color: white; font-size: 24px; cursor: pointer; margin-left: auto; }
+
+.adt-chat-body { height: 250px; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+
+.adt-msg {
+    background: white; padding: 10px; border-radius: 10px;
+    font-size: 13px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.adt-chat-footer { padding: 15px; background: white; }
+
+.adt-input {
+    width: 100%; margin-bottom: 8px; padding: 10px;
+    border: 1px solid #ddd; border-radius: 8px; font-size: 13px;
+}
+
+.adt-btn-send {
+    width: 100%; background: var(--adt-dark); color: var(--adt-gold);
+    border: 2px solid var(--adt-gold); padding: 10px; border-radius: 8px;
+    font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+
+.adt-btn-send:hover { background: var(--adt-gold); color: var(--adt-dark); }
+
+.adt-chat-trigger {
+    width: 60px; height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--adt-gold);
+    color: var(--adt-gold);
+    border-radius: 50%; font-size: 24px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 991px) {
+    .adt-parallax-cta { background-attachment: scroll; min-height: 55vh; }
+    .adt-parallax-cta-box h1 { font-size: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+    .adt-legacy-content { border-left: none; padding-left: 0; text-align: center; }
+    .adt-year-circle { width: 130px; height: 130px; }
+    .adt-year-circle h3 { font-size: 2.2rem; }
+    .adt-chat-box { width: 280px; }
+}
