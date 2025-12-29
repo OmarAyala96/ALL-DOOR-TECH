@@ -3896,3 +3896,101 @@ z-index: 2;
     .adt-year-circle h3 { font-size: 2.2rem; }
     .adt-chat-box { width: 280px; }
 }
+
+
+
+
+
+/* ESTO SIRVE PARA QUE EL HEADER NO TAPE PARTE DE LA SECCION DE LA PAG QUE DESEAS MOSTRAR */
+
+#contact {
+    scroll-margin-top: 100px; /* Ajusta este número según el alto de tu header */
+}
+
+#portfolio-title {
+    scroll-margin-top: 120px;
+    }
+
+/* ESTO SIRVE PARA QUE EL HEADER NO TAPE PARTE DE LA SECCION DE LA PAG QUE DESEAS MOSTRAR */
+
+
+
+
+/* PARA DARLE ESTILO A LOS ELEMENTOS DE --OUR SOLUTIONS--22+ YEARS EXP--FREE ESTIMATE-- DEL HOME */
+
+/* ======================================= */
+/* 🛠️ QUICK NAV (BARRA DE ATAJOS) */
+/* ======================================= */
+
+.quick-nav {
+    background-color: #ffffff; /* Fondo blanco para que resalte sobre el gris del body */
+    border-bottom: 3px solid var(--primary-orange);
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.quick-nav__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales siempre */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.quick-nav__item {
+    border-right: 1px solid #eee; /* Separador sutil entre botones */
+}
+
+.quick-nav__item:last-child {
+    border-right: none;
+}
+
+.quick-nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--primary-dark-blue);
+    transition: all 0.3s ease;
+}
+
+.quick-nav__link i {
+    font-size: 1.2rem; /* Icono tamaño justo */
+    color: var(--primary-orange);
+}
+
+.quick-nav__link span {
+    font-size: 10px; /* Texto pequeño para que no se rompa en móviles chicos */
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* --- ESTILOS PARA ESCRITORIO (1024px o más) --- */
+@media (min-width: 1024px) {
+    .quick-nav {
+        padding: 20px 0;
+    }
+
+    .quick-nav__link {
+        flex-direction: row; /* En desktop: Icono al lado del texto */
+        gap: 12px;
+    }
+
+    .quick-nav__link i {
+        font-size: 1.5rem;
+    }
+
+    .quick-nav__link span {
+        font-size: 14px; /* Texto más grande en desktop */
+    }
+
+    .quick-nav__link:hover {
+        transform: translateY(-3px);
+        color: var(--primary-orange);
+    }
+}
+
+/* PARA DARLE ESTILO A LOS ELEMENTOS DE --OUR SOLUTIONS--22+ YEARS EXP--FREE ESTIMATE-- DEL HOME */
