@@ -651,32 +651,42 @@
 
 <!------- chat------->
 <div class="adt-chat-system">
-    <div class="adt-chat-box" id="chatContainer">
-        <div class="adt-chat-header">
-            <div class="adt-avatar">RC</div>
-            <div style="flex-grow: 1;">
-                <p class="m-0 fw-bold" style="font-size: 0.9rem;">Raul Cortez</p>
-                <small class="opacity-75"><i class="bi bi-circle-fill text-success" style="font-size: 7px;"></i> Support Online</small>
+    <div class="adt-chat-box" id="chatContainer" style="display:none;">
+        <div class="adt-chat-header" style="background:#223248; color:white; padding:15px; display:flex; align-items:center; gap:10px; border-radius:20px 20px 0 0;">
+            <div class="adt-avatar" style="position: relative; width:40px; height:40px; background:#f9ae39; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#223248; font-weight:bold;">
+                RC
+                <span style="position: absolute; bottom: 2px; right: 2px; width: 10px; height: 10px; background: #28a745; border: 2px solid #223248; border-radius: 50%;"></span>
             </div>
-            <button onclick="toggleAdtChat()" class="btn-close btn-close-white" style="font-size: 10px;"></button>
+            <div style="flex-grow:1; text-align:left;">
+                <p style="margin:0; font-weight:bold; font-size:14px;">Raul Cortez</p>
+                <small style="color:#f9ae39; font-size:11px;">Online Now</small>
+            </div>
+            <button onclick="toggleAdtChat()" style="background:none; border:none; color:white; font-size:22px; cursor:pointer;">&times;</button>
         </div>
 
-        <div class="adt-chat-body">
-            <div class="adt-msg">Hi! I'm Raul. How can I help you today?</div>
-            <div class="adt-msg">Leave your details and I'll reply to your email shortly.</div>
+        <div style="height:250px; background:#f0f2f5; padding:15px; overflow-y:auto;" id="chatBody">
+            <div class="adt-msg" style="background:white; padding:10px; border-radius:10px; font-size:13px; margin-bottom:10px; box-shadow:0 2px 4px rgba(0,0,0,0.05);">
+                Hi! I'm Raul. How can I help you with your door project today?
+            </div>
+            <div class="adt-msg" style="background:white; padding:10px; border-radius:10px; font-size:13px; margin-bottom:10px; box-shadow:0 2px 4px rgba(0,0,0,0.05);">
+                Please leave your contact info (Email or Phone) below.
+            </div>
         </div>
 
-        <div class="adt-chat-footer">
-            <form action="https://formspree.io/f/tu_id_aqui" method="POST">
-                <input type="text" name="name" class="adt-input" placeholder="Your Name" required>
-                <input type="email" name="email" class="adt-input" placeholder="Your Email" required>
-                <textarea name="message" class="adt-input" rows="2" placeholder="Message..." required></textarea>
-                <button type="submit" class="adt-btn-send">Send Message</button>
+        <div style="padding:15px; background:white; border-radius:0 0 20px 20px;">
+            <form id="contact-form">
+                <input type="text" name="name" class="adt-input" placeholder="Your Name" required style="width:100%; margin-bottom:8px; padding:10px; border:1px solid #ddd; border-radius:8px; font-size:13px;">
+                
+                <input type="text" name="email" class="adt-input" placeholder="Email or Phone Number" required style="width:100%; margin-bottom:8px; padding:10px; border:1px solid #ddd; border-radius:8px; font-size:13px;">
+                
+                <textarea name="message" class="adt-input" rows="2" placeholder="How can we help?" required style="width:100%; margin-bottom:8px; padding:10px; border:1px solid #ddd; border-radius:8px; resize:none; font-size:13px;"></textarea>
+                
+                <button type="submit" id="btn-send" class="adt-btn-send" style="width:100%; background:#223248; color:#f9ae39; border:2px solid #f9ae39; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer;">SEND MESSAGE</button>
             </form>
         </div>
     </div>
 
-    <button class="adt-chat-trigger" onclick="toggleAdtChat()" id="chatButtonIcon">
+    <button class="adt-chat-trigger" onclick="toggleAdtChat()" id="chatBtn">
         <i class="bi bi-chat-fill"></i>
     </button>
 </div>
@@ -757,8 +767,10 @@
         defer>
     </script>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<script src="../../js/main.js?v=3.0"></script>
+<script src="../../js/main.js"></script>
+
 
 </body>
 </html>
