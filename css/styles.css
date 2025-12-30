@@ -1470,19 +1470,23 @@ a { text-decoration: none; color: inherit; }
 /* ======================================= */
 /* SECTION: CONTACT (Versión Unificada)    */
 /* ======================================= */
-
+/* --- CONTACT SECTION --- */
 .contact-section {
     background-color: #f4f4f4; 
     padding: 0; 
     text-align: center;
 }
 
-/* 1. BLOQUE DEL TÍTULO (Se oculta si ella no lo pone) */
+/* 1. BLOQUE DEL TÍTULO */
 .contact {
     background-color: var(--dark-blue, #223248); 
     padding: 20px;
 }
-.contact:empty { display: none; }
+
+/* Mejora de Best Practices: evita renderizado innecesario */
+.contact:empty { 
+    display: none; 
+}
 
 .contact__us {
     color: #ffffff;
@@ -1499,8 +1503,7 @@ a { text-decoration: none; color: inherit; }
     background-color: transparent;
 }
 
-/* 3. LA LISTA (Tu estructura) y CONTENEDOR (Estructura de ella) */
-/* Fusionamos ambos para que el Flexbox sea idéntico */
+/* 3. LISTA Y CONTENEDOR (Fusión Flexbox) */
 .contact__tabs-list, 
 .contact__tabs-container {
     list-style: none;
@@ -1510,10 +1513,10 @@ a { text-decoration: none; color: inherit; }
     display: flex;
     flex-direction: column; /* Móvil */
     align-items: center;
-    gap: 10px; /* Asegura separación incluso si no hay padding en el item */
+    gap: 10px;
 }
 
-/* 4. ITEMS Y ENLACES DIRECTOS */
+/* 4. ITEMS Y ENLACES */
 .contact__item,
 .contact__tabs-container > a {
     display: flex;
@@ -1521,9 +1524,10 @@ a { text-decoration: none; color: inherit; }
     padding: 5px 0; 
     width: 90%;
     max-width: 350px;
+    text-decoration: none; /* SEO: Limpieza de estilos de enlace */
 }
 
-/* 5. EL BOTÓN (Tu estilo exacto) */
+/* 5. EL BOTÓN (Estilo All Door Tech) */
 .contact__tabs-item {
     display: block;
     width: 100%; 
@@ -1535,18 +1539,23 @@ a { text-decoration: none; color: inherit; }
     font-weight: 700;
     font-size: 1.1rem;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    /* Cambio: optimización de transición (Performance) */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
 }
 
-.contact__tabs-item:hover {
+/* Accesibilidad: Estado Hover y Focus (Keyboard Navigation) */
+.contact__tabs-item:hover,
+.contact__tabs-item:focus {
     background-color: #223248;
     color: #ffffff !important;
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    outline: none;
 }
 
-/* 6. AJUSTE ESCRITORIO */
+/* 6. AJUSTE ESCRITORIO (Desktop) */
 @media (min-width: 768px) {
     .contact__tabs-list,
     .contact__tabs-container {
@@ -1566,7 +1575,6 @@ a { text-decoration: none; color: inherit; }
         min-width: 220px;
     }
 }
-
 
 /* CONTACT ENDS */
 
@@ -2297,306 +2305,131 @@ z-index: 2;
 /* -------- Request Service ENDS -------*/
 
 
-/* ======================================= */
-/* FORM RESQUEST SERVICE & ESTIMATE  */
-/* ======================================= */
 
+/* ==========================================================================
+   ALL DOOR TECH - FORMULARIOS (ESTIMATE & SERVICE)
+   Estructura Blindada: 2 Columnas + Centrado Total
+   ========================================================================== */
 
 .form__container {
-    min-height: 60vh;
-    padding: 40px 0;
+    width: 100%;
+    padding: 60px 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: var(--light-gray-bg, #f8f8f8);
-    container-type: inline-size;
-    container-name: form__container;
+    background-color: #f8f8f8;
 }
 
 .form__container-title {
-    margin: 0;
-    padding: 0 30px 25px 30px;
-    max-width: 600px;
+    margin: 0 auto 40px auto;
+    max-width: 800px;
     width: 100%;
-    color: var(--accent-color, #f4a200);
-    font-size: 2.2rem;
-    text-align: left; 
+    color: #f4a200;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
+/* 1. Base del Formulario (Móvil) */
 .form__container-form {
+    margin: 0 auto;
     padding: 15px;
-    max-width: 800px;
+    max-width: 850px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 15px;
 }
 
-/* --- ESTILO DE LOS INPUTS Y LABELS --- */
+/* 2. Estilo de Campos */
 .form__container-input label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 600;
     color: #444;
 }
 
-.form__container-input input:not([type="submit"]),
+.form__container-input input,
 .form__container-input textarea,
 .form__container-input select {
     width: 100%;
     padding: 12px; 
-    margin: 8px 0; 
     border-radius: 6px; 
-    border: 1px solid var(--border-color, #ddd); 
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); 
-    background-color: white; 
-    font-size: 1rem; /* 16px evita zoom penalizado por Chrome en iOS */
-    color: #333;
-    font-family: inherit;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd; 
+    font-size: 1rem;
     box-sizing: border-box;
 }
 
-.form__container-input textarea {
-    resize: none; 
-    min-height: 140px; 
-    display: block;
+/* 3. EL BOTÓN: ARREGLO DEFINITIVO */
+.submit-button-style {
+    all: unset;
+    display: block !important; /* Recupera el cuerpo tras el unset */
+    box-sizing: border-box !important;
+    background-color: #f4a200 !important;
+    color: white !important;
+    border-radius: 10px !important;
+    padding: 14px 40px !important; 
+    width: 260px !important; /* Tamaño fijo profesional */
+    margin: 30px auto 10px auto !important; /* Centrado automático */
+    font-weight: 700 !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
 }
 
-/* Enfoque de Accesibilidad (Puntos clave para el 100%) */
-.form__container-input input:not([type="submit"]):focus,
-.form__container-input textarea:focus,
-.form__container-input select:focus {
-    outline: none;
-    border-color: var(--accent-color, #f4a200);
-    box-shadow: 0 0 0 3px rgba(244, 162, 0, 0.3); /* Anillo de nitidez para accesibilidad */
+.submit-button-style:hover {
+    background-color: #e09300 !important; 
+    transform: translateY(-3px);
 }
 
-/* --- EL BOTÓN: RESET Y ESTILO ORIGINAL --- */
-.submit-button-style,
-.form__container-input input[type="submit"] {
-    all: unset; /* Elimina estilos de sistema que rompen el diseño */
-    background-color: var(--accent-color, #f4a200);
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    border-radius: 10px;
-    padding: 12px 30px; 
-    margin: 25px auto 0 auto; 
-    width: 200px; 
-    display: block;
-    font-weight: 700;
-    font-size: 1.1rem;
-    font-family: inherit;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.submit-button-style:hover,
-.form__container-input input[type="submit"]:hover {
-    background-color: var(--hover-color, #e09300); 
-    transform: translateY(-1px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.required {
-    color: var(--accent-color, #f4a200);
-    font-weight: normal; 
-    font-size: 0.9em;
-}
-
-.file-badge.loaded {
-    background-color: #e6f4ea; /* Verde muy claro */
-    color: #1e7e34; /* Verde oscuro */
-    border: 1px solid #c3e6cb;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.file-badge.loaded span {
-    font-weight: bold;
-}
-
-
-
-/* SELECT CUSTOM */
-.select-wrapper { position: relative; width: 100%; }
-
-/* Estilos específicos para el input de archivos */
-.form__container-input input[type="file"] {
-    background-color: white;
-    border: 1px solid var(--border-color, #ddd);
-    padding: 10px;
-    cursor: pointer;
-}
-
-.file-help-text {
-    display: block;
-    font-size: 0.85rem;
-    color: #666;
-    margin-top: -5px;
-    margin-bottom: 10px;
-}
-
-.file-preview-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.file-badge {
-    background-color: #eee;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    border: 1px solid #ddd;
-    color: #333;
-    display: inline-block; /* Importante para que no se amontonen */
-}
-
-/* CONFIDENCIALIDAD */
+/* 4. AVISO DE CONFIDENCIALIDAD */
 .form__container-confidentiality {
-    grid-column: 1 / -1; 
     text-align: center;
-    font-size: 13px;
-    color: #333;
-    padding: 0 20px 40px 20px; 
-    opacity: 0.8;
-}
-/* --- Estilos del Campo de Archivos --- */
-.custom-file-wrapper {
-    position: relative; /* Indispensable */
     width: 100%;
-    min-height: 50px; /* Dale una altura mínima */
 }
 
-/* Ocultar input nativo pero mantenerlo funcional */
-#est_files {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Ocupa todo el espacio del botón visual */
-    opacity: 0;
-    cursor: pointer;
-    z-index: 10; /* Asegúrate que esté por encima de todo */
-}
-
-/* Contenedor visual: Imitamos tus otros inputs */
-.custom-file-design {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 12px;
-    border: 1px solid var(--border-color, #ddd);
-    border-radius: 6px;
-    background-color: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-/* Botón simulado en inglés */
-.custom-file-button {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 6px 14px;
-    border-radius: 4px;
+.form__container-confidentiality p {
     font-size: 0.9rem;
-    color: #333;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.custom-file-status {
     color: #666;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
-/* Accesibilidad: Focus Ring (Puntos clave Lighthouse) */
-#est_files:focus + .custom-file-design {
-    border-color: var(--accent-color, #f4a200);
-    box-shadow: 0 0 0 3px rgba(244, 162, 0, 0.3);
-}
-
-.file-help-text {
-    font-size: 0.85rem;
-    color: #666;
-    margin-top: 5px;
-    display: block;
-}
-
-.optional {
-    color: #888;
-    font-weight: normal;
-    font-size: 0.85em;
-}
-
-/* ======================================= */
-/* DISEÑO PARA ESCRITORIO (ESTIMATE)       */
-/* ======================================= */
-
-@container form__container (min-width: 720px) {
-    .form__container-title {
-        text-align: center;
-        padding: 40px 0 30px 0; 
-        max-width: 800px;
-    }
-
+/* ==========================================================================
+   DISEÑO PARA ESCRITORIO (768px+)
+   ========================================================================== */
+@media screen and (min-width: 768px) {
     .form__container-form {
-        max-width: 800px; 
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "firstname lastname"
-            "company address"
-            "city zipcode"
-            "phone email"
-            "message message"
-            "files files"
-            "source source"
-            "submit submit"; /* Área para el botón */
-        gap: 15px 25px;
+        grid-template-columns: 1fr 1fr; /* Activa las 2 columnas */
+        gap: 20px 40px;
     }
 
-    /* Asignación manual de áreas */
-    .form__container-input:nth-child(1) { grid-area: firstname; }
-    .form__container-input:nth-child(2) { grid-area: lastname; }
-    .form__container-input:nth-child(3) { grid-area: company; }
-    .form__container-input:nth-child(4) { grid-area: address; }
-    .form__container-input:nth-child(5) { grid-area: city; }
-    .form__container-input:nth-child(6) { grid-area: zipcode; }
-    .form__container-input:nth-child(7) { grid-area: phone; }
-    .form__container-input:nth-child(8) { grid-area: email; }
-    .form__container-input:nth-child(9) { grid-area: message; }
-    .f-files { 
-        grid-area: files; 
+    /* Forzamos a que estos campos ocupen las 2 columnas */
+    .f-message, 
+    .f-files, 
+    .f-source, 
+    .f-submit,
+    .form__container-confidentiality {
+        grid-column: 1 / -1 !important; /* Ocupan todo el ancho de lado a lado */
     }
-    .f-source { 
-        grid-area: source; 
+
+    /* Alineamos los elementos al centro dentro de su fila */
+    .f-submit {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100%;
     }
-    /* EL SECRETO: En tu HTML el botón es el elemento 12 (porque hay un div vacío en el 11) */
-    /* Usamos este selector para asegurar que agarre el botón sin importar el número */
-    .form__container-form > .submit-button-style,
-    .form__container-form > button[type="submit"] { 
-        grid-area: submit; 
-        justify-self: center; /* Centra el botón en el área 'submit' */
-        width: 250px !important; 
-        margin: 30px auto !important;
-        display: block;
+
+    .form__container-title {
+        font-size: 3rem;
     }
 }
 
-/* FORMS ENDS */
-  
+
+
+
+
+
 /* ==========================================================================
    FORM CONTAINER - OPTIMIZADO PARA 100% LIGHTHOUSE SIN ROMPER DISEÑO
    ========================================================================== */
