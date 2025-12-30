@@ -30,6 +30,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../css/styles.css">
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init("A1SeiTh9E-maUoJXc"); // Tu Public Key ya integrada
+   })();
+  </script>
+
   <!-- ICONS -->
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -312,98 +319,84 @@
 
 
 <!-- FORM SECTION -->
-<section class="form__container" id="estimate-section">
-  <h2 class="form__container-title">Estimate Information</h2>
+<section class="form__container" id="service-section">
+  <h2 class="form__container-title">Service Information</h2>
 
-  <form class="form__container-form" id="estimate-form" enctype="multipart/form-data">
+  <form class="form__container-form" id="service-form" enctype="multipart/form-data">
     
     <div class="form__container-input f-name">
-      <label for="est_first_name">First Name <span class="required">(Required)</span></label>
-      <input type="text" id="est_first_name" name="first_name" placeholder="John" required autocomplete="given-name">
+      <label for="ser_first_name">First Name <span class="required">(Required)</span></label>
+      <input type="text" id="ser_first_name" name="first_name" placeholder="John" required autocomplete="given-name">
     </div>
 
     <div class="form__container-input l-name">
-      <label for="est_last_name">Last Name <span class="required">(Required)</span></label>
-      <input type="text" id="est_last_name" name="last_name" placeholder="Doe" required autocomplete="family-name">
+      <label for="ser_last_name">Last Name <span class="required">(Required)</span></label>
+      <input type="text" id="ser_last_name" name="last_name" placeholder="Doe" required autocomplete="family-name">
     </div>
 
     <div class="form__container-input f-company">
-      <label for="est_company">Company <span class="required">(Required)</span></label>
-      <input type="text" id="est_company" name="company" placeholder="Company Name" required autocomplete="organization">
+      <label for="ser_company">Company <span class="required">(Required)</span></label>
+      <input type="text" id="ser_company" name="company" placeholder="Company Name" required autocomplete="organization">
     </div>
 
     <div class="form__container-input f-address">
-      <label for="est_address">Address <span class="required">(Required)</span></label>
-      <input type="text" id="est_address" name="address" placeholder="123 Main Street" required autocomplete="street-address">
+      <label for="ser_address">Address <span class="required">(Required)</span></label>
+      <input type="text" id="ser_address" name="address" placeholder="123 Main Street" required autocomplete="street-address">
     </div>
 
     <div class="form__container-input f-city">
-      <label for="est_city">City <span class="required">(Required)</span></label>
-      <input type="text" id="est_city" name="city" placeholder="Los Angeles" required autocomplete="address-level2">
+      <label for="ser_city">City <span class="required">(Required)</span></label>
+      <input type="text" id="ser_city" name="city" placeholder="Los Angeles" required autocomplete="address-level2">
     </div>
 
     <div class="form__container-input f-zip">
-      <label for="est_zip">Zip Code <span class="required">(Required)</span></label>
-      <input type="text" id="est_zip" name="zip_code" placeholder="90012" required autocomplete="postal-code">
+      <label for="ser_zip">Zip Code <span class="required">(Required)</span></label>
+      <input type="text" id="ser_zip" name="zip_code" placeholder="90012" required autocomplete="postal-code">
     </div>
 
     <div class="form__container-input f-phone">
-      <label for="est_phone">Phone <span class="required">(Required)</span></label>
-      <input type="tel" id="est_phone" name="phone" placeholder="1 (213) 555-7890" required autocomplete="tel">
+      <label for="ser_phone">Phone <span class="required">(Required)</span></label>
+      <input type="tel" id="ser_phone" name="phone" placeholder="1 (213) 555-7890" required autocomplete="tel">
     </div>
 
     <div class="form__container-input f-email">
-      <label for="est_email">Email <span class="required">(Required)</span></label>
-      <input type="email" id="est_email" name="email" placeholder="john.doe@example.com" required autocomplete="email">
+      <label for="ser_email">Email <span class="required">(Required)</span></label>
+      <input type="email" id="ser_email" name="email" placeholder="john.doe@example.com" required autocomplete="email">
     </div>
 
     <div class="form__container-input f-message">
-      <label for="est_message">Description of your request <span class="required">(Required)</span></label>
-      <textarea id="est_message" name="message" placeholder="Please describe the door type, size, or issues you are experiencing." required></textarea>
+      <label for="ser_message">Description of service needed <span class="required">(Required)</span></label>
+      <textarea id="ser_message" name="message" placeholder="Please describe the repair or maintenance needed." required></textarea>
     </div>
 
     <div class="form__container-input f-files">
-  <label for="est_files">Attach Photos or Videos <span class="optional">(Max 3 files)</span></label>
-  
+      <label for="ser_files">Attach Photos or Videos <span class="optional">(Max 3 files)</span></label>
       <div class="custom-file-wrapper">
-        <input 
-          type="file" 
-          id="est_files" 
-          name="attachments[]" 
-          accept="image/*,video/*" 
-          multiple 
-        >
-        <div class="custom-file-design" id="file-design-container">
+        <input type="file" id="ser_files" name="my_file" accept="image/*,video/*" multiple aria-describedby="ser-file-instructions">
+        <div class="custom-file-design">
           <span class="custom-file-button">Choose files</span>
-          <span class="custom-file-status" id="file-status-text">No files chosen</span>
+          <span class="custom-file-status">No files chosen</span>
         </div>
       </div>
+      <p id="ser-file-instructions" class="file-help-text">Please upload up to 3 files.</p>
+    </div>
 
-     <p id="file-instructions" class="file-help-text">Please upload up to 3 files. Large files might take a moment to load.</p>
-  
-  <div id="file-preview-list" class="file-preview-wrapper"></div>
-</div>
     <div class="form__container-input f-source">
-      <label for="est_source">How did you find us? <span class="required">(Required)</span></label>
+      <label for="ser_source">How did you find us? <span class="required">(Required)</span></label>
       <div class="select-wrapper">
-        <select name="source" id="est_source" required>
+        <select name="source" id="ser_source" required>
           <option value="" disabled selected>Select an option</option>
           <option value="google">Google Search</option>
-          <option value="bing">Bing</option>
-          <option value="referral">Word of Mouth / Referral</option>
-          <option value="existing_customer">I'm an existing customer</option>
+          <option value="referral">Referral</option>
           <option value="other">Other</option>
         </select>
       </div>
     </div>
 
-    <button type="submit" class="submit-button-style f-submit">Send Request</button>
+    <button type="submit" class="submit-button-style f-submit">Submit</button>
 
     <div class="form__container-confidentiality" role="note">
-      <p>
-        <strong>Confidentiality Notice:</strong><br>
-        The information provided will be used solely for the purpose of providing an estimate and will not be shared with third parties.
-      </p>
+      <p><strong>Confidentiality Notice:</strong> Information used solely for service purposes.</p>
     </div>
   </form>
 </section>
@@ -524,6 +517,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script src="../../js/main.js"></script>
