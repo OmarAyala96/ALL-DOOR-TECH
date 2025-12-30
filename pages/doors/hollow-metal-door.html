@@ -98,6 +98,48 @@
   }
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you repair hollow metal doors and frames?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All Door Tech provides professional repair services for hollow metal doors and frames, including hinges, closers, locks, alignment, and structural damage repair for commercial buildings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you fabricate custom hollow metal doors to fit my building?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We fabricate and install custom hollow metal doors and frames built to exact measurements, security requirements, and commercial code compliance standards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common problems with hollow metal doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common problems include sagging doors, damaged frames, worn hinges, malfunctioning door closers, lock failures, and corrosion caused by heavy use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer maintenance services for hollow metal doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Preventive maintenance services help ensure safe operation, extend the lifespan of hollow metal doors, and reduce unexpected repair costs."
+      }
+    }
+  ]
+}
+</script>
+
+
 </head>
 
 
@@ -307,81 +349,43 @@
   </div>
 </section>
 
-        <nav class="nav-sub-sticky sub-nav-sticky"
-     style="z-index: 800; top: 80px;"> 
-    
+        <nav class="sub-nav-sticky" style="z-index: 800;"> 
     <div class="container px-0">
-        <div class="d-flex align-items-center justify-content-between py-2">
+        
+        <div class="mobile-nav-grid py-2">
 
-            <div class="d-flex gap-2 gap-md-4 align-items-center" 
-                 style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+            <div class="scroll-area d-flex align-items-center gap-2 ps-2 pe-3">
                 
-                <a href="#specifications" class="nav-pill-link">
+                <a href="#custom-engineering" class="nav-pill-link flex-shrink-0">
                     <i class="fas fa-ruler-combined"></i> 
-                    <span>Specs</span>
+                    <span>Custom Fab</span>
                 </a>
 
-                <a href="#faq" class="nav-pill-link">
+                <a href="#faq" class="nav-pill-link pill-faq-highlight flex-shrink-0">
                     <i class="fas fa-question-circle"></i> 
                     <span>FAQ</span>
                 </a>
             </div>
 
-            <div class="d-md-none pe-3">
-                <a href="tel:+19513761433" 
-                   class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2"
-                   style="border-radius: 50px; padding: 6px 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-phone-alt"></i> Call Tech
-                </a>
-            </div>
+            <div class="fixed-action pe-2">
+                <div class="d-md-none">
+                    <a href="tel:+19513761433" 
+                       class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2 shadow-sm"
+                       style="border-radius: 50px; padding: 7px 14px; font-size: 0.85rem;">
+                        <i class="fas fa-phone-alt"></i> Call
+                    </a>
+                </div>
 
-            <div class="d-none d-md-block">
-                <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
-                    <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
-                    <span>Expert Installation & 24/7 Repair</span>
+                <div class="d-none d-md-block">
+                    <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
+                        <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
+                        <span>Expert Installation & 24/7 Repair</span>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
-</nav>
-
-
-        </div>
-    </div>
-
-    <style>
-        /* Estilos encapsulados para esta barra */
-        .nav-pill-link {
-            color: #555;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 8px 15px;
-            border-radius: 50px;
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid transparent;
-        }
-
-        .nav-pill-link i { color: var(--primary-orange); }
-
-        .nav-pill-link:hover, .nav-pill-link:active {
-            background-color: white;
-            color: var(--primary-dark-blue);
-            border-color: var(--primary-orange);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .hover-orange:hover { color: var(--primary-orange) !important; }
-        
-        /* Ocultar barra de scroll */
-        div::-webkit-scrollbar { display: none; }
-    </style>
 </nav>
 
     
@@ -410,16 +414,11 @@
                     </p>
 
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#contact-us"
-                           class="btn-brand-solid-final"
-                           aria-label="Request hollow metal door service and installation">
+                        <a href="/ALL-DOOR-TECH/pages/forms/form-request-service.html" class="btn-brand-solid-final" aria-label="Request repair service for high speed doors">
                             Request Service
                         </a>
-
-                        <a href="#contact-us"
-                           class="btn-brand-outline-final"
-                           aria-label="Request a free estimate for your hollow metal door project">
-                            Request Estimate
+                        <a href="/ALL-DOOR-TECH/pages/forms/form-request-estimate.html" class="btn-brand-outline-final" aria-label="Request a free estimate for new doors">
+                            Get Quote <span class="d-none d-sm-inline ms-1">Now</span> 
                         </a>
                     </div>
 
@@ -810,8 +809,128 @@
 </section>
 
 
-
 <!------- Fully Certified & Accredited  OFFICE  EDN------->
+
+
+<!--------- FAQ -------->
+
+<section id="faq" class="py-5" style="background-color: #f9f9f9; overflow: hidden;" aria-labelledby="faq-title">
+    <div class="container">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <span class="text-uppercase fw-bold small px-3 py-1 mb-2 d-inline-block" 
+                      style="color: var(--primary-orange); background: rgba(244, 162, 0, 0.1); border-radius: 50px;">
+                    Hollow Metal Door FAQs
+                </span>
+                <h2 id="faq-title" class="display-6 fw-bold" style="color: var(--primary-dark-blue);">
+                    Frequently Asked Questions About Hollow Metal Doors
+                </h2>
+                <p class="text-muted">
+                    Common questions about hollow metal door repair, maintenance, and custom fabrication for commercial and industrial properties in Riverside, CA.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion custom-accordion" id="faqAccordion" role="region" aria-label="Hollow metal door frequently asked questions">
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne"
+                                    aria-expanded="false"
+                                    aria-controls="collapseOne"
+                                    style="color: var(--primary-dark-blue);">
+                                Do you repair hollow metal doors and frames?
+                            </button>
+                        </h3>
+                        <div id="collapseOne"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingOne"
+                             data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes. All Door Tech provides professional repair services for hollow metal doors and frames, including hinge replacement, frame alignment, door closers, locks, hardware upgrades, and damage caused by heavy use or impact. We service commercial buildings throughout Riverside, CA.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo"
+                                    aria-expanded="false"
+                                    aria-controls="collapseTwo"
+                                    style="color: var(--primary-dark-blue);">
+                                Can you fabricate custom hollow metal doors to fit my building?
+                            </button>
+                        </h3>
+                        <div id="collapseTwo"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingTwo"
+                             data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Absolutely. We fabricate and install custom hollow metal doors and frames built to your exact opening size, security requirements, and code compliance needs. Our doors are designed for durability, strength, and long-term performance.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingThree">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree"
+                                    aria-expanded="false"
+                                    aria-controls="collapseThree"
+                                    style="color: var(--primary-dark-blue);">
+                                What are common problems with hollow metal doors?
+                            </button>
+                        </h3>
+                        <div id="collapseThree"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingThree"
+                             data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Common issues include sagging doors, damaged frames, worn hinges, malfunctioning closers, lock failures, and rust or corrosion. These problems often occur in high-traffic commercial and industrial environments.
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingFour">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour"
+                                    aria-expanded="false"
+                                    aria-controls="collapseFour"
+                                    style="color: var(--primary-dark-blue);">
+                                Do you offer maintenance services for hollow metal doors?
+                            </button>
+                        </h3>
+                        <div id="collapseFour"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingFour"
+                             data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes. We offer preventive maintenance services for hollow metal doors to ensure smooth operation, improved security, and extended door lifespan. Routine inspections help prevent costly repairs and maintain building safety.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--------- FAQ END -------->
 
 
 <!-- FOOTER SECTOR -->

@@ -97,6 +97,50 @@
     }
   }
   </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you repair industrial and commercial sectional doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All Door Tech provides professional repair services for industrial and commercial sectional doors, including spring replacement, cable repair, panel damage, track alignment, rollers, and motorized operator issues. We service warehouses and commercial facilities throughout California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you install new sectional doors for commercial or industrial buildings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We install new industrial and commercial sectional doors designed for durability, insulation, and daily heavy use. Our team helps you select the right door size, materials, and operation type to match your facility’s needs anywhere in California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common problems with sectional doors in industrial environments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common issues include broken torsion springs, frayed cables, damaged door panels, misaligned tracks, worn rollers, and malfunctioning operators. High daily usage makes routine maintenance critical to avoid downtime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer preventive maintenance for sectional doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We offer preventive maintenance programs for industrial and commercial sectional doors to improve safety, reduce unexpected breakdowns, extend door lifespan, and keep operations running smoothly across California."
+      }
+    }
+  ]
+}
+</script>
+
+
+
 </head>
 
 
@@ -306,81 +350,43 @@
   </div>
 </section>
 
-        <nav class="nav-sub-sticky sub-nav-sticky"
-     style="z-index: 800; top: 80px;"> 
-    
+        <nav class="sub-nav-sticky" style="z-index: 800;"> 
     <div class="container px-0">
-        <div class="d-flex align-items-center justify-content-between py-2">
+        
+        <div class="mobile-nav-grid py-2">
 
-            <div class="d-flex gap-2 gap-md-4 align-items-center" 
-                 style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+            <div class="scroll-area d-flex align-items-center gap-2 ps-2 pe-3">
                 
-                <a href="#specifications" class="nav-pill-link">
+                <a href="#custom-engineering" class="nav-pill-link flex-shrink-0">
                     <i class="fas fa-ruler-combined"></i> 
-                    <span>Specs</span>
+                    <span>Custom Fab</span>
                 </a>
 
-                <a href="#faq" class="nav-pill-link">
+                <a href="#faq" class="nav-pill-link pill-faq-highlight flex-shrink-0">
                     <i class="fas fa-question-circle"></i> 
                     <span>FAQ</span>
                 </a>
             </div>
 
-            <div class="d-md-none pe-3">
-                <a href="tel:+19513761433" 
-                   class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2"
-                   style="border-radius: 50px; padding: 6px 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-phone-alt"></i> Call Tech
-                </a>
-            </div>
+            <div class="fixed-action pe-2">
+                <div class="d-md-none">
+                    <a href="tel:+19513761433" 
+                       class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2 shadow-sm"
+                       style="border-radius: 50px; padding: 7px 14px; font-size: 0.85rem;">
+                        <i class="fas fa-phone-alt"></i> Call
+                    </a>
+                </div>
 
-            <div class="d-none d-md-block">
-                <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
-                    <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
-                    <span>Expert Installation & 24/7 Repair</span>
+                <div class="d-none d-md-block">
+                    <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
+                        <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
+                        <span>Expert Installation & 24/7 Repair</span>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
-</nav>
-
-
-        </div>
-    </div>
-
-    <style>
-        /* Estilos encapsulados para esta barra */
-        .nav-pill-link {
-            color: #555;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 8px 15px;
-            border-radius: 50px;
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid transparent;
-        }
-
-        .nav-pill-link i { color: var(--primary-orange); }
-
-        .nav-pill-link:hover, .nav-pill-link:active {
-            background-color: white;
-            color: var(--primary-dark-blue);
-            border-color: var(--primary-orange);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .hover-orange:hover { color: var(--primary-orange) !important; }
-        
-        /* Ocultar barra de scroll */
-        div::-webkit-scrollbar { display: none; }
-    </style>
 </nav>
 
     
@@ -407,16 +413,11 @@
                     </p>
 
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#contact-us"
-                           class="btn-brand-solid-final"
-                           aria-label="Request sectional door service and installation">
-                             Request Service
+                        <a href="/ALL-DOOR-TECH/pages/forms/form-request-service.html" class="btn-brand-solid-final" aria-label="Request repair service for high speed doors">
+                            Request Service
                         </a>
-
-                        <a href="#contact-us"
-                           class="btn-brand-outline-final"
-                           aria-label="Request a free estimate for your sectional door project">
-                             Request Estimate
+                        <a href="/ALL-DOOR-TECH/pages/forms/form-request-estimate.html" class="btn-brand-outline-final" aria-label="Request a free estimate for new doors">
+                            Get Quote <span class="d-none d-sm-inline ms-1">Now</span> 
                         </a>
                     </div>
 
@@ -801,8 +802,156 @@
 </section>
 
 
-
 <!------- Fully Certified & Accredited  OFFICE  EDN------->
+
+<!--------- FAQ -------->
+
+<section id="faq" class="py-5" style="background-color: #f9f9f9; overflow: hidden;" aria-labelledby="faq-title">
+  <div class="container">
+
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <span class="text-uppercase fw-bold small px-3 py-1 mb-2 d-inline-block"
+              style="color: var(--primary-orange); background: rgba(244, 162, 0, 0.1); border-radius: 50px;">
+          Sectional Door FAQs
+        </span>
+
+        <h2 id="faq-title" class="display-6 fw-bold" style="color: var(--primary-dark-blue);">
+          Frequently Asked Questions About Industrial & Commercial Sectional Doors
+        </h2>
+
+        <p class="text-muted">
+          Answers to common questions about industrial and commercial sectional door repair,
+          maintenance, and installation for warehouses, loading docks, and commercial facilities
+          throughout California.
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion custom-accordion"
+             id="faqAccordion"
+             role="region"
+             aria-label="Industrial and commercial sectional door frequently asked questions">
+
+          <!-- FAQ 1 -->
+          <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+            <h3 class="accordion-header" id="headingOne">
+              <button class="accordion-button fw-bold collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="false"
+                      aria-controls="collapseOne"
+                      style="color: var(--primary-dark-blue);">
+                Do you repair industrial and commercial sectional doors?
+              </button>
+            </h3>
+
+            <div id="collapseOne"
+                 class="accordion-collapse collapse"
+                 aria-labelledby="headingOne"
+                 data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                Yes. All Door Tech provides professional repair services for industrial and
+                commercial sectional doors, including spring replacement, cable repair,
+                panel damage, track alignment, rollers, and motorized operator issues.
+                We service warehouses and commercial facilities throughout California.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+            <h3 class="accordion-header" id="headingTwo">
+              <button class="accordion-button fw-bold collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                      style="color: var(--primary-dark-blue);">
+                Can you install new sectional doors for commercial or industrial buildings?
+              </button>
+            </h3>
+
+            <div id="collapseTwo"
+                 class="accordion-collapse collapse"
+                 aria-labelledby="headingTwo"
+                 data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                Absolutely. We install new industrial and commercial sectional doors
+                designed for durability, insulation, and daily heavy use.
+                Our team helps you select the right door size, materials, and operation
+                type to match your facility’s needs anywhere in California.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+            <h3 class="accordion-header" id="headingThree">
+              <button class="accordion-button fw-bold collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                      style="color: var(--primary-dark-blue);">
+                What are common problems with sectional doors in industrial environments?
+              </button>
+            </h3>
+
+            <div id="collapseThree"
+                 class="accordion-collapse collapse"
+                 aria-labelledby="headingThree"
+                 data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                Common issues include broken torsion springs, frayed cables,
+                damaged door panels, misaligned tracks, worn rollers, and
+                malfunctioning operators. High daily usage makes routine
+                maintenance critical to avoid downtime.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+            <h3 class="accordion-header" id="headingFour">
+              <button class="accordion-button fw-bold collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                      style="color: var(--primary-dark-blue);">
+                Do you offer preventive maintenance for sectional doors?
+              </button>
+            </h3>
+
+            <div id="collapseFour"
+                 class="accordion-collapse collapse"
+                 aria-labelledby="headingFour"
+                 data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-muted">
+                Yes. We offer preventive maintenance programs for industrial and
+                commercial sectional doors to improve safety, reduce unexpected
+                breakdowns, extend door lifespan, and keep your operations running
+                smoothly across California.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--------- FAQ END -------->
+
+
 
 
 <!-- FOOTER SECTOR -->

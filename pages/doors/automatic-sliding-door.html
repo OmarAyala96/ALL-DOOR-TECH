@@ -97,6 +97,48 @@
     }
   }
   </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you repair automatic sliding doors for commercial properties?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All Door Tech provides professional repair services for automatic sliding doors, including sensors, operators, tracks, rollers, control units, and safety systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What causes automatic sliding doors to stop working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common causes include sensor failure, worn rollers, misaligned tracks, electrical issues, and control board malfunctions caused by heavy usage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are automatic sliding doors safe for customers and employees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When properly maintained, automatic sliding doors include safety sensors and motion detection systems designed to prevent accidents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer maintenance plans for automatic sliding doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Preventive maintenance helps ensure smooth operation, safety compliance, and longer service life for automatic sliding door systems."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 
@@ -306,80 +348,43 @@
   </div>
 </section>
 
-        <nav class="nav-sub-sticky sub-nav-sticky"
-     style="z-index: 800; top: 80px;"> 
-    
+        <nav class="sub-nav-sticky" style="z-index: 800;"> 
     <div class="container px-0">
-        <div class="d-flex align-items-center justify-content-between py-2">
+        
+        <div class="mobile-nav-grid py-2">
 
-            <div class="d-flex gap-2 gap-md-4 align-items-center" 
-                 style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+            <div class="scroll-area d-flex align-items-center gap-2 ps-2 pe-3">
                 
-                <a href="#specifications" class="nav-pill-link">
-                    <i class="fas fa-star"></i> <span>Features</span>
+                <a href="#custom-engineering" class="nav-pill-link flex-shrink-0">
+                    <i class="fas fa-ruler-combined"></i> 
+                    <span>Custom Fab</span>
                 </a>
 
-                <a href="#faq" class="nav-pill-link">
+                <a href="#faq" class="nav-pill-link pill-faq-highlight flex-shrink-0">
                     <i class="fas fa-question-circle"></i> 
                     <span>FAQ</span>
                 </a>
             </div>
 
-            <div class="d-md-none pe-3">
-                <a href="tel:+19513761433" 
-                   class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2"
-                   style="border-radius: 50px; padding: 6px 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-phone-alt"></i> Call Tech
-                </a>
-            </div>
+            <div class="fixed-action pe-2">
+                <div class="d-md-none">
+                    <a href="tel:+19513761433" 
+                       class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2 shadow-sm"
+                       style="border-radius: 50px; padding: 7px 14px; font-size: 0.85rem;">
+                        <i class="fas fa-phone-alt"></i> Call
+                    </a>
+                </div>
 
-            <div class="d-none d-md-block">
-                <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
-                    <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
-                    <span>Expert Installation & 24/7 Repair</span>
+                <div class="d-none d-md-block">
+                    <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
+                        <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
+                        <span>Expert Installation & 24/7 Repair</span>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
-</nav>
-
-
-        </div>
-    </div>
-
-    <style>
-        /* Estilos encapsulados para esta barra */
-        .nav-pill-link {
-            color: #555;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 8px 15px;
-            border-radius: 50px;
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid transparent;
-        }
-
-        .nav-pill-link i { color: var(--primary-orange); }
-
-        .nav-pill-link:hover, .nav-pill-link:active {
-            background-color: white;
-            color: var(--primary-dark-blue);
-            border-color: var(--primary-orange);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .hover-orange:hover { color: var(--primary-orange) !important; }
-        
-        /* Ocultar barra de scroll */
-        div::-webkit-scrollbar { display: none; }
-    </style>
 </nav>
 
     

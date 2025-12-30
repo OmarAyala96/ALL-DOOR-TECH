@@ -105,6 +105,48 @@
     }
   }
   </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you repair high speed doors for industrial and commercial facilities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All Door Tech repairs high speed doors including motors, control panels, sensors, safety edges, curtains, and track alignment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the benefits of installing high speed doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "High speed doors improve workflow efficiency, reduce air exchange, maintain temperature control, and increase safety in high traffic environments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast do high speed doors operate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depending on the model, high speed doors can operate at speeds of up to 96 inches per second, minimizing downtime and improving productivity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer preventive maintenance for high speed doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Preventive maintenance programs help reduce unexpected failures, extend component lifespan, and ensure safe operation."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body class="home-page">
@@ -293,82 +335,44 @@
 
 
 
-    <nav class="nav-sub-sticky sub-nav-sticky"
-     style="z-index: 800; top: 80px;"> 
-    
+    <nav class="sub-nav-sticky" style="z-index: 800;"> 
     <div class="container px-0">
-        <div class="d-flex align-items-center justify-content-between py-2">
+        
+        <div class="mobile-nav-grid py-2">
 
-            <div class="d-flex gap-2 gap-md-4 align-items-center" 
-                 style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+            <div class="scroll-area d-flex align-items-center gap-2 ps-2 pe-3">
                 
-                <a href="#specifications" class="nav-pill-link">
-                    <i class="fas fa-star"></i> <span>Features</span>
+                <a href="#custom-engineering" class="nav-pill-link flex-shrink-0">
+                    <i class="fas fa-ruler-combined"></i> 
+                    <span>Custom Fab</span>
                 </a>
 
-                <a href="#faq" class="nav-pill-link">
+                <a href="#faq" class="nav-pill-link pill-faq-highlight flex-shrink-0">
                     <i class="fas fa-question-circle"></i> 
                     <span>FAQ</span>
                 </a>
             </div>
 
-            <div class="d-md-none pe-3">
-                <a href="tel:+19513761433" 
-                   class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2"
-                   style="border-radius: 50px; padding: 6px 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-phone-alt"></i> Call Tech
-                </a>
-            </div>
+            <div class="fixed-action pe-2">
+                <div class="d-md-none">
+                    <a href="tel:+19513761433" 
+                       class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2 shadow-sm"
+                       style="border-radius: 50px; padding: 7px 14px; font-size: 0.85rem;">
+                        <i class="fas fa-phone-alt"></i> Call
+                    </a>
+                </div>
 
-            <div class="d-none d-md-block">
-                <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
-                    <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
-                    <span>Expert Installation & 24/7 Repair</span>
+                <div class="d-none d-md-block">
+                    <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
+                        <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
+                        <span>Expert Installation & 24/7 Repair</span>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
 </nav>
-
-
-        </div>
-    </div>
-
-    <style>
-        /* Estilos encapsulados para esta barra */
-        .nav-pill-link {
-            color: #555;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 8px 15px;
-            border-radius: 50px;
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid transparent;
-        }
-
-        .nav-pill-link i { color: var(--primary-orange); }
-
-        .nav-pill-link:hover, .nav-pill-link:active {
-            background-color: white;
-            color: var(--primary-dark-blue);
-            border-color: var(--primary-orange);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .hover-orange:hover { color: var(--primary-orange) !important; }
-        
-        /* Ocultar barra de scroll */
-        div::-webkit-scrollbar { display: none; }
-    </style>
-</nav>
-
 
 
     
