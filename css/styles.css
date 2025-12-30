@@ -59,41 +59,52 @@
     --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* ==========================================================================
+   1. CONFIGURACIÓN BASE Y RESET (SOLUCIÓN AL SCROLL Y DESBORDE)
+   ========================================================================== */
+
+/* 1. Aseguramos que el padding nunca sume ancho extra */
+*, *::before, *::after {
+    box-sizing: border-box !important;
 }
 
-/* --- CORRECCIÓN IMPORTANTE --- */
+/* 2. Configuración del HTML para permitir Scroll Suave y Sticky */
 html {
     scroll-behavior: smooth;
-    /* QUITAMOS overflow-x de aquí porque rompe el position: sticky */
+    overflow-x: visible; /* IMPORTANTE: Dejar visible aquí para que el sticky funcione */
+    scroll-padding-top: 130px;
 }
 
+/* 3. Configuración del BODY (Aquí matamos la barra blanca) */
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f0f0f0;
     color: var(--text-dark);
     line-height: 1.6;
-    max-width: 100%;
-    overflow-x: hidden; /* Lo dejamos solo en el body */
+    
+    /* EL MURO DE CONTENCIÓN: */
+    width: 100%;
+    max-width: 100vw;    /* Nunca más ancho que la ventana */
+    overflow-x: clip;    /* 'clip' corta lo que sobra SIN romper el header sticky */
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
 
-ul, ol { list-style: none; }
+ul, ol { list-style: none; padding: 0; margin: 0; }
 a { text-decoration: none; color: inherit; }
 
-/* Accesibilidad: Foco visible para navegación por teclado */
+/* Accesibilidad: Foco visible */
 :focus-visible {
     outline: 3px solid var(--primary-orange);
     outline-offset: 2px;
 }
 
 /* ==========================================================================
-   2. COMPONENTES GLOBALES: BOTONES (NUEVO DISEÑO TÉCNICO)
+   2. COMPONENTES GLOBALES: BOTONES
    ========================================================================== */
 
-/* Botón "REQUEST SERVICE" (Sobrescribe btn-warning de Bootstrap) */
+/* Botón "REQUEST SERVICE" */
 .btn-warning {
     background-color: var(--primary-orange) !important;
     border: 2px solid var(--primary-orange) !important;
@@ -108,7 +119,7 @@ a { text-decoration: none; color: inherit; }
     justify-content: center;
 }
 
-/* Botón "REQUEST ESTIMATE" (Sobrescribe btn-outline-light) */
+/* Botón "REQUEST ESTIMATE" */
 .btn-outline-light {
     background-color: transparent !important;
     border: 2px solid #ffffff !important;
@@ -120,10 +131,10 @@ a { text-decoration: none; color: inherit; }
     transition: var(--transition-smooth) !important;
 }
 
-/* EFECTO DE MOVIMIENTO Y ELEVACIÓN (HOVER) */
+/* EFECTO DE MOVIMIENTO (HOVER) */
 .btn-warning:hover, 
 .btn-outline-light:hover {
-    transform: translateY(-5px) !important; /* Movimiento leve hacia arriba */
+    transform: translateY(-5px) !important;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -141,20 +152,15 @@ a { text-decoration: none; color: inherit; }
 .text-warning { color: var(--primary-orange) !important; }
 .bg-custom-dark-blue { background-color: var(--primary-dark-blue) !important; }
 
+/* ==========================================================================
+   3. HEADER (ESTRUCTURA COMPLETA Y CORREGIDA)
+   ========================================================================== */
 
-
-
-/* 3. Adaptación de elementos específicos del Header */
-
-/* Hamburguesa: Aplicamos el foco visible */
+/* Accesibilidad Hamburguesa */
 .header__hamburger[role="button"]:focus-visible {
     outline: 3px solid var(--primary-orange, #FF9900); 
     outline-offset: 2px;
 }
-
-/* ======================================= */
-/* 🚀 HEADER MOBILE (MOBILE FIRST BASE STYLES) */
-/* ======================================= */
 
 .sr-only { 
     position: absolute;
@@ -168,18 +174,21 @@ a { text-decoration: none; color: inherit; }
     border: 0;
 }
 
-/* OCULTAR EL TOP BAR EN MÓVIL (Por defecto) */
+/* --- MÓVIL (MOBILE FIRST) --- */
+
+/* Topbar oculta en móvil */
 .topbar {
     display: none;
 }
 
+/* Header Sticky Móvil */
 .header {
     background-color: var(--primary-dark-blue);
-    position: -webkit-sticky; /* Para soporte en Safari */
-    position: sticky;         /* Esto hace la magia */
-    top: 0;                   /* Se pega al borde superior */
-    z-index: 1000;            /* Se asegura de estar encima de todo */
-    width: 100%;              /* Asegura que ocupe todo el ancho */
+    position: -webkit-sticky;
+    position: sticky;       /* Mantiene el header al bajar */
+    top: -1px;                 /* Pegado al techo */
+    z-index: 1050;          /* Valor alto para estar sobre todo */
+    width: 100%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -189,28 +198,25 @@ a { text-decoration: none; color: inherit; }
     justify-content: space-between;
     padding: 12px 20px;
     position: relative; 
+    width: 100%; /* Asegura ancho completo */
 }
 
-/* --- 2. LOGO --- */
+/* Logo */
 .header__logo {
     display: block;
-    height: 55px; /* Tu altura elegida */
-    width: auto;  /* El ancho se calcula solo */
-    
-    /* PROPORCIÓN: Usa la misma que tu imagen original (ejemplo 250/165) */
+    height: 55px; 
+    width: auto;
     aspect-ratio: 250 / 165; 
-    
     object-fit: contain;
     image-rendering: -webkit-optimize-contrast; 
     transition: transform 0.3s ease;
 }
 
-/* El efecto hover está perfecto */
 .header__logo:hover {
     transform: scale(1.05);
 }
 
-/* --- 3. HAMBURGUESA --- */
+/* Hamburguesa */
 .header__checkbox {
     display: none;
 }
@@ -237,26 +243,21 @@ a { text-decoration: none; color: inherit; }
     transition: all 0.3s;
 }
 
-.header__nav::-webkit-scrollbar {
-    display: none; /* Para Chrome, Safari y Opera */
-}
-
-/* --- 4. MENÚ LATERAL (SIDEBAR) --- */
+/* Navegación Lateral (Móvil) */
 .header__nav {
     position: fixed;
     top: 0;
     right: -100%; 
-    width: 85%; /* Aumentado de 80% a 85% */
-    max-width: 380px; /* Aumentado de 320px a 350px */
+    width: 85%; 
+    max-width: 380px; 
     height: 100vh;
     background-color: var(--primary-dark-blue);
     transition: right 0.35s ease;
     box-shadow: inset -5px 0 20px rgba(0,0,0,0.5);
-    -ms-overflow-style: none;  /* Para Internet Explorer y Edge */
-    scrollbar-width: none;
-    overflow-y: auto;overflow-x: hidden;
-    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding-top: 65px;
+    z-index: 1100; /* Encima del header */
 }
 
 .header__checkbox:checked ~ .header__nav {
@@ -281,7 +282,7 @@ a { text-decoration: none; color: inherit; }
     line-height: 1;
 }
 
-/* --- 5. ENLACES DEL MENÚ (LISTA Y ACTIVOS) --- */
+/* Listas del menú */
 .header__nav-list {
     list-style: none;
     margin: 0;
@@ -305,16 +306,17 @@ a { text-decoration: none; color: inherit; }
     color: #e0e0e0;
     text-decoration: none;
     transition: all 0.2s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header__nav a:active {
     background-color: rgba(255, 165, 0, 0.15);
     color: var(--primary-orange);
     padding-left: 30px; 
-    transition: padding 0.2s;
 } 
 
-/* --- 6. SUBMENÚS (DROPDOWN) --- */
+/* Submenús */
 .dropdown__menu {
     background-color: var(--secondary-dark-blue);
     list-style: none;
@@ -336,7 +338,7 @@ a { text-decoration: none; color: inherit; }
     max-height: 600px;
 }
 
-/* --- 7. GRUPO CTA MÓVIL (Al final del menú) --- */
+/* CTA Móvil */
 .header__nav-cta-group {
     padding: 30px 20px; 
     border-top: 1px solid var(--border-color);
@@ -345,7 +347,6 @@ a { text-decoration: none; color: inherit; }
     gap: 15px;
 }
 
-/* --- 8. ESTILOS DE BOTONES GENERALES --- */
 .header__cta {
     display: block;
     width: 100%;
@@ -370,7 +371,6 @@ a { text-decoration: none; color: inherit; }
     border: 2px solid var(--text-light, #FFF);
 }
 
-/* --- 9. EFECTOS HOVER/ACTIVE DEL BOTÓN --- */
 .header__cta--solid:hover {
     background-color: var(--primary-orange);
     border-color: var(--primary-orange);
@@ -382,96 +382,68 @@ a { text-decoration: none; color: inherit; }
 .header__cta--outline:active {
     transform: translateY(1px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
-    transition: transform 0.1s;
 }
 .header__cta--outline:hover {
     background-color: var(--text-light, #FFF);
     color: var(--primary-dark-blue);
 }
 
-/* Ocultar el grupo CTA de escritorio por defecto */
-.desktop-cta-group {
-    display: none;
-}
+.desktop-cta-group { display: none; }
 
-/* 1. Estilos para móvil (Fuera de las media queries) */
-/* Contenedor: le damos aire a los costados */
-/* Eliminamos el contenedor con padding especial */
+/* Info Container Móvil */
 .nav-info-container {
     list-style: none;
-    padding: 0; /* Sin padding extra para que la línea llegue de borde a borde */
-    margin: 10px 0px 0px 0px;;
+    padding: 0;
+    margin: 10px 0 0 0;
     display: flex;
     flex-direction: column;
 }
 
-/* Aplicamos el estilo exacto de los ítems del menú (ABOUT, CONTACT) */
 .nav-info-link {
     display: flex;
     align-items: center;
-    padding: 12px 20px; /* Ajustá según el padding de tus otros items */
+    padding: 12px 20px;
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
-    text-transform: uppercase; /* Para que coincida con DOORS, ABOUT, etc. */
+    text-transform: uppercase;
     width: 100%;
-    box-sizing: border-box;
 }
 
-/* El primer ítem de contacto necesita una línea arriba para separarse de los botones */
-.nav-info-link:first-child {
-    margin-top: 10px; /* Un pequeño respiro después de los botones naranjas */
-}
+.nav-info-link:first-child { margin-top: 10px; }
 
-/* Estilo de los iconos para que no distraigan */
 .nav-info-link i {
-    width: 20px; /* Ancho fijo para que los textos queden alineados */
+    width: 20px;
     margin-right: 10px;
-    color: #f9ae39; /* El color naranja solo en el icono para resaltar */
+    color: #f9ae39;
     font-size: 14px;
     text-align: center;
 }
 
-/* Solución definitiva para que el email largo no rompa el diseño */
 .nav-info-link span {
-    font-size: 13px; /* Tamaño reducido para correos largos */
-    letter-spacing: -0.2px; /* Comprimimos un poco las letras */
+    font-size: 13px;
+    letter-spacing: -0.2px;
     overflow: hidden;
     text-overflow: clip;
     white-space: nowrap;
     display: block;
 }
 
-/* Efecto al pasar el dedo o clic */
-.nav-info-link:active, 
-.nav-info-link:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-/* 2. DESAPARECER EN ESCRITORIO (Dentro de tu @media 1024px) */
-@media (min-width: 1024px) {
-    /* Agrega esta línea dentro de tu bloque de 1024px actual */
-    .nav-info-container {
-        display: none !important;
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none;
-    }
-}
-
-
-
 /* ======================================= */
 /* MEDIA QUERY: ESCRITORIO (min-width: 1024px) */
 /* ======================================= */
 @media (min-width: 1024px) {
 
-    /* Topbar */
+    .nav-info-container {
+        display: none !important;
+    }
+
+    /* Topbar Sticky */
     .topbar {
         position: -webkit-sticky;
         position: sticky;
         top: 0;
-        z-index: 1002; /* Mayor que el header para que tape si es necesario */
+        z-index: 1055; /* Encima del header */
         padding: 5px 20px;
         font-size: 0.85rem;
         background-color: #0d1e34; 
@@ -486,18 +458,14 @@ a { text-decoration: none; color: inherit; }
         transition: color 0.3s;
     }
 
-    .topbar a:hover {
-        color: var(--primary-orange);
-    }
+    .topbar a:hover { color: var(--primary-orange); }
 
-    /* 1. ALINEACIÓN PRINCIPAL Y ESTRUCTURA DEL HEADER */
-
+    /* Header Sticky Desktop */
     .header {
         position: -webkit-sticky;
         position: sticky;
-        /* Si tu topbar mide aprox 31px, esto hace que el header se pegue debajo */
-        top: 31px; 
-        z-index: 1000;
+        top: 31px; /* Se pega debajo del Topbar */
+        z-index: 1050;
         background-color: #223248;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
@@ -509,39 +477,22 @@ a { text-decoration: none; color: inherit; }
         min-height: 80px; 
         max-width: 100% !important;
         margin: 0 auto;
-        padding: 0 20px;
-        padding-left: 30px !important;
-        padding-right: 30px !important;
+        padding: 0 30px !important;
     }
 
-    /*  LOGO (Ajuste de tamaño en desktop) */
     .header__logo {
-    display: block;
-    height: 70px; /* Tu altura elegida para Desktop */
-    width: auto;
-    
-    /* 1. Reserva el espacio exacto para evitar el "salto" de carga */
-    aspect-ratio: 250 / 165; 
-    
-    /* 2. Asegura que el logo no se deforme */
-    object-fit: contain;
-    
-    image-rendering: -webkit-optimize-contrast; 
-    transition: transform 0.3s ease;
-}
+        height: 70px;
+        aspect-ratio: 250 / 165; 
+        object-fit: contain;
+    }
 
-.header__logo:hover {
-    transform: scale(1.05);
-}
+    .header__logo-link {
+        flex-shrink: 0 !important;
+        display: flex;
+        align-items: center;
+    }
 
-.header__logo-link {
-    /* Excelente: evita que el logo se deforme en flexbox */
-    flex-shrink: 0 !important;
-    display: flex;
-    align-items: center;
-}
-
-    /* 2. OCULTAR ELEMENTOS MÓVILES */
+    /* Ocultar elementos móviles */
     .header__hamburger, 
     .header__checkbox, 
     .header__nav-cta-group, 
@@ -550,27 +501,26 @@ a { text-decoration: none; color: inherit; }
         display: none;
     }
     
-    /* 3. NAV HORIZONTAL (Menú) */
+    /* Nav Horizontal */
     .header__nav {
         flex-grow: 1; 
         margin: 0 80px; 
         position: static;
-        width: auto; /* En escritorio vuelve a ser automático */
+        width: auto;
         height: auto;
         background: none;
         padding: 0;
         box-shadow: none;
         overflow: visible; 
         min-width: 0;
-        display: block; /* Asegura que se vea en el flujo horizontal */
+        display: block;
     }
 
     .header__nav-list {
         display: flex !important;
-        gap: 12px !important;
         align-items: center;
         justify-content: center; 
-        gap: 30px;
+        gap: 30px !important;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -583,15 +533,12 @@ a { text-decoration: none; color: inherit; }
     }
     
     .header__nav-list li:last-child {
-        margin-left: auto; /* Empuja el botón un poco a la derecha si hay espacio */
+        margin-left: auto;
     }
 
-    .arrow {
-        display: none; 
-    }
+    .arrow { display: none; }
 
-
-    /* 4. LINKS DEL MENÚ PRINCIPAL */
+    /* Links Desktop */
     .header__nav a,
     .dropdown__link {
         padding: 10px 0; 
@@ -599,28 +546,27 @@ a { text-decoration: none; color: inherit; }
         font-weight: 500;
         text-transform: uppercase;
         color: var(--text-light);
-        text-decoration: none;
         transition: color 0.3s ease;
         position: relative;
         display: block;
-        font-size: 13px !important;      /* Bajamos a 13px solo en escritorio */
-        letter-spacing: -0.3px !important; /* Junta un poquito las letras para ganar espacio */
-        padding-left: 5px !important;    /* Reduce el aire a los costados del texto */
+        font-size: 13px !important;
+        letter-spacing: -0.3px !important;
+        padding-left: 5px !important;
         padding-right: 5px !important;
     }
 
-    /* 💡 NUEVO: Creación de la línea animada (Pseudo-elemento) */
+    /* Línea animada */
     .header__nav a::after,
     .dropdown__link::after {
         content: '';
         position: absolute;
         bottom: 0;
-        left: 50%; /* Inicia en el centro */
+        left: 50%;
         transform: translateX(-50%);
         height: 2px;
-        width: 0; /* Empieza con ancho cero */
+        width: 0;
         background-color: var(--primary-orange);
-        transition: width 0.3s ease-out; /* Animación al cambiar el ancho */
+        transition: width 0.3s ease-out;
     }
 
     .header__nav-list > li > a:hover,
@@ -636,10 +582,10 @@ a { text-decoration: none; color: inherit; }
     .dropdown__link:hover::after,
     .header__nav-list > li > a:focus-visible::after,
     .dropdown__link:focus-visible::after {
-        width: 100%; /* La línea crece al ancho completo */
+        width: 100%;
     }
 
-    /* 5. DROPDOWN (SUBMENÚ) EN ESCRITORIO (Hover/Focus) */
+    /* Dropdowns Desktop */
     .dropdown__menu {
         position: absolute;
         top: 90%;
@@ -653,7 +599,7 @@ a { text-decoration: none; color: inherit; }
         max-height: none;
         opacity: 0;
         pointer-events: none;
-        transition: all 0.3s ease; top 0.3s ease;
+        transition: all 0.3s ease;
         z-index: 999;
     }
     
@@ -672,25 +618,25 @@ a { text-decoration: none; color: inherit; }
     .dropdown__menu li a::after {
         content: '';
         position: absolute;
-        left: 0; /* Lo hacemos deslizar de izquierda a derecha en el submenú */
+        left: 0;
         bottom: 0;
         width: 100%;
         height: 2px;
         background-color: var(--primary-orange);
-        transform: translateX(-100%); /* Oculto a la izquierda */
+        transform: translateX(-100%);
         transition: transform 0.3s ease-out; 
     }
 
-    .dropdown__menu li a:hover,.dropdown__menu li a:focus-visible {
+    .dropdown__menu li a:hover, .dropdown__menu li a:focus-visible {
         color: #fff;
         background-color: transparent !important;
         box-shadow: none;
         padding-left: 20px;
     }
     
-.dropdown__menu li a:hover::after,
+    .dropdown__menu li a:hover::after,
     .dropdown__menu li a:focus-visible::after {
-        transform: translateX(0); /* La línea se desliza hacia la derecha para cubrir el ancho */
+        transform: translateX(0);
     }
 
     .dropdown:hover .dropdown__menu {
@@ -699,7 +645,7 @@ a { text-decoration: none; color: inherit; }
         pointer-events: auto;
         top: 100%;
     }
-    /* El dropdown debe abrirse si el enlace tiene :focus-visible (teclado) */
+    
     .dropdown__link:focus-visible + .dropdown__menu,
     .dropdown__menu:focus-within {
         opacity: 1;
@@ -707,8 +653,7 @@ a { text-decoration: none; color: inherit; }
         top: 100%;
     }
 
-
-    /* 6. CTA DE ESCRITORIO */
+    /* CTA Desktop */
     .desktop-cta-group {
         display: flex;
         align-items: center;
@@ -725,7 +670,6 @@ a { text-decoration: none; color: inherit; }
         margin: 0;
     }
 }
-
 
 
     
@@ -1982,6 +1926,28 @@ z-index: 2;
 .sub-nav-link.active {
     color: var(--primary-dark-blue) !important; 
     border-bottom: 3px solid var(--primary-orange);
+}
+
+.sub-nav-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 800;
+    background-color: white;
+}
+
+/* En Móvil: El header principal suele ser más bajo */
+@media (max-width: 1023px) {
+    .sub-nav-sticky {
+        top: 78px !important; /* Ajusta este valor al alto exacto de tu header móvil */
+        margin-top: -1px; /* Cierra la "luz" o grieta entre headers */
+    }
+}
+
+/* En Desktop: El header principal + topbar es más alto */
+@media (min-width: 1024px) {
+    .sub-nav-sticky {
+        top: 110px !important; /* Ajusta este valor al alto de tu header desktop */
+    }
 }
 
 /* 4. ESTILOS DE LA SECCIÓN DE CONTENIDO (ACS) */
@@ -3992,5 +3958,183 @@ z-index: 2;
         color: var(--primary-orange);
     }
 }
-
 /* PARA DARLE ESTILO A LOS ELEMENTOS DE --OUR SOLUTIONS--22+ YEARS EXP--FREE ESTIMATE-- DEL HOME */
+
+
+/* --- CORRECCIONES PARA HIGH SPEED DOORS --- */
+
+/* 1. Domar el título gigante en móviles */
+@media (max-width: 576px) {
+    .display-2 {
+        font-size: 2.5rem !important; /* Mucho más pequeño en celular */
+        word-wrap: break-word; /* Si es necesario, que baje de renglón */
+    }
+    
+    /* 2. Asegurar que la cabecera no tenga márgenes locos */
+    .page-header {
+        overflow: hidden; /* Corta cualquier imagen de fondo que se salga */
+    }
+}
+
+/* 3. Romper el email largo (administration@...) para que no empuje */
+a[href^="mailto"] {
+    word-break: break-all;
+    font-size: 0.9em; /* Un poquito más chico para asegurar */
+}
+
+/* ======================================= */
+/* 🚑 VACUNA MASIVA PARA TODO EL SITIO (Responsive Fixes) */
+/* ======================================= */
+
+/* 1. DOMAR TÍTULOS GIGANTES EN MÓVIL */
+/* Esto arregla el "High Speed Doors" y cualquier otro título largo */
+@media (max-width: 768px) {
+    .display-1, .display-2, .display-3, .display-4 {
+        font-size: 2.2rem !important; /* Tamaño seguro para móvil */
+        word-wrap: break-word;        /* Rompe la palabra si es muy larga */
+        word-break: break-word;
+        hyphens: auto;
+    }
+}
+
+/* 2. ARREGLAR EL CUADRO NARANJA DESFASADO (Sin editar HTML) */
+/* Esta regla busca automáticamente cualquier elemento con "left: -20px" y lo corrige */
+[style*="left: -20px"], [style*="left:-20px"] {
+    left: 0 !important;  /* Lo regresa a su lugar */
+    max-width: 100%;     /* Evita que se salga */
+    display: none !important; /* En móvil, mejor lo ocultamos para evitar problemas */
+}
+/* Re-activarlo solo en escritorio si es necesario */
+@media (min-width: 992px) {
+    [style*="left: -20px"], [style*="left:-20px"] {
+        display: block !important;
+    }
+}
+
+/* 3. CANDADO DE SEGURIDAD PARA SECCIONES */
+/* Obliga a TODAS las secciones a cortar el contenido que se salga */
+section, header, footer {
+    overflow-x: clip; 
+    position: relative;
+    max-width: 100vw; /* Asegura que ninguna sección sea más ancha que la pantalla */
+}
+
+/* 4. CORRECCIÓN DE MÁRGENES DE BOOTSTRAP */
+/* Evita que las filas (.row) sin contenedor rompan el sitio */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
+}
+.col, [class*="col-"] {
+    padding-left: 15px !important; /* Recuperamos el padding que quitamos arriba */
+    padding-right: 15px !important;
+}
+
+/* ======================================= */
+/* 🚑 VACUNA MASIVA PARA TODO EL SITIO (Responsive Fixes) FINAL */
+/* ======================================= */
+
+/* ====================== */
+/*  ACORDEON DEL FAQ  */
+/* ======================*/
+
+/* Estilos para el Acordeón FAQ */
+.accordion-button:not(.collapsed) {
+    color: var(--primary-dark-blue) !important;
+    background-color: rgba(244, 162, 0, 0.1) !important; /* Fondo naranja suave al abrir */
+    box-shadow: none;
+}
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(244, 162, 0, 0.5);
+}
+/* Cambiar el color de la flechita por defecto de Bootstrap a una oscura */
+.accordion-button::after {
+    filter: grayscale(100%);
+}
+.accordion-button:not(.collapsed)::after {
+    filter: none; /* Opcional: podrías rotarla o cambiarle color con SVG si quisieras */
+}
+
+/* ====================== */
+/*  ACORDEON DEL FAQ AND  */
+/* ======================*/
+
+/* ====================== */
+/*  ACORDEON DEL FAQ PAGE */
+/* ======================*/
+
+/* FAQ Page – integración visual */
+/* FAQ CTA – Clean & Centered */
+.faq-cta {
+    background-color: #f8f9fa;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.faq-cta h3 {
+    font-weight: 700;
+    color: var(--primary-dark-blue);
+    margin-bottom: 8px;
+}
+
+.faq-cta p {
+    color: var(--text-dark);
+    max-width: 620px;
+    margin: 0 auto 12px;
+    font-size: 1.05rem;
+}
+
+.faq-cta .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 22px 0;
+    color: var(--primary-dark-blue);
+    font-size: 1rem;
+}
+
+.faq-cta .contact-info div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.faq-cta .contact-info i {
+    color: var(--primary-orange);
+    font-size: 1.1rem;
+}
+
+.faq-cta .contact-info a {
+    color: var(--primary-dark-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.faq-cta .contact-info a:hover {
+    color: var(--primary-orange);
+}
+
+.faq-cta .btn {
+    margin-top: 10px;
+    padding: 12px 34px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 50px;
+    background-color: var(--primary-orange);
+    border: none;
+    color: #1a2636;
+    transition: all 0.25s ease;
+}
+
+.faq-cta .btn:hover {
+    background-color: var(--primary-orange-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ====================== */
+/*  ACORDEON DEL FAQ PAGE AND */
+/* ======================*/

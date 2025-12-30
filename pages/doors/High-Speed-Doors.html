@@ -281,7 +281,7 @@
         <div class="container text-center py-md-5">
             <nav aria-label="breadcrumb" class="mb-3">
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-none small opacity-75">HOME</a></li>
+                    <li class="breadcrumb-item"><a href="../../index.html" class="text-white text-decoration-none small opacity-75">HOME</a></li>
                     <li class="breadcrumb-item active text-white small fw-bold" aria-current="page" style="color: var(--primary-orange) !important;">HIGH SPEED DOORS</li>
                 </ol>
             </nav>
@@ -291,47 +291,86 @@
         </div>
     </section>
 
-    <nav class="container-fluid bg-light border-bottom shadow-sm sticky-top"
-            style="z-index: 800;"
-            aria-label="Section navigation">
-            <div class="container px-0">
-                <div class="d-flex flex-nowrap justify-content-start justify-content-md-center align-items-center py-3 gap-3 gap-md-5"
-                    style="overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
 
-                    <a href="#overview"
-                    class="fw-bold text-decoration-none text-uppercase small ps-3 ps-md-0 nav-link-custom"
-                    style="color: #0d1e34; white-space: nowrap; min-width: fit-content; transition: color 0.3s ease;">
-                        Overview
-                    </a>
 
-                    <a href="#contact-us"
-                    class="fw-bold text-decoration-none text-uppercase small nav-link-custom"
-                    style="color: #0d1e34; white-space: nowrap; min-width: fit-content; transition: color 0.3s ease;">
-                        Contact Us
-                    </a>
+    <nav class="nav-sub-sticky sub-nav-sticky"
+     style="z-index: 800; top: 80px;"> 
+    
+    <div class="container px-0">
+        <div class="d-flex align-items-center justify-content-between py-2">
 
-                    <a href="#why-us"
-                    class="fw-bold text-decoration-none text-uppercase small pe-3 pe-md-0 nav-link-custom"
-                    style="color: #0d1e34; white-space: nowrap; min-width: fit-content; transition: color 0.3s ease;">
-                        Why Choose Us
-                    </a>
+            <div class="d-flex gap-2 gap-md-4 align-items-center" 
+                 style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+                
+                <a href="#specifications" class="nav-pill-link">
+                    <i class="fas fa-ruler-combined"></i> 
+                    <span>Specs</span>
+                </a>
 
+                <a href="#faq" class="nav-pill-link">
+                    <i class="fas fa-question-circle"></i> 
+                    <span>FAQ</span>
+                </a>
+            </div>
+
+            <div class="d-md-none ps-3">
+                <a href="tel:+19513761433" 
+                   class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2"
+                   style="border-radius: 50px; padding: 6px 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <i class="fas fa-phone-alt"></i> Call Tech
+                </a>
+            </div>
+
+            <div class="d-none d-md-block">
+                <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
+                    <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
+                    <span>Expert Installation & 24/7 Repair</span>
                 </div>
             </div>
 
-            <style>
-                /* Efecto Hover Espectacular sin perder accesibilidad */
-                .nav-link-custom:hover {
-                    color: var(--primary-orange) !important;
-                    text-shadow: 0px 0px 1px rgba(0,0,0,0.1);
-                }
+        </div>
+    </div>
+</nav>
 
-                /* Ocultar barra de scroll en navegadores basados en Webkit */
-                div[style*="overflow-x: auto"]::-webkit-scrollbar {
-                    display: none;
-                }
-            </style>
-        </nav>
+
+        </div>
+    </div>
+
+    <style>
+        /* Estilos encapsulados para esta barra */
+        .nav-pill-link {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 8px 15px;
+            border-radius: 50px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid transparent;
+        }
+
+        .nav-pill-link i { color: var(--primary-orange); }
+
+        .nav-pill-link:hover, .nav-pill-link:active {
+            background-color: white;
+            color: var(--primary-dark-blue);
+            border-color: var(--primary-orange);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .hover-orange:hover { color: var(--primary-orange) !important; }
+        
+        /* Ocultar barra de scroll */
+        div::-webkit-scrollbar { display: none; }
+    </style>
+</nav>
+
+
 
     
 <section id="overview" class="bg-white overflow-hidden" style="padding: 0;" aria-labelledby="overview-title">
@@ -352,11 +391,11 @@
                     </p>
                     
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#contact" class="btn-brand-solid-final" aria-label="Request repair service for high speed doors">
+                        <a href="/ALL-DOOR-TECH/pages/forms/form-request-service.html" class="btn-brand-solid-final" aria-label="Request repair service for high speed doors">
                             Request Service
                         </a>
-                        <a href="#contact" class="btn-brand-outline-final" aria-label="Request a free estimate for new doors">
-                            Request Estimate
+                        <a href="/ALL-DOOR-TECH/pages/forms/form-request-estimate.html" class="btn-brand-outline-final" aria-label="Request a free estimate for new doors">
+                            Get Quote <span class="d-none d-sm-inline ms-1">Now</span> 
                         </a>
                     </div>
                 </div>
@@ -455,15 +494,13 @@
 
 
 
-   <section id="specifications" class="py-5 bg-white" aria-label="High Speed Door Safety Features">
+   <section id="specifications" class="py-5 bg-white" aria-label="High Speed Door Safety Features" style="overflow: hidden;">
     <div class="container py-lg-5">
-        <div class="row g-5 align-items-stretch"> 
-            
-            <div class="col-lg-7 mb-4 mb-lg-0">
+        <div class="row g-4 g-lg-5 align-items-stretch"> <div class="col-lg-7 mb-4 mb-lg-0">
                 <div class="position-relative h-100">
                     <div class="position-absolute d-none d-lg-block" 
                          aria-hidden="true"
-                         style="top: -20px; left: -20px; width: 100px; height: 100px; background: var(--primary-orange); opacity: 0.1; border-radius: 15px; z-index: 0;">
+                         style="top: -20px; left: 0; width: 100px; height: 100px; background: var(--primary-orange); opacity: 0.1; border-radius: 15px; z-index: 0;">
                     </div>
                     
                     <div class="h-100 w-100 shadow-lg" style="border-radius: var(--border-radius-tech); overflow: hidden; border-left: 8px solid var(--primary-orange); position: relative;">
@@ -471,11 +508,12 @@
                         <img src="../../assets/images/doors-img/Nergeco_puertas-rapidas4.webp" 
                              alt="Nergeco High Speed Door equipped with safety sensors and soft bottom edge for industrial use" 
                              title="High Speed Door Safety Systems - All Door Tech"
-                             class="w-100 h-100" 
+                             class="img-fluid w-100 h-100" 
                              width="800"
                              height="600"
                              loading="lazy"
-                             style="object-fit: cover; object-position: center; min-height: 400px;">
+                             decoding="async"
+                             style="object-fit: cover; object-position: center; min-height: 300px;">
                         
                         <div class="position-absolute bottom-0 end-0 m-4 p-3 bg-white shadow-sm d-none d-md-block" style="border-radius: 10px; border-left: 4px solid var(--primary-orange);">
                              <p class="mb-0 small fw-bold text-uppercase" style="color: var(--primary-dark-blue);">
@@ -505,7 +543,6 @@
                             <p class="mb-0 small" style="color: #444;">Photoelectric sensors that detect obstacles and prevent closing.</p>
                         </div>
                     </div>
-
                     <div class="d-flex align-items-start mb-3 p-3 rounded-3 spec-item-hover">
                         <div class="icon-wrapper me-3">
                             <i class="bi bi-shield-check" aria-hidden="true" style="font-size: 1.5rem; color: var(--primary-orange);"></i>
@@ -807,8 +844,95 @@
 </section>
 
 
-
 <!------- Fully Certified & Accredited  OFFICE  EDN------->
+
+
+<!--------- FAQ  -------->
+
+<section id="faq" class="py-5" style="background-color: #f9f9f9; overflow: hidden;">
+    <div class="container">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <span class="text-uppercase fw-bold small px-3 py-1 mb-2 d-inline-block" 
+                      style="color: var(--primary-orange); background: rgba(244, 162, 0, 0.1); border-radius: 50px;">
+                    Common Questions
+                </span>
+                <h2 class="display-6 fw-bold" style="color: var(--primary-dark-blue);">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-muted">Answers to common questions about our High Speed Door systems.</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion custom-accordion" id="faqAccordion">
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color: var(--primary-dark-blue);">
+                                What happens if there is a power outage?
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Our high-speed doors come equipped with a manual release system (chain hoist or crank) that allows you to easily open and close the door manually during power failures, ensuring your operations never stop.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: var(--primary-dark-blue);">
+                                Are these doors safe for forklifts and pedestrians?
+                            </button>
+                        </h3>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Absolutely. We integrate advanced safety systems including photo-eyes and light curtains that detect obstruction. If a person or forklift is detected, the door reverses immediately to prevent accidents.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingThree">
+                            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color: var(--primary-dark-blue);">
+                                How fast do these doors open?
+                            </button>
+                        </h3>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Depending on the model and size, our high-speed doors can open at speeds of up to 96 inches per second. This rapid action minimizes air exchange, saving energy and maintaining temperature control.
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingFour">
+                            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="color: var(--primary-dark-blue);">
+                                Do you provide maintenance services?
+                            </button>
+                        </h3>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes, All Door Tech offers comprehensive preventive maintenance plans tailored to your facility's needs to ensure your doors operate smoothly and to extend their lifespan.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--------- FAQ AND -------->
+
+
+
+
+
 
 
 <!-- FOOTER SECTOR -->
