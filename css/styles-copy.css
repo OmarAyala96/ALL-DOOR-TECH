@@ -3529,7 +3529,7 @@ z-index: 2;
     justify-content: center;
     text-align: center;
     background: linear-gradient(rgba(34, 50, 72, 0.6), rgba(34, 50, 72, 0.8)), 
-                url('../assets/images/About-us/about-us4.webp') no-repeat center center / cover fixed;
+                url('../assets/images/about-us/about-us4.webp') no-repeat center center / cover fixed;
 }
 
 .adt-parallax-cta-box {
