@@ -39,7 +39,7 @@
 
   <!-- ICONS -->
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -320,11 +320,10 @@
 <!-- CONTACT ANDS -->
 
 <!-- FORM SECTION -->
-
 <section class="form__container" id="estimate-section">
   <h2 class="form__container-title">Estimate Information</h2>
 
-  <form class="form__container-form" id="estimate-form" enctype="multipart/form-data">
+  <form class="form__container-form" id="estimate-form">
     
     <div class="form__container-input f-name">
       <label for="est_first_name">First Name <span class="required">(Required)</span></label>
@@ -371,18 +370,6 @@
       <textarea id="est_message" name="message" placeholder="Please describe the door type, size, or issues you are experiencing." required></textarea>
     </div>
 
-    <div class="form__container-input f-files">
-      <label for="est_files">Attach Photos or Videos <span class="optional">(Max 3 files)</span></label>
-      <div class="custom-file-wrapper">
-        <input type="file" id="est_files" name="my_file" accept="image/*,video/*" multiple aria-describedby="est-file-instructions">
-        <div class="custom-file-design">
-          <span class="custom-file-button">Choose files</span>
-          <span class="custom-file-status">No files chosen</span>
-        </div>
-      </div>
-      <p id="est-file-instructions" class="file-help-text">Please upload up to 3 files. Large files might take a moment to load.</p>
-    </div>
-
     <div class="form__container-input f-source">
       <label for="est_source">How did you find us? <span class="required">(Required)</span></label>
       <div class="select-wrapper">
@@ -403,7 +390,6 @@
     </div>
   </form>
 </section>
-
 
 <!-- PERFECT SERVICE INCREIBLE FAST  -->
 <section class="contact-cta">
@@ -516,7 +502,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 
 <script src="../../js/main.js"></script>
 

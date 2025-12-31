@@ -3652,37 +3652,87 @@ z-index: 2;
     border: 1px solid rgba(0,0,0,0.05);
 }
 
+/* --- VARIABLES GLOBALES (Aseguran que los colores funcionen) --- */
+
+
 /* --- CHAT SYSTEM --- */
-.adt-chat-system { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
+/* --- VARIABLES --- */
+:root {
+    --adt-dark: #223248;
+    --adt-gold: #f9ae39;
+}
+
+/* --- CHAT SYSTEM --- */
+.adt-chat-system { 
+    position: fixed; 
+    bottom: 25px; 
+    right: 25px; 
+    z-index: 9999; 
+}
 
 .adt-chat-box {
-    position: absolute; bottom: 80px; right: 0;
-    width: 320px; background: #f0f2f5;
-    border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-    display: none; overflow: hidden;
+    position: absolute; 
+    bottom: 80px; 
+    right: 0;
+    width: 320px; 
+    background: #f0f2f5;
+    border-radius: 20px; 
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    display: none; 
+    overflow: hidden;
+    animation: adtFadeIn 0.3s ease-out;
+}
+
+/* Esta clase es la que activa el JavaScript */
+.adt-chat-box.active {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
 }
 
 .adt-chat-header {
-    background: var(--adt-dark); color: white; padding: 15px;
-    display: flex; align-items: center; gap: 10px;
+    background: var(--adt-dark); 
+    color: white; 
+    padding: 15px;
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
 }
 
 .adt-avatar {
-    position: relative; width: 40px; height: 40px;
-    background: var(--adt-gold); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--adt-dark); font-weight: bold;
+    position: relative; 
+    width: 40px; 
+    height: 40px;
+    background: var(--adt-gold); 
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: var(--adt-dark); 
+    font-weight: bold;
 }
 
 .online-dot {
-    position: absolute; bottom: 2px; right: 2px;
-    width: 10px; height: 10px; background: #28a745;
-    border: 2px solid var(--adt-dark); border-radius: 50%;
+    position: absolute; 
+    bottom: 2px; 
+    right: 2px;
+    width: 10px; 
+    height: 10px; 
+    background: #28a745;
+    border: 2px solid var(--adt-dark); 
+    border-radius: 50%;
 }
 
-.chat-close-btn { background: none; border: none; color: white; font-size: 24px; cursor: pointer; margin-left: auto; }
+.chat-close-btn { 
+    background: none; border: none; color: white; 
+    font-size: 24px; cursor: pointer; margin-left: auto; 
+}
 
-.adt-chat-body { height: 250px; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+.adt-chat-body { 
+    height: 250px; padding: 15px; overflow-y: auto; 
+    display: flex; flex-direction: column; gap: 10px; 
+}
 
 .adt-msg {
     background: white; padding: 10px; border-radius: 10px;
@@ -3702,34 +3752,41 @@ z-index: 2;
     font-weight: bold; cursor: pointer; transition: 0.3s;
 }
 
-.adt-btn-send:hover { background: var(--adt-gold); color: var(--adt-dark); }
-
+/* BURBUJA TRANSPARENTE (Restaurada) */
 .adt-chat-trigger {
-    width: 60px; height: 60px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    width: 60px; 
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2); /* Transparencia original */
+    backdrop-filter: blur(10px); /* Efecto cristal */
     border: 2px solid var(--adt-gold);
     color: var(--adt-gold);
-    border-radius: 50%; font-size: 24px;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 50%; 
+    font-size: 24px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer; 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
-/* --- MOBILE OPTIMIZATION --- */
-@media (max-width: 991px) {
-    .adt-parallax-cta { background-attachment: scroll; min-height: 55vh; }
-    .adt-parallax-cta-box h1 { font-size: 2.5rem; }
+@keyframes adtFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
-    .adt-legacy-content { border-left: none; padding-left: 0; text-align: center; }
-    .adt-year-circle { width: 130px; height: 130px; }
-    .adt-year-circle h3 { font-size: 2.2rem; }
-    .adt-chat-box { width: 280px; }
+    .adt-chat-box { width: 280px; right: -10px; }
 }
 
 
-
+/* Clase para éxito en el envío */
+.btn-success {
+    background-color: #28a745 !important;
+    color: #ffffff !important;
+    border-color: #28a745 !important;
+    content: "SENT SUCCESSFULLY!" !important; /* Truco visual */
+    opacity: 1 !important;
+}
 
 
 /* ESTO SIRVE PARA QUE EL HEADER NO TAPE PARTE DE LA SECCION DE LA PAG QUE DESEAS MOSTRAR */
