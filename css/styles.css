@@ -2081,9 +2081,32 @@ z-index: 2;
 
 
 
-    /*-------PAGINA DE ACCESS CONTROL SYSTEM END-------*/
+    /*-------PAGINA DE ACCESS CONTROL SYSTEM -------*/
 
+/* BOTONES DEL SUBMENU */
+/* Mejora el scroll horizontal en móviles */
+.custom-nav-scroll {
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iPhone */
+    scrollbar-width: none; /* Oculta scroll en Firefox */
+    -ms-overflow-style: none; /* Oculta scroll en IE/Edge */
+}
 
+.custom-nav-scroll::-webkit-scrollbar {
+    display: none; /* Oculta scroll en Chrome/Safari */
+}
+
+/* Evita que los enlaces se achiquen */
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+/* Estilo opcional para que se vea mejor el link activo */
+.active-link {
+    color: #ffb338 !important; /* El naranja de All Door Tech */
+    border-bottom: 2px solid #ffb338;
+}
+
+ /*-------PAGINA DE ACCESS CONTROL SYSTEM END-------*/
 
 
 
