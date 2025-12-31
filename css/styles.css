@@ -1783,7 +1783,7 @@ z-index: 2;
 
 .parallax-section {
     /* CLAVE 1: Define la imagen de fondo y su tamaño */
-    background-image: url(../assets/images/banner-webp/gemini_acces-control-system.webp); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
+    background-image: url("../../assets/images/banner-webp/gemini_acces-control-system.webp"); /* REEMPLAZA ESTA RUTA por la imagen que quieres mover */
     background-size: cover;
     background-position: center;
     min-height: 400px; /* Altura mínima para que el efecto sea visible */
@@ -2710,7 +2710,7 @@ z-index: 2;
     left: 0;
     width: 100%; 
     height: 100%;
-    background-image: url('../assets/images/banner-webp/offices.webp');
+    background-image: url('../../assets/images/banner-webp/offices.webp');
     background-size: cover;
     background-position: center;
     /* Si se sigue pegando, cambia 'fixed' por 'scroll' para probar */
