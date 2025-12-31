@@ -2401,6 +2401,54 @@ z-index: 2;
     padding: 15px 45px;
   }
 }
+
+/* --- NUEVOS ESTILOS PARA EL CONTENIDO --- */
+
+/* Badge superior tipo pastilla */
+.service-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(249, 174, 57, 0.15); /* Naranja suave */
+    color: #f9ae39;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(249, 174, 57, 0.3);
+}
+
+/* Color naranja para resaltar palabras en el H1 */
+.text-orange {
+    color: #f9ae39;
+}
+
+/* Estilo para el nuevo subtítulo */
+.service-hero__subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #d1d1d1;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* --- AJUSTES EN TU H1 EXISTENTE --- */
+.service-hero__content h1 {
+    margin-bottom: 10px; /* Reducimos el margen para que el subtítulo esté cerca */
+    line-height: 1.2;
+}
+
+/* --- AJUSTE PARA PANTALLAS GRANDES --- */
+@container service-hero (min-width: 900px) {
+    .service-hero__subtitle {
+        font-size: 1.25rem;
+    }
+}
 /* -------- Request Service ENDS -------*/
 
 
@@ -4294,4 +4342,180 @@ section, header, footer {
 
 .emergency-tab:hover .tab-icon-box {
     background-color: #e63946;
+}
+
+
+
+
+
+/* Esto asegura que NADA en el index ponga el texto en blanco al hacer hover */
+.contact__tabs-item, 
+.contact__tabs-item:hover, 
+.contact__tabs-item:active, 
+.contact__tabs-item:focus {
+    text-decoration: none !important;
+    color: #002855 !important; /* Fuerza el azul oscuro siempre */
+}
+
+/* Forzamos visibilidad de los títulos internos */
+.contact__tabs-item .tab-title {
+    color: #002855 !important;
+    display: block;
+}
+
+.contact__tabs-item .tab-subtitle {
+    color: #666666 !important;
+    display: block;
+}
+
+/* Estilo de la cajita de icono para el index */
+.tab-icon-box {
+    width: 45px;
+    height: 45px;
+    background: #f1f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.contact__tabs-item:hover .tab-icon-box {
+    background: #f4a200; /* Naranja All Door Tech */
+    color: white !important;
+}
+
+
+
+
+/* Badge Estilo Estimate */
+
+
+.service-hero__badge-estimate {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(249, 174, 57, 0.1); 
+    color: #f9ae39;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(249, 174, 57, 0.25);
+}
+
+.text-orange {
+    color: #f9ae39;
+}
+
+/* Subtítulo ajustado */
+.service-hero__subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    color: #e0e0e0;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Nueva barra de confianza (Trust Bar) */
+.estimate-trust-bar {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.estimate-trust-bar span {
+    font-size: 0.9rem;
+    color: #f9ae39;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.estimate-trust-bar i {
+    font-size: 0.8rem;
+}
+
+/* Ajuste responsivo para la barra de confianza */
+@media (max-width: 768px) {
+    .estimate-trust-bar {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+
+
+/* Badge Estilo Feedback */
+.service-hero__badge-feedback {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(249, 174, 57, 0.1);
+    color: #f9ae39;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(249, 174, 57, 0.25);
+}
+
+/* Estrellas de Calificación */
+.feedback-stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.feedback-stars i {
+    color: #f9ae39; /* Estrellas doradas/naranjas */
+    font-size: 1.2rem;
+    /* Efecto de brillo sutil */
+    filter: drop-shadow(0 0 5px rgba(249, 174, 57, 0.4));
+}
+
+.stars-text {
+    margin-left: 10px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Reutilizamos el estilo del subtítulo de las otras páginas */
+.service-hero__subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    color: #e0e0e0;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+}
+
+/* Micro-animación para el corazón del badge */
+.service-hero__badge-feedback i {
+    animation: pulse-heart 2s infinite;
+}
+
+@keyframes pulse-heart {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
