@@ -252,3 +252,79 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+ // gallery about//
+const initLightbox = () => {
+    // 1. Crear el visor con flechas si no existe
+    if (!document.getElementById('adt-lightbox')) {
+        const lb = document.createElement('div');
+        lb.id = 'adt-lightbox';
+        
+        // Estilos del fondo
+        Object.assign(lb.style, {
+            display: 'none', position: 'fixed', zIndex: '100000',
+            top: '0', left: '0', width: '100%', height: '100%',
+            backgroundColor: 'rgba(0,0,0,0.95)', justifyContent: 'center',
+            alignItems: 'center', cursor: 'pointer'
+        });
+
+        // HTML interno: Imagen + Flechas + Botón Cerrar
+        lb.innerHTML = `
+            <button id="lb-prev" style="position:absolute; left:20px; background:none; border:none; color:white; font-size:50px; cursor:pointer; z-index:100001;">&#10094;</button>
+            <img id="adt-lightbox-img" src="" style="max-width:85%; max-height:80vh; border:3px solid #f9ae39; border-radius:12px; transition: transform 0.3s; cursor:default;">
+            <button id="lb-next" style="position:absolute; right:20px; background:none; border:none; color:white; font-size:50px; cursor:pointer; z-index:100001;">&#10095;</button>
+            <span style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+        `;
+        document.body.appendChild(lb);
+    }
+
+    const lightbox = document.getElementById('adt-lightbox');
+    const lightboxImg = document.getElementById('adt-lightbox-img');
+    let images = []; // Array para guardar las rutas de las fotos
+    let currentIndex = 0;
+
+    // Función para actualizar la imagen en el visor
+    const updateImage = (index) => {
+        if (index < 0) index = images.length - 1;
+        if (index >= images.length) index = 0;
+        currentIndex = index;
+        lightboxImg.src = images[currentIndex];
+    };
+
+    // 2. Abrir el visor al hacer clic en una imagen
+    document.addEventListener('click', (e) => {
+        const clickedImg = e.target.closest('.adt-gallery-item img');
+        if (clickedImg) {
+            // Buscamos todas las imágenes de la galería en ese momento
+            const allImgElements = Array.from(document.querySelectorAll('.adt-gallery-item img'));
+            images = allImgElements.map(img => img.src);
+            currentIndex = images.indexOf(clickedImg.src);
+
+            updateImage(currentIndex);
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    });
+
+    // 3. Control de botones (Siguiente / Anterior)
+    document.getElementById('lb-prev').onclick = (e) => { e.stopPropagation(); updateImage(currentIndex - 1); };
+    document.getElementById('lb-next').onclick = (e) => { e.stopPropagation(); updateImage(currentIndex + 1); };
+
+    // Cerrar al hacer clic en el fondo
+    lightbox.onclick = () => {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
+
+    // 4. Control por TECLADO (Flechas y Escape)
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+            if (e.key === "ArrowRight") updateImage(currentIndex + 1);
+            if (e.key === "ArrowLeft") updateImage(currentIndex - 1);
+            if (e.key === "Escape") lightbox.click();
+        }
+    });
+};
+
+// Iniciar sistema
+initLightbox();
