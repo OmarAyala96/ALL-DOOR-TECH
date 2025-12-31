@@ -3701,7 +3701,7 @@ z-index: 2;
     border-radius: 12px; font-size: 1.8rem; margin-bottom: 1.5rem;
 }
 
-/* --- PORTFOLIO GALLERY --- */
+/* --- PORTFOLIO GALLERY about--- */
 .adt-gallery-item {
     position: relative;
     height: 180px; /* Tamaño fijo para rejilla perfecta */
@@ -3709,6 +3709,8 @@ z-index: 2;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: var(--adt-transition);
+    cursor: pointer; /* Añade esto */
+    /* ... resto de tu código igual ... */
 }
 
 .adt-gallery-item img {

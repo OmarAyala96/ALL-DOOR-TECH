@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#223248">
 
-  <title>About All Door Tech | Expert Door Specialists in Riverside, CA</title>
-  <meta name="description" content="Learn more about All Door Tech, Riverside's leading experts in commercial and industrial door solutions. Years of experience in installation, repair, and certified safety inspections.">
+  <title>About All Door Tech | Expert Door Specialists  Riverside & All California | All Door Tech </title>
+  <meta name="description" content="Learn more about All Door Tech, Riverside's leading experts in commercial and industrial door solutions. Years of experience in installation, repair, and certified safety inspections...serving Riverside and the entire state of California.">
   <meta name="keywords" content="about All Door Tech, door specialists Riverside, commercial door experts, industrial door company CA, professional door technicians">
   <link rel="canonical" href="https://alldoortech.com/about-us">
 
@@ -26,7 +26,7 @@
 
   
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -54,34 +54,75 @@
   <meta name="twitter:image" content="https://alldoortech.com/assets/og-image-about.png">
 
   <script type="application/ld+json">
-  [
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "All Door Tech",
-      "image": "https://alldoortech.com/assets/logo.png",
-      "telephone": "+1-951-376-1433",
+      "@type": "AboutPage",
+      "@id": "https://alldoortech.com/about-us/#webpage",
       "url": "https://alldoortech.com/about-us",
+      "name": "About All Door Tech | Expert Door Specialists Riverside",
+      "description": "Learn more about All Door Tech, Riverside's leading experts in commercial and industrial door solutions with over 22 years of experience.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://alldoortech.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About Us"
+          }
+        ]
+      },
+      "mainEntity": {
+        "@id": "https://alldoortech.com/#organization"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://alldoortech.com/#organization",
+      "name": "All Door Tech",
+      "image": "https://alldoortech.com/assets/images/img-webp/FAVicon-LOGO.webp",
+      "telephone": "+1-951-376-1433",
+      "url": "https://alldoortech.com/",
+      "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "4036 Canterbury Rd",
         "addressLocality": "Riverside",
         "addressRegion": "CA",
         "postalCode": "92501",
         "addressCountry": "US"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "All Door Tech",
-        "description": "Riverside's leading commercial and industrial door company, specializing in high-performance installations and 24/7 repair services.",
-        "areaServed": "Riverside, CA"
-      }
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Riverside"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "San Bernardino"
+        },
+        {
+          "@type": "State",
+          "name": "California"
+        }
+      ],
+      "knowsAbout": [
+        "Commercial Door Repair",
+        "Industrial Door Installation",
+        "AAADM Certified Inspections",
+        "ADA Compliance"
+      ]
     }
   ]
-  </script>
+}
+</script>
 </head>
 
 <body class="home-page">
@@ -481,54 +522,6 @@
     </div>
   </div>
 </section>
-
-<!------- chat------->
-<div class="adt-chat-system">
-    <div class="adt-chat-box" id="chatContainer" style="display:none;">
-        <div class="adt-chat-header" style="background:#223248; color:white; padding:15px; display:flex; align-items:center; gap:10px; border-radius:20px 20px 0 0;">
-            <div class="adt-avatar" style="position: relative; width:40px; height:40px; background:#f9ae39; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#223248; font-weight:bold;">
-                RC
-                <span style="position: absolute; bottom: 2px; right: 2px; width: 10px; height: 10px; background: #28a745; border: 2px solid #223248; border-radius: 50%;"></span>
-            </div>
-            <div style="flex-grow:1; text-align:left;">
-                <p style="margin:0; font-weight:bold; font-size:14px;">Raul Cortez</p>
-                <small style="color:#f9ae39; font-size:11px;">Online Now</small>
-            </div>
-            <button onclick="toggleAdtChat()" style="background:none; border:none; color:white; font-size:22px; cursor:pointer;">&times;</button>
-        </div>
-
-        <div style="height:250px; background:#f0f2f5; padding:15px; overflow-y:auto;" id="chatBody">
-            <div class="adt-msg" style="background:white; padding:10px; border-radius:10px; font-size:13px; margin-bottom:10px; box-shadow:0 2px 4px rgba(0,0,0,0.05);">
-                Hi! I'm Raul. How can I help you with your door project today?
-            </div>
-            <div class="adt-msg" style="background:white; padding:10px; border-radius:10px; font-size:13px; margin-bottom:10px; box-shadow:0 2px 4px rgba(0,0,0,0.05);">
-                Please leave your contact info (Email or Phone) below.
-            </div>
-        </div>
-
-        <div style="padding:15px; background:white; border-radius:0 0 20px 20px;">
-            <form id="contact-form">
-                <input type="text" name="name" class="adt-input" placeholder="Your Name" required style="width:100%; margin-bottom:8px; padding:10px; border:1px solid #ddd; border-radius:8px; font-size:13px;">
-                
-                <input type="text" name="email" class="adt-input" placeholder="Email or Phone Number" required style="width:100%; margin-bottom:8px; padding:10px; border:1px solid #ddd; border-radius:8px; font-size:13px;">
-                
-                <textarea name="message" class="adt-input" rows="2" placeholder="How can we help?" required style="width:100%; margin-bottom:8px; padding:10px; border:1px solid #ddd; border-radius:8px; resize:none; font-size:13px;"></textarea>
-                
-                <button type="submit" id="btn-send" class="adt-btn-send" style="width:100%; background:#223248; color:#f9ae39; border:2px solid #f9ae39; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer;">SEND MESSAGE</button>
-            </form>
-        </div>
-    </div>
-
-    <button class="adt-chat-trigger" onclick="toggleAdtChat()" id="chatBtn">
-        <i class="bi bi-chat-fill"></i>
-    </button>
-</div>
-<!------- chat and------->
-
-
-
-
-
 
 <!-- FOOTER SECTOR -->
 
