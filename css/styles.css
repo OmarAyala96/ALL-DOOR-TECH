@@ -4208,3 +4208,91 @@ section, header, footer {
         transition-duration: 0.6s; /* Un poco más rápido en celular */
     }
 }
+
+
+
+
+/* Contenedor: Más espacio y elegancia */
+.contact__tabs-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px 10px; /* Aumentamos el espacio arriba para despegarlo del Hero */
+    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* El Botón: Estilo Glassmorphism / Minimalista */
+.contact__tabs-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 22px;
+    background: #ffffff;
+    text-decoration: none;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 40, 85, 0.08); /* Borde muy sutil azul */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); /* Sombra casi invisible al inicio */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Caja del Icono: Más pequeña y fina */
+.tab-icon-box {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 12px;
+    color: var(--primary-dark-blue);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.tab-title {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-dark-blue);
+    margin-bottom: 2px;
+}
+
+.tab-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 500;
+}
+
+/* --- HOVER PREMIUM --- */
+
+.contact__tabs-item:hover {
+    background: #ffffff;
+    transform: translateY(-8px); /* Elevación más pronunciada */
+    box-shadow: 0 20px 40px rgba(0, 40, 85, 0.12); /* Sombra elegante azulada */
+    border-color: var(--primary-orange);
+}
+
+.contact__tabs-item:hover .tab-icon-box {
+    background: var(--primary-orange);
+    color: white;
+}
+
+/* Toque especial para Emergency */
+.emergency-tab:hover {
+    border-color: #d90429;
+}
+.emergency-tab:hover .tab-icon-box {
+    background: #d90429;
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+    .contact__tabs-list {
+        grid-template-columns: 1fr;
+        padding: 0px 20px;
+        gap: 15px;
+    }
+}
