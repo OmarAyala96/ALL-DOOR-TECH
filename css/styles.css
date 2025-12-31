@@ -1968,27 +1968,98 @@ z-index: 2;
     border-bottom: 3px solid var(--primary-orange);
 }
 
+/* --- CONFIGURACIÓN ESTRUCTURAL DEL SUBMENÚ --- */
+
+/* 1. Posicionamiento Sticky (Lo que ya tenías, ajustado) */
 .sub-nav-sticky {
     position: -webkit-sticky;
     position: sticky;
     z-index: 800;
     background-color: white;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
 }
 
-/* En Móvil: El header principal suele ser más bajo */
+/* Ajustes de altura según dispositivo */
 @media (max-width: 1023px) {
-    .sub-nav-sticky {
-        top: 78px !important; /* Ajusta este valor al alto exacto de tu header móvil */
-        margin-top: -1px; /* Cierra la "luz" o grieta entre headers */
+    .sub-nav-sticky { top: 78px !important; margin-top: -1px; }
+}
+@media (min-width: 1024px) {
+    .sub-nav-sticky { top: 110px !important; }
+}
+
+/* 2. LA MAGIA: GRID LAYOUT (Esto evita que se choquen) */
+.mobile-nav-grid {
+    display: grid;
+    /* Columna 1 (Scroll): Ocupa el espacio disponible (1fr) pero permite min-width 0 para activar scroll */
+    /* Columna 2 (Botón): Ocupa solo lo que necesita (auto) */
+    grid-template-columns: 1fr auto; 
+    align-items: center;
+    width: 100%;
+}
+
+/* 3. ZONA DE SCROLL (Izquierda) */
+.scroll-area {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; /* Suavidad en iPhone */
+    scrollbar-width: none; /* Ocultar barra Firefox */
+    min-width: 0; /* CRUCIAL: Permite que el contenedor se achique y active el scroll */
+    padding-right: 15px; /* Espacio extra al final para que el botón FAQ respire */
+}
+.scroll-area::-webkit-scrollbar {
+    display: none; /* Ocultar barra Chrome/Safari */
+}
+
+/* 4. ESTILOS DE LOS BOTONES (Píldoras) */
+.nav-pill-link {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    border-radius: 50px;
+    background-color: #f8f9fa;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.nav-pill-link i { color: var(--primary-orange); }
+
+.nav-pill-link:hover, .nav-pill-link:active {
+    background-color: white;
+    color: #223248;
+    border-color: var(--primary-orange);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* ESTILO FAQ RESALTADO */
+.pill-faq-highlight {
+    background-color: #fff !important;
+    border: 1.5px solid var(--primary-orange) !important;
+    color: var(--primary-dark-blue) !important;
+}
+.pill-faq-highlight i { color: var(--primary-orange) !important; }
+
+.pill-faq-highlight:hover {
+    background-color: var(--primary-orange) !important;
+    color: white !important;
+}
+.pill-faq-highlight:hover i { color: white !important; }
+
+/* Escritorio: Volvemos a Flex normal para distribuir mejor */
+@media (min-width: 768px) {
+    .mobile-nav-grid {
+        display: flex;
+        justify-content: space-between;
     }
 }
 
-/* En Desktop: El header principal + topbar es más alto */
-@media (min-width: 1024px) {
-    .sub-nav-sticky {
-        top: 110px !important; /* Ajusta este valor al alto de tu header desktop */
-    }
-}
+
 
 /* 4. ESTILOS DE LA SECCIÓN DE CONTENIDO (ACS) */
 .text-custom-blue {

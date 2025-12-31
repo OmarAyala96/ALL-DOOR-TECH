@@ -98,6 +98,47 @@
   }
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you repair hollow metal door frames and heavy-duty hardware?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All Door Tech specializes in repairing steel frames, hinges, closers, and panic bars. Headquartered in Riverside, we provide specialized hardware restoration to commercial buildings throughout California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you provide and install fire-rated hollow metal doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We supply and install certified fire-rated hollow metal doors that comply with safety codes, managing installations state-wide from our Inland Empire hub."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common signs that a steel door needs immediate service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common signs include dragging, rust on frames, hinge failure, or latching issues. Our audits restore structural integrity and ensure your entrances are fully operational."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer custom fabrication for specific security steel doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We offer custom fabrication for steel doors and frames to fit non-standard openings. Based in Riverside, we deliver these custom-engineered solutions anywhere in California."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 
@@ -307,47 +348,44 @@
   </div>
 </section>
 
-        <nav class="container-fluid bg-light border-bottom shadow-sm sticky-top"
-            style="z-index: 800;"
-            aria-label="Section navigation">
-            <div class="container px-0">
-                <div class="d-flex flex-nowrap justify-content-start justify-content-md-center align-items-center py-3 gap-3 gap-md-5"
-                    style="overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+        <nav class="sub-nav-sticky" style="z-index: 800;"> 
+    <div class="container px-0">
+        
+        <div class="mobile-nav-grid py-2">
 
-                    <a href="#overview"
-                    class="fw-bold text-decoration-none text-uppercase small ps-3 ps-md-0 nav-link-custom"
-                    style="color: #0d1e34; white-space: nowrap; min-width: fit-content; transition: color 0.3s ease;">
-                        Overview
+            <div class="scroll-area d-flex align-items-center gap-2 ps-2 pe-3">
+                
+                <a href="#specifications" class="nav-pill-link flex-shrink-0">
+                    <i class="fas fa-door-closed"></i> 
+                    <span>Metal Svcs</span>
+                </a>
+
+                <a href="#faq" class="nav-pill-link pill-faq-highlight flex-shrink-0">
+                    <i class="fas fa-question-circle"></i> 
+                    <span>FAQ</span>
+                </a>
+            </div>
+
+            <div class="fixed-action pe-2">
+                <div class="d-md-none">
+                    <a href="tel:+19513761433" 
+                       class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2 shadow-sm"
+                       style="border-radius: 50px; padding: 7px 14px; font-size: 0.85rem;">
+                        <i class="fas fa-phone-alt"></i> Call
                     </a>
+                </div>
 
-                    <a href="#contact-us"
-                    class="fw-bold text-decoration-none text-uppercase small nav-link-custom"
-                    style="color: #0d1e34; white-space: nowrap; min-width: fit-content; transition: color 0.3s ease;">
-                        Contact Us
-                    </a>
-
-                    <a href="#why-us"
-                    class="fw-bold text-decoration-none text-uppercase small pe-3 pe-md-0 nav-link-custom"
-                    style="color: #0d1e34; white-space: nowrap; min-width: fit-content; transition: color 0.3s ease;">
-                        Why Choose Us
-                    </a>
-
+                <div class="d-none d-md-block">
+                    <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
+                        <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
+                        <span>Expert Installation & 24/7 Repair</span>
+                    </div>
                 </div>
             </div>
 
-            <style>
-                /* Efecto Hover Espectacular sin perder accesibilidad */
-                .nav-link-custom:hover {
-                    color: var(--primary-orange) !important;
-                    text-shadow: 0px 0px 1px rgba(0,0,0,0.1);
-                }
-
-                /* Ocultar barra de scroll en navegadores basados en Webkit */
-                div[style*="overflow-x: auto"]::-webkit-scrollbar {
-                    display: none;
-                }
-            </style>
-        </nav>
+        </div>
+    </div>
+</nav>
 
     
 <section id="overview"
@@ -375,16 +413,11 @@
                     </p>
 
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#contact-us"
-                           class="btn-brand-solid-final"
-                           aria-label="Request hollow metal door service and installation">
+                        <a href="/ALL-DOOR-TECH/pages/forms/form-request-service.html" class="btn-brand-solid-final" aria-label="Request repair service for high speed doors">
                             Request Service
                         </a>
-
-                        <a href="#contact-us"
-                           class="btn-brand-outline-final"
-                           aria-label="Request a free estimate for your hollow metal door project">
-                            Request Estimate
+                        <a href="/ALL-DOOR-TECH/pages/forms/form-request-estimate.html" class="btn-brand-outline-final" aria-label="Request a free estimate for new doors">
+                            Get Quote <span class="d-none d-sm-inline ms-1">Now</span> 
                         </a>
                     </div>
 
@@ -582,7 +615,9 @@
                 <p class="fs-5 mb-2" style="color: #e0e0e0;">
                     Whether you are upgrading your warehouse security or need 
                     <span style="color: #ffb338; font-weight: 600;">immediate emergency assistance</span> 
-                    for a damaged steel frame, our expert technicians provide the fast, professional service required to keep your business secure in Riverside and the Inland Empire.
+                    for a damaged steel frame, our specialized team is ready. 
+                    <strong>Headquartered in Riverside</strong>, we provide expert hollow metal services to commercial and industrial facilities 
+                    <span style="border-bottom: 1px solid #ffb338;">state-wide throughout California</span>.
                 </p>
 
             </div>
@@ -744,7 +779,7 @@
             for 24/7 customer support.
         </p>
 
-        <a href="#contact" class="cta-button">Contact Us</a>
+        <a href="tel:+19513761433" class="cta-button">Contact Us</a>
 
     </div>
 </section>
@@ -774,8 +809,117 @@
 </section>
 
 
-
 <!------- Fully Certified & Accredited  OFFICE  EDN------->
+
+
+<!--------- FAQ -------->
+
+<section id="faq" class="py-5" style="background-color: #f9f9f9; overflow: hidden;" aria-labelledby="faq-title">
+    <div class="container">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <span class="text-uppercase fw-bold small px-3 py-1 mb-2 d-inline-block" 
+                      style="color: var(--primary-orange); background: rgba(244, 162, 0, 0.1); border-radius: 50px;">
+                    Steel Door FAQs
+                </span>
+                <h2 id="faq-title" class="display-6 fw-bold" style="color: var(--primary-dark-blue);">
+                    Frequently Asked Questions About Hollow Metal Doors
+                </h2>
+                <p class="text-muted">
+                    Expert answers on steel door maintenance, fire-rated standards, and custom frame repairs. 
+                    From our <strong>strategic Riverside base</strong>, we offer technical excellence to businesses <strong>across every county in California</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion custom-accordion" id="faqAccordion" role="region" aria-label="Hollow metal door frequently asked questions">
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne"
+                                    aria-expanded="false"
+                                    aria-controls="collapseOne"
+                                    style="color: var(--primary-dark-blue);">
+                                Do you repair hollow metal door frames and heavy-duty hardware?
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes. All Door Tech specializes in the repair and reinforcement of steel frames, as well as the replacement of high-traffic hinges, door closers, and panic bars. While we are <strong>locally based in Riverside</strong>, our mobile units provide specialized hardware restoration to commercial buildings <strong>throughout California</strong>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo"
+                                    aria-expanded="false"
+                                    aria-controls="collapseTwo"
+                                    style="color: var(--primary-dark-blue);">
+                                Can you provide and install fire-rated hollow metal doors?
+                            </button>
+                        </h3>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Absolutely. we supply and install certified fire-rated hollow metal doors that comply with strict building safety codes. We manage professional installations state-wide from our <strong>Inland Empire hub</strong>, ensuring your facility meets all regulatory security and safety requirements.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingThree">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree"
+                                    aria-expanded="false"
+                                    aria-controls="collapseThree"
+                                    style="color: var(--primary-dark-blue);">
+                                What are common signs that a steel door needs immediate service?
+                            </button>
+                        </h3>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Common issues include dragging along the floor, rust at the base of the frame, hinge failure due to metal fatigue, or latching problems that compromise security. Our technical audits restore structural integrity and ensure your entrances are fully operational and secure.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingFour">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour"
+                                    aria-expanded="false"
+                                    aria-controls="collapseFour"
+                                    style="color: var(--primary-dark-blue);">
+                                Do you offer custom fabrication for specific security steel doors?
+                            </button>
+                        </h3>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes. We offer custom fabrication for hollow metal doors and frames to fit non-standard openings or specialized security needs. <strong>Based in Riverside</strong>, we deliver these custom-engineered solutions to industrial sites and office complexes <strong>anywhere in the state of California</strong>.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--------- FAQ END -------->
 
 
 <!-- FOOTER SECTOR -->

@@ -97,6 +97,48 @@
     }
   }
   </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you provide repair services for all types of roll-up doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All Door Tech specializes in professional repair for all commercial roll-up doors, including springs and motor issues. Headquartered in Riverside, we offer mobile repair units covering all of California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you manufacture custom roll-up doors for specific security needs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We offer custom fabrication and installation based on your specific requirements. We manage state-wide projects from our Riverside hub to any location in California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should a commercial roll-up door be serviced?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We recommend professional maintenance every 6 to 12 months to prevent mechanical failure and ensure compliance with safety standards across California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your response time for emergency roll-up door failures?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide 24/7 emergency services. Our strategic location in the Inland Empire allows for rapid dispatch and response times for industrial facilities throughout the entire state."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 
@@ -306,47 +348,44 @@
   </div>
 </section>
 
-        <nav class="container-fluid bg-light border-bottom shadow-sm sticky-top"
-            style="z-index: 800;"
-            aria-label="Section navigation">
-            <div class="container px-0">
-                <div class="d-flex flex-nowrap justify-content-start justify-content-md-center align-items-center py-3 gap-3 gap-md-5"
-                    style="overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+        <nav class="sub-nav-sticky" style="z-index: 800;"> 
+    <div class="container px-0">
+        
+        <div class="mobile-nav-grid py-2">
 
-                    <a href="#overview"
-                    class="fw-bold text-decoration-none text-uppercase small ps-3 ps-md-0 nav-link-custom"
-                    style="color: #0d1e34; white-space: nowrap; min-width: fit-content; transition: color 0.3s ease;">
-                        Overview
+            <div class="scroll-area d-flex align-items-center gap-2 ps-2 pe-3">
+                
+                <a href="#specifications" class="nav-pill-link flex-shrink-0">
+                    <i class="fas fa-tools"></i> 
+                    <span>Roll Svcs</span>
+                </a>
+
+                <a href="#faq" class="nav-pill-link pill-faq-highlight flex-shrink-0">
+                    <i class="fas fa-question-circle"></i> 
+                    <span>FAQ</span>
+                </a>
+            </div>
+
+            <div class="fixed-action pe-2">
+                <div class="d-md-none">
+                    <a href="tel:+19513761433" 
+                       class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2 shadow-sm"
+                       style="border-radius: 50px; padding: 7px 14px; font-size: 0.85rem;">
+                        <i class="fas fa-phone-alt"></i> Call
                     </a>
+                </div>
 
-                    <a href="#contact-us"
-                    class="fw-bold text-decoration-none text-uppercase small nav-link-custom"
-                    style="color: #0d1e34; white-space: nowrap; min-width: fit-content; transition: color 0.3s ease;">
-                        Contact Us
-                    </a>
-
-                    <a href="#why-us"
-                    class="fw-bold text-decoration-none text-uppercase small pe-3 pe-md-0 nav-link-custom"
-                    style="color: #0d1e34; white-space: nowrap; min-width: fit-content; transition: color 0.3s ease;">
-                        Why Choose Us
-                    </a>
-
+                <div class="d-none d-md-block">
+                    <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
+                        <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
+                        <span>Expert Installation & 24/7 Repair</span>
+                    </div>
                 </div>
             </div>
 
-            <style>
-                /* Efecto Hover Espectacular sin perder accesibilidad */
-                .nav-link-custom:hover {
-                    color: var(--primary-orange) !important;
-                    text-shadow: 0px 0px 1px rgba(0,0,0,0.1);
-                }
-
-                /* Ocultar barra de scroll en navegadores basados en Webkit */
-                div[style*="overflow-x: auto"]::-webkit-scrollbar {
-                    display: none;
-                }
-            </style>
-        </nav>
+        </div>
+    </div>
+</nav>
 
     
 <section id="overview"
@@ -374,16 +413,11 @@
                     </p>
 
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#contact-us"
-                           class="btn-brand-solid-final"
-                           aria-label="Request roll up door service and installation">
+                        <a href="/ALL-DOOR-TECH/pages/forms/form-request-service.html" class="btn-brand-solid-final" aria-label="Request repair service for high speed doors">
                             Request Service
                         </a>
-
-                        <a href="#contact-us"
-                           class="btn-brand-outline-final"
-                           aria-label="Request a free estimate for your roll up door project">
-                            Request Estimate
+                        <a href="/ALL-DOOR-TECH/pages/forms/form-request-estimate.html" class="btn-brand-outline-final" aria-label="Request a free estimate for new doors">
+                            Get Quote <span class="d-none d-sm-inline ms-1">Now</span> 
                         </a>
                     </div>
 
@@ -575,7 +609,9 @@
                 <p class="fs-5 mb-2" style="color: #e0e0e0;">
                     Whether you are upgrading your storefront security or need 
                     <span style="color: #ffb338; font-weight: 600;">immediate emergency assistance</span> 
-                    to secure a compromised entrance, our expert technicians provide the fast, high-quality service your business demands in Riverside and surrounding areas.
+                    to secure a compromised entrance, our specialized technicians are ready. 
+                    <strong>Headquartered in Riverside</strong>, we coordinate professional mobile units to provide high-quality door solutions for businesses 
+                    <span style="border-bottom: 1px solid #ffb338;">throughout the entire state of California</span>.
                 </p>
 
             </div>
@@ -737,7 +773,7 @@
             for 24/7 customer support.
         </p>
 
-        <a href="#contact" class="cta-button">Contact Us</a>
+        <a href="tel:+19513761433" class="cta-button">Contact Us</a>
 
     </div>
 </section>
@@ -766,9 +802,116 @@
   </div>
 </section>
 
-
-
 <!------- Fully Certified & Accredited  OFFICE  EDN------->
+
+    <!--------- FAQ  -------->
+
+<section id="faq" class="py-5" style="background-color: #f9f9f9; overflow: hidden;" aria-labelledby="faq-title">
+    <div class="container">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <span class="text-uppercase fw-bold small px-3 py-1 mb-2 d-inline-block" 
+                      style="color: var(--primary-orange); background: rgba(244, 162, 0, 0.1); border-radius: 50px;">
+                    Roll Up Door FAQs
+                </span>
+                <h2 id="faq-title" class="display-6 fw-bold" style="color: var(--primary-dark-blue);">
+                    Frequently Asked Questions About Commercial Roll Up Doors
+                </h2>
+                <p class="text-muted">
+                    Expert answers on maintenance, emergency repair, and industrial roll-up solutions. 
+                    <strong>Headquartered in Riverside</strong>, our specialized teams are ready to support facilities <strong>anywhere in the Golden State</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion custom-accordion" id="faqAccordion" role="region" aria-label="Commercial roll up door frequently asked questions">
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne"
+                                    aria-expanded="false"
+                                    aria-controls="collapseOne"
+                                    style="color: var(--primary-dark-blue);">
+                                Do you provide repair services for all types of roll-up doors?
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes. All Door Tech specializes in the repair of high-usage commercial roll-up systems, including spring tensioning, motor replacements, and slat repairs. While we are a <strong>Riverside-based company</strong>, our mobile units are fully equipped to handle mission-critical repairs <strong>across all California counties</strong>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo"
+                                    aria-expanded="false"
+                                    aria-controls="collapseTwo"
+                                    style="color: var(--primary-dark-blue);">
+                                Can you manufacture custom roll-up doors for specific security needs?
+                            </button>
+                        </h3>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Absolutely. We provide bespoke fabrication tailored to your exact architectural and security specifications. Our team coordinates <strong>state-wide installations from our Riverside hub</strong>, ensuring that warehouses and retail storefronts throughout California receive durable, high-security custom solutions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingThree">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree"
+                                    aria-expanded="false"
+                                    aria-controls="collapseThree"
+                                    style="color: var(--primary-dark-blue);">
+                                How often should a commercial roll-up door be serviced?
+                            </button>
+                        </h3>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                To prevent unexpected downtime and ensure safety compliance, we recommend professional maintenance every 6 to 12 months. This systematic check includes lubricating tracks, testing safety sensors, and inspecting mechanical hardware, keeping facilities in the <strong>Inland Empire and greater California</strong> operational and secure.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingFour">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour"
+                                    aria-expanded="false"
+                                    aria-controls="collapseFour"
+                                    style="color: var(--primary-dark-blue);">
+                                What is your response time for emergency roll-up door failures?
+                            </button>
+                        </h3>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                We offer 24/7 emergency assistance because we know security is your priority. Our <strong>strategic presence in Riverside</strong> allows us to dispatch expert technicians rapidly for urgent repairs <strong>anywhere in California</strong>, minimizing risk and restoring access to your business immediately.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--------- FAQ END -------->
 
 
 <!-- FOOTER SECTOR -->

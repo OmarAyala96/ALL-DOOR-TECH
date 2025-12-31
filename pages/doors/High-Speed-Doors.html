@@ -105,6 +105,48 @@
     }
   }
   </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you repair high speed doors from all major brands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All Door Tech repairs industry-leading high speed doors, specializing in curtain alignment and motor troubleshooting. Based in Riverside, we provide rapid response services across all of California."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the main benefits of installing high speed doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "High speed doors improve traffic flow, enhance energy efficiency through temperature control, and increase safety. We manage professional installations from our Riverside hub to any location state-wide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do high speed doors ensure safety for personnel and equipment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They feature smart sensors and flexible edges to prevent accidents. Our maintenance programs include safety audits to ensure full compliance with California industrial standards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you provide emergency repair for mission-critical doors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We offer 24/7 emergency repairs state-wide. Our Riverside-based teams respond quickly to restore functionality and avoid operational downtime in industrial facilities."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body class="home-page">
@@ -293,83 +335,44 @@
 
 
 
-    <nav class="nav-sub-sticky sub-nav-sticky"
-     style="z-index: 800; top: 80px;"> 
-    
+    <nav class="sub-nav-sticky" style="z-index: 800;"> 
     <div class="container px-0">
-        <div class="d-flex align-items-center justify-content-between py-2">
+        
+        <div class="mobile-nav-grid py-2">
 
-            <div class="d-flex gap-2 gap-md-4 align-items-center" 
-                 style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+            <div class="scroll-area d-flex align-items-center gap-2 ps-2 pe-3">
                 
-                <a href="#specifications" class="nav-pill-link">
-                    <i class="fas fa-ruler-combined"></i> 
-                    <span>Specs</span>
+                <a href="#specifications" class="nav-pill-link flex-shrink-0">
+                    <i class="fas fa-hard-hat"></i> 
+                    <span>Safe Feat</span>
                 </a>
 
-                <a href="#faq" class="nav-pill-link">
+                <a href="#faq" class="nav-pill-link pill-faq-highlight flex-shrink-0">
                     <i class="fas fa-question-circle"></i> 
                     <span>FAQ</span>
                 </a>
             </div>
 
-            <div class="d-md-none ps-3">
-                <a href="tel:+19513761433" 
-                   class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2"
-                   style="border-radius: 50px; padding: 6px 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-phone-alt"></i> Call Tech
-                </a>
-            </div>
+            <div class="fixed-action pe-2">
+                <div class="d-md-none">
+                    <a href="tel:+19513761433" 
+                       class="btn btn-sm btn-success fw-bold text-nowrap d-flex align-items-center gap-2 shadow-sm"
+                       style="border-radius: 50px; padding: 7px 14px; font-size: 0.85rem;">
+                        <i class="fas fa-phone-alt"></i> Call
+                    </a>
+                </div>
 
-            <div class="d-none d-md-block">
-                <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
-                    <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
-                    <span>Expert Installation & 24/7 Repair</span>
+                <div class="d-none d-md-block">
+                    <div class="d-flex align-items-center gap-2 text-muted small fw-bold">
+                        <i class="fas fa-hard-hat" style="color: var(--primary-orange); font-size: 1.2em;"></i>
+                        <span>Expert Installation & 24/7 Repair</span>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
 </nav>
-
-
-        </div>
-    </div>
-
-    <style>
-        /* Estilos encapsulados para esta barra */
-        .nav-pill-link {
-            color: #555;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 8px 15px;
-            border-radius: 50px;
-            background-color: #f8f9fa;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid transparent;
-        }
-
-        .nav-pill-link i { color: var(--primary-orange); }
-
-        .nav-pill-link:hover, .nav-pill-link:active {
-            background-color: white;
-            color: var(--primary-dark-blue);
-            border-color: var(--primary-orange);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .hover-orange:hover { color: var(--primary-orange) !important; }
-        
-        /* Ocultar barra de scroll */
-        div::-webkit-scrollbar { display: none; }
-    </style>
-</nav>
-
 
 
     
@@ -590,7 +593,7 @@
                     High Speed Door Installation & Repair
                 </h2>
                 
-                <p class="lead mb-4" style="line-height: 1.8;">
+                <p class="lead mb-4" style="line-height: 1.8; color: #f8f9fa;">
                     At All Door Tech, we provide complete high speed door solutions, including 
                     <strong class="text-white d-inline-block" style="border-bottom: 3px solid var(--primary-orange); padding-bottom: 1px;">
                         professional installation, repair, and preventive maintenance
@@ -598,10 +601,13 @@
                     We work with reliable, industry-proven systems to ensure long-lasting performance, minimal downtime, and strict compliance with safety standards.
                 </p>
                 
-                <p class="fs-7 mb-7">
-                    Whether you need a new high speed door installation or <span style="color: var(--primary-orange); font-weight: 600;">emergency repair service</span> to keep your operation running smoothly, our experienced technicians are ready to help.
+                <p class="fs-5 mb-2" style="color: #e0e0e0;">
+                    Whether you need a new high-performance door installation or 
+                    <span style="color: #ffb338; font-weight: 600;">immediate emergency assistance</span> 
+                    to restore your facility's workflow, our specialized team is ready. 
+                    <strong>Located in Riverside</strong>, we coordinate high-priority mobile units to support industrial operations 
+                    <span style="border-bottom: 1px solid #ffb338;">state-wide throughout California</span>.
                 </p>
-
 
             </div>
         </div>
@@ -814,12 +820,122 @@
             for 24/7 customer support.
         </p>
 
-        <a href="#contact" class="cta-button">Contact Us</a>
+        <a href="tel:+19513761433" class="cta-button">Contact Us</a>
 
     </div>
 </section>
 
 <!-- PERFECT SERVICE INCREIBLE FAST  END -->
+
+
+<!--------- FAQ -------->
+
+<section id="faq" class="py-5" style="background-color: #f9f9f9; overflow: hidden;" aria-labelledby="faq-title">
+    <div class="container">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <span class="text-uppercase fw-bold small px-3 py-1 mb-2 d-inline-block" 
+                      style="color: var(--primary-orange); background: rgba(244, 162, 0, 0.1); border-radius: 50px;">
+                    High Speed Door FAQs
+                </span>
+                <h2 id="faq-title" class="display-6 fw-bold" style="color: var(--primary-dark-blue);">
+                    Frequently Asked Questions About High Speed Doors
+                </h2>
+                <p class="text-muted">
+                    Expert answers on high-performance door maintenance, energy efficiency, and rapid repair services. 
+                    From our <strong>Riverside headquarters</strong>, we ensure operational continuity for businesses <strong>across the entire state of California</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion custom-accordion" id="faqAccordion" role="region" aria-label="High speed door frequently asked questions">
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne"
+                                    aria-expanded="false"
+                                    aria-controls="collapseOne"
+                                    style="color: var(--primary-dark-blue);">
+                                Do you repair high speed doors from all major brands?
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes. All Door Tech specialized technicians are equipped to diagnose and repair high speed doors from industry-leading manufacturers. We focus on curtain realignment, motor troubleshooting, and sensor calibration. While <strong>based in Riverside</strong>, we offer rapid response for critical failures <strong>anywhere in California</strong>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo"
+                                    aria-expanded="false"
+                                    aria-controls="collapseTwo"
+                                    style="color: var(--primary-dark-blue);">
+                                What are the main benefits of installing high speed doors?
+                            </button>
+                        </h3>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                High speed doors significantly improve facility logistics by increasing traffic flow, enhancing energy efficiency through temperature control, and reducing the risk of collisions. We manage specialized installations state-wide from our <strong>Inland Empire hub</strong>, ensuring your operation meets modern industrial standards.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingThree">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree"
+                                    aria-expanded="false"
+                                    aria-controls="collapseThree"
+                                    style="color: var(--primary-dark-blue);">
+                                How do high speed doors ensure safety for personnel and equipment?
+                            </button>
+                        </h3>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                These systems feature smart photoelectric sensors that detect obstacles and "soft bottom" edges designed to yield upon impact. Our maintenance programs include a comprehensive safety audit to ensure all protection features are fully operational, protecting your workflow in the <strong>California region</strong>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                        <h3 class="accordion-header" id="headingFour">
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour"
+                                    aria-expanded="false"
+                                    aria-controls="collapseFour"
+                                    style="color: var(--primary-dark-blue);">
+                                Can you provide emergency repair for mission-critical doors?
+                            </button>
+                        </h3>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Absolutely. We offer 24/7 emergency repair services because we understand that a door failure can stop your entire production line. <strong>Operating from Riverside</strong>, we dispatch expert teams state-wide to restore structural and mechanical integrity to your high speed systems immediately.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--------- FAQ AND -------->
 
 
 <!------- Fully Certified & Accredited ------->
@@ -849,74 +965,112 @@
 
 <!--------- FAQ  -------->
 
-<section id="faq" class="py-5" style="background-color: #f9f9f9; overflow: hidden;">
+<section id="faq" class="py-5" style="background-color: #f9f9f9; overflow: hidden;" aria-labelledby="faq-title">
     <div class="container">
         
         <div class="row justify-content-center mb-5">
             <div class="col-lg-8 text-center">
                 <span class="text-uppercase fw-bold small px-3 py-1 mb-2 d-inline-block" 
                       style="color: var(--primary-orange); background: rgba(244, 162, 0, 0.1); border-radius: 50px;">
-                    Common Questions
+                    High Speed Door FAQs
                 </span>
-                <h2 class="display-6 fw-bold" style="color: var(--primary-dark-blue);">
-                    Frequently Asked Questions
+                <h2 id="faq-title" class="display-6 fw-bold" style="color: var(--primary-dark-blue);">
+                    Frequently Asked Questions About High Speed Doors
                 </h2>
-                <p class="text-muted">Answers to common questions about our High Speed Door systems.</p>
+                <p class="text-muted">
+                    Answers to common questions about high speed door repair, maintenance, and installation for industrial and commercial facilities in Riverside, CA.
+                </p>
             </div>
         </div>
 
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="accordion custom-accordion" id="faqAccordion">
+                <div class="accordion custom-accordion" id="faqAccordion" role="region" aria-label="High speed door frequently asked questions">
 
                     <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                         <h3 class="accordion-header" id="headingOne">
-                            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color: var(--primary-dark-blue);">
-                                What happens if there is a power outage?
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne"
+                                    aria-expanded="false"
+                                    aria-controls="collapseOne"
+                                    style="color: var(--primary-dark-blue);">
+                                Do you repair high speed doors for industrial and commercial facilities?
                             </button>
                         </h3>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div id="collapseOne"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingOne"
+                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted">
-                                Our high-speed doors come equipped with a manual release system (chain hoist or crank) that allows you to easily open and close the door manually during power failures, ensuring your operations never stop.
+                                Yes. All Door Tech provides expert repair services for high speed doors, including motor systems, control panels, sensors, safety edges, curtains, and track alignment. We service warehouses, distribution centers, manufacturing plants, and commercial facilities throughout Riverside, CA.
                             </div>
                         </div>
                     </div>
 
                     <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                         <h3 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: var(--primary-dark-blue);">
-                                Are these doors safe for forklifts and pedestrians?
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo"
+                                    aria-expanded="false"
+                                    aria-controls="collapseTwo"
+                                    style="color: var(--primary-dark-blue);">
+                                What are the benefits of installing high speed doors?
                             </button>
                         </h3>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div id="collapseTwo"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingTwo"
+                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted">
-                                Absolutely. We integrate advanced safety systems including photo-eyes and light curtains that detect obstruction. If a person or forklift is detected, the door reverses immediately to prevent accidents.
+                                High speed doors improve operational efficiency by reducing air exchange, maintaining temperature control, and increasing traffic flow. They also enhance safety in high-traffic areas by opening and closing quickly while integrating advanced safety systems.
                             </div>
                         </div>
                     </div>
 
                     <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                         <h3 class="accordion-header" id="headingThree">
-                            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color: var(--primary-dark-blue);">
-                                How fast do these doors open?
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree"
+                                    aria-expanded="false"
+                                    aria-controls="collapseThree"
+                                    style="color: var(--primary-dark-blue);">
+                                How fast do high speed doors operate?
                             </button>
                         </h3>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div id="collapseThree"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingThree"
+                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted">
-                                Depending on the model and size, our high-speed doors can open at speeds of up to 96 inches per second. This rapid action minimizes air exchange, saving energy and maintaining temperature control.
+                                Depending on the model and application, high speed doors can operate at speeds of up to 96 inches per second. This fast operation helps minimize downtime, improves workflow efficiency, and supports climate-controlled environments.
                             </div>
                         </div>
                     </div>
 
                      <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
                         <h3 class="accordion-header" id="headingFour">
-                            <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="color: var(--primary-dark-blue);">
-                                Do you provide maintenance services?
+                            <button class="accordion-button fw-bold collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour"
+                                    aria-expanded="false"
+                                    aria-controls="collapseFour"
+                                    style="color: var(--primary-dark-blue);">
+                                Do you offer preventive maintenance for high speed doors?
                             </button>
                         </h3>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div id="collapseFour"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="headingFour"
+                             data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-muted">
-                                Yes, All Door Tech offers comprehensive preventive maintenance plans tailored to your facility's needs to ensure your doors operate smoothly and to extend their lifespan.
+                                Yes. We offer preventive maintenance programs specifically designed for high speed doors. Regular inspections and adjustments help reduce unexpected failures, extend the lifespan of components, and keep your facility operating safely and efficiently.
                             </div>
                         </div>
                     </div>
@@ -927,7 +1081,7 @@
     </div>
 </section>
 
-<!--------- FAQ AND -------->
+<!--------- FAQ END -------->
 
 
 
