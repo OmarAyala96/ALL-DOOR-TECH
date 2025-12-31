@@ -254,10 +254,16 @@ a { text-decoration: none; color: inherit; }
     background-color: var(--primary-dark-blue);
     transition: right 0.35s ease;
     box-shadow: inset -5px 0 20px rgba(0,0,0,0.5);
-    overflow-y: auto;
+    
+    /* Esto es lo que permite que el usuario baje con el dedo para ver todo */
+    overflow-y: auto; 
     overflow-x: hidden;
+    
+    /* Mejora para móviles (Scroll suave) */
+    -webkit-overflow-scrolling: touch; 
+    
     padding-top: 65px;
-    z-index: 1100; /* Encima del header */
+    z-index: 1100;
 }
 
 .header__checkbox:checked ~ .header__nav {
@@ -335,23 +341,24 @@ a { text-decoration: none; color: inherit; }
 }
 
 .dropdown__checkbox:checked ~ .dropdown__link + .dropdown__menu {
-    max-height: 600px;
+    max-height: 1200px;
+    transition: max-height 0.5s ease-in-out;
 }
 
 /* CTA Móvil */
 .header__nav-cta-group {
-    padding: 30px 20px; 
+    padding: 20px 15px; 
     border-top: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 .header__cta {
     display: block;
     width: 100%;
     text-align: center;
-    padding: 14px 20px;
+    padding: 5px 5px;
     font-weight: 700;
     font-size: 1rem;
     text-decoration: none;
