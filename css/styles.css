@@ -4609,3 +4609,74 @@ section, header, footer {
 .header__nav {
     z-index: 999;
 }
+
+
+/* ================================================================
+   PARCHE DE SEGURIDAD FINAL - MÓVIL (Hasta 991px)
+   Esto fuerza la desaparición del carrusel en celulares y tablets
+   ================================================================ */
+@/* ================================================================
+   PARCHE DE SEGURIDAD FINAL - SOLO MÓVIL (Hasta 767px)
+   Tablets y PC verán el carrusel. Celulares verán la foto estática.
+   ================================================================ */
+@media only screen and (max-width: 767.98px) {
+    
+    /* 1. ANIQUILAR EL CARRUSEL EN CELULARES */
+    .hero__carrusel, 
+    .hero__track, 
+    .hero__slide,
+    #slide-1, #slide-2, #slide-3, #slide-4, #slide-5 {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        z-index: -9999 !important;
+    }
+
+    /* 2. MOSTRAR FOTO ESTÁTICA EN CELULARES */
+    .hero__mobile-static {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important; /* Ocupa todo el contenedor .hero */
+        inset: 0 !important;
+        z-index: 10 !important;
+    }
+
+    /* Arreglo para que la imagen no salga "cortada" o deforme */
+    .hero__mobile-static img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* Recorta los bordes sobrantes sin deformar */
+        object-position: center top !important; /* Enfoca desde arriba hacia abajo */
+    }
+
+    /* 3. AJUSTAR EL CONTENEDOR PADRE PARA QUE NO HAYA HUECOS */
+    .hero {
+        height: 85vh !important; 
+        min-height: 500px !important;
+        position: relative !important;
+        overflow: hidden !important; 
+    }
+}
+
+/* ================================================================
+   REGLA DE RESURRECCIÓN (Para que vuelva en Tablets y PC)
+   ================================================================ */
+@media only screen and (min-width: 768px) {
+    .hero__carrusel {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 1 !important;
+    }
+    
+    .hero__mobile-static {
+        display: none !important;
+    }
+}

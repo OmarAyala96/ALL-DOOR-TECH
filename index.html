@@ -10,11 +10,11 @@
   <meta name="keywords" content="commercial doors california, roll up doors riverside, dock levelers ca, industrial doors california, high speed doors, door repair service">
   <link rel="canonical" href="https://alldoortech.com/">
 
-  <style>
-    /* CSS CRÍTICO NUCLEAR */
+ <style>
+    /* CSS CRÍTICO: Sincronizado para cortar exactamente en Tablet (768px) */
     
-    /* 1. Forzamos ocultar el carrusel en móviles y tablets verticales */
-    @media (max-width: 991.98px) {
+    /* 1. MÓVIL (Celulares hasta 767px) -> OCULTAR CARRUSEL */
+    @media (max-width: 767.98px) {
         .hero__carrusel { 
             display: none !important; 
             visibility: hidden !important;
@@ -24,14 +24,14 @@
             overflow: hidden !important;
         }
         
-        /* Aseguramos que la versión móvil se vea */
+        /* Mostrar la imagen estática */
         .hero__mobile-static { 
             display: block !important; 
         }
     }
 
-    /* 2. Reglas estándar para escritorio (Pantallas grandes) */
-    @media (min-width: 992px) {
+    /* 2. TABLET Y ESCRITORIO (Desde 768px en adelante) -> MOSTRAR CARRUSEL */
+    @media (min-width: 768px) {
         .hero__carrusel { display: block !important; }
         .hero__mobile-static { display: none !important; }
     }
@@ -319,110 +319,81 @@
             <meta itemprop="name" content="All Door Tech">
         </div>
 
-
-<div class="hero__mobile-static d-block d-md-none">
-    <img src="assets/images/banner-webp/gemini-mobile.webp" 
-         class="hero__img" 
-         alt="Industrial commercial door repair services in Riverside CA"
-         width="600" 
-         height="800" 
-         fetchpriority="high"
-         style="width: 100%; height: auto; object-fit: cover; filter: brightness(0.5);">
-         
-    <div class="hero__overlay"></div>
-    
-    <div class="hero__content container text-center"> 
-        <h1 class="hero__title display-4 fw-bold text-white mb-3">
-            Expert Commercial<br>Door Services
-        </h1>
-        <p class="hero__subtitle lead text-white mb-4">
-            Installation, Repair & Maintenance in Riverside, CA
-        </p>
-        <div class="hero__buttons d-flex justify-content-center gap-3">
-            <a href="tel:9513761433" class="btn btn-primary btn-lg" aria-label="Call All Door Tech at 951-376-1433">Call Now</a>
-            <a href="contact.html" class="btn btn-outline-light btn-lg" aria-label="Get a quote for door services">Get Quote</a>
-        </div>
-    </div>
-</div>
-
-<div class="hero__carrusel d-none d-md-block">
-    <div class="hero__track">
-        <div class="hero__slide active" role="group" aria-roledescription="slide" aria-label="1 of 5" id="slide-1">
-            
-            <picture>
-                <source media="(max-width: 767px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-
-                <source media="(min-width: 768px)" 
-                        srcset="assets/images/banner-webp/roll-1313.webp 1200w, 
-                                assets/images/banner-webp/roll.webp 1920w"
-                        sizes="100vw">
-                
-                <img src="assets/images/banner-webp/roll.webp" 
-                     alt="Row of numbered sectional overhead doors at an industrial loading dock"
-                     width="1920" height="1080"
-                     class="hero__img"
-                     fetchpriority="high"
-                     style="width: 100%; height: 100%; object-fit: cover;">
-            </picture>
-
+        <div class="hero__mobile-static d-block d-md-none">
+            <img src="assets/images/banner-webp/gemini-mobile.webp" 
+                 class="hero__img" 
+                 alt="Industrial commercial door repair services in Riverside CA"
+                 width="600" 
+                 height="800" 
+                 fetchpriority="high"
+                 style="width: 100%; height: auto; object-fit: cover; filter: brightness(0.5);">
+                 
             <div class="hero__overlay"></div>
+            
+            <div class="hero__content container text-center"> 
+                <h1 class="hero__title display-4 fw-bold text-white mb-3">
+                    Expert Commercial<br>Door Services
+                </h1>
+                <p class="hero__subtitle lead text-white mb-4">
+                    Installation, Repair & Maintenance in Riverside, CA
+                </p>
+                <div class="hero__buttons d-flex justify-content-center gap-3">
+                    <a href="tel:9513761433" class="btn btn-primary btn-lg" aria-label="Call All Door Tech at 951-376-1433">Call Now</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg" aria-label="Get a quote for door services">Get Quote</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+
+        <div class="hero__carrusel d-none d-md-block">
+            <div class="hero__track">
+                
+                <div class="hero__slide active" role="group" aria-roledescription="slide" aria-label="1 of 5" id="slide-1">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                        <source media="(min-width: 768px)" srcset="assets/images/banner-webp/roll-1313.webp 1200w, assets/images/banner-webp/roll.webp 1920w" sizes="100vw">
+                        <img src="assets/images/banner-webp/roll.webp" 
+                             alt="Row of numbered sectional overhead doors at an industrial loading dock"
+                             width="1920" height="1080"
+                             class="hero__img"
+                             fetchpriority="high"
+                             style="width: 100%; height: 100%; object-fit: cover;">
+                    </picture>
+                    <div class="hero__overlay"></div>
+                </div>
 
                 <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="2 of 5" id="slide-2">
-                    
                     <img src="assets/images/banner-webp/corporate-office33.webp" width="1920" height="1080"
-                        class="hero__img kb-effect" 
-                        alt="Corporate Glass Doors,Double swing glass doors with metal frames in a modern corporate office hallway"
-                        itemprop="image"
-                        loading="lazy"
-                        decoding="async"
-                        fetchpriority="low">
-
+                         class="hero__img kb-effect" 
+                         alt="Corporate Glass Doors,Double swing glass doors with metal frames in a modern corporate office hallway"
+                         itemprop="image" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="hero__overlay"></div>
                 </div>
 
                 <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="3 of 5" id="slide-3">
-                    
                     <img src="assets/images/banner-webp/gemini_access-control-system.webp" width="1920" height="1080"
-                        class="hero__img kb-effect" 
-                        alt="Advanced commercial access control system installation on a secure office door featuring an electronic keypad reader and professional security hardware."
-                        itemprop="image" 
-                        loading="lazy"
-                        decoding="async"
-                        fetchpriority="low">
-
+                         class="hero__img kb-effect" 
+                         alt="Advanced commercial access control system installation on a secure office door"
+                         itemprop="image" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="hero__overlay"></div>
                 </div>
 
                 <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="4 of 5" id="slide-4">
-    
                     <img src="assets/images/banner-webp/door.webp" width="1920" height="1080"
-                        class="hero__img kb-effect" 
-                        alt="Automatic Door Installation,Installation of commercial automatic sliding glass doors with tools and ladder on site"
-                        itemprop="image" 
-                        loading="lazy"
-                        decoding="async"
-                        fetchpriority="low">
-
+                         class="hero__img kb-effect" 
+                         alt="Automatic Door Installation,Installation of commercial automatic sliding glass doors"
+                         itemprop="image" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="hero__overlay"></div>
                 </div>
 
                 <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="5 of 5" id="slide-5">
-    
                     <img src="assets/images/banner-webp/gemini2.webp" width="1920" height="1080"
-                        class="hero__img kb-effect" 
-                        alt="Industrial gate and hangar door repair service showing custom metal fencing, heavy-duty sectional doors, and professional loading dock equipment maintenance."
-                        itemprop="image" 
-                        loading="lazy"
-                        decoding="async"
-                        fetchpriority="low">
-
+                         class="hero__img kb-effect" 
+                         alt="Industrial gate and hangar door repair service"
+                         itemprop="image" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="hero__overlay"></div>
                 </div>
-                </div></div>
-        <div class="hero__data-container">
+
+            </div> </div> <div class="hero__data-container">
             <div class="hero__data">
                 <div class="hero__descripcion text-center mt-3" aria-labelledby="hero-title" aria-describedby="hero-desc">
                     <h1 id="hero-title" class="animate-up" itemprop="name">
