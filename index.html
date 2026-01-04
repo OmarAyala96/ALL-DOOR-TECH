@@ -301,14 +301,47 @@
             <meta itemprop="name" content="All Door Tech">
         </div>
 
-        <div class="hero__mobile-static d-block d-md-none">
-            <img src="assets/images/banner-webp/gemini-mobile.webp" 
-                class="hero__img" 
-                alt="Industrial Door Services Mobile"
-                width="390" 
-                height="500" 
-                fetchpriority="high"
-                style="width: 100%; height: auto; object-fit: cover; filter: brightness(0.5);">
+        ¡Exacto! Tienes razón. El problema es lo que llamamos el "Double Download Trap" (Trampa de la Doble Descarga).
+
+Aunque uses d-none (display: none) en Bootstrap para ocultar el div de escritorio en el celular, el navegador es "codicioso": lee el HTML, encuentra la etiqueta <img> de escritorio y comienza a descargarla antes de procesar el CSS que le dice que la oculte.
+
+Por eso Lighthouse te grita: estás descargando la foto del escritorio (roll.webp) en el celular, gastando datos y tiempo, aunque el usuario nunca la vea.
+
+Para solucionar esto y mejorar el puntaje a 100, la mejor solución técnica es usar la etiqueta <picture> con un truco de "pixel vacío" o usar media queries dentro de picture para detener la carga.
+
+Aquí tienes la solución paso a paso y el código corregido.
+
+Paso 1: Prepara tus imágenes (Resizing)
+Lighthouse se queja de que las imágenes son muy grandes para el espacio que ocupan. Necesitas tener estas medidas exactas en tu carpeta:
+
+Para Móvil (gemini-mobile.webp):
+
+Redimensiónala a 600px de ancho (ancho). La altura se ajustará sola.
+
+Por qué: Los celulares modernos tienen alta densidad de píxeles, 600px se ve nítido y pesa poco.
+
+Para Escritorio (roll.webp):
+
+Crea una versión de 1920px de ancho (Full HD).
+
+Crea una versión de 1200px de ancho (Laptops).
+
+Paso 2: El Código Corregido
+Vamos a usar la etiqueta <picture> para controlar físicamente qué se descarga.
+
+A. Bloque Móvil (Tu hero__mobile-static)
+Aquí simplemente aseguramos que cargue la imagen optimizada de 600px.
+
+HTML
+
+<div class="hero__mobile-static d-block d-md-none">
+    <img src="assets/images/banner-webp/gemini-mobile.webp" 
+         class="hero__img" 
+         alt="Industrial Door Services Mobile"
+         width="600" 
+         height="800" 
+         fetchpriority="high"
+         style="width: 100%; height: auto; object-fit: cover; filter: brightness(0.5);">
             <div class="hero__overlay"></div>
             <div class="hero__content container text-center"> <h1 class="hero__title display-4 fw-bold text-white mb-3">
                     Expert Commercial<br>Door Services
@@ -328,14 +361,21 @@
 
         <div class="hero__slide active" role="group" aria-roledescription="slide" aria-label="1 of 5" id="slide-1">
     
-            <img src="assets/images/banner-webp/roll.webp" 
-                srcset="assets/images/banner-webp/roll.webp 600w,
-                        assets/images/banner-webp/roll.webp 1200w"
-                sizes="(max-width: 600px) 100vw, 1200px" 
-                width="1920" height="1080" 
-                class="hero__img" 
-                alt="Industrial Overhead Doors,Row of numbered sectional overhead doors at an industrial loading dock"
-                fetchpriority="high">
+            <picture>
+                <source media="(max-width: 767px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+
+                <source media="(min-width: 768px)" 
+                        srcset="assets/images/banner-webp/roll.webp 1200w, 
+                                assets/images/banner-webp/roll.webp 1920w"
+                        sizes="100vw">
+                
+                <img src="assets/images/banner-webp/roll.webp" 
+                     alt="Industrial Overhead Doors, Row of numbered sectional overhead doors"
+                     width="1920" height="1080"
+                     class="hero__img"
+                     fetchpriority="high"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </picture>
 
             <div class="hero__overlay"></div>
         </div>
