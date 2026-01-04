@@ -4575,3 +4575,37 @@ section, header, footer {
         flex-direction: column; /* Los ponemos uno debajo de otro si es necesario */
     }
 }
+
+
+
+/* EL OVERLAY (FONDO OSCURO)  header js*/
+.header__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscuro transparente */
+    z-index: 998; /* Debajo del menú (999), encima del resto */
+    
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    
+    /* Para que funcione en móviles */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* MOSTRAR EL OVERLAY CUANDO EL MENÚ ESTÁ ABIERTO */
+/* La virgulilla (~) busca hermanos que estén después en el HTML */
+#menu-toggle:checked ~ .header__overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Asegúrate de que el menú tenga un z-index superior */
+.header__nav {
+    z-index: 999;
+}
