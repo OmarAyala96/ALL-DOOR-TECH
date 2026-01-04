@@ -94,6 +94,14 @@ body {
 ul, ol { list-style: none; padding: 0; margin: 0; }
 a { text-decoration: none; color: inherit; }
 
+
+input, button, textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0; /* O el radio que tú quieras */
+}
+
 /* Accesibilidad: Foco visible */
 :focus-visible {
     outline: 3px solid var(--primary-orange);
@@ -251,6 +259,7 @@ a { text-decoration: none; color: inherit; }
     width: 85%; 
     max-width: 380px; 
     height: 100vh;
+    height: 100dvh; /* ESTO ES LA MAGIA: Se adapta a la barra del iPhone */
     background-color: var(--primary-dark-blue);
     transition: right 0.35s ease;
     box-shadow: inset -5px 0 20px rgba(0,0,0,0.5);
