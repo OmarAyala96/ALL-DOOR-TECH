@@ -483,43 +483,38 @@
  <!-- ABOUT PRINCIPAL -->
 
 
-<section class="about-compact" 
-         aria-labelledby="about-heading" 
-         itemscope itemtype="https://schema.org/LocalBusiness">
-
+<section class="adt-about-section" aria-labelledby="adt-heading" itemscope itemtype="https://schema.org/LocalBusiness">
     <meta itemprop="name" content="All Door Tech">
     <meta itemprop="address" content="Riverside, CA">
-    <meta itemprop="description" content="Commercial and industrial door repair, installation, and maintenance with over 22 years of experience in Riverside, CA.">
+    <meta itemprop="description" content="Commercial and industrial door repair, installation, and maintenance in Riverside, CA.">
     <link itemprop="url" href="/about">
 
-    <div class="about-wrapper">
+    <div class="adt-grid-container">
         
-        <div class="about-video-side">
-            <div class="video-frame" style="max-width: 500px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-                <video 
-                    autoplay 
-                    loop 
-                    muted 
-                    playsinline
-                    preload="metadata"
-                    poster="assets/images/video-poster.webp" 
-                    title="Professional door installation and repair process"
-                    aria-label="Technician working on commercial and industrial doors at All Door Tech"
-                    style="width: 100%; height: auto; display: block; background-color: #eee;">
-                    <source src="assets/videos/video-home.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+        <div class="adt-video-wrapper">
+            <div class="adt-video-overlay"></div>
+            
+            <video autoplay loop muted playsinline preload="metadata" 
+                   poster="assets/images/video-poster.webp" 
+                   class="adt-main-video"
+                   aria-label="Technician working on commercial and industrial doors">
+                
+                <source src="assets/videos/video-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+                
+                <source src="assets/videos/all-door-tech6.mp4" type="video/mp4">
+                .
+                Your browser does not support the video tag.
+            </video>
         </div>
 
-        <div class="about-text-side">
-            <h2 id="about-heading">
-                ABOUT US — <span style="color: var(--primary-orange);">ALL DOOR TECH</span>
+        <div class="adt-text-wrapper">
+            <h2 id="adt-heading" class="adt-section-title">
+                ABOUT US — <span class="adt-highlight">ALL DOOR TECH</span>
             </h2>
             
-            <div class="about-content" itemprop="description">
+            <div itemprop="description" class="adt-text-body">
                 <p>
-                    At <strong>All Door Tech</strong>, we have over <strong>22 years of experience</strong> providing comprehensive solutions for the <strong>repair, manufacture, installation, and maintenance of commercial and industrial doors</strong>. We are a locally owned and operated company committed to offering reliable, safe, and high-performance service for all types of entry systems.
+                    At <strong>All Door Tech</strong>, we have over <strong>22 years of experience</strong> providing comprehensive solutions for the <strong>repair, manufacture, installation, and maintenance</strong> of commercial and industrial doors. We are a locally owned and operated company committed to offering reliable, safe, and high-performance service.
                 </p>
                 
                 <p>
@@ -534,7 +529,6 @@
 
     </div>
 </section>
-
 
 
 

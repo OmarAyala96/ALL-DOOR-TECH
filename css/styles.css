@@ -4680,3 +4680,99 @@ section, header, footer {
         display: none !important;
     }
 }
+
+/* --- Estilos exclusivos para la sección All Door Tech About --- */
+
+/* Contenedor principal de la sección */
+/* --- SECCIÓN SOBRE NOSOTROS (Fondo Azul) --- */
+.adt-about-section {
+    padding: 4rem 1.5rem;
+    background-color: #1c2a3d; /* TU AZUL OSCURO */
+    width: 100%;
+    box-sizing: border-box;
+    color: #fff; /* Color base blanco por si acaso */
+}
+
+/* La Grilla (Grid) contenedora */
+.adt-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Contenedor del video */
+.adt-video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3); /* Sombra un poco más fuerte para resaltar sobre el azul */
+    aspect-ratio: 16 / 9;
+}
+
+/* El video en sí */
+.adt-main-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* La capa oscura superpuesta (Opcional si ya oscureciste el video en Shotcut) */
+.adt-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Estilos de la tipografía */
+.adt-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #ffffff; /* IMPORTANTE: Texto blanco para que se vea sobre el azul */
+}
+
+.adt-highlight {
+    color: var(--primary-orange, #ff6600); /* El naranja resalta muy bien sobre azul */
+}
+
+/* Texto del cuerpo */
+.adt-text-body p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #d1d1d1; /* IMPORTANTE: Gris muy claro para leer bien sobre azul */
+    margin-bottom: 1rem;
+}
+
+/* --- RESPONSIVE (Celulares y Tablets) --- */
+@media (max-width: 900px) {
+    .adt-grid-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .adt-video-wrapper {
+        aspect-ratio: 4 / 3; 
+        max-width: 100%;
+    }
+    
+    .adt-section-title {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+    
+    .adt-text-body {
+        text-align: left;
+        padding: 0 10px;
+    }
+}
