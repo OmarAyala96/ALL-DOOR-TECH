@@ -1,10 +1,25 @@
-// 1. INICIALIZACIÓN DE EMAILJS (Tu nueva Key)
+// ======================================================
+// CONFIGURACIÓN CENTRAL (TUS CREDENCIALES)
+// ======================================================
+const EMAILJS_PUBLIC_KEY = "YeV2hn7sjNt9bgfv-"; // Tu Public Key
+const EMAILJS_SERVICE_ID = "service_xok36xu"; // Tu Service ID
+const EMAILJS_TEMPLATE_ID = "template_apv8d1c"; // Tu Template ID
+
+// Inicialización básica (por si acaso)
 (function() {
-    // Asegúrate de que esta sea la KEY correcta. Antes tenías "A1SeiTh9E...", ahora usas esta:
-    emailjs.init("YeV2hn7sjNt9bgfv-");
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    } else {
+        console.error("Librería EmailJS no encontrada. Revisa tu HTML.");
+    }
 })();
 
-// 2. FUNCIÓN DE APERTURA DEL CHAT (Global)
+
+// ======================================================
+// 1. CHAT WIDGET & UI GLOBAL
+// ======================================================
+
+// Función Global para abrir/cerrar chat
 window.toggleAdtChat = function() {
     const chat = document.getElementById('chatContainer');
     const iconBtn = document.getElementById('chatBtn');
@@ -13,12 +28,12 @@ window.toggleAdtChat = function() {
         if (chat.style.display === 'none' || chat.style.display === '') {
             chat.style.display = 'block';
             if(iconBtn && iconBtn.querySelector('i')) {
-                iconBtn.querySelector('i').className = 'bi bi-x-lg'; // Icono Cerrar
+                iconBtn.querySelector('i').className = 'bi bi-x-lg';
             }
         } else {
             chat.style.display = 'none';
             if(iconBtn && iconBtn.querySelector('i')) {
-                iconBtn.querySelector('i').className = 'bi bi-chat-fill'; // Icono Chat
+                iconBtn.querySelector('i').className = 'bi bi-chat-fill';
             }
         }
     }
@@ -26,119 +41,7 @@ window.toggleAdtChat = function() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ======================================================
-    // A. HERO SLIDER (Solo Home)
-    // ======================================================
-    const slides = document.querySelectorAll('.hero__slide');
-    const dots = document.querySelectorAll('.indicator');
-    
-    if (slides.length > 0 && dots.length > 0) {
-        let currentSlide = 0;
-        const intervalTime = 5000;
-
-        function changeSlide(index) {
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-            currentSlide = index;
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() {
-            let next = (currentSlide + 1) % slides.length;
-            changeSlide(next);
-        }
-
-        let slideTimer = setInterval(nextSlide, intervalTime);
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                clearInterval(slideTimer);
-                changeSlide(index);
-                slideTimer = setInterval(nextSlide, intervalTime);
-            });
-        });
-    }
-
-    // ======================================================
-    // B. ANIMACIONES SCROLL (Intersection Observer)
-    // ======================================================
-    const animateElements = document.querySelectorAll('.animate-up');
-    
-    if (animateElements.length > 0) {
-        const observerOptions = { root: null, threshold: 0.1 };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        animateElements.forEach(el => { observer.observe(el); });
-    }
-
-    // ======================================================
-    // C. MENÚ MÓVIL (Accesibilidad 100%)
-    // ======================================================
-    const menuCheckbox = document.getElementById('menu-toggle');
-    const menuButton = document.querySelector('.header__hamburger');
-    const menuLinks = document.querySelectorAll('.header__nav a');
-    const closeBtn = document.querySelector('.header__close-btn');
-
-    if (menuCheckbox && menuButton) {
-        // Sincronizar ARIA y Scroll
-        menuCheckbox.addEventListener('change', () => {
-            const isExpanded = menuCheckbox.checked;
-            menuButton.setAttribute('aria-expanded', isExpanded);
-            document.body.style.overflow = isExpanded ? 'hidden' : '';
-        });
-
-        // Cerrar al hacer click en links
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (menuCheckbox.checked) {
-                    menuCheckbox.checked = false;
-                    menuCheckbox.dispatchEvent(new Event('change')); 
-                }
-            });
-        });
-
-        // Teclado (Enter/Espacio) para abrir
-        menuButton.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                menuCheckbox.checked = !menuCheckbox.checked;
-                menuCheckbox.dispatchEvent(new Event('change'));
-            }
-        });
-
-        // Teclado para cerrar (X)
-        if(closeBtn) {
-            closeBtn.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    menuCheckbox.checked = false;
-                    menuCheckbox.dispatchEvent(new Event('change'));
-                }
-            });
-        }
-    }
-    
-    // Dropdowns Accesibles (Teclado)
-    const dropdownToggles = document.querySelectorAll('.dropdown__checkbox');
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('change', function() {
-            const label = this.nextElementSibling; 
-            if (label) label.setAttribute('aria-expanded', this.checked);
-        });
-    });
-
-    // ======================================================
-    // D. INYECCIÓN DEL CHAT WIDGET
-    // ======================================================
+    // A. INYECCIÓN DEL CHAT WIDGET
     if (!document.getElementById('chatContainer')) {
         const chatHTML = `
         <div class="adt-chat-system" role="complementary">
@@ -170,12 +73,76 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.insertAdjacentHTML('beforeend', chatHTML);
     }
 
-    // ======================================================
-    // E. LÓGICA DE ENVÍO DE FORMULARIOS (Universal)
-    // ======================================================
-    const serviceID = 'service_xok36xu'; 
-    const masterTemplate = 'template_apv8d1c'; 
+    // B. HEADER & MENÚ MÓVIL (Con Overlay)
+    const menuCheckbox = document.getElementById('menu-toggle');
+    if (menuCheckbox) {
+        // Crear Overlay
+        const overlay = document.createElement('label');
+        overlay.className = 'header__overlay';
+        overlay.setAttribute('for', 'menu-toggle');
+        overlay.setAttribute('aria-hidden', 'true');
+        menuCheckbox.insertAdjacentElement('afterend', overlay);
 
+        // Bloquear scroll al abrir
+        menuCheckbox.addEventListener('change', () => {
+            document.body.style.overflow = menuCheckbox.checked ? 'hidden' : '';
+        });
+
+        // Cerrar al hacer click en enlaces
+        document.querySelectorAll('.header__nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(menuCheckbox.checked) menuCheckbox.click();
+            });
+        });
+    }
+
+    // C. ACTUALIZAR AÑO COPYRIGHT
+    const yearSpan = document.querySelector('[itemprop="copyrightYear"]');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+    // D. HERO SLIDER (Solo si existe en la página)
+    const slides = document.querySelectorAll('.hero__slide');
+    const dots = document.querySelectorAll('.indicator');
+    if (slides.length > 0 && dots.length > 0) {
+        let currentSlide = 0;
+        const nextSlide = () => {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        };
+        let timer = setInterval(nextSlide, 5000);
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                clearInterval(timer);
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                currentSlide = idx;
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+                timer = setInterval(nextSlide, 5000);
+            });
+        });
+    }
+
+    // E. ANIMACIONES SCROLL
+    const animateElements = document.querySelectorAll('.animate-up');
+    if (animateElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animateElements.forEach(el => observer.observe(el));
+    }
+
+    // ======================================================
+    // F. LÓGICA DE ENVÍO (EmailJS) - CORREGIDA
+    // ======================================================
     const forms = [
         { id: 'chat-form', label: 'Chat Support' },
         { id: 'estimate-form', label: 'Estimate Request' },
@@ -186,21 +153,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     forms.forEach(item => {
         const formEl = document.getElementById(item.id);
-        
         if (formEl) {
             formEl.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
                 const btn = formEl.querySelector('button[type="submit"]');
                 const originalText = btn.innerText;
 
-                // Estado Cargando
+                // 1. Estado Cargando
                 btn.innerText = 'Sending...';
                 btn.style.opacity = '0.7';
                 btn.disabled = true;
 
                 const formData = new FormData(this);
-
                 const templateParams = {
                     form_type: item.label,
                     first_name: formData.get('first_name'),
@@ -216,33 +180,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     message: formData.get('message') || formData.get('feedback') || ''
                 };
 
-                emailjs.send(serviceID, masterTemplate, templateParams)
+                // 2. ENVIAR (Pasando la Key explícitamente para evitar error 400)
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
                     .then(() => {
-                        // ÉXITO: PONE EL BOTÓN VERDE
-                        btn.innerText = 'SENT SUCCESSFULLY!';
+                        // ÉXITO
+                        btn.innerText = 'SENT!';
                         btn.style.backgroundColor = '#28a745';
-                        btn.style.color = '#ffffff';
-                        btn.style.borderColor = '#28a745';
-                        
+                        btn.style.color = 'white';
                         formEl.reset();
 
-                        // Si es el chat, cerrar después de 2s
                         if(item.id === 'chat-form') {
                              setTimeout(() => { window.toggleAdtChat(); }, 2000);
                         }
-
-                        // Restaurar botón después de 4s
+                        
+                        // Restaurar
                         setTimeout(() => {
                             btn.innerText = originalText;
-                            btn.style.backgroundColor = ''; 
+                            btn.style.backgroundColor = '';
                             btn.style.color = '';
-                            btn.style.borderColor = '';
                             btn.style.opacity = '1';
                             btn.disabled = false;
-                        }, 4000);
-                    }, (err) => {
-                        console.error('Error:', err);
-                        alert("Error sending message. Please try again.");
+                        }, 3000);
+                    })
+                    .catch((err) => {
+                        // ERROR
+                        console.error('FAILED...', err);
+                        alert("Error sending message. Check console for details.");
                         btn.innerText = originalText;
                         btn.style.opacity = '1';
                         btn.disabled = false;
@@ -250,111 +213,67 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-
 });
-// gallery about//
+
+// ======================================================
+// G. LIGHTBOX (Galería)
+// ======================================================
 const initLightbox = () => {
-    // 1. Crear el visor con flechas si no existe
-    if (!document.getElementById('adt-lightbox')) {
-        const lb = document.createElement('div');
-        lb.id = 'adt-lightbox';
-        
-        // Estilos del fondo
-        Object.assign(lb.style, {
-            display: 'none', position: 'fixed', zIndex: '100000',
-            top: '0', left: '0', width: '100%', height: '100%',
-            backgroundColor: 'rgba(0,0,0,0.95)', justifyContent: 'center',
-            alignItems: 'center', cursor: 'pointer'
-        });
+    if (document.getElementById('adt-lightbox')) return; // Evitar duplicados
 
-        // HTML interno: Imagen + Flechas + Botón Cerrar
-        lb.innerHTML = `
-            <button id="lb-prev" style="position:absolute; left:20px; background:none; border:none; color:white; font-size:50px; cursor:pointer; z-index:100001;">&#10094;</button>
-            <img id="adt-lightbox-img" src="" style="max-width:85%; max-height:80vh; border:3px solid #f9ae39; border-radius:12px; transition: transform 0.3s; cursor:default;">
-            <button id="lb-next" style="position:absolute; right:20px; background:none; border:none; color:white; font-size:50px; cursor:pointer; z-index:100001;">&#10095;</button>
-            <span style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;">&times;</span>
-        `;
-        document.body.appendChild(lb);
-    }
+    const lb = document.createElement('div');
+    lb.id = 'adt-lightbox';
+    Object.assign(lb.style, {
+        display: 'none', position: 'fixed', zIndex: '100000',
+        top: '0', left: '0', width: '100%', height: '100%',
+        backgroundColor: 'rgba(0,0,0,0.95)', justifyContent: 'center',
+        alignItems: 'center', cursor: 'pointer'
+    });
+    lb.innerHTML = `
+        <button id="lb-prev" style="position:absolute; left:20px; background:none; border:none; color:white; font-size:50px; cursor:pointer; z-index:100001;">&#10094;</button>
+        <img id="adt-lightbox-img" src="" style="max-width:85%; max-height:80vh; border:3px solid #f9ae39; border-radius:12px; transition: transform 0.3s; cursor:default;">
+        <button id="lb-next" style="position:absolute; right:20px; background:none; border:none; color:white; font-size:50px; cursor:pointer; z-index:100001;">&#10095;</button>
+        <span style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+    `;
+    document.body.appendChild(lb);
 
-    const lightbox = document.getElementById('adt-lightbox');
-    const lightboxImg = document.getElementById('adt-lightbox-img');
-    let images = []; // Array para guardar las rutas de las fotos
-    let currentIndex = 0;
+    const imgEl = document.getElementById('adt-lightbox-img');
+    let images = [], currentIndex = 0;
 
-    // Función para actualizar la imagen en el visor
-    const updateImage = (index) => {
-        if (index < 0) index = images.length - 1;
-        if (index >= images.length) index = 0;
-        currentIndex = index;
-        lightboxImg.src = images[currentIndex];
+    const updateImage = (idx) => {
+        if (idx < 0) idx = images.length - 1;
+        if (idx >= images.length) idx = 0;
+        currentIndex = idx;
+        imgEl.src = images[currentIndex];
     };
 
-    // 2. Abrir el visor al hacer clic en una imagen
     document.addEventListener('click', (e) => {
         const clickedImg = e.target.closest('.adt-gallery-item img');
         if (clickedImg) {
-            // Buscamos todas las imágenes de la galería en ese momento
-            const allImgElements = Array.from(document.querySelectorAll('.adt-gallery-item img'));
-            images = allImgElements.map(img => img.src);
+            images = Array.from(document.querySelectorAll('.adt-gallery-item img')).map(img => img.src);
             currentIndex = images.indexOf(clickedImg.src);
-
             updateImage(currentIndex);
-            lightbox.style.display = 'flex';
+            lb.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
     });
 
-    // 3. Control de botones (Siguiente / Anterior)
     document.getElementById('lb-prev').onclick = (e) => { e.stopPropagation(); updateImage(currentIndex - 1); };
     document.getElementById('lb-next').onclick = (e) => { e.stopPropagation(); updateImage(currentIndex + 1); };
-
-    // Cerrar al hacer clic en el fondo
-    lightbox.onclick = () => {
-        lightbox.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    };
-
-    // 4. Control por TECLADO (Flechas y Escape)
+    lb.onclick = () => { lb.style.display = 'none'; document.body.style.overflow = ''; };
+    
     document.addEventListener('keydown', (e) => {
-        if (lightbox.style.display === 'flex') {
+        if (lb.style.display === 'flex') {
             if (e.key === "ArrowRight") updateImage(currentIndex + 1);
             if (e.key === "ArrowLeft") updateImage(currentIndex - 1);
-            if (e.key === "Escape") lightbox.click();
+            if (e.key === "Escape") lb.click();
         }
     });
 };
 
-// Iniciar sistema
-initLightbox();
-
-
-
-// Actualización automática del año de copyright
-document.addEventListener('DOMContentLoaded', () => {
-    const yearSpan = document.querySelector('[itemprop="copyrightYear"]');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-});
-
-
- // checkbox de header
-document.addEventListener('DOMContentLoaded', () => {
-    const menuCheckbox = document.getElementById('menu-toggle');
-
-    // Solo ejecutamos si existe el menú en esta página
-    if (menuCheckbox) {
-        // 1. Crear el elemento label (el overlay)
-        const overlay = document.createElement('label');
-        
-        // 2. Asignarle los atributos necesarios
-        overlay.className = 'header__overlay';
-        overlay.setAttribute('for', 'menu-toggle');
-        overlay.setAttribute('aria-hidden', 'true');
-
-        // 3. Insertarlo en el HTML justo DESPUÉS del checkbox
-        // Esto es crucial para que el CSS (~) funcione
-        menuCheckbox.insertAdjacentElement('afterend', overlay);
-    }
-});
+// Iniciar Lightbox
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLightbox);
+} else {
+    initLightbox();
+}
